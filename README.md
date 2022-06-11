@@ -73,7 +73,7 @@ or, if you have the ["Test Adapter for Google Test" Visual Studio component](htt
 
 ![VSTestAdapter](https://github.com/MCInversion/Symplektis/blob/main/InfoImages/VSGTestAddin.png)
 
-If you want to add a new suite to a component, just add a \*.cpp file where you want your tests. CMake will automatically map it into the test suite executable, for example `ProcessingKernel_TestSuite`. Just make sure you follow the Google Test syntax for test cases and suites.
+If you want to add a new suite to a component, just add a \*.cpp file where you want your tests. CMake will automatically map it into the test suite executable, for example `ProcessingKernel_TestSuite`. Just make sure you follow the [Google Test syntax for test cases and suites](https://google.github.io/googletest/primer.html).
 
 ------------------
 
