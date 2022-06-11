@@ -1,0 +1,1699 @@
+===============================================================
+              Binary Tree Debug Print     [10-06-2022 20-34-31]    
+---------------------------------------------------------------
+    Tree Name: LargerIterativeStrTreeInstance
+    Tree UUID:             fe8eef54-ef27-4b71-b085-bac6ab2dc253
+    Implementation Type:   Iterative
+===============================================================
+          Iterative Binary Tree Implementation Debug Print       
+    Node Count:            168
+    Height    :            19
+    Balanced  :            NO
+..................................................................
+- - - - - - - - - - - -    N O D E S  - - - - - - - - - - - - - - 
+..................................................................
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   e2bffccf-d236-454b-b6f0-062057312d62 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   19
+      Children  :   2
+      Left Child Node Index:    7
+      Right Child Node Index:    1
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "In"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   7067dbcb-6c86-4f2f-a13f-ce3ae6673840 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   18
+      Children  :   2
+      Left Child Node Index:    3
+      Right Child Node Index:    2
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "computer"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   f1a9926d-2bb6-4bfb-843f-991949fe2bf6 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   17
+      Children  :   2
+      Left Child Node Index:    11
+      Right Child Node Index:    5
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "science,"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   136b670e-1577-46f7-bf54-d84239f2f2c9 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   11
+      Children  :   2
+      Left Child Node Index:    93
+      Right Child Node Index:    4
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "a"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   19cc0e62-cce0-4e6c-898e-3b4e043c7987 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   10
+      Children  :   2
+      Left Child Node Index:    8
+      Right Child Node Index:    9
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "binary"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   d6bd6536-0cf1-4be7-9f01-1d0b55ed1437 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   16
+      Children  :   1
+      Right Child Node Index:    6
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "search"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   1b995cb1-bbd6-4afc-a3bf-f5d2f99eb33c |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   15
+      Children  :   2
+      Left Child Node Index:    13
+      Right Child Node Index:    15
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "tree"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   e9f4a06c-d4fb-425f-a69a-7346e6c84845 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   4
+      Children  :   1
+      Right Child Node Index:    48
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "(BST),"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   d3d88046-892b-4ebc-9575-ac5a7874b9c9 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   8
+      Children  :   2
+      Left Child Node Index:    17
+      Right Child Node Index:    10
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "also"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   6dfe4f47-72a4-4bb7-9a90-27183f866f1c |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   9
+      Children  :   2
+      Left Child Node Index:    14
+      Right Child Node Index:    83
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "called"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   a53b95f5-61dd-4221-9711-61c8c9f21bcd |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   6
+      Children  :   1
+      Right Child Node Index:    40
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "an"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   23022754-1e93-4a35-9766-a1bb29241bcf |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   13
+      Children  :   2
+      Left Child Node Index:    12
+      Right Child Node Index:    18
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "ordered"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   647a3c59-6b71-423a-8a24-bc766a00453c |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   12
+      Children  :   2
+      Left Child Node Index:    16
+      Right Child Node Index:    94
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "or"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   7b3270ae-88d1-4bb9-882a-67ff45b1c851 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   14
+      Children  :   2
+      Left Child Node Index:    68
+      Right Child Node Index:    22
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "sorted"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   393fef77-6aac-4ea8-940c-ab0657626ab1 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   8
+      Children  :   1
+      Right Child Node Index:    19
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "binary"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   5ef9ae43-d3ab-4a7c-bd6e-c86414338179 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   6
+      Children  :   2
+      Left Child Node Index:    20
+      Right Child Node Index:    23
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "tree,"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   992485aa-24a6-42d7-8620-3934a7bddbad |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   11
+      Children  :   2
+      Left Child Node Index:    21
+      Right Child Node Index:    25
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "is"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   c00244f9-1f65-454c-aa31-1e2575c9ab91 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   7
+      Children  :   1
+      Right Child Node Index:    28
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "a"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   88edd9c5-0842-4c3d-ac75-8ee306f7069b |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   6
+      Children  :   1
+      Left Child Node Index:    46
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "rooted"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   117aa83a-cdff-49ff-bd06-342b2e590bdc |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   7
+      Children  :   1
+      Right Child Node Index:    49
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "binary"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   a1e1aa4a-8109-424e-b947-02facad646c4 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   1
+      Right Child Node Index:    50
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "tree"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   e2490e3a-3fe1-43b2-9c67-12dfd67469e4 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   10
+      Children  :   2
+      Left Child Node Index:    153
+      Right Child Node Index:    24
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "data"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   e7383dfa-5a8f-4423-ba80-3de05e06735d |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   13
+      Children  :   2
+      Left Child Node Index:    27
+      Right Child Node Index:    31
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "structure"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   d1e2de05-8a63-438f-aede-16a892cc7c51 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   5
+      Children  :   1
+      Left Child Node Index:    53
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "whose"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   c796c265-3d2c-4e50-ba45-b3ef5cb6035b |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   9
+      Children  :   1
+      Left Child Node Index:    26
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "internal"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   1cba732e-175b-4cac-a8de-d6cb931380cd |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   10
+      Children  :   2
+      Left Child Node Index:    29
+      Right Child Node Index:    54
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "nodes"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   1ec55a40-9b4e-406f-86c8-0f349a8e8a5d |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   8
+      Children  :   2
+      Left Child Node Index:    55
+      Right Child Node Index:    30
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "each"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   b0333792-15dc-42fa-8f3a-ac2f16295d7c |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   1
+      Right Child Node Index:    58
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "store"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   2b7bfa31-ca08-43a5-b39d-caf3caec0f1d |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   6
+      Children  :   1
+      Right Child Node Index:    32
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "a"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   5be263ed-2cc7-4fe7-ade5-ff0c7e467535 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   9
+      Children  :   2
+      Left Child Node Index:    45
+      Right Child Node Index:    34
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "key"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   7c201282-4335-45bb-bd16-1d91413db3de |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   7
+      Children  :   2
+      Left Child Node Index:    57
+      Right Child Node Index:    35
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "greater"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   c8368256-5fa1-4019-9dde-c18eaeb839ef |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   12
+      Children  :   2
+      Left Child Node Index:    39
+      Right Child Node Index:    33
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "than"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   38e70de1-666f-4603-9a5b-38bc557ae18d |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   5
+      Children  :   2
+      Left Child Node Index:    52
+      Right Child Node Index:    70
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "all"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   2f21d5ee-b4e8-4b18-b5b5-af038f90fa6a |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   11
+      Children  :   2
+      Left Child Node Index:    42
+      Right Child Node Index:    36
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "the"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   e3ed98fc-0aad-4dea-956b-dbb5efc939fb |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   8
+      Children  :   2
+      Left Child Node Index:    144
+      Right Child Node Index:    37
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "keys"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   62518a9d-8762-4ea8-8d1d-933db04a311b |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   6
+      Children  :   2
+      Left Child Node Index:    87
+      Right Child Node Index:    44
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "in"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   a3ce9640-c6b8-4828-a4ac-8eb65d1a3adc |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   10
+      Children  :   1
+      Right Child Node Index:    43
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "the"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   062471a3-ab7d-4622-8efb-21517cd66731 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   7
+      Children  :   1
+      Left Child Node Index:    38
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "node's"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   05376df7-dd34-4129-b25f-ef0ec652f2ea |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   6
+      Children  :   1
+      Right Child Node Index:    41
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "left"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   c87e67fb-0067-43eb-b0c4-c12e60eb7f2a |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   6
+      Children  :   2
+      Left Child Node Index:    56
+      Right Child Node Index:    47
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "subtree"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   d4545554-8f59-4591-90df-995bc7cb4bb5 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   5
+      Children  :   2
+      Left Child Node Index:    64
+      Right Child Node Index:    61
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "and"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   fed01010-a9ac-4049-a2bd-84ec23a10db8 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   5
+      Children  :   1
+      Right Child Node Index:    75
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "less"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   770ce4ef-439a-471a-8bf4-61092421eee9 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   4
+      Children  :   1
+      Right Child Node Index:    101
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "than"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   f1fafd39-0e6e-4b6f-b15f-89d4ce7401d7 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   9
+      Children  :   2
+      Left Child Node Index:    108
+      Right Child Node Index:    86
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "those"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   265d740e-2a15-439a-88ed-a9fed77c56d4 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   5
+      Children  :   1
+      Right Child Node Index:    63
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "in"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   26777811-c7de-4708-b2ca-b5ffbfcaec24 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   5
+      Children  :   1
+      Left Child Node Index:    51
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "its"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   f18d3d88-1c91-4721-9373-59b581048131 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   5
+      Children  :   1
+      Left Child Node Index:    65
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "right"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   03b38d24-552e-45ac-adae-838c6df3ea36 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   5
+      Children  :   1
+      Right Child Node Index:    60
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "subtree."
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   c077521f-5006-461f-8bd7-cc965ba70818 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   2
+      Left Child Node Index:    147
+      Right Child Node Index:    67
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "A"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   a951736b-4f11-49a8-bdbe-2419623861e5 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   6
+      Children  :   1
+      Right Child Node Index:    71
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "binary"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   55e6ee38-ea65-463b-a3f4-331e5bc09dee |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Right Child Node Index:    164
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "tree"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   2492c1fd-fdfd-4d46-9bbc-daf0bdebaa63 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   4
+      Children  :   1
+      Right Child Node Index:    81
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "is"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   95fcfddd-fd1e-4d9d-bd3b-8a22039638c2 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   4
+      Children  :   1
+      Right Child Node Index:    76
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "a"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   ce00b819-f125-402d-9ea4-359e605036b9 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   4
+      Children  :   2
+      Left Child Node Index:    69
+      Right Child Node Index:    66
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "type"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   e21985c2-4431-49e3-8723-b74889b54bb1 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   9
+      Children  :   2
+      Left Child Node Index:    62
+      Right Child Node Index:    79
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "of"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   cec6e4ea-b478-474a-92c1-55849dbbbd61 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   4
+      Children  :   1
+      Right Child Node Index:    59
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "data"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   785851d0-b322-4050-925f-27025fc8af8c |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Right Child Node Index:    167
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "structure"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   79e9c5c2-1be8-49a9-bab6-02d8ae6f964d |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   2
+      Left Child Node Index:    74
+      Right Child Node Index:    73
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "for"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   f8e1dce4-6a88-4dd0-b0fa-ea9c80f217e6 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Left Child Node Index:    127
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "storing"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   38e6f10a-a151-4a81-b897-8ca33f20098a |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   1
+      Right Child Node Index:    80
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "data"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   67c376e6-898c-4903-8179-a8fc370e8237 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   4
+      Children  :   1
+      Right Child Node Index:    92
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "such"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   dba9172e-89b8-437d-a651-1953697270a7 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   4
+      Children  :   2
+      Left Child Node Index:    77
+      Right Child Node Index:    84
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "as"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   15540eb0-d2ea-4dbe-acf6-b863178fe6e6 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   1
+      Left Child Node Index:    96
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "numbers"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   882a95b1-82b1-456f-8993-06bf10e16d25 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   4
+      Children  :   1
+      Right Child Node Index:    97
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "in"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   536d8441-868d-4c51-873f-f026abdd6a77 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Right Child Node Index:    146
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "an"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   f668b6a9-150f-4c14-a15b-b94545cb5f60 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   4
+      Children  :   1
+      Right Child Node Index:    78
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "organized"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   69daf75d-8a16-4073-8952-b61718b328ba |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   2
+      Left Child Node Index:    85
+      Right Child Node Index:    113
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "way."
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   4c382c1f-ded5-4729-9851-c63fc76706da |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Left Child Node Index:    99
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "Binary"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   68f152f9-a83a-4a17-9700-6fb457f51dd8 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   6
+      Children  :   1
+      Right Child Node Index:    72
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "search"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   0aa28926-10ab-498f-987b-7a3e2326f0c1 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   1
+      Left Child Node Index:    110
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "trees"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   39efef61-ce30-4713-b5d7-276db25a2a34 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "allow"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   c1461b3b-6771-48e2-8141-a6d060e158d9 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   5
+      Children  :   1
+      Right Child Node Index:    120
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "binary"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   5d834348-52c3-490b-ac4f-e23d030c1907 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   5
+      Children  :   1
+      Right Child Node Index:    89
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "search"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   0a232202-ca1f-49c7-8955-44dc7440e33d |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "for"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   cc6e8658-e536-4cbb-835f-836c869728b1 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   2
+      Left Child Node Index:    102
+      Right Child Node Index:    141
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "fast"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   626c5861-c041-40d4-b952-7549297c4fec |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   4
+      Children  :   2
+      Left Child Node Index:    91
+      Right Child Node Index:    100
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "lookup,"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   460f64a2-e49f-48f0-8246-47229b0f3144 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   1
+      Left Child Node Index:    98
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "addition"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   308f5919-3b08-4c72-9c7e-01db0decab2d |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   2
+      Left Child Node Index:    82
+      Right Child Node Index:    148
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "and "
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   bb6b1559-0aaa-4f16-96c3-2a04fc29b4fc |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   2
+      Left Child Node Index:    109
+      Right Child Node Index:    139
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "removal"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   226c9bce-c1de-474e-a516-9a44e768319d |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   8
+      Children  :   1
+      Right Child Node Index:    95
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "of"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   fb93ded6-bd22-4b86-8f89-7bb46dc4970d |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Right Child Node Index:    88
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "data"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   7b2b4a59-ff0b-4c0a-bc54-dd1b51256ba0 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   1
+      Left Child Node Index:    126
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "items,"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   38c88b26-fa90-49ff-9a2d-7627c8f81bc4 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Right Child Node Index:    90
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "and"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   b432b7f3-84f7-4559-86f9-17a92f5f40b9 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Right Child Node Index:    103
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "can"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   c7e96126-e379-447e-a643-ec4fc3ebcfa6 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   1
+      Right Child Node Index:    134
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "be"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   c86fb5da-b5a1-4d2b-981e-d5a838744742 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Right Child Node Index:    159
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "used"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   c7eec4ae-efdd-4061-ad1b-35374e0cdd13 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   2
+      Left Child Node Index:    116
+      Right Child Node Index:    118
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "to"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   79f30761-7fdd-45cf-8756-cdc7e915a0f7 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   4
+      Children  :   1
+      Left Child Node Index:    106
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "implement"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   4d96d623-7f2d-4b13-929d-20d83b691fe1 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "dynamic"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   058f9f57-7ff5-4f6c-a7dd-7175bb492914 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   4
+      Children  :   2
+      Left Child Node Index:    163
+      Right Child Node Index:    104
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "sets"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   2b8eb07e-d8b4-47d2-a055-b2de45980d99 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "and"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   05b257de-491e-4b0f-ad29-a3501157b850 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   2
+      Left Child Node Index:    121
+      Right Child Node Index:    114
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "lookup"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   f35eb008-9f80-4fe1-893b-333ae9bac432 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   1
+      Right Child Node Index:    115
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "tables."
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   7c259f64-c4fb-444e-8439-5c0f9ebd994f |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   2
+      Left Child Node Index:    158
+      Right Child Node Index:    131
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "The"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   db3397d0-db94-4ee8-ae92-a73721c38db0 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "order"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   ccbdd35b-e723-4f98-a81d-3a026f3aa226 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   7
+      Children  :   1
+      Right Child Node Index:    107
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "of"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   0e9ebf6a-60e6-4040-bcd6-39caa9501aa2 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Right Child Node Index:    124
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "nodes"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   54220c2d-3793-4ef0-b3fc-ff0b9da225c3 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   1
+      Right Child Node Index:    128
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "in"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   0c7abff5-d80f-474f-89a5-91fbf46f9c93 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Right Child Node Index:    105
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "a"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   a827d9aa-1d8c-4773-a9df-643874c1f3a8 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "BST"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   87d09ccd-6a5a-4f35-9891-b31162f821ac |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Right Child Node Index:    133
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "means"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   bcf25b9a-36ec-4e23-a61e-dad2845200b7 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   1
+      Left Child Node Index:    135
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "that"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   b70cc10b-ea5a-475c-b64e-108992bc2f89 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "each"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   2923ba55-83f7-4a4d-ac17-ebc34a69f4f0 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "comparison"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   33a48edc-69ef-492b-a0e7-dc4b0b0bb41b |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   1
+      Right Child Node Index:    111
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "skips"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   de5c550c-1bdc-419c-b539-bfb6c147c71c |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "about"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   34203594-fee2-46ca-a5de-9d51219a1a83 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   1
+      Right Child Node Index:    156
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "half"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   9f0c0b8b-0142-464c-a90f-17e425f1ca84 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   6
+      Children  :   1
+      Right Child Node Index:    122
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "of"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   cbb327aa-516e-4ced-a3bd-80ed033a1096 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   8
+      Children  :   1
+      Right Child Node Index:    112
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "the"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   cf6f6149-9b85-4bb5-9b0e-ac39dff8ce01 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Left Child Node Index:    117
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "remaining"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   f8ff8650-ce13-4047-950e-f7503e3201ba |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Right Child Node Index:    130
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "tree,"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   ddc13d88-6291-495a-b385-f2ef2b786ff5 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Left Child Node Index:    150
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "so"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   311662d5-4415-45c3-993d-99757a99d34b |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   7
+      Children  :   1
+      Right Child Node Index:    119
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "the"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   85f8082b-edc7-4b68-8bf9-b7ef8d45f7d5 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "whole"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   e3197ed9-9f6a-470b-8839-1444505611a3 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "lookup"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   11ef28d5-5fc2-45ec-b112-198d27c9c4e5 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Left Child Node Index:    157
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "takes"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   42c6650c-0793-492a-ac57-ca36cb22ce53 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Right Child Node Index:    138
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "time"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   b6061128-7b3a-4104-be72-3aca09fcf9bb |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "proportional"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   eeb92fc2-def2-446a-bf8f-fedcff4e4948 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Right Child Node Index:    140
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "to"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   8cfe091b-a6a8-4cd2-afe6-9e6ef5733b76 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   6
+      Children  :   1
+      Right Child Node Index:    123
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "the"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   0fcdcbbe-4090-4336-86b9-b698fb54e6e6 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   4
+      Children  :   1
+      Right Child Node Index:    143
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "binary"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   3f108fcb-770e-4387-b064-50273c5bef08 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Left Child Node Index:    137
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "logarithm"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   0af1cf57-a564-41e9-b5da-a9f33809fb22 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   5
+      Children  :   1
+      Right Child Node Index:    125
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "of"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   2285c9c2-06a6-4ada-bf01-5b0f3ea5cbf0 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   5
+      Children  :   1
+      Right Child Node Index:    129
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "the"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   8e2adeae-742b-44d9-9c8b-83eb9009187c |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "number"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   93b5faaf-d3e3-4a8d-b1f4-774eee3c318e |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   4
+      Children  :   1
+      Right Child Node Index:    154
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "of"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   1f55cd11-2b2f-4dd9-879a-972f0655c57e |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   2
+      Left Child Node Index:    132
+      Right Child Node Index:    142
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "items"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   53fe5dc5-e9ff-4678-b1c7-185d83bacd41 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "stored"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   e5c8329b-988f-4d2c-8923-237736c10c0d |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Right Child Node Index:    145
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "in"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   14ba5670-58e5-4145-bcff-2931ee1fbf8f |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   4
+      Children  :   1
+      Right Child Node Index:    136
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "the"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   f01ce8de-34d9-4fa7-8ab1-01bdc3e459a7 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "tree."
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   e2ec1d3a-70ff-47a6-b797-bae8ead868a5 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "This"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   ebe0d618-fa50-4f45-8e6d-9b9142433419 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "is"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   1c94d9cd-e412-4b78-90d4-a2daeb926c03 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "much"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   c2e90acb-1e87-4818-b0db-6f7602ec502b |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Left Child Node Index:    166
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "better"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   02dc2c7e-d03d-417d-86fb-20fac3f19c20 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Right Child Node Index:    151
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "than"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   8b770e89-8a9b-4e12-836d-debddbf0293d |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   1
+      Right Child Node Index:    152
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "the"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   369cf25f-6a49-45b8-9229-0ce854b7fcb8 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "linear"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   fdd8b758-0138-4a9e-a1aa-141a58b17cec |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "time"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   db0cb38e-fdf6-45dd-b390-28649c02e6e2 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "required"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   ba6266eb-67da-4b82-8682-554ecedeb17e |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "to"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   eb4e3ee0-f7de-4ee6-b27d-36f65a58ce7f |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "find"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   394cd1a6-b0cd-4c74-b847-501408735d7b |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "items"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   38c00871-feca-4e15-aafc-2d5318f959aa |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   1
+      Left Child Node Index:    149
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "by"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   f79e6822-992d-4eba-8645-fc854973b66b |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "key"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   64ce5767-84d1-49d7-b22a-54a19997d75c |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "in"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   ccea5cdd-0a71-4186-b2b4-b5f8d6e7820f |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "an"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   abe5ae2e-0756-44df-823b-75c1f0f2c1d2 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "(unsorted)"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   012858ac-3193-4058-80ba-be81537646f7 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "array,"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   bea48b9f-2cb4-4ec6-962a-cc8cbf3580bf |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Left Child Node Index:    162
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "but"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   41744df0-8cba-40be-bc31-39e175ca1867 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "slower"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   1f07296b-6582-4297-847e-114d1fb3bec3 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "than"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   0be91db2-9aa5-4ff8-bfca-b96e78c9a4f2 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Right Child Node Index:    161
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "the"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   e0be1486-8b5e-4f4b-a64d-b04c585c0b55 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "corresponding"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   b869a89a-e7a1-4d09-9423-dd439137aea1 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   3
+      Children  :   1
+      Left Child Node Index:    155
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "operations"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   54c4ca4c-9c92-4850-a690-7c2e3337ebfd |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Left Child Node Index:    160
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "on"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   64fc18bf-f5d6-42ae-9392-690c9fced400 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   2
+      Children  :   1
+      Right Child Node Index:    165
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "hash"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   5810603a-17e6-4572-896e-cd32c4b2317a |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "tables."
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   f3b0b15c-0d43-434a-9457-72497b26da52 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "Several"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   c203601e-5ddb-43a8-890c-43fb0e1addc5 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "variants"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   6de4ad61-a46a-49f0-91ef-4df16f15aa9b |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "of"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   e9c85f70-bc9a-45c7-b9ff-924d52044a55 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "the"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   1161ab52-bbd3-4886-b7b5-06af3ff98ef5 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "binary"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   04c1c7b7-a906-4107-9a3b-971e5362fb69 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "search"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   fdfbd4b5-e4a3-4b4e-8346-78bac5bf3d5d |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "tree"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   5c7c4da3-f714-488f-b54e-b2a06af8a874 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "have"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   799264fe-547c-411d-8e8f-9c170f72b2e0 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "been"
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+|     (Iterative) Node   :   10c4b9e3-5ef5-4eb8-82e9-db30088647e9 |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      Height     :   1
+      Children  :   0
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+              m_Data->DataSize   :       40
+            m_Data->DataString   :       "studied."
+^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
+..................................................................
+- - - - - - - - - - - -  E N D    N O D E S   - - - - - - - - - - 
+..................................................................
+===============================================================
+...................... END DEBUG PRINT ........................
+===============================================================

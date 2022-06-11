@@ -1,0 +1,4 @@
+set(Symplekt_ProcessingKernel_Src
+	Symplekt_ProcessingKernel.cpp
+)
+add_library(Symplekt_ProcessingKernel ${Symplekt_ProcessingKernel_Src})

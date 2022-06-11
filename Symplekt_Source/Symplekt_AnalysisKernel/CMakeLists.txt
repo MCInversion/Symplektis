@@ -1,0 +1,4 @@
+set(Symplekt_AnalysisKernel_Src
+	Symplekt_AnalysisKernel.cpp
+)
+add_library(Symplekt_AnalysisKernel ${Symplekt_AnalysisKernel_Src})

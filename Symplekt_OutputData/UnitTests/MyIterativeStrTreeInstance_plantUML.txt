@@ -1,0 +1,107 @@
+@startuml
+
+title: Iterative Binary Tree Instance [267af575-7b00-444e-8b99-530db57f5d7a]
+
+class "ce640d2b-30db-4b96-9375-2d25ef4d4155" << (0, #b7bbbd) >> {
+    -NodeArrayIndex = 0
+    ~Height = 6
+    ~BalanceFactor = 2
+    --
+    -DataSize   = 40
+    +DataString = "D"
+}
+
+class "bebc17cb-15d3-409c-9915-6482565182a5" << (L, #6fcaed) >> {
+    -NodeArrayIndex = 1
+    ~Height = 3
+    ~BalanceFactor = -2
+    --
+    -DataSize   = 40
+    +DataString = "C"
+}
+
+class "39c6f7da-7302-4143-adb5-bfbcf484c453" << (L, #6fcaed) >> {
+    -NodeArrayIndex = 2
+    ~Height = 2
+    ~BalanceFactor = 1
+    --
+    -DataSize   = 40
+    +DataString = "A"
+}
+
+class "06087698-daa4-4b35-9c7a-eadacbf9ce16" << (L, #6fcaed) >> {
+    -NodeArrayIndex = 7
+    ~Height = 3
+    ~BalanceFactor = 2
+    --
+    -DataSize   = 40
+    +DataString = "I"
+}
+
+class "2c26c0e2-f54c-4094-9bf6-65fbefe91b94" << (L, #6fcaed) >> {
+    -NodeArrayIndex = 9
+    ~Height = 1
+    ~BalanceFactor = 0
+    --
+    -DataSize   = 40
+    +DataString = "L"
+}
+
+class "67f34cb0-10f2-4b48-b27b-c21d976512f0" << (R, #d68976) >> {
+    -NodeArrayIndex = 4
+    ~Height = 5
+    ~BalanceFactor = 4
+    --
+    -DataSize   = 40
+    +DataString = "F"
+}
+
+class "b0a789a1-3822-4337-b65e-297e23238eee" << (R, #d68976) >> {
+    -NodeArrayIndex = 3
+    ~Height = 1
+    ~BalanceFactor = 0
+    --
+    -DataSize   = 40
+    +DataString = "B"
+}
+
+class "11bdedba-faa6-4c8e-80c2-29fcaab7aeae" << (R, #d68976) >> {
+    -NodeArrayIndex = 5
+    ~Height = 4
+    ~BalanceFactor = -2
+    --
+    -DataSize   = 40
+    +DataString = "X"
+}
+
+class "247732d8-e586-4dcd-b748-746963ff7a43" << (R, #d68976) >> {
+    -NodeArrayIndex = 6
+    ~Height = 1
+    ~BalanceFactor = 0
+    --
+    -DataSize   = 40
+    +DataString = "Z"
+}
+
+class "f80580dd-551d-44c2-88d8-a78ab039d63a" << (R, #d68976) >> {
+    -NodeArrayIndex = 8
+    ~Height = 2
+    ~BalanceFactor = -1
+    --
+    -DataSize   = 40
+    +DataString = "O"
+}
+
+
+
+"ce640d2b-30db-4b96-9375-2d25ef4d4155" ---> "bebc17cb-15d3-409c-9915-6482565182a5"
+"bebc17cb-15d3-409c-9915-6482565182a5" ---> "39c6f7da-7302-4143-adb5-bfbcf484c453"
+"11bdedba-faa6-4c8e-80c2-29fcaab7aeae" ---> "06087698-daa4-4b35-9c7a-eadacbf9ce16"
+"f80580dd-551d-44c2-88d8-a78ab039d63a" ---> "2c26c0e2-f54c-4094-9bf6-65fbefe91b94"
+"ce640d2b-30db-4b96-9375-2d25ef4d4155" ---> "67f34cb0-10f2-4b48-b27b-c21d976512f0"
+"39c6f7da-7302-4143-adb5-bfbcf484c453" ---> "b0a789a1-3822-4337-b65e-297e23238eee"
+"67f34cb0-10f2-4b48-b27b-c21d976512f0" ---> "11bdedba-faa6-4c8e-80c2-29fcaab7aeae"
+"11bdedba-faa6-4c8e-80c2-29fcaab7aeae" ---> "247732d8-e586-4dcd-b748-746963ff7a43"
+"06087698-daa4-4b35-9c7a-eadacbf9ce16" ---> "f80580dd-551d-44c2-88d8-a78ab039d63a"
+
+@enduml

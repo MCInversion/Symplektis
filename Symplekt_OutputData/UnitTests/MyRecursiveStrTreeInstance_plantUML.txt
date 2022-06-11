@@ -1,0 +1,67 @@
+@startuml
+
+title: Recursive Binary Tree Instance [e9c48acb-7a79-4942-84fe-53f3eca073f0]
+
+class "1aaff6c4-2e0c-4e8b-8cc4-021abc9a7da6" << (0, #b7bbbd) >> {
+    -DataSize   = 40
+    +DataString = "D"
+}
+
+class "8e4491ff-2f4e-444f-9149-be1ec16de5c2" << (L, #6fcaed) >> {
+    -DataSize   = 40
+    +DataString = "C"
+}
+
+class "daf3187e-d441-4974-99b2-c513115966fd" << (L, #6fcaed) >> {
+    -DataSize   = 40
+    +DataString = "A"
+}
+
+class "994bb529-689f-472f-8842-60b0ab6745f9" << (L, #6fcaed) >> {
+    -DataSize   = 40
+    +DataString = "I"
+}
+
+class "d8684537-f87b-48b5-98ad-4362041b0f34" << (L, #6fcaed) >> {
+    -DataSize   = 40
+    +DataString = "L"
+}
+
+class "d741f607-54ed-4d69-9805-02f1548e3284" << (R, #d68976) >> {
+    -DataSize   = 40
+    +DataString = "F"
+}
+
+class "c741bbae-564a-443b-ba01-19740918ac07" << (R, #d68976) >> {
+    -DataSize   = 40
+    +DataString = "Z"
+}
+
+class "d621eca7-0cad-4d4d-8a0e-78df7546c786" << (R, #d68976) >> {
+    -DataSize   = 40
+    +DataString = "O"
+}
+
+class "94437562-2d13-4a14-a7a2-38efec179eff" << (R, #d68976) >> {
+    -DataSize   = 40
+    +DataString = "X"
+}
+
+class "b2a4bd91-31ee-41c1-bef7-3b2f1f13e792" << (R, #d68976) >> {
+    -DataSize   = 40
+    +DataString = "B"
+}
+
+
+
+"1aaff6c4-2e0c-4e8b-8cc4-021abc9a7da6" ---> "8e4491ff-2f4e-444f-9149-be1ec16de5c2"
+"8e4491ff-2f4e-444f-9149-be1ec16de5c2" ---> "daf3187e-d441-4974-99b2-c513115966fd"
+"94437562-2d13-4a14-a7a2-38efec179eff" ---> "994bb529-689f-472f-8842-60b0ab6745f9"
+"d621eca7-0cad-4d4d-8a0e-78df7546c786" ---> "d8684537-f87b-48b5-98ad-4362041b0f34"
+"1aaff6c4-2e0c-4e8b-8cc4-021abc9a7da6" ---> "d741f607-54ed-4d69-9805-02f1548e3284"
+"94437562-2d13-4a14-a7a2-38efec179eff" ---> "c741bbae-564a-443b-ba01-19740918ac07"
+"994bb529-689f-472f-8842-60b0ab6745f9" ---> "d621eca7-0cad-4d4d-8a0e-78df7546c786"
+"d741f607-54ed-4d69-9805-02f1548e3284" ---> "94437562-2d13-4a14-a7a2-38efec179eff"
+"daf3187e-d441-4974-99b2-c513115966fd" ---> "b2a4bd91-31ee-41c1-bef7-3b2f1f13e792"
+
+@enduml
