@@ -47,6 +47,8 @@ or **Configure** and **Generate** using CMake GUI:
 
 ![CMakeGUISetup](https://github.com/MCInversion/Symplektis/blob/main/InfoImages/ImgCmakeGUI.jpg)
 
+------------------
+
 #### When Using Visual Studio:
 
 **The required C++ standard is C++ 20**, so make sure you have at least **MSVC 19.28**. If you're not using Visual Studio, make sure you have compilers which support C++ 20.
@@ -55,7 +57,23 @@ When using CMake, make sure to choose Native compilers, and x64 configuration. T
 
 Build all Symplektis projects either from Solution Explorer, or just run using Local Windows Debugger (F5).
 
-Also, set **Symplektis_ConsoleApp** as a startup project (right-click in Solution Explorer) to make sure the correct executable is run during Debug or Release configuration. Other executables can be added in the topmost CMakeLists.txt. 
+Also, set **Symplektis_ConsoleApp** as a startup project (right-click in Solution Explorer) to make sure the correct executable is run during Debug or Release configuration. Other executables can be added in the topmost CMakeLists.txt.
+
+------------------
+
+#### Unit Testing with GoogleTest in Visual Studio:
+
+When developing new functionalities, or modifying the existing ones, it is essential to properly test the outputs of individual components (methods, functions). For this purpose, we use the [Google Test C++ testing framework](https://google.github.io/googletest/) which is cloned as a submodule in Symplektis/External/GoogleTest, and installed with CMake. 
+
+The test suites (for example `GeometryBase_TestSuite` which tests the functionality of `Symplekt_GeometryBase` library) have their own executables. They can be run in Visual Studio via the *Test Explorer*:
+
+![VSTestExplorer](https://github.com/MCInversion/Symplektis/blob/main/InfoImages/VSTestExplorer.png)
+
+or, if you have the ["Test Adapter for Google Test" Visual Studio component](https://docs.microsoft.com/en-us/visualstudio/test/how-to-use-google-test-for-cpp?view=vs-2019) installed, you can run or debug tests by right-clicking a project with tests in the Solution Explorer:
+
+![VSTestAdapter](https://github.com/MCInversion/Symplektis/blob/main/InfoImages/VSGTestAddin.png)
+
+If you want to add a new suite to a component, just add a \*.cpp file where you want your tests. CMake will automatically map it into the test suite executable, for example `ProcessingKernel_TestSuite`. Just make sure you follow the Google Test syntax for test cases and suites.
 
 ------------------
 
