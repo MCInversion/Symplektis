@@ -1,6 +1,7 @@
+cmake_minimum_required(VERSION 3.14)
 cmake_policy(SET CMP0074 NEW)
 cmake_policy(SET CMP0048 NEW)
-cmake_minimum_required(VERSION 3.14)
+cmake_policy(SET CMP0090 NEW)
 
 # use a diferent name for GUI version
 project(Symplektis_ConsoleApp VERSION 1.0)
