@@ -83,13 +83,11 @@ Among the useful guidelines, we follow the [Arrange-Act-Assert pattern](https://
 TEST(OBJImport_TestSuite, SFBunnyOBJFile_Import_ImportedSFBunnyData)
 {
 	// Arrange
-	const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-	const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-	const auto fileFullPath = parentPath / "Symplekt_ResourceData\\" / "bunnySimple.obj";
+	const auto fileFullPath = symplektRootPath / "Symplekt_ResourceData\\" / "bunnySimple.obj";
 
 	// Act
-	const auto importStatus = OBJImporter::GetInstance().Import(fileFullPath);
-	const auto& geomData = OBJImporter::GetInstance().Data();
+	const auto importStatus = OBJImporter::Import(fileFullPath);
+	const auto& geomData = OBJImporter::Data();
 
 	// Assert
 	EXPECT_EQ(importStatus, ImportStatus::Complete);
@@ -147,3 +145,11 @@ Repo: https://github.com/google/googletest
 Eigen is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms. We use it primarly in the Symplekt_AnalysisKernel and Symplekt_ProcessingKernel components.
 
 Repo: https://gitlab.com/libeigen/eigen
+
+#### -> **Poly2Tri**:
+
+Poly2Tri is a small C++ library for triangulating polygonal contours using constrained Delaunay triangulation (CDT). Since it was necessary to do multiple adjustments to the library, we embedded it in Symplekt_GeometryBase rather than include it as an external dependency.
+
+\[Domiter V. and Zalik B. (2008) Sweep‐line algorithm for constrained Delaunay triangulation\] 
+
+Repo: https://github.com/jhasse/poly2tri
