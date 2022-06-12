@@ -1,2 +1,8 @@
 build/
 Symplektis_CppCheck-cppcheck-build-dir/
+External/Eigen/eigen-build
+External/Eigen/eigen-src
+External/Eigen/eigen-subbuild
+External/GoogleTest/googletest-build
+External/GoogleTest/googletest-src
+External/GoogleTest/googletest-subbuild
