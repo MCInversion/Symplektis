@@ -84,6 +84,7 @@ FetchContent_Declare(Eigen
 	GIT_REPOSITORY ${repo_eigen}
 	GIT_TAG        3.4.0
 	GIT_PROGRESS   TRUE
+	GIT_SHALLOW    TRUE
 )
 set(EIGEN_BUILD_DOC OFF)
 set(BUILD_TESTING OFF)
