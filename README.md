@@ -34,8 +34,10 @@ You need [git](https://github.com/git-guides/install-git), of course. And then y
 Clone the repository (recursively to also clone "External" submodules):
 
 ```sh
-git clone --recursive https://github.com/MCInversion/Symplektis.git
+git clone https://github.com/MCInversion/Symplektis.git
 ```
+
+Do not use `clone --recursive` external dependencies in `./External` folder will be cloned by CMake.
 
 **Configure** and **Generate** project files (using [CMake](https://cmake.org/) from command line):
 
@@ -75,27 +77,27 @@ or, if you have the ["Test Adapter for Google Test" Visual Studio component](htt
 
 If you want to add a new suite to a component, just add a \*.cpp file where you want your tests. CMake will automatically map it into the test suite executable, for example `ProcessingKernel_TestSuite`. Just make sure you follow the [Google Test syntax for test cases and suites](https://google.github.io/googletest/primer.html).
 
-Among the useful guidelines, we follow the Arrange-Act-Assert idiom:
+Among the useful guidelines, we follow the [Arrange-Act-Assert pattern](https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/):
 
 ```
-	TEST(OBJImport_TestSuite, SFBunnyOBJFile_Import_ImportedSFBunnyData)
-	{
-		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_ResourceData\\" / "bunnySimple.obj";
+TEST(OBJImport_TestSuite, SFBunnyOBJFile_Import_ImportedSFBunnyData)
+{
+	// Arrange
+	const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
+	const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
+	const auto fileFullPath = parentPath / "Symplekt_ResourceData\\" / "bunnySimple.obj";
 
-		// Act
-		const auto importStatus = OBJImporter::GetInstance().Import(fileFullPath);
-		const auto& geomData = OBJImporter::GetInstance().Data();
+	// Act
+	const auto importStatus = OBJImporter::GetInstance().Import(fileFullPath);
+	const auto& geomData = OBJImporter::GetInstance().Data();
 
-		// Assert
-		EXPECT_EQ(importStatus, ImportStatus::Complete);
-		EXPECT_EQ(geomData.Name, L"bunnySimple");
-		EXPECT_EQ(geomData.Vertices.size(), 2503);
-		EXPECT_EQ(geomData.VertexIndices.size(), 4968);
-		EXPECT_EQ(geomData.VertexNormals.size(), 0);
-	}
+	// Assert
+	EXPECT_EQ(importStatus, ImportStatus::Complete);
+	EXPECT_EQ(geomData.Name, L"bunnySimple");
+	EXPECT_EQ(geomData.Vertices.size(), 2503);
+	EXPECT_EQ(geomData.VertexIndices.size(), 4968);
+	EXPECT_EQ(geomData.VertexNormals.size(), 0);
+}
 ```
 
 ------------------
