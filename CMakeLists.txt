@@ -1,3 +1,5 @@
+cmake_policy(SET CMP0074 NEW)
+cmake_policy(SET CMP0048 NEW)
 cmake_minimum_required(VERSION 3.14)
 
 # use a diferent name for GUI version
