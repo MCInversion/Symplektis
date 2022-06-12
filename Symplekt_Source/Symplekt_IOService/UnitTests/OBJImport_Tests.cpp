@@ -8,21 +8,23 @@
 
 #include "gtest/gtest.h"
 
-#include "../OBJImporter.h"
+#include "Symplekt_IOService/OBJImporter.h"
 
 namespace Symplektis::UnitTests
 {
 	using namespace IOService;
+
+	// set up root directory
+	const std::filesystem::path symplektRootPath = DSYMPLEKTIS_ROOT_DIR;
+	
 	TEST(OBJImport_TestSuite, SFBunnyOBJFile_Import_ImportedSFBunnyData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_ResourceData\\" / "bunnySimple.obj";
+		const auto fileFullPath = symplektRootPath / "Symplekt_ResourceData\\" / "bunnySimple.obj";
 
 		// Act
-		const auto importStatus = OBJImporter::GetInstance().Import(fileFullPath);
-		const auto& geomData = OBJImporter::GetInstance().Data();
+		const auto importStatus = OBJImporter::Import(fileFullPath);
+		const auto& geomData = OBJImporter::Data();
 
 		// Assert
 		EXPECT_EQ(importStatus, ImportStatus::Complete);
@@ -35,13 +37,11 @@ namespace Symplektis::UnitTests
 	TEST(OBJImport_TestSuite, SFBunnyWithoutHolesOBJFile_Import_ImportedSFBunnyWithoutHolesData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_ResourceData\\" / "bunnySimple_no_holes.obj";
+		const auto fileFullPath = symplektRootPath / "Symplekt_ResourceData\\" / "bunnySimple_no_holes.obj";
 
 		// Act
-		const auto importStatus = OBJImporter::GetInstance().Import(fileFullPath);
-		const auto& geomData = OBJImporter::GetInstance().Data();
+		const auto importStatus = OBJImporter::Import(fileFullPath);
+		const auto& geomData = OBJImporter::Data();
 
 		// Assert
 		EXPECT_EQ(importStatus, ImportStatus::Complete);
@@ -54,13 +54,11 @@ namespace Symplektis::UnitTests
 	TEST(OBJImport_TestSuite, ArcOBJFile_Import_ImportedArcData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_ResourceData\\" / "arc.obj";
+		const auto fileFullPath = symplektRootPath / "Symplekt_ResourceData\\" / "arc.obj";
 
 		// Act
-		const auto importStatus = OBJImporter::GetInstance().Import(fileFullPath);
-		const auto& geomData = OBJImporter::GetInstance().Data();
+		const auto importStatus = OBJImporter::Import(fileFullPath);
+		const auto& geomData = OBJImporter::Data();
 
 		// Assert
 		EXPECT_EQ(importStatus, ImportStatus::Complete);
@@ -73,13 +71,11 @@ namespace Symplektis::UnitTests
 	TEST(OBJImport_TestSuite, BentChairOBJFile_Import_ImportedBentChairData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_ResourceData\\" / "BentChair.obj";
+		const auto fileFullPath = symplektRootPath / "Symplekt_ResourceData\\" / "BentChair.obj";
 
 		// Act
-		const auto importStatus = OBJImporter::GetInstance().Import(fileFullPath);
-		const auto& geomData = OBJImporter::GetInstance().Data();
+		const auto importStatus = OBJImporter::Import(fileFullPath);
+		const auto& geomData = OBJImporter::Data();
 
 		// Assert
 		EXPECT_EQ(importStatus, ImportStatus::Complete);

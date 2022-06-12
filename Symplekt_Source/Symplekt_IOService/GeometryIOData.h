@@ -9,7 +9,7 @@
 #pragma once
 
 
-#include "../Symplekt_GeometryBase/Vector3.h"
+#include "Symplekt_GeometryBase/Vector3.h"
 
 #include <string>
 #include <vector>

@@ -8,7 +8,7 @@
 
 #include "gtest/gtest.h"
 
-#include "../IteratorHelperUtils.h"
+#include "Symplekt_UtilityGeneral/IteratorHelperUtils.h"
 
 namespace Symplektis::UnitTests
 {

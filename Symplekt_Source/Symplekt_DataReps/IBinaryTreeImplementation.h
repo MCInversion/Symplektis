@@ -10,7 +10,7 @@
 
 #include "BinaryTreeHelperTypes.h"
 #include "IBinaryTreeNode.h"
-#include "../Symplekt_UtilityGeneral/UUIDTools.h"
+#include "Symplekt_UtilityGeneral/UUIDTools.h"
 
 #include <cmath>
 #include <memory>

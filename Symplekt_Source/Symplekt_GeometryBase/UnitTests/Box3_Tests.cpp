@@ -7,10 +7,10 @@
  */
 #include "gtest/gtest.h"
 
-#include "../Box3.h"
-#include "../Box3Utils.h"
-#include "../RectilinearGridBox3.h"
-#include "../Vector3.h"
+#include "Symplekt_GeometryBase/Box3.h"
+#include "Symplekt_GeometryBase/Box3Utils.h"
+#include "Symplekt_GeometryBase/RectilinearGridBox3.h"
+#include "Symplekt_GeometryBase/Vector3.h"
 
 namespace Symplektis::UnitTests
 {

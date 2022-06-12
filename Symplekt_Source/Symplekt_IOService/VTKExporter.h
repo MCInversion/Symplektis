@@ -34,37 +34,6 @@ namespace Symplektis::IOService
 	class VTKExporter
 	{
 	public:
-		/// @{
-		/// \name Default special members
-
-		// ------------------------------------------------------------------------------
-		/// \brief Default and deleted special member functions of VTKExporter singleton
-		/// 
-		VTKExporter() = default;
-		~VTKExporter() = default;
-		VTKExporter(const VTKExporter&) = delete;
-		VTKExporter(const VTKExporter&&) = delete;
-		VTKExporter& operator=(const VTKExporter&) = delete;
-		VTKExporter& operator=(const VTKExporter&&) = delete;
-		/// 
-		// ------------------------------------------------------------------------------
-
-		/// @{
-		/// \name Static Members
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Singleton instance getter
-		 *  \return VTKExporter instance.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   10.10.2021
-		*/
-		//-----------------------------------------------------------------------------
-		static VTKExporter& GetInstance()
-		{
-			static VTKExporter instance{};
-			return instance;
-		}
 
 		/// @{
 		/// \name Functionality
@@ -79,7 +48,7 @@ namespace Symplektis::IOService
 		*   \date   18.10.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] ExportStatus Export(const GeometryIOData& data, const std::filesystem::path& exportedFileName) const;
+		static [[nodiscard]] ExportStatus Export(const GeometryIOData& data, const std::filesystem::path& exportedFileName);
 	};
 
 } // Symplektis::IOService

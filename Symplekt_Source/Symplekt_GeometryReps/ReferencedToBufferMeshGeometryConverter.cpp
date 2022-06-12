@@ -8,9 +8,9 @@
 
 #include "ReferencedToBufferMeshGeometryConverter.h"
 
-#include "../Symplekt_GeometryBase/Face.h"
-#include "../Symplekt_GeometryBase/GeometryHelperTypes.h"
-#include "../Symplekt_GeometryBase/HalfEdge.h"
+#include "Symplekt_GeometryBase/Face.h"
+#include "Symplekt_GeometryBase/GeometryHelperTypes.h"
+#include "Symplekt_GeometryBase/HalfEdge.h"
 
 #include "BufferMeshGeometry.h"
 

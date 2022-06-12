@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "../Symplekt_GeometryBase/RectilinearGridBox3.h"
+#include "Symplekt_GeometryBase/RectilinearGridBox3.h"
 
 #include "ImplicitGeometryDataTypes.h"
 

@@ -8,16 +8,19 @@
 
 #include "gtest/gtest.h"
 
-#include "../../Symplekt_GeometryReps/UnitTests/MeshGeometryDataForTesting.h"
+#include "Symplekt_GeometryReps/UnitTests/MeshGeometryDataForTesting.h"
 
-#include "../VTKExporter.h"
-#include "../OBJImporter.h"
+#include "Symplekt_IOService/VTKExporter.h"
+#include "Symplekt_IOService/OBJImporter.h"
 
 #include <fstream>
 
 namespace Symplektis::UnitTests
 {
 	using namespace IOService;
+
+	// set up root directory
+	const std::filesystem::path symplektRootPath = DSYMPLEKTIS_ROOT_DIR;
 
 	static void ValidateVTKPolydataFile(const std::filesystem::path& filePath, const GeometryIOData& data)
 	{
@@ -145,9 +148,7 @@ namespace Symplektis::UnitTests
 	TEST(VTKExport_TestSuite, IcosahedronMeshData_ExportVTK_CorrectlyExportedPolyData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_OutputData\\UnitTests" / "icosahedron.vtk";
+		const auto fileFullPath = symplektRootPath / "Symplekt_OutputData\\UnitTests" / "icosahedron.vtk";
 		const auto geomIOData = GeometryIOData{
 			L"icosahedron",
 			icosahedronDataVertices,
@@ -156,7 +157,7 @@ namespace Symplektis::UnitTests
 		};
 
 		// Act
-		const auto exportStatus = VTKExporter::GetInstance().Export(geomIOData, fileFullPath);
+		const auto exportStatus = VTKExporter::Export(geomIOData, fileFullPath);
 
 		// Assert
 		EXPECT_EQ(exportStatus, ExportStatus::Complete);
@@ -166,15 +167,13 @@ namespace Symplektis::UnitTests
 	TEST(VTKExport_TestSuite, ImportedSFBunnyOBJData_ExportVTK_CorrectlyExportedPolyData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto importFilePath = parentPath / "Symplekt_ResourceData\\" / "bunnySimple.obj";
-		const auto importStatus = OBJImporter::GetInstance().Import(importFilePath);
-		const auto& geomIOData = OBJImporter::GetInstance().Data();
-		const auto exportFilePath = parentPath / "Symplekt_OutputData\\UnitTests" / "bunnySimple.vtk";
+		const auto importFilePath = symplektRootPath / "Symplekt_ResourceData\\" / "bunnySimple.obj";
+		const auto importStatus = OBJImporter::Import(importFilePath);
+		const auto& geomIOData = OBJImporter::Data();
+		const auto exportFilePath = symplektRootPath / "Symplekt_OutputData\\UnitTests" / "bunnySimple.vtk";
 
 		// Act
-		const auto exportStatus = VTKExporter::GetInstance().Export(geomIOData, exportFilePath);
+		const auto exportStatus = VTKExporter::Export(geomIOData, exportFilePath);
 
 		// Assert
 		EXPECT_EQ(importStatus, ImportStatus::Complete);
@@ -185,15 +184,13 @@ namespace Symplektis::UnitTests
 	TEST(VTKExport_TestSuite, ImportedBentChairOBJData_ExportVTK_CorrectlyExportedPolyData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto importFilePath = parentPath / "Symplekt_ResourceData\\" / "BentChair.obj";
-		const auto importStatus = OBJImporter::GetInstance().Import(importFilePath);
-		const auto& geomIOData = OBJImporter::GetInstance().Data();
-		const auto exportFilePath = parentPath / "Symplekt_OutputData\\UnitTests" / "BentChair.vtk";
+		const auto importFilePath = symplektRootPath / "Symplekt_ResourceData\\" / "BentChair.obj";
+		const auto importStatus = OBJImporter::Import(importFilePath);
+		const auto& geomIOData = OBJImporter::Data();
+		const auto exportFilePath = symplektRootPath / "Symplekt_OutputData\\UnitTests" / "BentChair.vtk";
 
 		// Act
-		const auto exportStatus = VTKExporter::GetInstance().Export(geomIOData, exportFilePath);
+		const auto exportStatus = VTKExporter::Export(geomIOData, exportFilePath);
 
 		// Assert
 		EXPECT_EQ(importStatus, ImportStatus::Complete);
@@ -204,15 +201,13 @@ namespace Symplektis::UnitTests
 	TEST(VTKExport_TestSuite, ImportedArcOBJData_ExportVTK_CorrectlyExportedPolyData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto importFilePath = parentPath / "Symplekt_ResourceData\\" / "arc.obj";
-		const auto importStatus = OBJImporter::GetInstance().Import(importFilePath);
-		const auto& geomIOData = OBJImporter::GetInstance().Data();
-		const auto exportFilePath = parentPath / "Symplekt_OutputData\\UnitTests" / "arc.vtk";
+		const auto importFilePath = symplektRootPath / "Symplekt_ResourceData\\" / "arc.obj";
+		const auto importStatus = OBJImporter::Import(importFilePath);
+		const auto& geomIOData = OBJImporter::Data();
+		const auto exportFilePath = symplektRootPath / "Symplekt_OutputData\\UnitTests" / "arc.vtk";
 
 		// Act
-		const auto exportStatus = VTKExporter::GetInstance().Export(geomIOData, exportFilePath);
+		const auto exportStatus = VTKExporter::Export(geomIOData, exportFilePath);
 
 		// Assert
 		EXPECT_EQ(importStatus, ImportStatus::Complete);

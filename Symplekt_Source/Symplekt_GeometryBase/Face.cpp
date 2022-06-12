@@ -12,8 +12,8 @@ created  : 29.7.2021 : M.Cavarga (MCInversion) :
 
 #include "Face.h"
 
-#include "../Symplekt_UtilityGeneral/Assert.h"
-#include "../Symplekt_UtilityGeneral/ToleranceSettings.h"
+#include "Symplekt_UtilityGeneral/Assert.h"
+#include "Symplekt_UtilityGeneral/ToleranceSettings.h"
 
 #include "FaceUtils.h"
 #include "Vector2.h"

@@ -8,11 +8,12 @@
 
 #include "gtest/gtest.h"
 
-#include "../../Symplekt_GeometryBase/FaceUtils.h"
-#include "../../Symplekt_GeometryBase/Vector3.h"
+#include "Symplekt_GeometryBase/FaceUtils.h"
+#include "Symplekt_GeometryBase/Vector3.h"
 
-#include "../MeshGeometryDataTypes.h"
-#include "../BufferMeshGeometry.h"
+#include "Symplekt_GeometryReps/MeshGeometryDataTypes.h"
+#include "Symplekt_GeometryReps/BufferMeshGeometry.h"
+
 #include "MeshGeometryDataForTesting.h"
 
 #include <corecrt_math_defines.h>

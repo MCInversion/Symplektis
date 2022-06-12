@@ -8,7 +8,7 @@
 
 #include "OBJExporter.h"
 
-#include "../Symplekt_UtilityGeneral/Assert.h"
+#include "Symplekt_UtilityGeneral/Assert.h"
 
 #include <fstream>
 #include <locale>
@@ -18,7 +18,7 @@ namespace Symplektis::IOService
 	//!> \brief precision for double values written into .obj file
 	constexpr unsigned int stream_precision = 16;
 	
-	ExportStatus OBJExporter::Export(const GeometryIOData& data, const std::filesystem::path& exportedFileName) const
+	ExportStatus OBJExporter::Export(const GeometryIOData& data, const std::filesystem::path& exportedFileName)
 	{
 		std::filesystem::path resultPath = exportedFileName;
 

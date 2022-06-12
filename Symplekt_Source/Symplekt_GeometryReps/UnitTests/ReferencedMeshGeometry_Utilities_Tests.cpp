@@ -8,17 +8,18 @@
 
 #include "gtest/gtest.h"
 
-#include "../../Symplekt_GeometryBase/VertexUtils.h"
-#include "../../Symplekt_GeometryBase/FaceUtils.h"
-#include "../../Symplekt_GeometryBase/HalfEdgeUtils.h"
-#include "../../Symplekt_GeometryBase/Vertex.h"
-#include "../../Symplekt_GeometryBase/Vector3.h"
-#include "../../Symplekt_GeometryBase/Vector2.h"
+#include "Symplekt_GeometryBase/VertexUtils.h"
+#include "Symplekt_GeometryBase/FaceUtils.h"
+#include "Symplekt_GeometryBase/HalfEdgeUtils.h"
+#include "Symplekt_GeometryBase/Vertex.h"
+#include "Symplekt_GeometryBase/Vector3.h"
+#include "Symplekt_GeometryBase/Vector2.h"
 
-#include "../../Symplekt_UtilityGeneral/NumericUtils.h"
-#include "../../Symplekt_UtilityGeneral/ToleranceSettings.h"
+#include "Symplekt_UtilityGeneral/NumericUtils.h"
+#include "Symplekt_UtilityGeneral/ToleranceSettings.h"
 
-#include "../ReferencedMeshGeometry.h"
+#include "Symplekt_GeometryReps/ReferencedMeshGeometry.h"
+
 #include "MeshGeometryDataForTesting.h"
 
 #include <corecrt_math_defines.h>

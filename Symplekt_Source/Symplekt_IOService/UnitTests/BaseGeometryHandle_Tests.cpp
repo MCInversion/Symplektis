@@ -8,25 +8,26 @@
 
 #include "gtest/gtest.h"
 
-#include "../../Symplekt_GeometryReps/MeshGeometryDataTypes.h"
+#include "Symplekt_GeometryReps/MeshGeometryDataTypes.h"
 
-#include "../OBJImporter.h"
-#include "../BaseGeometryImportHandle.h"
+#include "Symplekt_IOService/OBJImporter.h"
+#include "Symplekt_IOService/BaseGeometryImportHandle.h"
 
 namespace Symplektis::UnitTests
 {
 	using namespace IOService;
+
+	// set up root directory
+	const std::filesystem::path symplektRootPath = DSYMPLEKTIS_ROOT_DIR;
 	
 	TEST(BaseGeometryImportHandle_Suite, SFBunnyOBJFile_ImportAndConvertToRefGeom_ReferencedGeometrySFBunnyData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_ResourceData\\" / "bunnySimple.obj";
+		const auto fileFullPath = symplektRootPath / "Symplekt_ResourceData\\" / "bunnySimple.obj";
 
 		// Act
-		const auto importStatus = OBJImporter::GetInstance().Import(fileFullPath);
-		const auto& geomData = OBJImporter::GetInstance().Data();
+		const auto importStatus = OBJImporter::Import(fileFullPath);
+		const auto& geomData = OBJImporter::Data();
 		const auto& meshData = ConvertIODataToReferencedMeshGeometryData(geomData);
 
 		// Assert
@@ -43,13 +44,11 @@ namespace Symplektis::UnitTests
 	TEST(BaseGeometryImportHandle_Suite, SFBunnyWithoutHolesOBJFile_ImportAndConvertToRefGeom_ReferencedGeometrySFBunnyWithoutHolesData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_ResourceData\\" / "bunnySimple_no_holes.obj";
+		const auto fileFullPath = symplektRootPath / "Symplekt_ResourceData\\" / "bunnySimple_no_holes.obj";
 
 		// Act
-		const auto importStatus = OBJImporter::GetInstance().Import(fileFullPath);
-		const auto& geomData = OBJImporter::GetInstance().Data();
+		const auto importStatus = OBJImporter::Import(fileFullPath);
+		const auto& geomData = OBJImporter::Data();
 		const auto& meshData = ConvertIODataToReferencedMeshGeometryData(geomData);
 
 		// Assert
@@ -66,13 +65,11 @@ namespace Symplektis::UnitTests
 	TEST(BaseGeometryImportHandle_Suite, ArcOBJFile_ImportAndConvertToRefGeom_ReferencedGeometryArcData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_ResourceData\\" / "arc.obj";
+		const auto fileFullPath = symplektRootPath / "Symplekt_ResourceData\\" / "arc.obj";
 
 		// Act
-		const auto importStatus = OBJImporter::GetInstance().Import(fileFullPath);
-		const auto& geomData = OBJImporter::GetInstance().Data();
+		const auto importStatus = OBJImporter::Import(fileFullPath);
+		const auto& geomData = OBJImporter::Data();
 		const auto& meshData = ConvertIODataToReferencedMeshGeometryData(geomData);
 
 		// Assert
@@ -89,13 +86,11 @@ namespace Symplektis::UnitTests
 	TEST(BaseGeometryImportHandle_Suite, BentChairOBJFile_ImportAndConvertToRefGeom_ReferencedGeometryBentChairData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_ResourceData\\" / "BentChair.obj";
+		const auto fileFullPath = symplektRootPath / "Symplekt_ResourceData\\" / "BentChair.obj";
 
 		// Act
-		const auto importStatus = OBJImporter::GetInstance().Import(fileFullPath);
-		const auto& geomData = OBJImporter::GetInstance().Data();
+		const auto importStatus = OBJImporter::Import(fileFullPath);
+		const auto& geomData = OBJImporter::Data();
 		const auto& meshData = ConvertIODataToReferencedMeshGeometryData(geomData);
 
 		// Assert
@@ -112,13 +107,11 @@ namespace Symplektis::UnitTests
 	TEST(BaseGeometryImportHandle_Suite, SFBunnyOBJFile_ImportAndConvertToBuffGeom_BufferGeometrySFBunnyData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_ResourceData\\" / "bunnySimple.obj";
+		const auto fileFullPath = symplektRootPath / "Symplekt_ResourceData\\" / "bunnySimple.obj";
 
 		// Act
-		const auto importStatus = OBJImporter::GetInstance().Import(fileFullPath);
-		const auto& geomData = OBJImporter::GetInstance().Data();
+		const auto importStatus = OBJImporter::Import(fileFullPath);
+		const auto& geomData = OBJImporter::Data();
 		const auto& meshData = ConvertIODataToBufferMeshGeometryData(geomData);
 
 		// Assert
@@ -132,13 +125,11 @@ namespace Symplektis::UnitTests
 	TEST(BaseGeometryImportHandle_Suite, SFBunnyWithoutHolesOBJFile_ImportAndConvertToBuffGeom_BufferGeometrySFBunnyWithoutHolesData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_ResourceData\\" / "bunnySimple_no_holes.obj";
+		const auto fileFullPath = symplektRootPath / "Symplekt_ResourceData\\" / "bunnySimple_no_holes.obj";
 
 		// Act
-		const auto importStatus = OBJImporter::GetInstance().Import(fileFullPath);
-		const auto& geomData = OBJImporter::GetInstance().Data();
+		const auto importStatus = OBJImporter::Import(fileFullPath);
+		const auto& geomData = OBJImporter::Data();
 		const auto& meshData = ConvertIODataToBufferMeshGeometryData(geomData);
 
 		// Assert
@@ -152,13 +143,11 @@ namespace Symplektis::UnitTests
 	TEST(BaseGeometryImportHandle_Suite, ArcOBJFile_ImportAndConvertToBuffGeom_BufferGeometryArcData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_ResourceData\\" / "arc.obj";
+		const auto fileFullPath = symplektRootPath / "Symplekt_ResourceData\\" / "arc.obj";
 
 		// Act
-		const auto importStatus = OBJImporter::GetInstance().Import(fileFullPath);
-		const auto& geomData = OBJImporter::GetInstance().Data();
+		const auto importStatus = OBJImporter::Import(fileFullPath);
+		const auto& geomData = OBJImporter::Data();
 		const auto& meshData = ConvertIODataToBufferMeshGeometryData(geomData);
 
 		// Assert
@@ -172,13 +161,11 @@ namespace Symplektis::UnitTests
 	TEST(BaseGeometryImportHandle_Suite, BentChairOBJFile_ImportAndConvertToBuffGeom_BufferGeometryBentChairData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_ResourceData\\" / "BentChair.obj";
+		const auto fileFullPath = symplektRootPath / "Symplekt_ResourceData\\" / "BentChair.obj";
 
 		// Act
-		const auto importStatus = OBJImporter::GetInstance().Import(fileFullPath);
-		const auto& geomData = OBJImporter::GetInstance().Data();
+		const auto importStatus = OBJImporter::Import(fileFullPath);
+		const auto& geomData = OBJImporter::Data();
 		const auto& meshData = ConvertIODataToBufferMeshGeometryData(geomData);
 
 		// Assert

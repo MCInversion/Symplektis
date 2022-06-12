@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "../Symplekt_UtilityGeneral/NamedValue.h"
+#include "Symplekt_UtilityGeneral/NamedValue.h"
 
 #include <vector>
 

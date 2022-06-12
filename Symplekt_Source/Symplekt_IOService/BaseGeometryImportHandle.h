@@ -10,7 +10,7 @@
 
 #include "GeometryIOData.h"
 
-#include "../Symplekt_GeometryReps/MeshGeometryDataTypes.h"
+#include "Symplekt_GeometryReps/MeshGeometryDataTypes.h"
 
 namespace Symplektis::IOService
 {

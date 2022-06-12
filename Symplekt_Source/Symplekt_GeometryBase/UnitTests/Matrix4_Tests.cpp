@@ -8,12 +8,10 @@
 
 #include "gtest/gtest.h"
 
-#include "../../Symplekt_UtilityGeneral/NumericUtils.h"
-
-#include "../Matrix4.h"
-#include "../Matrix4Utils.h"
-#include "../Vector3.h"
-#include "../Quaternion.h"
+#include "Symplekt_GeometryBase/Matrix4.h"
+#include "Symplekt_GeometryBase/Matrix4Utils.h"
+#include "Symplekt_GeometryBase/Vector3.h"
+#include "Symplekt_GeometryBase/Quaternion.h"
 
 #include <corecrt_math_defines.h>
 

@@ -8,15 +8,14 @@
 
 #include "gtest/gtest.h"
 
-#include "../../Symplekt_UtilityGeneral/NumericUtils.h"
-
-#include "../Matrix3.h"
-#include "../Matrix3Utils.h"
-#include "../Matrix4.h"
+#include "Symplekt_GeometryBase/Matrix3.h"
+#include "Symplekt_GeometryBase/Matrix3Utils.h"
+#include "Symplekt_GeometryBase/Matrix4.h"
 
 namespace Symplektis::UnitTests
 {
 	using namespace GeometryBase;
+	
 	TEST(Matrix3_TestSuite, Matrix3_ConstructFromMatrix4_Matrix3)
 	{
 		// Arrange

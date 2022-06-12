@@ -8,7 +8,7 @@
 
 #include "gtest/gtest.h"
 
-#include "../StringSearchBinaryTree.h"
+#include "Symplekt_DataReps/StringSearchBinaryTree.h"
 
 #include <vector>
 #include <string>
@@ -18,6 +18,9 @@
 namespace Symplektis::UnitTests
 {
     using namespace DataReps;
+
+    // set up root directory
+    const std::filesystem::path symplektRootPath = DSYMPLEKTIS_ROOT_DIR;
 
     std::vector<std::string> testDataBasic = {
     	"D", "C", "A", "B", "F", "X", "Z", "I", "O", "L"//
@@ -48,10 +51,7 @@ namespace Symplektis::UnitTests
 	{
 		try
 		{
-	        const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_DataReps\\UnitTests\\{Release | Debug}"
-            const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-	        const auto fileFullPath = parentPath / "Symplekt_OutputData\\UnitTests" / (tree.GetTreeName() + "_print.txt").c_str();
-
+	        const auto fileFullPath = symplektRootPath / "Symplekt_OutputData\\UnitTests" / (tree.GetTreeName() + "_print.txt").c_str();
 	        const auto printStringFull = tree.DebugPrint();
 
 	        std::ofstream fileOStream(fileFullPath.c_str());
@@ -73,10 +73,7 @@ namespace Symplektis::UnitTests
 	{
         try
         {
-            const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_DataReps\\UnitTests\\{Release | Debug}"
-            const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-            const auto fileFullPath = parentPath / "Symplekt_OutputData\\UnitTests" / (tree.GetTreeName() + "_plantUML.txt").c_str();
-
+            const auto fileFullPath = symplektRootPath / "Symplekt_OutputData\\UnitTests" / (tree.GetTreeName() + "_plantUML.txt").c_str();
             const auto printStringFull = tree.PlantUMLPrint();
 
             std::ofstream fileOStream(fileFullPath.c_str());

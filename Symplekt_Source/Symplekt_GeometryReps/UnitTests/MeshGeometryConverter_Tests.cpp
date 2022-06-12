@@ -8,13 +8,13 @@
 
 #include "gtest/gtest.h"
 
-#include "../../Symplekt_GeometryBase/VertexUtils.h"
-#include "../../Symplekt_GeometryBase/FaceUtils.h"
+#include "Symplekt_GeometryBase/VertexUtils.h"
+#include "Symplekt_GeometryBase/FaceUtils.h"
 
-#include "../BufferMeshGeometry.h"
-#include "../ReferencedMeshGeometry.h"
-#include "../ReferencedToBufferMeshGeometryConverter.h"
-#include "../BufferToReferencedMeshGeometryConverter.h"
+#include "Symplekt_GeometryReps/BufferMeshGeometry.h"
+#include "Symplekt_GeometryReps/ReferencedMeshGeometry.h"
+#include "Symplekt_GeometryReps/ReferencedToBufferMeshGeometryConverter.h"
+#include "Symplekt_GeometryReps/BufferToReferencedMeshGeometryConverter.h"
 
 #include "MeshGeometryDataForTesting.h"
 

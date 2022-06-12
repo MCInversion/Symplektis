@@ -8,7 +8,7 @@
 
 #include "OBJImporter.h"
 
-#include "../Symplekt_UtilityGeneral/Assert.h"
+#include "Symplekt_UtilityGeneral/Assert.h"
 
 #include <string>
 #include <fstream>

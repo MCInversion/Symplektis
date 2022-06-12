@@ -8,7 +8,7 @@
 
 #include "BinaryTree.h"
 
-#include "../Symplekt_UtilityGeneral/Assert.h"
+#include "Symplekt_UtilityGeneral/Assert.h"
 
 #include "IterativeBinaryTreeImplementation.h"
 #include "RecursiveBinaryTreeImplementation.h"

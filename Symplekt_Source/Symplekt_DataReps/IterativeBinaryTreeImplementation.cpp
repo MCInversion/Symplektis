@@ -11,7 +11,7 @@
 
 #include "BinaryTreeUtils.h"
 
-#include "../Symplekt_UtilityGeneral/Assert.h"
+#include "Symplekt_UtilityGeneral/Assert.h"
 
 #include <functional>
 #include <map>

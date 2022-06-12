@@ -1,8 +1,8 @@
 ===============================================================
-              Binary Tree Debug Print     [10-06-2022 20-34-31]    
+              Binary Tree Debug Print     [12-06-2022 21-49-39]    
 ---------------------------------------------------------------
     Tree Name: MyIterativeStrTreeInstance
-    Tree UUID:             267af575-7b00-444e-8b99-530db57f5d7a
+    Tree UUID:             2f68fa9d-c861-4d97-ad7f-daec8f637347
     Implementation Type:   Iterative
 ===============================================================
           Iterative Binary Tree Implementation Debug Print       
@@ -13,7 +13,7 @@
 - - - - - - - - - - - -    N O D E S  - - - - - - - - - - - - - - 
 ..................................................................
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Iterative) Node   :   ce640d2b-30db-4b96-9375-2d25ef4d4155 |
+|     (Iterative) Node   :   3434aec6-af7a-4e1e-b106-6dd25168865d |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   6
       Children  :   2
@@ -24,7 +24,7 @@
             m_Data->DataString   :       "D"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Iterative) Node   :   bebc17cb-15d3-409c-9915-6482565182a5 |
+|     (Iterative) Node   :   73b1ff63-4b9a-4223-adcb-54bc6118427c |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   3
       Children  :   1
@@ -34,7 +34,7 @@
             m_Data->DataString   :       "C"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Iterative) Node   :   39c6f7da-7302-4143-adb5-bfbcf484c453 |
+|     (Iterative) Node   :   69541004-e9ff-4bb5-83c2-063da04d0aec |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   2
       Children  :   1
@@ -44,7 +44,7 @@
             m_Data->DataString   :       "A"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Iterative) Node   :   b0a789a1-3822-4337-b65e-297e23238eee |
+|     (Iterative) Node   :   4e271663-6094-48e9-8086-ea0f73e86ed1 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -53,7 +53,7 @@
             m_Data->DataString   :       "B"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Iterative) Node   :   67f34cb0-10f2-4b48-b27b-c21d976512f0 |
+|     (Iterative) Node   :   28381e49-9769-44f9-8a19-4df8b3135911 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   5
       Children  :   1
@@ -63,7 +63,7 @@
             m_Data->DataString   :       "F"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Iterative) Node   :   11bdedba-faa6-4c8e-80c2-29fcaab7aeae |
+|     (Iterative) Node   :   c3b9ad07-edae-47e8-8fba-5a0a8d345e61 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   4
       Children  :   2
@@ -74,7 +74,7 @@
             m_Data->DataString   :       "X"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Iterative) Node   :   247732d8-e586-4dcd-b748-746963ff7a43 |
+|     (Iterative) Node   :   c19e31d7-71c6-4409-ab0d-6c41db905ec0 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -83,7 +83,7 @@
             m_Data->DataString   :       "Z"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Iterative) Node   :   06087698-daa4-4b35-9c7a-eadacbf9ce16 |
+|     (Iterative) Node   :   0b77badc-0da6-4a79-a895-7b6eda743e8d |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   3
       Children  :   1
@@ -93,7 +93,7 @@
             m_Data->DataString   :       "I"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Iterative) Node   :   f80580dd-551d-44c2-88d8-a78ab039d63a |
+|     (Iterative) Node   :   49025245-b1a6-441d-a7f9-26eee77a1aa1 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   2
       Children  :   1
@@ -103,7 +103,7 @@
             m_Data->DataString   :       "O"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Iterative) Node   :   2c26c0e2-f54c-4094-9bf6-65fbefe91b94 |
+|     (Iterative) Node   :   5bf0c86b-32f1-4c7f-b7f2-6cfb37a7d95c |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0

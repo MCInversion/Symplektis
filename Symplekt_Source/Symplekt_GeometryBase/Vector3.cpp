@@ -11,8 +11,8 @@ created  : 5.5.2021 : M.Cavarga (MCInversion) :
 */
 #include "Vector3.h"
 
-#include "../Symplekt_UtilityGeneral/NumericUtils.h"
-#include "../Symplekt_UtilityGeneral/ToleranceSettings.h"
+#include "Symplekt_UtilityGeneral/NumericUtils.h"
+#include "Symplekt_UtilityGeneral/ToleranceSettings.h"
 #include "Vector2.h"
 #include "Matrix3.h"
 #include "Matrix4.h"

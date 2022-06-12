@@ -8,8 +8,8 @@
 
 #include "BaseGeometryImportHandle.h"
 
-#include "../Symplekt_GeometryReps/BufferMeshGeometry.h"
-#include "../Symplekt_GeometryReps/ReferencedMeshGeometry.h"
+#include "Symplekt_GeometryReps/BufferMeshGeometry.h"
+#include "Symplekt_GeometryReps/ReferencedMeshGeometry.h"
 
 namespace Symplektis::IOService
 {

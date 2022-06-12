@@ -8,8 +8,8 @@
 
 #pragma once
 
-#include "../Symplekt_GeometryBase/Box3.h"
-#include "../Symplekt_GeometryBase/RectilinearGridBox3.h"
+#include "Symplekt_GeometryBase/Box3.h"
+#include "Symplekt_GeometryBase/RectilinearGridBox3.h"
 
 #include <vector>
 

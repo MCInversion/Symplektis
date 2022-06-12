@@ -8,7 +8,7 @@
 
 #include "gtest/gtest.h"
 
-#include "../InterfaceUtils.h"
+#include "Symplekt_UtilityGeneral/InterfaceUtils.h"
 
 namespace Symplektis::UnitTests
 {

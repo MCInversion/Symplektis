@@ -8,7 +8,7 @@
 
 #include "VTKExporter.h"
 
-#include "../Symplekt_UtilityGeneral/Assert.h"
+#include "Symplekt_UtilityGeneral/Assert.h"
 
 #include <fstream>
 #include <locale>
@@ -59,7 +59,7 @@ namespace Symplektis::IOService
 	// ===========================================================================
 	//
 
-	ExportStatus VTKExporter::Export(const GeometryIOData& data, const std::filesystem::path& exportedFileName) const
+	ExportStatus VTKExporter::Export(const GeometryIOData& data, const std::filesystem::path& exportedFileName)
 	{
 		std::filesystem::path resultPath = exportedFileName;
 

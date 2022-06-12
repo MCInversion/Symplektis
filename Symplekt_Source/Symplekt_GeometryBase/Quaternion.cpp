@@ -10,8 +10,8 @@ created  : 6.5.2021 : M.Cavarga (MCInversion) :
 \endverbatim
 */
 #include "Quaternion.h"
-#include "../Symplekt_UtilityGeneral/ToleranceSettings.h"
-#include "../Symplekt_UtilityGeneral/NumericUtils.h"
+#include "Symplekt_UtilityGeneral/ToleranceSettings.h"
+#include "Symplekt_UtilityGeneral/NumericUtils.h"
 
 #include "Vector3.h"
 #include "Matrix3.h"

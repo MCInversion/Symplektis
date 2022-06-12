@@ -8,7 +8,7 @@
 
 #include "BufferGeometryBuilder.h"
 
-#include "../Symplekt_GeometryBase/FaceUtils.h"
+#include "Symplekt_GeometryBase/FaceUtils.h"
 
 #include <vector>
 

@@ -8,7 +8,7 @@
 
 #include "MeshGeometryDataTypes.h"
 
-#include "../Symplekt_UtilityGeneral/Assert.h"
+#include "Symplekt_UtilityGeneral/Assert.h"
 
 #include <algorithm>
 

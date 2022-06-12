@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "../Symplekt_GeometryBase/Matrix4.h"
+#include "Symplekt_GeometryBase/Matrix4.h"
 
 #include "ReferencedGeometryBuilder.h"
 

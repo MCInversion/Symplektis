@@ -8,13 +8,13 @@
 
 #include "gtest/gtest.h"
 
-#include "../../Symplekt_UtilityGeneral/ToleranceSettings.h"
-#include "../../Symplekt_UtilityGeneral/NumericUtils.h"
+#include "Symplekt_UtilityGeneral/ToleranceSettings.h"
+#include "Symplekt_UtilityGeneral/NumericUtils.h"
 
-#include "../Vector3.h"
-#include "../Matrix3.h"
-#include "../Quaternion.h"
-#include "../QuaternionUtils.h"
+#include "Symplekt_GeometryBase/Vector3.h"
+#include "Symplekt_GeometryBase/Matrix3.h"
+#include "Symplekt_GeometryBase/Quaternion.h"
+#include "Symplekt_GeometryBase/QuaternionUtils.h"
 
 #include <corecrt_math_defines.h>
 

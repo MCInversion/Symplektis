@@ -28,38 +28,6 @@ namespace Symplektis::IOService
 	{
 	public:
 		/// @{
-		/// \name Default special members
-
-		// ------------------------------------------------------------------------------
-		/// \brief Default and deleted special member functions of OBJExporter singleton
-		/// 
-		OBJExporter() = default;
-		~OBJExporter() = default;
-		OBJExporter(const OBJExporter&) = delete;
-		OBJExporter(const OBJExporter&&) = delete;
-		OBJExporter& operator=(const OBJExporter&) = delete;
-		OBJExporter& operator=(const OBJExporter&&) = delete;
-		/// 
-		// ------------------------------------------------------------------------------
-
-		/// @{
-		/// \name Static Members
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Singleton instance getter
-		 *  \return OBJExporter instance.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   9.6.2022
-		*/
-		//-----------------------------------------------------------------------------
-		static OBJExporter& GetInstance()
-		{
-			static OBJExporter instance{};
-			return instance;
-		}
-
-		/// @{
 		/// \name Functionality
 
 		//-----------------------------------------------------------------------------
@@ -72,7 +40,7 @@ namespace Symplektis::IOService
 		*   \date   9.6.2022
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] ExportStatus Export(const GeometryIOData& data, const std::filesystem::path& exportedFileName) const;
+		static [[nodiscard]] ExportStatus Export(const GeometryIOData& data, const std::filesystem::path& exportedFileName);
 	};
 
 } // Symplektis::IOService

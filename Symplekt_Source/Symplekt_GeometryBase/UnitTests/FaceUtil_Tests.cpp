@@ -8,12 +8,12 @@
 
 #include "gtest/gtest.h"
 
-#include "../Vector2.h"
-#include "../Vector3.h"
-#include "../FaceUtils.h"
+#include "Symplekt_GeometryBase/Vector2.h"
+#include "Symplekt_GeometryBase/Vector3.h"
+#include "Symplekt_GeometryBase/FaceUtils.h"
 
-#include "../../Symplekt_UtilityGeneral/NumericUtils.h"
-#include "../../Symplekt_UtilityGeneral/ToleranceSettings.h"
+#include "Symplekt_UtilityGeneral/NumericUtils.h"
+#include "Symplekt_UtilityGeneral/ToleranceSettings.h"
 
 #include <corecrt_math_defines.h>
 

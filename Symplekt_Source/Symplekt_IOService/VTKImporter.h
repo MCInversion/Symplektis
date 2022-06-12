@@ -27,37 +27,6 @@ namespace Symplektis::IOService
 	class VTKImporter
 	{
 	public:
-		/// @{
-		/// \name Default special members
-
-		// ------------------------------------------------------------------------------
-		/// \brief Default and deleted special member functions of VTKImporter singleton
-		/// 
-		VTKImporter() = default;
-		~VTKImporter() = default;
-		VTKImporter(const VTKImporter&) = delete;
-		VTKImporter(const VTKImporter&&) = delete;
-		VTKImporter& operator=(const VTKImporter&) = delete;
-		VTKImporter& operator=(const VTKImporter&&) = delete;
-		/// 
-		// ------------------------------------------------------------------------------
-
-		/// @{
-		/// \name Static Members
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Singleton instance getter
-		 *  \return VTKImporter instance.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   10.6.2022
-		*/
-		//-----------------------------------------------------------------------------
-		static VTKImporter& GetInstance()
-		{
-			static VTKImporter instance{};
-			return instance;
-		}
 
 		/// @{
 		/// \name Functionality
@@ -71,7 +40,7 @@ namespace Symplektis::IOService
 		*   \date   10.6.2022
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] ImportStatus Import(const std::filesystem::path & importedFilePath);
+		static [[nodiscard]] ImportStatus Import(const std::filesystem::path & importedFilePath);
 
 		/// @{
 		/// \name Getters
@@ -84,20 +53,7 @@ namespace Symplektis::IOService
 		*   \date   10.6.2022
 		*/
 		//-----------------------------------------------------------------------------
-		GeometryIOData& Data()
-		{
-			return m_Data;
-		}
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Const imported data getter
-		 *  \return const reference to m_Data
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   10.6.2022
-		*/
-		//-----------------------------------------------------------------------------
-		[[nodiscard]] const GeometryIOData& Data() const
+		static GeometryIOData& Data()
 		{
 			return m_Data;
 		}
@@ -109,14 +65,14 @@ namespace Symplektis::IOService
 		*   \date   10.6.2022
 		*/
 		//-----------------------------------------------------------------------------
-		void ClearIOData()
+		static void ClearIOData()
 		{
 			m_Data.Clear();
 		}
 
 	private:
 
-		GeometryIOData m_Data{}; //!> imported geometry data
+		inline static GeometryIOData m_Data{}; //!> imported geometry data
 	};
 
 } // Symplektis::IOService

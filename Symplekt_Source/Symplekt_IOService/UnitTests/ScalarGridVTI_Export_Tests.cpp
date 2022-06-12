@@ -8,11 +8,11 @@
 
 #include "gtest/gtest.h"
 
-#include "../../Symplekt_GeometryBase/Box3.h"
-#include "../../Symplekt_GeometryReps/ImplicitGeometryDataTypes.h"
-#include "../../Symplekt_GeometryReps/ScalarGridInit.h"
+#include "Symplekt_GeometryBase/Box3.h"
+#include "Symplekt_GeometryReps/ImplicitGeometryDataTypes.h"
+#include "Symplekt_GeometryReps/ScalarGridInit.h"
 
-#include "../VTIExporter.h"
+#include "Symplekt_IOService/VTIExporter.h"
 
 #include <functional>
 #include <cmath>
@@ -22,6 +22,9 @@ namespace Symplektis::UnitTests
 {
 	using namespace IOService;
 	using namespace GeometryReps;
+
+	// set up root directory
+	const std::filesystem::path symplektRootPath = DSYMPLEKTIS_ROOT_DIR;
 
 	ScalarGridData InitializeAndFillScalarGridData(const BaseScalarGridInputData& inputData, const std::function<double(double, double, double)>& fXYZ)
 	{
@@ -59,9 +62,7 @@ namespace Symplektis::UnitTests
 	TEST(ScalarGridVTIExport_Suite, PolynomialScalarFieldGenerator_ExportVTI_VTIExported)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_OutputData\\UnitTests" / "polynomialScalarField.vti";
+		const auto fileFullPath = symplektRootPath / "Symplekt_OutputData\\UnitTests" / "polynomialScalarField.vti";
 		auto boundingBox = GeometryBase::Box3{
 			{-20.3, -20.1, 0.21},
 			{20.123, 20.35, 29.96}
@@ -72,7 +73,7 @@ namespace Symplektis::UnitTests
 			[](double x, double y, double z) -> double	{ return x * x  + 2.0 * y * y + 0.5 * z * z; });
 
 		// Act
-		const auto exportStatus = VTIExporter::GetInstance().Export(scalarData, fileFullPath);
+		const auto exportStatus = VTIExporter::Export(scalarData, fileFullPath);
 
 		// Assert
 		EXPECT_EQ(exportStatus, ExportStatus::Complete);
@@ -81,9 +82,7 @@ namespace Symplektis::UnitTests
 	TEST(ScalarGridVTIExport_Suite, TrigScalarFieldGenerator_ExportVTI_VTIExported)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_OutputData\\UnitTests" / "trigScalarField.vti";
+		const auto fileFullPath = symplektRootPath / "Symplekt_OutputData\\UnitTests" / "trigScalarField.vti";
 		auto boundingBox = GeometryBase::Box3{
 			{-20.3, -20.1, 0.21},
 			{20.123, 20.35, 29.96}
@@ -94,7 +93,7 @@ namespace Symplektis::UnitTests
 			[](double x, double y, double z) -> double { return sin(x / (2 * M_PI)) * cos(y / (2 * M_PI)) * sin(z / (M_PI)); });
 
 		// Act
-		const auto exportStatus = VTIExporter::GetInstance().Export(scalarData, fileFullPath);
+		const auto exportStatus = VTIExporter::Export(scalarData, fileFullPath);
 
 		// Assert
 		EXPECT_EQ(exportStatus, ExportStatus::Complete);
@@ -103,9 +102,7 @@ namespace Symplektis::UnitTests
 	TEST(ScalarGridVTIExport_Suite, MaxMinScalarFieldGenerator_ExportVTI_VTIExported)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_OutputData\\UnitTests" / "maxMinScalarField.vti";
+		const auto fileFullPath = symplektRootPath / "Symplekt_OutputData\\UnitTests" / "maxMinScalarField.vti";
 		auto boundingBox = GeometryBase::Box3{
 			{-20.123, -20.35, -29.96},
 			{20.123, 20.35, 29.96}
@@ -116,7 +113,7 @@ namespace Symplektis::UnitTests
 			[](double x, double y, double z) -> double { return std::max(x, std::min(y, z)); });
 
 		// Act
-		const auto exportStatus = VTIExporter::GetInstance().Export(scalarData, fileFullPath);
+		const auto exportStatus = VTIExporter::Export(scalarData, fileFullPath);
 
 		// Assert
 		EXPECT_EQ(exportStatus, ExportStatus::Complete);
@@ -125,9 +122,7 @@ namespace Symplektis::UnitTests
 	TEST(ScalarGridVTIExport_Suite, MinMaxScalarFieldGenerator_ExportVTI_VTIExported)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_OutputData\\UnitTests" / "minMaxScalarField.vti";
+		const auto fileFullPath = symplektRootPath / "Symplekt_OutputData\\UnitTests" / "minMaxScalarField.vti";
 		auto boundingBox = GeometryBase::Box3{
 			{-20.123, -20.35, -29.96},
 			{20.123, 20.35, 29.96}
@@ -138,7 +133,7 @@ namespace Symplektis::UnitTests
 			[](double x, double y, double z) -> double { return std::min(x, std::max(y, z)); });
 
 		// Act
-		const auto exportStatus = VTIExporter::GetInstance().Export(scalarData, fileFullPath);
+		const auto exportStatus = VTIExporter::Export(scalarData, fileFullPath);
 
 		// Assert
 		EXPECT_EQ(exportStatus, ExportStatus::Complete);

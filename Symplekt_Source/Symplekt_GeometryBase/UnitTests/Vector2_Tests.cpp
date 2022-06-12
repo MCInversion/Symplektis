@@ -8,17 +8,16 @@
 
 #include "gtest/gtest.h"
 
-#include "../../Symplekt_UtilityGeneral/NumericUtils.h"
-
-#include "../Vector2.h"
-#include "../Vector2Utils.h"
-#include "../Matrix2.h"
+#include "Symplekt_GeometryBase/Vector2.h"
+#include "Symplekt_GeometryBase/Vector2Utils.h"
+#include "Symplekt_GeometryBase/Matrix2.h"
 
 #include <corecrt_math_defines.h>
 
 namespace Symplektis::UnitTests
 {
 	using namespace GeometryBase;
+	
 	TEST(Vector2_TestSuite, ThreeVector2s_EqualityComparisonOperator_Vector2Equality)
 	{
 		// Arrange

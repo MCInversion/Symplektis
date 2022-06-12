@@ -8,7 +8,7 @@
 
 #include "BufferMeshGeometry.h"
 
-#include "../Symplekt_UtilityGeneral/Assert.h"
+#include "Symplekt_UtilityGeneral/Assert.h"
 
 namespace Symplektis::GeometryReps
 {

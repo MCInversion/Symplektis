@@ -8,13 +8,13 @@
 
 #include "ReferencedGeometryBuilder.h"
 
-#include "../Symplekt_UtilityGeneral/Assert.h"
-#include "../Symplekt_GeometryBase/Edge.h"
-#include "../Symplekt_GeometryBase/Face.h"
-#include "../Symplekt_GeometryBase/FaceUtils.h"
-#include "../Symplekt_GeometryBase/HalfEdge.h"
-#include "../Symplekt_GeometryBase/Vertex.h"
-#include "../Symplekt_GeometryBase/VertexUtils.h"
+#include "Symplekt_UtilityGeneral/Assert.h"
+#include "Symplekt_GeometryBase/Edge.h"
+#include "Symplekt_GeometryBase/Face.h"
+#include "Symplekt_GeometryBase/FaceUtils.h"
+#include "Symplekt_GeometryBase/HalfEdge.h"
+#include "Symplekt_GeometryBase/Vertex.h"
+#include "Symplekt_GeometryBase/VertexUtils.h"
 
 #include <string>
 #include <set>

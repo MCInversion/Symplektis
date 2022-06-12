@@ -28,38 +28,6 @@ namespace Symplektis::IOService
 	{
 	public:
 		/// @{
-		/// \name Default special members
-		
-		// ------------------------------------------------------------------------------
-		/// \brief Default and deleted special member functions of OBJImporter singleton
-		/// 
-		OBJImporter() = default;
-		~OBJImporter() = default;
-		OBJImporter(const OBJImporter&) = delete;
-		OBJImporter(const OBJImporter&&) = delete;
-		OBJImporter& operator=(const OBJImporter&) = delete;
-		OBJImporter& operator=(const OBJImporter&&) = delete;
-		/// 
-		// ------------------------------------------------------------------------------
-
-		/// @{
-		/// \name Static Members
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Singleton instance getter
-		 *  \return OBJImporter instance.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   10.10.2021
-		*/
-		//-----------------------------------------------------------------------------
-		static OBJImporter& GetInstance()
-		{
-			static OBJImporter instance{};
-			return instance;
-		}
-
-		/// @{
 		/// \name Functionality
 
 		//-----------------------------------------------------------------------------
@@ -71,7 +39,7 @@ namespace Symplektis::IOService
 		*   \date   10.10.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] ImportStatus Import(const std::filesystem::path& importedFilePath);
+		static [[nodiscard]] ImportStatus Import(const std::filesystem::path& importedFilePath);
 
 		/// @{
 		/// \name Getters
@@ -84,24 +52,13 @@ namespace Symplektis::IOService
 		*   \date   10.10.2021
 		*/
 		//-----------------------------------------------------------------------------
-		GeometryIOData& Data()
-		{
-			return m_Data;
-		}
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Const imported data getter
-		 *  \return const reference to m_Data
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   10.10.2021
-		*/
-		//-----------------------------------------------------------------------------
-		[[nodiscard]] const GeometryIOData& Data() const
+		static GeometryIOData& Data()
 		{
 			return m_Data;
 		}
 	
+
+	private:
 		//-----------------------------------------------------------------------------
 		/*! \brief Simple data clear
 		*
@@ -109,12 +66,10 @@ namespace Symplektis::IOService
 		*   \date   11.10.2021
 		*/
 		//-----------------------------------------------------------------------------
-		void ClearIOData()
+		static void ClearIOData()
 		{
 			m_Data.Clear();
 		}
-
-	private:
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Re-defines vertex normal array if normal indices were found.
@@ -125,11 +80,15 @@ namespace Symplektis::IOService
 		*   \date   13.10.2021
 		*/
 		//-----------------------------------------------------------------------------
-		void PostProcessVertexNormalsFromIndices(
+		static void PostProcessVertexNormalsFromIndices(
 			const std::vector<std::vector<unsigned int>>&  collectedNormalIndices,
 			const std::vector<GeometryBase::Vector3>&      nonIndexedVertexNormals);
+
+		//
+		// ==================================
+		//
 		
-		GeometryIOData m_Data{}; //!> imported geometry data
+		inline static GeometryIOData m_Data{}; //!> imported geometry data
 	};
 	
 } // Symplektis::IOService

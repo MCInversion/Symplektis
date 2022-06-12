@@ -14,7 +14,7 @@ created  : 21.10.2021 : M.Cavarga (MCInversion) :
 
 #include "Vector3.h"
 
-#include "../Symplekt_UtilityGeneral/Assert.h"
+#include "Symplekt_UtilityGeneral/Assert.h"
 
 #include <cmath>
 

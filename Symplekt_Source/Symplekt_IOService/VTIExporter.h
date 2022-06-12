@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "../Symplekt_GeometryReps/ImplicitGeometryDataTypes.h" // TODO: use a local struct instead of GeometryReps::ScalarGridData
+#include "Symplekt_GeometryReps/ImplicitGeometryDataTypes.h" // TODO: use a local struct instead of GeometryReps::ScalarGridData
 #include "IOHelperTypes.h"
 
 #include <filesystem>
@@ -33,38 +33,6 @@ namespace Symplektis::IOService
 	{
 	public:
 		/// @{
-		/// \name Default special members
-
-		// ------------------------------------------------------------------------------
-		/// \brief Default and deleted special member functions of VTIExporter singleton
-		/// 
-		VTIExporter() = default;
-		~VTIExporter() = default;
-		VTIExporter(const VTIExporter&) = delete;
-		VTIExporter(const VTIExporter&&) = delete;
-		VTIExporter& operator=(const VTIExporter&) = delete;
-		VTIExporter& operator=(const VTIExporter&&) = delete;
-		/// 
-		// ------------------------------------------------------------------------------
-
-		/// @{
-		/// \name Static Members
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Singleton instance getter
-		 *  \return VTIExporter instance.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   24.10.2021
-		*/
-		//-----------------------------------------------------------------------------
-		static VTIExporter& GetInstance()
-		{
-			static VTIExporter instance{};
-			return instance;
-		}
-
-		/// @{
 		/// \name Functionality
 
 		//-----------------------------------------------------------------------------
@@ -77,9 +45,7 @@ namespace Symplektis::IOService
 		*   \date   24.10.2021
 		*/
 		//-----------------------------------------------------------------------------
-		static [[nodiscard]] ExportStatus Export(const GeometryReps::ScalarGridData& data, const std::filesystem::path& exportedFileName);
-
-		
+		static [[nodiscard]] ExportStatus Export(const GeometryReps::ScalarGridData& data, const std::filesystem::path& exportedFileName);		
 	};
 
 } // Symplektis::IOService

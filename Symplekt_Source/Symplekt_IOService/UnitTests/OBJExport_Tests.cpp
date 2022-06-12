@@ -8,16 +8,19 @@
 
 #include "gtest/gtest.h"
 
-#include "../../Symplekt_GeometryReps/UnitTests/MeshGeometryDataForTesting.h"
+#include "Symplekt_GeometryReps/UnitTests/MeshGeometryDataForTesting.h"
 
-#include "../OBJExporter.h"
-#include "../OBJImporter.h"
+#include "Symplekt_IOService/OBJExporter.h"
+#include "Symplekt_IOService/OBJImporter.h"
 
 #include <fstream>
 
 namespace Symplektis::UnitTests
 {
 	using namespace IOService;
+
+	// set up root directory
+	const std::filesystem::path symplektRootPath = DSYMPLEKTIS_ROOT_DIR;
 
 	static bool LineBeginsWithToken(const std::string line, const std::string token)
 	{
@@ -185,9 +188,7 @@ namespace Symplektis::UnitTests
 	TEST(OBJExport_TestSuite, IcosahedronMeshData_ExportOBJ_CorrectlyExportedOBJData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_OutputData\\UnitTests" / "icosahedronExported.obj";
+		const auto fileFullPath = symplektRootPath / "Symplekt_OutputData\\UnitTests" / "icosahedronExported.obj";
 		const auto geomIOData = GeometryIOData{
 			L"icosahedron",
 			icosahedronDataVertices,
@@ -196,7 +197,7 @@ namespace Symplektis::UnitTests
 		};
 
 		// Act
-		const auto exportStatus = OBJExporter::GetInstance().Export(geomIOData, fileFullPath);
+		const auto exportStatus = OBJExporter::Export(geomIOData, fileFullPath);
 
 		// Assert
 		EXPECT_EQ(exportStatus, ExportStatus::Complete);
@@ -206,15 +207,13 @@ namespace Symplektis::UnitTests
 	TEST(OBJExport_TestSuite, ImportedBentChairOBJData_ExportOBJ_CorrectlyExportedOBJData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto importFilePath = parentPath / "Symplekt_ResourceData\\" / "BentChair.obj";
-		const auto importStatus = OBJImporter::GetInstance().Import(importFilePath);
-		const auto& geomIOData = OBJImporter::GetInstance().Data();
-		const auto exportFilePath = parentPath / "Symplekt_OutputData\\UnitTests" / "BentChairExported.obj";
+		const auto importFilePath = symplektRootPath / "Symplekt_ResourceData\\" / "BentChair.obj";
+		const auto importStatus = OBJImporter::Import(importFilePath);
+		const auto& geomIOData = OBJImporter::Data();
+		const auto exportFilePath = symplektRootPath / "Symplekt_OutputData\\UnitTests" / "BentChairExported.obj";
 
 		// Act
-		const auto exportStatus = OBJExporter::GetInstance().Export(geomIOData, exportFilePath);
+		const auto exportStatus = OBJExporter::Export(geomIOData, exportFilePath);
 
 		// Assert
 		EXPECT_EQ(importStatus, ImportStatus::Complete);
@@ -225,15 +224,13 @@ namespace Symplektis::UnitTests
 	TEST(OBJExport_TestSuite, ImportedArcOBJData_ExportOBJ_CorrectlyExportedOBJData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto importFilePath = parentPath / "Symplekt_ResourceData\\" / "arc.obj";
-		const auto importStatus = OBJImporter::GetInstance().Import(importFilePath);
-		const auto& geomIOData = OBJImporter::GetInstance().Data();
-		const auto exportFilePath = parentPath / "Symplekt_OutputData\\UnitTests" / "arcExported.obj";
+		const auto importFilePath = symplektRootPath / "Symplekt_ResourceData\\" / "arc.obj";
+		const auto importStatus = OBJImporter::Import(importFilePath);
+		const auto& geomIOData = OBJImporter::Data();
+		const auto exportFilePath = symplektRootPath / "Symplekt_OutputData\\UnitTests" / "arcExported.obj";
 
 		// Act
-		const auto exportStatus = OBJExporter::GetInstance().Export(geomIOData, exportFilePath);
+		const auto exportStatus = OBJExporter::Export(geomIOData, exportFilePath);
 
 		// Assert
 		EXPECT_EQ(importStatus, ImportStatus::Complete);

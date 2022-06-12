@@ -8,11 +8,9 @@
 
 #include "gtest/gtest.h"
 
-#include "../../Symplekt_UtilityGeneral/NumericUtils.h"
-
-#include "../Matrix2.h"
-#include "../Matrix2Utils.h"
-#include "../Vector2.h"
+#include "Symplekt_GeometryBase/Matrix2.h"
+#include "Symplekt_GeometryBase/Matrix2Utils.h"
+#include "Symplekt_GeometryBase/Vector2.h"
 
 #include <corecrt_math_defines.h>
 

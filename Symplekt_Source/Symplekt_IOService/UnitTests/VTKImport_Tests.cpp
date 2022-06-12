@@ -8,21 +8,22 @@
 
 #include "gtest/gtest.h"
 
-#include "../VTKImporter.h"
+#include "Symplekt_IOService/VTKImporter.h"
 
 namespace Symplektis::UnitTests
 {
 	using namespace IOService;
+	
+	// set up root directory
+	const std::filesystem::path symplektRootPath = DSYMPLEKTIS_ROOT_DIR;
 	TEST(VTKImport_TestSuite, SFBunnyVTKFile_Import_ImportedSFBunnyData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_ResourceData\\" / "bunnySimple.vtk";
+		const auto fileFullPath = symplektRootPath / "Symplekt_ResourceData\\" / "bunnySimple.vtk";
 
 		// Act
-		const auto importStatus = VTKImporter::GetInstance().Import(fileFullPath);
-		const auto& geomData = VTKImporter::GetInstance().Data();
+		const auto importStatus = VTKImporter::Import(fileFullPath);
+		const auto& geomData = VTKImporter::Data();
 
 		// Assert
 		EXPECT_EQ(importStatus, ImportStatus::Complete);
@@ -35,13 +36,11 @@ namespace Symplektis::UnitTests
 	TEST(VTKImport_TestSuite, ArcVTKFile_Import_ImportedArcData)
 	{
 		// Arrange
-		const auto currPath = std::filesystem::current_path(); // assumed "{SymplektisRepo_root}\\build\\Symplekt_IOService\\UnitTests\\{Release | Debug}"
-		const auto parentPath = currPath.parent_path().parent_path().parent_path().parent_path();
-		const auto fileFullPath = parentPath / "Symplekt_ResourceData\\" / "arc.vtk";
+		const auto fileFullPath = symplektRootPath / "Symplekt_ResourceData\\" / "arc.vtk";
 
 		// Act
-		const auto importStatus = VTKImporter::GetInstance().Import(fileFullPath);
-		const auto& geomData = VTKImporter::GetInstance().Data();
+		const auto importStatus = VTKImporter::Import(fileFullPath);
+		const auto& geomData = VTKImporter::Data();
 
 		// Assert
 		EXPECT_EQ(importStatus, ImportStatus::Complete);
