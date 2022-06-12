@@ -1,8 +1,8 @@
 ===============================================================
-              Binary Tree Debug Print     [12-06-2022 21-49-39]    
+              Binary Tree Debug Print     [12-06-2022 22-58-58]    
 ---------------------------------------------------------------
     Tree Name: LargerMyRecursiveStrTreeInstance
-    Tree UUID:             91ce78a6-af0d-4822-b65f-402cdcc08b54
+    Tree UUID:             b4ca77d0-a5ff-45d2-8dd7-16154661d9f7
     Implementation Type:   Recursive
 ===============================================================
           Recursive Binary Tree Implementation Debug Print       
@@ -13,104 +13,104 @@
 - - - - - - - - - - - -    N O D E S  - - - - - - - - - - - - - - 
 ..................................................................
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   432b197c-9c5e-4a59-ba65-c5ca5746654c |
+|     (Recursive) Node   :   ffe31c91-3510-49b5-966d-ae6c14abc2f1 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    f7730a6f-decc-426d-8c40-42bd85d679e8
-      Right Child Node:    94504ba1-4265-4e9b-8077-463410641c3a
+      Left Child Node:    542e654a-8373-4751-b241-829ecb1937c6
+      Right Child Node:    5617e59e-2d88-4696-8e56-325627484cb5
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "In"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   94504ba1-4265-4e9b-8077-463410641c3a |
+|     (Recursive) Node   :   5617e59e-2d88-4696-8e56-325627484cb5 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    2641b82d-05d3-4bad-a4b5-0b6892cc6eb6
-      Right Child Node:    2ce25024-4b5c-4e93-bb67-d3ad0db1393a
+      Left Child Node:    0a84d3e7-b3d8-42a9-864c-9f4827c41676
+      Right Child Node:    51782882-b1ab-4109-865b-8dc697083f5f
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "computer"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   2ce25024-4b5c-4e93-bb67-d3ad0db1393a |
+|     (Recursive) Node   :   51782882-b1ab-4109-865b-8dc697083f5f |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    465c877b-607a-4840-b3c7-bbc7b798d874
-      Right Child Node:    099ee97d-8473-4020-ab76-9cbcc7d8b57a
+      Left Child Node:    8a542c42-5e02-4870-87f4-2d7d0107c7a1
+      Right Child Node:    0e668fd4-9f09-46d5-a24d-59909ac79265
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "science,"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   099ee97d-8473-4020-ab76-9cbcc7d8b57a |
+|     (Recursive) Node   :   0e668fd4-9f09-46d5-a24d-59909ac79265 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    82b7edbc-29c4-4a68-b204-c197178be52a
+      Right Child Node:    5461aea5-6b93-4e07-87da-b76374d709a2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "search"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   82b7edbc-29c4-4a68-b204-c197178be52a |
+|     (Recursive) Node   :   5461aea5-6b93-4e07-87da-b76374d709a2 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    23280d34-db0b-4539-b990-3da15f8cc33f
-      Right Child Node:    13a0a009-e2fd-4a3d-a21a-8afcca7557c1
+      Left Child Node:    cc4392b1-7cf4-42e9-adfc-695296f00bb1
+      Right Child Node:    72017924-ff2d-4c06-92b3-471fb79de022
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "tree"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   13a0a009-e2fd-4a3d-a21a-8afcca7557c1 |
+|     (Recursive) Node   :   72017924-ff2d-4c06-92b3-471fb79de022 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    c543445f-acc8-48d7-9f2e-09eb48c2cb1d
-      Right Child Node:    111997bf-12ed-4882-b5fd-ce912b62419e
+      Left Child Node:    1523f7c1-7502-4317-9d8a-0edb96d3e477
+      Right Child Node:    87fee29b-e0ea-4743-be37-d9a3ceb45b8b
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "tree,"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   111997bf-12ed-4882-b5fd-ce912b62419e |
+|     (Recursive) Node   :   87fee29b-e0ea-4743-be37-d9a3ceb45b8b |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    a24e7cde-fa92-463e-941c-7b391c4c5832
+      Left Child Node:    c220fd25-8f4a-4e29-8f2d-495d4f736138
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "whose"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   a24e7cde-fa92-463e-941c-7b391c4c5832 |
+|     (Recursive) Node   :   c220fd25-8f4a-4e29-8f2d-495d4f736138 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    f6eb939d-9a8a-4609-bbbf-2926321c8378
-      Right Child Node:    33d22a77-af36-4862-b8d7-a58b667fdf06
+      Left Child Node:    be38acc3-b240-4c58-af03-9191b6d07c13
+      Right Child Node:    23fc8cee-6960-4f7c-8444-e87a7be525b1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "type"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   33d22a77-af36-4862-b8d7-a58b667fdf06 |
+|     (Recursive) Node   :   23fc8cee-6960-4f7c-8444-e87a7be525b1 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    81b2877c-af79-4269-a029-8b12e1e3189c
-      Right Child Node:    8b317870-ad2f-42d7-b7e0-9ccd40979a6d
+      Left Child Node:    86a1d312-101c-40d7-9ad3-381e736833c6
+      Right Child Node:    7fa467d2-81df-4d8e-b0b8-1cc06b81302e
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "way."
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   8b317870-ad2f-42d7-b7e0-9ccd40979a6d |
+|     (Recursive) Node   :   7fa467d2-81df-4d8e-b0b8-1cc06b81302e |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -119,17 +119,17 @@
             m_Data->DataString   :       "whole"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   81b2877c-af79-4269-a029-8b12e1e3189c |
+|     (Recursive) Node   :   86a1d312-101c-40d7-9ad3-381e736833c6 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    570a002a-7e69-4c1e-b025-6fda4e0adbf2
+      Right Child Node:    81fdac2e-14ed-4246-9c09-3b1a39aa1f9a
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "used"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   570a002a-7e69-4c1e-b025-6fda4e0adbf2 |
+|     (Recursive) Node   :   81fdac2e-14ed-4246-9c09-3b1a39aa1f9a |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -138,27 +138,27 @@
             m_Data->DataString   :       "variants"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   f6eb939d-9a8a-4609-bbbf-2926321c8378 |
+|     (Recursive) Node   :   be38acc3-b240-4c58-af03-9191b6d07c13 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    aefa65e2-5062-4465-aa69-e3d30a5a6acd
+      Left Child Node:    1a308a5a-a952-43b0-88c2-749d868939b6
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "trees"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   aefa65e2-5062-4465-aa69-e3d30a5a6acd |
+|     (Recursive) Node   :   1a308a5a-a952-43b0-88c2-749d868939b6 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    51ffa70c-4c49-494f-94ba-61057a618262
+      Right Child Node:    36bb4534-629f-4615-bc3c-80e82679749c
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "tree,"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   51ffa70c-4c49-494f-94ba-61057a618262 |
+|     (Recursive) Node   :   36bb4534-629f-4615-bc3c-80e82679749c |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -167,27 +167,27 @@
             m_Data->DataString   :       "tree."
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   c543445f-acc8-48d7-9f2e-09eb48c2cb1d |
+|     (Recursive) Node   :   1523f7c1-7502-4317-9d8a-0edb96d3e477 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    7a629b5c-44fb-48c7-8f39-ed7f7663bc3e
+      Right Child Node:    d4228813-6df8-42ea-a3af-f686a878ed1d
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "tree"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   7a629b5c-44fb-48c7-8f39-ed7f7663bc3e |
+|     (Recursive) Node   :   d4228813-6df8-42ea-a3af-f686a878ed1d |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    ebdbf013-3766-4b8a-869f-c470e342a252
+      Right Child Node:    3dbabe84-d2e8-464e-9398-3dffce0bf5a7
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "tree"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   ebdbf013-3766-4b8a-869f-c470e342a252 |
+|     (Recursive) Node   :   3dbabe84-d2e8-464e-9398-3dffce0bf5a7 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -196,93 +196,93 @@
             m_Data->DataString   :       "tree"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   23280d34-db0b-4539-b990-3da15f8cc33f |
+|     (Recursive) Node   :   cc4392b1-7cf4-42e9-adfc-695296f00bb1 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    bdf296fb-3214-4260-91ee-8f9101ee1041
-      Right Child Node:    9a4cd7b5-ab21-4c29-95f9-2772b8cf1b5e
+      Left Child Node:    436993cb-b781-480b-88c2-d6be66ac3604
+      Right Child Node:    5566cc0b-27a1-44c4-86ff-8f92c0274efe
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "sorted"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   9a4cd7b5-ab21-4c29-95f9-2772b8cf1b5e |
+|     (Recursive) Node   :   5566cc0b-27a1-44c4-86ff-8f92c0274efe |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    b03e8649-338e-4cdf-bd6d-79d487018854
-      Right Child Node:    8f253e01-58ff-46ba-8094-ddb062e62f21
+      Left Child Node:    f13c4e35-1be6-4ee8-afa1-7f73b5061041
+      Right Child Node:    b65aca30-7806-42ac-bb5a-ef79460bc274
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "structure"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   8f253e01-58ff-46ba-8094-ddb062e62f21 |
+|     (Recursive) Node   :   b65aca30-7806-42ac-bb5a-ef79460bc274 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    9112cd50-8e8a-4f20-8b33-36c5963dbe62
-      Right Child Node:    d3f0cbe5-d07a-433e-a113-2601f7d99d0b
+      Left Child Node:    2f01c88d-2ad8-467e-8bf4-2ab2acd6799b
+      Right Child Node:    3ccbc8cb-1b68-4973-80e7-be0df4dbf54a
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "than"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   d3f0cbe5-d07a-433e-a113-2601f7d99d0b |
+|     (Recursive) Node   :   3ccbc8cb-1b68-4973-80e7-be0df4dbf54a |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    fe7dd5f9-7802-4624-8d3c-285f0e002b0c
-      Right Child Node:    30847565-7907-4514-90d0-bebe03509337
+      Left Child Node:    d26e0c0f-b6bd-4eb5-baa4-2452d20b60bd
+      Right Child Node:    ef4ae47e-c54f-402c-af23-107f234b59f7
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "the"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   30847565-7907-4514-90d0-bebe03509337 |
+|     (Recursive) Node   :   ef4ae47e-c54f-402c-af23-107f234b59f7 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    1c3937f9-7684-4e60-8090-94fc465ea843
+      Right Child Node:    a4c16551-e772-4949-82fd-7a6136b0f079
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "the"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   1c3937f9-7684-4e60-8090-94fc465ea843 |
+|     (Recursive) Node   :   a4c16551-e772-4949-82fd-7a6136b0f079 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    7c7f16be-8b57-48a2-8e32-4447f4a43d78
-      Right Child Node:    2aa6a37f-f1ba-4019-ab03-4098f79cf4f0
+      Left Child Node:    dbde71bb-cb73-4418-bf76-a6febf2149eb
+      Right Child Node:    93e06bcb-1e89-4f16-bb1c-d8776db85738
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "those"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   2aa6a37f-f1ba-4019-ab03-4098f79cf4f0 |
+|     (Recursive) Node   :   93e06bcb-1e89-4f16-bb1c-d8776db85738 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    99ac23c9-ea75-4dc4-997a-c861db160d09
-      Right Child Node:    3e0f6704-7f20-4f66-8e21-de7c70aeaf7f
+      Left Child Node:    96bfdd86-a29b-408f-8fbd-d8b1c78d6bbe
+      Right Child Node:    2bd75bb8-469d-4f6a-bedb-7468700d662f
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "to"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   3e0f6704-7f20-4f66-8e21-de7c70aeaf7f |
+|     (Recursive) Node   :   2bd75bb8-469d-4f6a-bedb-7468700d662f |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    a058776c-94a8-4423-9d83-5a452e550364
+      Right Child Node:    aef6cad0-4561-4e41-968e-ac16774faba4
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "to"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   a058776c-94a8-4423-9d83-5a452e550364 |
+|     (Recursive) Node   :   aef6cad0-4561-4e41-968e-ac16774faba4 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -291,17 +291,17 @@
             m_Data->DataString   :       "to"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   99ac23c9-ea75-4dc4-997a-c861db160d09 |
+|     (Recursive) Node   :   96bfdd86-a29b-408f-8fbd-d8b1c78d6bbe |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    0d0b80f7-3b83-483a-824a-b4c2e60f8b78
+      Right Child Node:    27259fc4-3129-46a2-957c-4a9528d1f7b7
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "time"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   0d0b80f7-3b83-483a-824a-b4c2e60f8b78 |
+|     (Recursive) Node   :   27259fc4-3129-46a2-957c-4a9528d1f7b7 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -310,77 +310,77 @@
             m_Data->DataString   :       "time"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   7c7f16be-8b57-48a2-8e32-4447f4a43d78 |
+|     (Recursive) Node   :   dbde71bb-cb73-4418-bf76-a6febf2149eb |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    c180b82b-475a-4974-8115-6db61f068001
+      Right Child Node:    97518d18-2568-46df-94c1-170c5c29fdf9
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "the"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   c180b82b-475a-4974-8115-6db61f068001 |
+|     (Recursive) Node   :   97518d18-2568-46df-94c1-170c5c29fdf9 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    6fc1bf68-3f4f-4d5b-b5b1-d7637331ea7c
+      Right Child Node:    0bc2b098-0f5c-47a2-878d-ae9c689077f1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "the"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   6fc1bf68-3f4f-4d5b-b5b1-d7637331ea7c |
+|     (Recursive) Node   :   0bc2b098-0f5c-47a2-878d-ae9c689077f1 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    9a80eefa-80dd-4436-b27d-254c3187d7b0
+      Right Child Node:    9304a927-9ae9-4180-b9dd-699ae61cd080
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "the"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   9a80eefa-80dd-4436-b27d-254c3187d7b0 |
+|     (Recursive) Node   :   9304a927-9ae9-4180-b9dd-699ae61cd080 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    f3d72787-576a-4457-9d9a-bb1d17fc82c4
+      Right Child Node:    440c05af-f250-4421-a6fb-5f9975a7c712
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "the"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   f3d72787-576a-4457-9d9a-bb1d17fc82c4 |
+|     (Recursive) Node   :   440c05af-f250-4421-a6fb-5f9975a7c712 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    93db9b21-7768-4405-8802-0fdc75c0b19b
+      Right Child Node:    3d00ec70-956c-4fd0-a21b-94894c58a947
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "the"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   93db9b21-7768-4405-8802-0fdc75c0b19b |
+|     (Recursive) Node   :   3d00ec70-956c-4fd0-a21b-94894c58a947 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    fbae8933-203d-43b3-83e6-123bd7cd4bb5
+      Right Child Node:    0e05395c-b912-4595-9016-75d5b89c9773
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "the"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   fbae8933-203d-43b3-83e6-123bd7cd4bb5 |
+|     (Recursive) Node   :   0e05395c-b912-4595-9016-75d5b89c9773 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    febd9f29-1ad8-48f2-b765-3654b266e17f
+      Right Child Node:    1f5341c6-6849-4b4a-bcd7-77e96f3cdd1a
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "the"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   febd9f29-1ad8-48f2-b765-3654b266e17f |
+|     (Recursive) Node   :   1f5341c6-6849-4b4a-bcd7-77e96f3cdd1a |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -389,37 +389,37 @@
             m_Data->DataString   :       "the"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   fe7dd5f9-7802-4624-8d3c-285f0e002b0c |
+|     (Recursive) Node   :   d26e0c0f-b6bd-4eb5-baa4-2452d20b60bd |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    7592aad2-ef0d-43cd-8e2e-3ec5e73c4cba
+      Right Child Node:    571e8b7d-2774-4a32-bd2c-2e64bc55fb6b
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "than"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   7592aad2-ef0d-43cd-8e2e-3ec5e73c4cba |
+|     (Recursive) Node   :   571e8b7d-2774-4a32-bd2c-2e64bc55fb6b |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    c8dfc9c5-fade-4d35-8b97-185b9138928d
+      Left Child Node:    3b2b157c-61d4-4608-a09a-e246558d7e41
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "that"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   c8dfc9c5-fade-4d35-8b97-185b9138928d |
+|     (Recursive) Node   :   3b2b157c-61d4-4608-a09a-e246558d7e41 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    20e28826-ac42-4f57-83cd-6d24dd7b8e7e
+      Right Child Node:    2134640f-19ba-4914-9d4a-0acd4cd30490
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "than"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   20e28826-ac42-4f57-83cd-6d24dd7b8e7e |
+|     (Recursive) Node   :   2134640f-19ba-4914-9d4a-0acd4cd30490 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -428,58 +428,58 @@
             m_Data->DataString   :       "than"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   9112cd50-8e8a-4f20-8b33-36c5963dbe62 |
+|     (Recursive) Node   :   2f01c88d-2ad8-467e-8bf4-2ab2acd6799b |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    a38e5d48-16ce-4d73-aac8-58e3986df964
-      Right Child Node:    abf4670f-08be-4d53-8d66-2a023c7f1ecd
+      Left Child Node:    eb58e43b-533d-4313-9944-9684c2cf381c
+      Right Child Node:    12cc9ef0-1d90-466f-96a2-a28a9797d6a4
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "subtree"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   abf4670f-08be-4d53-8d66-2a023c7f1ecd |
+|     (Recursive) Node   :   12cc9ef0-1d90-466f-96a2-a28a9797d6a4 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    50b5de3d-fdf1-42fd-9f0e-49ab9ee86e1e
+      Right Child Node:    8f047617-130b-4bbc-bd7c-a02ac1e0c7cf
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "subtree."
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   50b5de3d-fdf1-42fd-9f0e-49ab9ee86e1e |
+|     (Recursive) Node   :   8f047617-130b-4bbc-bd7c-a02ac1e0c7cf |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    eb83ab08-fd85-455b-8ead-77bf5962871f
+      Right Child Node:    f915853e-d7af-44a3-8203-688ef2fa173d
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "such"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   eb83ab08-fd85-455b-8ead-77bf5962871f |
+|     (Recursive) Node   :   f915853e-d7af-44a3-8203-688ef2fa173d |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    e6a73ba6-1a59-4233-8739-450b66299a20
+      Right Child Node:    3afa668c-d4e2-4a77-a8c1-be2bd1ec3715
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "tables."
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   e6a73ba6-1a59-4233-8739-450b66299a20 |
+|     (Recursive) Node   :   3afa668c-d4e2-4a77-a8c1-be2bd1ec3715 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    77a1cae8-1ec8-4008-8a60-fadbe81379b3
+      Left Child Node:    b9a535cd-34f7-4ae3-a920-9cc02e305610
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "takes"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   77a1cae8-1ec8-4008-8a60-fadbe81379b3 |
+|     (Recursive) Node   :   b9a535cd-34f7-4ae3-a920-9cc02e305610 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -488,17 +488,17 @@
             m_Data->DataString   :       "tables."
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   a38e5d48-16ce-4d73-aac8-58e3986df964 |
+|     (Recursive) Node   :   eb58e43b-533d-4313-9944-9684c2cf381c |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    11427819-1c57-4b70-a31e-cdf35980ed7b
+      Right Child Node:    cf4b6285-b1e5-45c8-956e-5b19d120d978
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "structure"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   11427819-1c57-4b70-a31e-cdf35980ed7b |
+|     (Recursive) Node   :   cf4b6285-b1e5-45c8-956e-5b19d120d978 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -507,27 +507,27 @@
             m_Data->DataString   :       "studied."
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   b03e8649-338e-4cdf-bd6d-79d487018854 |
+|     (Recursive) Node   :   f13c4e35-1be6-4ee8-afa1-7f73b5061041 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    e39781f3-baef-43c3-8f71-8bbf06657f64
+      Right Child Node:    60a8911c-c3a7-48b3-a7b4-7aea37dfe441
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "store"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   e39781f3-baef-43c3-8f71-8bbf06657f64 |
+|     (Recursive) Node   :   60a8911c-c3a7-48b3-a7b4-7aea37dfe441 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    fbb070a9-7a82-46b2-86b8-384b1e3c25cd
+      Left Child Node:    b41ad590-6e77-4cbb-aeb4-d477239e199f
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "storing"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   fbb070a9-7a82-46b2-86b8-384b1e3c25cd |
+|     (Recursive) Node   :   b41ad590-6e77-4cbb-aeb4-d477239e199f |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -536,58 +536,58 @@
             m_Data->DataString   :       "stored"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   bdf296fb-3214-4260-91ee-8f9101ee1041 |
+|     (Recursive) Node   :   436993cb-b781-480b-88c2-d6be66ac3604 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    cb659108-c8d3-407e-adc0-3fdd75cd28f8
+      Right Child Node:    f8051644-60b0-4335-9886-05d885261044
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "search"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   cb659108-c8d3-407e-adc0-3fdd75cd28f8 |
+|     (Recursive) Node   :   f8051644-60b0-4335-9886-05d885261044 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    4cea0dd5-6d12-4458-bcd1-83f52ca1fd18
+      Right Child Node:    c030ffbf-05f4-48a5-9568-c07a9ee9e141
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "search"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   4cea0dd5-6d12-4458-bcd1-83f52ca1fd18 |
+|     (Recursive) Node   :   c030ffbf-05f4-48a5-9568-c07a9ee9e141 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    89bc4f5c-8b3c-4bfb-b8a9-d71f6850b9da
-      Right Child Node:    5907d0f6-435c-41ab-9e7b-5a7511eac8cd
+      Left Child Node:    a8122ab1-9925-4a2d-a798-cd49b4a14d87
+      Right Child Node:    1f23804c-1e99-4ecb-8376-47f35a70798e
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "sets"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   5907d0f6-435c-41ab-9e7b-5a7511eac8cd |
+|     (Recursive) Node   :   1f23804c-1e99-4ecb-8376-47f35a70798e |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    39261173-9864-4a0a-8137-706a8bd5ca4a
+      Right Child Node:    6d82f3e5-ebef-4d6f-beea-984ac718d137
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "skips"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   39261173-9864-4a0a-8137-706a8bd5ca4a |
+|     (Recursive) Node   :   6d82f3e5-ebef-4d6f-beea-984ac718d137 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    558bb3fb-41c8-46a0-b8b8-22b685273d9e
+      Left Child Node:    cfc9c35a-63d5-4a26-9c39-b21fd4ebd42b
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "so"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   558bb3fb-41c8-46a0-b8b8-22b685273d9e |
+|     (Recursive) Node   :   cfc9c35a-63d5-4a26-9c39-b21fd4ebd42b |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -596,7 +596,7 @@
             m_Data->DataString   :       "slower"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   89bc4f5c-8b3c-4bfb-b8a9-d71f6850b9da |
+|     (Recursive) Node   :   a8122ab1-9925-4a2d-a798-cd49b4a14d87 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -605,59 +605,59 @@
             m_Data->DataString   :       "search"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   465c877b-607a-4840-b3c7-bbc7b798d874 |
+|     (Recursive) Node   :   8a542c42-5e02-4870-87f4-2d7d0107c7a1 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    4a79a638-eafd-4d7d-b842-250110ec0908
-      Right Child Node:    c2e5b688-b141-4f91-9d7d-cb76b0926f5c
+      Left Child Node:    9284bce4-1f7e-4318-80a1-2e49eb0dfff3
+      Right Child Node:    fa316f3c-16e6-4062-8836-e0129c635927
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "ordered"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   c2e5b688-b141-4f91-9d7d-cb76b0926f5c |
+|     (Recursive) Node   :   fa316f3c-16e6-4062-8836-e0129c635927 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    856c6e1f-b8da-401a-8032-9afee23ebb45
+      Left Child Node:    c60d847a-66fd-4a52-8a03-baf8287968f6
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "rooted"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   856c6e1f-b8da-401a-8032-9afee23ebb45 |
+|     (Recursive) Node   :   c60d847a-66fd-4a52-8a03-baf8287968f6 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    784260b6-cee0-43c1-ba99-43d662618bd3
+      Left Child Node:    299bbf32-4997-4902-beba-b4174851775f
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "right"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   784260b6-cee0-43c1-ba99-43d662618bd3 |
+|     (Recursive) Node   :   299bbf32-4997-4902-beba-b4174851775f |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    12b7e46f-d9c4-4e6b-8644-e683a5f1553f
+      Right Child Node:    772ca9d8-ca8c-4743-afae-a8b227163b95
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "organized"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   12b7e46f-d9c4-4e6b-8644-e683a5f1553f |
+|     (Recursive) Node   :   772ca9d8-ca8c-4743-afae-a8b227163b95 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    2da71997-6023-4fe3-b2bf-a49cd5b91952
-      Right Child Node:    934d373f-150a-400f-ab8f-cdda2f7b7d12
+      Left Child Node:    212af504-b0bc-432c-a4b4-8b2eb8926741
+      Right Child Node:    28e3d045-5ac6-4392-bd37-aea9bbaa3851
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "removal"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   934d373f-150a-400f-ab8f-cdda2f7b7d12 |
+|     (Recursive) Node   :   28e3d045-5ac6-4392-bd37-aea9bbaa3851 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -666,17 +666,17 @@
             m_Data->DataString   :       "required"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   2da71997-6023-4fe3-b2bf-a49cd5b91952 |
+|     (Recursive) Node   :   212af504-b0bc-432c-a4b4-8b2eb8926741 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    3c6574c0-7d27-4c78-9641-5fc2ecde15e9
+      Left Child Node:    0af6ffa9-c8bc-4903-8553-1de3f616d1fd
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "remaining"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   3c6574c0-7d27-4c78-9641-5fc2ecde15e9 |
+|     (Recursive) Node   :   0af6ffa9-c8bc-4903-8553-1de3f616d1fd |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -685,18 +685,18 @@
             m_Data->DataString   :       "proportional"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   4a79a638-eafd-4d7d-b842-250110ec0908 |
+|     (Recursive) Node   :   9284bce4-1f7e-4318-80a1-2e49eb0dfff3 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    2ba2b56b-3268-4636-a055-440f83b3eaa7
-      Right Child Node:    88ec1d77-9b40-46c5-99ce-f63dfe9184e0
+      Left Child Node:    b96beee9-8968-4c6c-9f95-4ce513fe86c0
+      Right Child Node:    6622bf52-1a3b-4e83-9e70-f69c7ae692ff
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "or"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   88ec1d77-9b40-46c5-99ce-f63dfe9184e0 |
+|     (Recursive) Node   :   6622bf52-1a3b-4e83-9e70-f69c7ae692ff |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -705,110 +705,110 @@
             m_Data->DataString   :       "order"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   2ba2b56b-3268-4636-a055-440f83b3eaa7 |
+|     (Recursive) Node   :   b96beee9-8968-4c6c-9f95-4ce513fe86c0 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    439fb2d7-49ca-4597-a9dc-8013f18363c0
-      Right Child Node:    d4ce59cb-780d-487a-900b-d9ec09ba550e
+      Left Child Node:    0a050aa6-346d-4023-b9e8-3b24f4e8bf89
+      Right Child Node:    effb3947-2624-4906-9c1d-211a0d3f1a4c
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "is"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   d4ce59cb-780d-487a-900b-d9ec09ba550e |
+|     (Recursive) Node   :   effb3947-2624-4906-9c1d-211a0d3f1a4c |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    c9619bdb-9c47-43c9-a0e2-c49a8b34e365
-      Right Child Node:    158a0201-1bf4-46b6-b5c5-47ba9a4679de
+      Left Child Node:    4df23148-054c-441d-a542-e9d8a27799de
+      Right Child Node:    6617ac20-16a6-4450-b85d-a821794a469c
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "nodes"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   158a0201-1bf4-46b6-b5c5-47ba9a4679de |
+|     (Recursive) Node   :   6617ac20-16a6-4450-b85d-a821794a469c |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    c1a5f59c-61eb-46fe-88bf-ebb131f2bf81
-      Right Child Node:    0756e7ba-d756-4fd0-9995-732a913ff98c
+      Left Child Node:    a6c8831d-df56-4a78-b948-3cfbd4bb8ccd
+      Right Child Node:    e8068145-b671-46f7-b44a-445c228e9db3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "of"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   0756e7ba-d756-4fd0-9995-732a913ff98c |
+|     (Recursive) Node   :   e8068145-b671-46f7-b44a-445c228e9db3 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    345e539e-0513-40c1-af13-a3e5f5746ce3
+      Right Child Node:    5bffbc72-88c9-4263-929a-68925962f8f4
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "of"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   345e539e-0513-40c1-af13-a3e5f5746ce3 |
+|     (Recursive) Node   :   5bffbc72-88c9-4263-929a-68925962f8f4 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    234b80a6-0123-40b4-ba51-2dad5f0cd843
+      Right Child Node:    6921d20e-2aca-474e-ae1c-f629e442112e
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "of"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   234b80a6-0123-40b4-ba51-2dad5f0cd843 |
+|     (Recursive) Node   :   6921d20e-2aca-474e-ae1c-f629e442112e |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    6b9f7431-cbac-4a92-8210-c42290c3b1ff
+      Right Child Node:    9dfa18b3-abb7-419c-aad6-d23ac2c987fc
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "of"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   6b9f7431-cbac-4a92-8210-c42290c3b1ff |
+|     (Recursive) Node   :   9dfa18b3-abb7-419c-aad6-d23ac2c987fc |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    78257a5b-c7d5-4960-b27a-c7f7baa9b743
+      Right Child Node:    3617347a-58dc-4e10-a4f5-10db70594d29
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "of"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   78257a5b-c7d5-4960-b27a-c7f7baa9b743 |
+|     (Recursive) Node   :   3617347a-58dc-4e10-a4f5-10db70594d29 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    10b7e54b-eb68-444d-ba0a-bf38d4daf0c8
+      Right Child Node:    60d97d73-e8b4-469a-b471-5bb09de6561e
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "of"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   10b7e54b-eb68-444d-ba0a-bf38d4daf0c8 |
+|     (Recursive) Node   :   60d97d73-e8b4-469a-b471-5bb09de6561e |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    8537ada6-2213-4fec-b5b4-4e95166438b3
+      Left Child Node:    05ce0188-696a-471d-9267-3088a00d71dc
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "operations"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   8537ada6-2213-4fec-b5b4-4e95166438b3 |
+|     (Recursive) Node   :   05ce0188-696a-471d-9267-3088a00d71dc |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    b47db7de-8abe-4200-80e1-f69f0e10792f
+      Left Child Node:    5f6afa2c-83fa-44b7-92f3-5111d8080d4d
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "on"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   b47db7de-8abe-4200-80e1-f69f0e10792f |
+|     (Recursive) Node   :   5f6afa2c-83fa-44b7-92f3-5111d8080d4d |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -817,27 +817,27 @@
             m_Data->DataString   :       "of"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   c1a5f59c-61eb-46fe-88bf-ebb131f2bf81 |
+|     (Recursive) Node   :   a6c8831d-df56-4a78-b948-3cfbd4bb8ccd |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    98f34c4c-9276-47c3-938a-d4236b61008c
+      Left Child Node:    92940b89-07d8-41ec-a0b3-e9ff334cc7cf
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "numbers"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   98f34c4c-9276-47c3-938a-d4236b61008c |
+|     (Recursive) Node   :   92940b89-07d8-41ec-a0b3-e9ff334cc7cf |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    680e6817-4fd7-4b0c-9941-a5e22a24f760
+      Right Child Node:    e14aa2a8-4bdb-4abe-b5fb-09e46a542a49
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "nodes"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   680e6817-4fd7-4b0c-9941-a5e22a24f760 |
+|     (Recursive) Node   :   e14aa2a8-4bdb-4abe-b5fb-09e46a542a49 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -846,80 +846,80 @@
             m_Data->DataString   :       "number"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   c9619bdb-9c47-43c9-a0e2-c49a8b34e365 |
+|     (Recursive) Node   :   4df23148-054c-441d-a542-e9d8a27799de |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    80fa5e46-0d85-4bb2-a686-1013a04bf8f5
-      Right Child Node:    9607ff0f-e921-467d-bd01-668d0f8cf745
+      Left Child Node:    94ef5616-35d3-4486-b2e0-ca8366b598f4
+      Right Child Node:    a50ff6c9-9213-415c-92ea-4c87e7721ac8
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "key"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   9607ff0f-e921-467d-bd01-668d0f8cf745 |
+|     (Recursive) Node   :   a50ff6c9-9213-415c-92ea-4c87e7721ac8 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    7ad8c739-ffde-400a-8cd1-d4b52171b624
-      Right Child Node:    04646530-8692-47a2-a066-01a320e6bfcc
+      Left Child Node:    64853bca-318f-4271-b1a6-d6f77ac7d462
+      Right Child Node:    09233c9b-e87a-43eb-ab60-1e04340aa33d
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "keys"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   04646530-8692-47a2-a066-01a320e6bfcc |
+|     (Recursive) Node   :   09233c9b-e87a-43eb-ab60-1e04340aa33d |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    031dbae8-6685-4e15-bd29-6c960c0843ec
+      Left Child Node:    c9a1056a-e57e-46c4-8226-35a9ea85b442
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "node's"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   031dbae8-6685-4e15-bd29-6c960c0843ec |
+|     (Recursive) Node   :   c9a1056a-e57e-46c4-8226-35a9ea85b442 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    73c16af0-7a8a-4ef0-8241-37fda0e05f59
+      Right Child Node:    4be7842a-0e99-499e-bad4-d533261f3476
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "left"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   73c16af0-7a8a-4ef0-8241-37fda0e05f59 |
+|     (Recursive) Node   :   4be7842a-0e99-499e-bad4-d533261f3476 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    2e3d15b0-09d9-4210-a04b-a0f94beed3f3
+      Right Child Node:    b3b0b822-a35f-4ffb-a1b0-11d858ec0c3f
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "less"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   2e3d15b0-09d9-4210-a04b-a0f94beed3f3 |
+|     (Recursive) Node   :   b3b0b822-a35f-4ffb-a1b0-11d858ec0c3f |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    fca2654b-baaf-48e6-977c-d31ebb29e14b
-      Right Child Node:    79e4cf89-0256-4f92-bfe6-c6a34d3a5437
+      Left Child Node:    ac1a7ba9-6ad6-4589-a739-a0e3a8b423c9
+      Right Child Node:    7860462f-f588-4eeb-82ce-f9a7613618ff
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "lookup,"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   79e4cf89-0256-4f92-bfe6-c6a34d3a5437 |
+|     (Recursive) Node   :   7860462f-f588-4eeb-82ce-f9a7613618ff |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    276736dd-f3bf-4699-91a1-3fe69e7555e0
+      Right Child Node:    a4f72dfa-ee43-4789-9905-ba90904320ca
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "means"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   276736dd-f3bf-4699-91a1-3fe69e7555e0 |
+|     (Recursive) Node   :   a4f72dfa-ee43-4789-9905-ba90904320ca |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -928,18 +928,18 @@
             m_Data->DataString   :       "much"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   fca2654b-baaf-48e6-977c-d31ebb29e14b |
+|     (Recursive) Node   :   ac1a7ba9-6ad6-4589-a739-a0e3a8b423c9 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    36d26f53-f68f-4ce9-8e94-d82be4ab9246
-      Right Child Node:    8826c6f7-5409-48ac-bdd2-a299a83dc29b
+      Left Child Node:    ad193ca7-cd27-49ec-8c43-c24bc10b7cf3
+      Right Child Node:    de913413-f3c8-4c15-a86a-dbf8bcd21315
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "lookup"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   8826c6f7-5409-48ac-bdd2-a299a83dc29b |
+|     (Recursive) Node   :   de913413-f3c8-4c15-a86a-dbf8bcd21315 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -948,17 +948,17 @@
             m_Data->DataString   :       "lookup"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   36d26f53-f68f-4ce9-8e94-d82be4ab9246 |
+|     (Recursive) Node   :   ad193ca7-cd27-49ec-8c43-c24bc10b7cf3 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    e2b428fc-5afe-45b3-9068-dc770499b627
+      Left Child Node:    16130104-e764-49f5-ad6c-b7a299790ca7
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "logarithm"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   e2b428fc-5afe-45b3-9068-dc770499b627 |
+|     (Recursive) Node   :   16130104-e764-49f5-ad6c-b7a299790ca7 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -967,7 +967,7 @@
             m_Data->DataString   :       "linear"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   7ad8c739-ffde-400a-8cd1-d4b52171b624 |
+|     (Recursive) Node   :   64853bca-318f-4271-b1a6-d6f77ac7d462 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -976,48 +976,48 @@
             m_Data->DataString   :       "key"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   80fa5e46-0d85-4bb2-a686-1013a04bf8f5 |
+|     (Recursive) Node   :   94ef5616-35d3-4486-b2e0-ca8366b598f4 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    88dbe819-bc70-4e11-aced-f1468c1047ef
+      Left Child Node:    0ef6e395-2114-4baf-a458-230582172e60
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "its"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   88dbe819-bc70-4e11-aced-f1468c1047ef |
+|     (Recursive) Node   :   0ef6e395-2114-4baf-a458-230582172e60 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    2f759af0-e019-4eba-8511-82ea09288ee9
+      Right Child Node:    e69b19d5-0174-4a17-9020-c424ab53ffa8
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "is"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   2f759af0-e019-4eba-8511-82ea09288ee9 |
+|     (Recursive) Node   :   e69b19d5-0174-4a17-9020-c424ab53ffa8 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    ed0c06b1-a5e2-4a94-acfd-85b3e42aed52
+      Left Child Node:    47c7c653-c6c3-4a01-8557-048eb0437586
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "items,"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   ed0c06b1-a5e2-4a94-acfd-85b3e42aed52 |
+|     (Recursive) Node   :   47c7c653-c6c3-4a01-8557-048eb0437586 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    d304d09a-609b-4698-b637-b83e87463326
-      Right Child Node:    8eb4b35e-70d7-4e13-b8e5-6dcbfebee0f9
+      Left Child Node:    ce888231-b572-4b5d-ba36-de06baeea3a3
+      Right Child Node:    74319791-29cb-4be3-85d2-df9bfa26d6c9
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "items"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   8eb4b35e-70d7-4e13-b8e5-6dcbfebee0f9 |
+|     (Recursive) Node   :   74319791-29cb-4be3-85d2-df9bfa26d6c9 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -1026,7 +1026,7 @@
             m_Data->DataString   :       "items"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   d304d09a-609b-4698-b637-b83e87463326 |
+|     (Recursive) Node   :   ce888231-b572-4b5d-ba36-de06baeea3a3 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -1035,101 +1035,101 @@
             m_Data->DataString   :       "is"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   439fb2d7-49ca-4597-a9dc-8013f18363c0 |
+|     (Recursive) Node   :   0a050aa6-346d-4023-b9e8-3b24f4e8bf89 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    6d4e38f4-3b0b-47c3-9016-5f08c2a55dae
-      Right Child Node:    36ef7075-21e2-4434-8ea5-1ea317ea4df0
+      Left Child Node:    a9238185-2e4e-4fb4-aba3-1a39a3bc25f2
+      Right Child Node:    82e09a09-aedf-47c1-9423-b19d8033f59c
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "data"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   36ef7075-21e2-4434-8ea5-1ea317ea4df0 |
+|     (Recursive) Node   :   82e09a09-aedf-47c1-9423-b19d8033f59c |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    1812db1c-ae54-4bae-84a5-8df768abacdf
+      Left Child Node:    c77b4f54-bbac-4c6d-98c7-233054a9f622
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "internal"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   1812db1c-ae54-4bae-84a5-8df768abacdf |
+|     (Recursive) Node   :   c77b4f54-bbac-4c6d-98c7-233054a9f622 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    5d6cad2d-b24f-418e-9b14-c3a9ed874414
-      Right Child Node:    e059f5ee-957e-45b0-963a-162236b2b042
+      Left Child Node:    7ba994a7-f1eb-450f-b37b-ab9eb22229a7
+      Right Child Node:    5545fb33-7278-4e55-add1-3e8f6f259451
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "each"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   e059f5ee-957e-45b0-963a-162236b2b042 |
+|     (Recursive) Node   :   5545fb33-7278-4e55-add1-3e8f6f259451 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    6b3b1454-46d7-4044-a2e9-d5f20404d2be
-      Right Child Node:    5634095b-b3fa-4d32-b64c-8e9445eb3775
+      Left Child Node:    2e482b30-efae-44dd-af70-e45dcd088df6
+      Right Child Node:    11528ed9-7c59-426f-8fd4-35298a33f648
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "greater"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   5634095b-b3fa-4d32-b64c-8e9445eb3775 |
+|     (Recursive) Node   :   11528ed9-7c59-426f-8fd4-35298a33f648 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    e32d511d-0df2-48b5-a30f-901cfc90ad14
-      Right Child Node:    2fa62f34-f4dc-497a-91cd-812e3898ea2a
+      Left Child Node:    c140bcc7-52f8-4088-9f74-7a4d55a4207f
+      Right Child Node:    d2282ef8-1a35-4e1b-a85e-74070bec2a3e
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "in"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   2fa62f34-f4dc-497a-91cd-812e3898ea2a |
+|     (Recursive) Node   :   d2282ef8-1a35-4e1b-a85e-74070bec2a3e |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    52d07b99-d9a1-4eaf-b9cc-7c0357a9e476
+      Right Child Node:    f142554a-be31-4abf-a90c-997a3724bddc
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "in"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   52d07b99-d9a1-4eaf-b9cc-7c0357a9e476 |
+|     (Recursive) Node   :   f142554a-be31-4abf-a90c-997a3724bddc |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    37568374-5a26-438d-bf0f-a35860ab1354
+      Right Child Node:    c75c9a40-b2b8-487b-b9b8-040b8a7977c1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "in"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   37568374-5a26-438d-bf0f-a35860ab1354 |
+|     (Recursive) Node   :   c75c9a40-b2b8-487b-b9b8-040b8a7977c1 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    c6ef0c48-7d96-4eb8-8def-293f64d94c3e
+      Right Child Node:    55f138ff-4be0-48ca-b6db-2f9ec85a734e
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "in"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   c6ef0c48-7d96-4eb8-8def-293f64d94c3e |
+|     (Recursive) Node   :   55f138ff-4be0-48ca-b6db-2f9ec85a734e |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    f675a774-8d0a-472e-b58d-047fbbb3581a
+      Right Child Node:    5a026d7a-3757-4c67-a6b6-8be0a7422840
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "in"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   f675a774-8d0a-472e-b58d-047fbbb3581a |
+|     (Recursive) Node   :   5a026d7a-3757-4c67-a6b6-8be0a7422840 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -1138,37 +1138,37 @@
             m_Data->DataString   :       "in"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   e32d511d-0df2-48b5-a30f-901cfc90ad14 |
+|     (Recursive) Node   :   c140bcc7-52f8-4088-9f74-7a4d55a4207f |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    506a5e59-a828-4dc6-a2f8-2e72bd6d2b39
+      Left Child Node:    42e58f2a-17a3-4435-af3c-c7a7b47d5ebe
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "implement"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   506a5e59-a828-4dc6-a2f8-2e72bd6d2b39 |
+|     (Recursive) Node   :   42e58f2a-17a3-4435-af3c-c7a7b47d5ebe |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    9fd743d2-c3f8-4df2-892f-668e7bdf3d36
+      Right Child Node:    fe7524bd-b349-426c-903c-d646635c4c8c
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "half"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   9fd743d2-c3f8-4df2-892f-668e7bdf3d36 |
+|     (Recursive) Node   :   fe7524bd-b349-426c-903c-d646635c4c8c |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    c49d6495-d06d-49e6-bda5-14e79a5108e7
+      Right Child Node:    9f587334-188f-4a7e-87c8-f8ed567b9415
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "hash"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   c49d6495-d06d-49e6-bda5-14e79a5108e7 |
+|     (Recursive) Node   :   9f587334-188f-4a7e-87c8-f8ed567b9415 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -1177,18 +1177,18 @@
             m_Data->DataString   :       "have"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   6b3b1454-46d7-4044-a2e9-d5f20404d2be |
+|     (Recursive) Node   :   2e482b30-efae-44dd-af70-e45dcd088df6 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    31f0f89d-33fb-4131-ad04-1108464930f7
-      Right Child Node:    9f55202c-8edf-4ebe-8220-7acb63e0e92f
+      Left Child Node:    4906f7ce-6c8c-4986-88e1-6ed57b4e8222
+      Right Child Node:    4a94b60d-831e-41ac-896e-fd17768cc554
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "for"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   9f55202c-8edf-4ebe-8220-7acb63e0e92f |
+|     (Recursive) Node   :   4a94b60d-831e-41ac-896e-fd17768cc554 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -1197,18 +1197,18 @@
             m_Data->DataString   :       "for"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   31f0f89d-33fb-4131-ad04-1108464930f7 |
+|     (Recursive) Node   :   4906f7ce-6c8c-4986-88e1-6ed57b4e8222 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    d8b6507f-947e-4458-8183-dc4743f4299b
-      Right Child Node:    a853828f-e53c-4fed-aa5f-1db19809d5f8
+      Left Child Node:    1bb59c64-bb88-4dad-a6ec-ce225d49cc62
+      Right Child Node:    b1487e72-22d9-473c-9a6e-c1f98b5dc24c
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "fast"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   a853828f-e53c-4fed-aa5f-1db19809d5f8 |
+|     (Recursive) Node   :   b1487e72-22d9-473c-9a6e-c1f98b5dc24c |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -1217,7 +1217,7 @@
             m_Data->DataString   :       "find"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   d8b6507f-947e-4458-8183-dc4743f4299b |
+|     (Recursive) Node   :   1bb59c64-bb88-4dad-a6ec-ce225d49cc62 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -1226,37 +1226,37 @@
             m_Data->DataString   :       "each"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   5d6cad2d-b24f-418e-9b14-c3a9ed874414 |
+|     (Recursive) Node   :   7ba994a7-f1eb-450f-b37b-ab9eb22229a7 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    dd98d925-0f05-4c1a-9a93-795e8426f9ae
+      Right Child Node:    d2387c9b-1b6c-4d3a-8cbd-c519a98cc454
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "data"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   dd98d925-0f05-4c1a-9a93-795e8426f9ae |
+|     (Recursive) Node   :   d2387c9b-1b6c-4d3a-8cbd-c519a98cc454 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    1ea0ba36-61c7-4114-afd8-57dfd4e3f5f8
+      Right Child Node:    855ed3cf-07d9-4318-9b39-7514c91698c6
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "data"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   1ea0ba36-61c7-4114-afd8-57dfd4e3f5f8 |
+|     (Recursive) Node   :   855ed3cf-07d9-4318-9b39-7514c91698c6 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    3faaa410-8e83-4b02-b122-3127ec0772eb
+      Right Child Node:    336dce15-96c6-4f1f-9a8a-9b694a01cba0
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "data"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   3faaa410-8e83-4b02-b122-3127ec0772eb |
+|     (Recursive) Node   :   336dce15-96c6-4f1f-9a8a-9b694a01cba0 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -1265,7 +1265,7 @@
             m_Data->DataString   :       "dynamic"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   6d4e38f4-3b0b-47c3-9016-5f08c2a55dae |
+|     (Recursive) Node   :   a9238185-2e4e-4fb4-aba3-1a39a3bc25f2 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -1274,50 +1274,50 @@
             m_Data->DataString   :       "corresponding"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   2641b82d-05d3-4bad-a4b5-0b6892cc6eb6 |
+|     (Recursive) Node   :   0a84d3e7-b3d8-42a9-864c-9f4827c41676 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    52f99edc-23d5-486a-96ad-7bbd2094073a
-      Right Child Node:    10be85d5-0aa2-4c70-adbd-70df9c3038f3
+      Left Child Node:    d011945e-1220-4a2c-a6e8-04081fbfc452
+      Right Child Node:    2d272a21-45f6-4f94-a5b1-da14b127577a
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "a"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   10be85d5-0aa2-4c70-adbd-70df9c3038f3 |
+|     (Recursive) Node   :   2d272a21-45f6-4f94-a5b1-da14b127577a |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    71d90de9-95b0-429d-a6f1-436781d764b6
-      Right Child Node:    56f7019f-bf29-4596-87f4-cf48fd134ace
+      Left Child Node:    8b5f2ea3-1ce7-4e49-bb89-e423725122fb
+      Right Child Node:    dfe8e65c-ce22-42c3-b54e-46b65c6d0f42
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "binary"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   56f7019f-bf29-4596-87f4-cf48fd134ace |
+|     (Recursive) Node   :   dfe8e65c-ce22-42c3-b54e-46b65c6d0f42 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    88402ef2-260a-43b5-a8b4-7c669a5b024c
-      Right Child Node:    33624c06-4059-49a7-ae1c-c363ba5cd8f6
+      Left Child Node:    198c61d1-d9c2-4089-aad3-b9b4f80bde5f
+      Right Child Node:    a4ae5600-6f0d-4ece-93f9-9672537c40c1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "called"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   33624c06-4059-49a7-ae1c-c363ba5cd8f6 |
+|     (Recursive) Node   :   a4ae5600-6f0d-4ece-93f9-9672537c40c1 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    93e98097-f7c9-478d-8b12-a24e38884d41
+      Right Child Node:    6d411b74-381d-4860-b2ac-45be3a9e3e86
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "can"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   93e98097-f7c9-478d-8b12-a24e38884d41 |
+|     (Recursive) Node   :   6d411b74-381d-4860-b2ac-45be3a9e3e86 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -1326,77 +1326,77 @@
             m_Data->DataString   :       "comparison"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   88402ef2-260a-43b5-a8b4-7c669a5b024c |
+|     (Recursive) Node   :   198c61d1-d9c2-4089-aad3-b9b4f80bde5f |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    c6d276a4-33a4-4189-be26-de09fb589ab6
+      Right Child Node:    fb31a541-8963-4acb-ad60-76451bb68cae
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "binary"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   c6d276a4-33a4-4189-be26-de09fb589ab6 |
+|     (Recursive) Node   :   fb31a541-8963-4acb-ad60-76451bb68cae |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    d579f510-3a9f-41a5-aaec-3fb94d8682d6
+      Right Child Node:    b54b2c85-c368-4c24-b45c-95d4e8d4b1df
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "binary"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   d579f510-3a9f-41a5-aaec-3fb94d8682d6 |
+|     (Recursive) Node   :   b54b2c85-c368-4c24-b45c-95d4e8d4b1df |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    0e974fb5-96b4-4019-ba70-f7f9f2804d05
+      Right Child Node:    e12755b7-7e78-4530-b97f-705bd2568048
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "binary"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   0e974fb5-96b4-4019-ba70-f7f9f2804d05 |
+|     (Recursive) Node   :   e12755b7-7e78-4530-b97f-705bd2568048 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    523ddeae-c8d8-4a52-98bc-06ee7bcb7424
+      Right Child Node:    be17285e-1c93-4fcc-be11-dce49f9c3c44
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "binary"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   523ddeae-c8d8-4a52-98bc-06ee7bcb7424 |
+|     (Recursive) Node   :   be17285e-1c93-4fcc-be11-dce49f9c3c44 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    67eae32d-fb15-4bea-830a-5e6b0c9450f8
+      Right Child Node:    d40f82e7-588f-4aef-a092-71f3922f02c2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "binary"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   67eae32d-fb15-4bea-830a-5e6b0c9450f8 |
+|     (Recursive) Node   :   d40f82e7-588f-4aef-a092-71f3922f02c2 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    e7f5f161-2836-4b7d-a77a-c87b93ce5cc6
+      Left Child Node:    c00745a6-a38f-4e0d-8ef1-2a99ef60b9dc
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "by"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   e7f5f161-2836-4b7d-a77a-c87b93ce5cc6 |
+|     (Recursive) Node   :   c00745a6-a38f-4e0d-8ef1-2a99ef60b9dc |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    d48d5528-6571-4778-af7d-1a598253b1be
+      Left Child Node:    f2688907-9e9c-434c-8e8b-aa967fd0aba0
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "but"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   d48d5528-6571-4778-af7d-1a598253b1be |
+|     (Recursive) Node   :   f2688907-9e9c-434c-8e8b-aa967fd0aba0 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -1405,70 +1405,70 @@
             m_Data->DataString   :       "binary"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   71d90de9-95b0-429d-a6f1-436781d764b6 |
+|     (Recursive) Node   :   8b5f2ea3-1ce7-4e49-bb89-e423725122fb |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    5179ff6f-3463-4324-aab6-a25699816a78
-      Right Child Node:    b03af736-fe48-407f-b513-bbdacb8e9945
+      Left Child Node:    0d73486b-6dc3-4301-a886-56caaea46a09
+      Right Child Node:    74c312ad-1499-464c-a2c9-4246e2b310f1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "also"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   b03af736-fe48-407f-b513-bbdacb8e9945 |
+|     (Recursive) Node   :   74c312ad-1499-464c-a2c9-4246e2b310f1 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    2ecbefbc-ed8a-48a4-af54-9b4606e00e94
+      Right Child Node:    405dd0f0-e8bc-46b5-8124-893b751cbfda
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "an"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   2ecbefbc-ed8a-48a4-af54-9b4606e00e94 |
+|     (Recursive) Node   :   405dd0f0-e8bc-46b5-8124-893b751cbfda |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    730aab0b-14b3-4127-be34-73e64d3a4920
-      Right Child Node:    44f100e4-e634-4118-9596-1b98ec6ff40c
+      Left Child Node:    b4989e82-b11e-406f-a79b-b0481f95a292
+      Right Child Node:    87b879e1-fce6-43a5-aa7e-6cef7cdf692c
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "and"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   44f100e4-e634-4118-9596-1b98ec6ff40c |
+|     (Recursive) Node   :   87b879e1-fce6-43a5-aa7e-6cef7cdf692c |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    3d6c75b5-b1d3-4e26-8d2f-0a0046717439
-      Right Child Node:    13467ca8-5a43-4ebc-b7ee-658199ad6435
+      Left Child Node:    89395d6c-62d6-4794-9836-de9642008411
+      Right Child Node:    f76ea8bc-22f7-4a10-81da-691f433d7456
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "as"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   13467ca8-5a43-4ebc-b7ee-658199ad6435 |
+|     (Recursive) Node   :   f76ea8bc-22f7-4a10-81da-691f433d7456 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    df1003b8-8282-4ec9-a9ce-6ef01ef11472
+      Right Child Node:    ba18eda6-796a-45ed-a2ed-2ccdb91e242f
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "be"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   df1003b8-8282-4ec9-a9ce-6ef01ef11472 |
+|     (Recursive) Node   :   ba18eda6-796a-45ed-a2ed-2ccdb91e242f |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    85f5b8dc-a270-4202-a4e2-8c997545881a
+      Left Child Node:    481c569a-5217-43be-80de-a218ed517e3b
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "better"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   85f5b8dc-a270-4202-a4e2-8c997545881a |
+|     (Recursive) Node   :   481c569a-5217-43be-80de-a218ed517e3b |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -1477,18 +1477,18 @@
             m_Data->DataString   :       "been"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   3d6c75b5-b1d3-4e26-8d2f-0a0046717439 |
+|     (Recursive) Node   :   89395d6c-62d6-4794-9836-de9642008411 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    f6762ca4-f2c3-448a-8325-f050183524b9
-      Right Child Node:    5b8df27c-b8f0-4335-b4b9-75fcf0f17dda
+      Left Child Node:    a5afebf1-b1a3-4dff-9415-20ac3c2d56ee
+      Right Child Node:    31727863-35fe-4073-897b-6492800214b8
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "and "
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   5b8df27c-b8f0-4335-b4b9-75fcf0f17dda |
+|     (Recursive) Node   :   31727863-35fe-4073-897b-6492800214b8 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -1497,17 +1497,17 @@
             m_Data->DataString   :       "array,"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   f6762ca4-f2c3-448a-8325-f050183524b9 |
+|     (Recursive) Node   :   a5afebf1-b1a3-4dff-9415-20ac3c2d56ee |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    ff8c42f9-f242-4ac6-9378-0fd17fdc30a3
+      Right Child Node:    32933286-a8a3-4964-8c65-8a4fc4000b22
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "and"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   ff8c42f9-f242-4ac6-9378-0fd17fdc30a3 |
+|     (Recursive) Node   :   32933286-a8a3-4964-8c65-8a4fc4000b22 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -1516,17 +1516,17 @@
             m_Data->DataString   :       "and"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   730aab0b-14b3-4127-be34-73e64d3a4920 |
+|     (Recursive) Node   :   b4989e82-b11e-406f-a79b-b0481f95a292 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    47ae2760-e73e-4cba-a772-5c8ddb76c2b2
+      Right Child Node:    c5f344bf-b58f-4a65-9fff-2b852fc18589
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "an"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   47ae2760-e73e-4cba-a772-5c8ddb76c2b2 |
+|     (Recursive) Node   :   c5f344bf-b58f-4a65-9fff-2b852fc18589 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -1535,38 +1535,38 @@
             m_Data->DataString   :       "an"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   5179ff6f-3463-4324-aab6-a25699816a78 |
+|     (Recursive) Node   :   0d73486b-6dc3-4301-a886-56caaea46a09 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    fd68d537-d987-4c9e-8168-399b5698023b
+      Right Child Node:    4bbadf07-cc26-4a13-b68e-19014ea22dbd
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "a"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   fd68d537-d987-4c9e-8168-399b5698023b |
+|     (Recursive) Node   :   4bbadf07-cc26-4a13-b68e-19014ea22dbd |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    42ff1609-6765-49a8-9eba-c64c5f1d5331
+      Right Child Node:    20a39b13-abb9-4197-a077-4c5482642ad9
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "a"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   42ff1609-6765-49a8-9eba-c64c5f1d5331 |
+|     (Recursive) Node   :   20a39b13-abb9-4197-a077-4c5482642ad9 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    7d389e66-8b5a-4817-8e2b-bdb0b1ca9074
-      Right Child Node:    e74eb7fe-9373-4ff7-8de4-f3efc148cb60
+      Left Child Node:    cce70f1b-aa6e-47ab-9ee3-9bf0199ef416
+      Right Child Node:    d8dddc8a-0123-44aa-ba9a-9f6f6d64a3d0
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "all"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   e74eb7fe-9373-4ff7-8de4-f3efc148cb60 |
+|     (Recursive) Node   :   d8dddc8a-0123-44aa-ba9a-9f6f6d64a3d0 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -1575,37 +1575,37 @@
             m_Data->DataString   :       "allow"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   7d389e66-8b5a-4817-8e2b-bdb0b1ca9074 |
+|     (Recursive) Node   :   cce70f1b-aa6e-47ab-9ee3-9bf0199ef416 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    460591a9-e5a4-4cbf-bbae-82f5937a1356
+      Right Child Node:    1c0551ac-9f60-4f78-abe8-dd591d287194
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "a"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   460591a9-e5a4-4cbf-bbae-82f5937a1356 |
+|     (Recursive) Node   :   1c0551ac-9f60-4f78-abe8-dd591d287194 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    3873f4b9-3278-4a63-919b-e129a43e1e52
+      Left Child Node:    312ce07e-a820-4d18-93ea-f1dd50783654
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "addition"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   3873f4b9-3278-4a63-919b-e129a43e1e52 |
+|     (Recursive) Node   :   312ce07e-a820-4d18-93ea-f1dd50783654 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    eb751266-17ee-4f60-bd4f-96fa19133fc4
+      Right Child Node:    77fd1ed1-7274-49cb-8fd1-c96123f07d1b
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "a"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   eb751266-17ee-4f60-bd4f-96fa19133fc4 |
+|     (Recursive) Node   :   77fd1ed1-7274-49cb-8fd1-c96123f07d1b |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -1614,18 +1614,18 @@
             m_Data->DataString   :       "about"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   52f99edc-23d5-486a-96ad-7bbd2094073a |
+|     (Recursive) Node   :   d011945e-1220-4a2c-a6e8-04081fbfc452 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    5882ccf5-a342-45e3-a1f9-dc1efb531f67
-      Right Child Node:    6364a66a-4630-4121-a927-de63423ffce5
+      Left Child Node:    0bac57d4-bc54-4a1a-a94f-f966b92f6f19
+      Right Child Node:    78ef6719-287f-4a3f-bf75-02b9646f8e9a
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "The"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   6364a66a-4630-4121-a927-de63423ffce5 |
+|     (Recursive) Node   :   78ef6719-287f-4a3f-bf75-02b9646f8e9a |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -1634,7 +1634,7 @@
             m_Data->DataString   :       "This"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   5882ccf5-a342-45e3-a1f9-dc1efb531f67 |
+|     (Recursive) Node   :   0bac57d4-bc54-4a1a-a94f-f966b92f6f19 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -1643,38 +1643,38 @@
             m_Data->DataString   :       "Several"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   f7730a6f-decc-426d-8c40-42bd85d679e8 |
+|     (Recursive) Node   :   542e654a-8373-4751-b241-829ecb1937c6 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Right Child Node:    5fca9f86-9c78-44cb-adfc-f5d8bd1875e1
+      Right Child Node:    dffc218e-ab93-4df4-b0ee-e452f7d6ab86
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "(BST),"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   5fca9f86-9c78-44cb-adfc-f5d8bd1875e1 |
+|     (Recursive) Node   :   dffc218e-ab93-4df4-b0ee-e452f7d6ab86 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   2
-      Left Child Node:    00985852-32b8-4b25-aa9c-eabce8b1dc85
-      Right Child Node:    1be9b3d0-d143-4018-b593-a28074474bca
+      Left Child Node:    78c575bd-625f-4b87-8565-724b47b4b601
+      Right Child Node:    9d084245-68e7-409c-9348-cca2207c8180
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "A"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   1be9b3d0-d143-4018-b593-a28074474bca |
+|     (Recursive) Node   :   9d084245-68e7-409c-9348-cca2207c8180 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   1
-      Left Child Node:    58de6e02-ef2d-4a87-a0c6-a378cd2131a6
+      Left Child Node:    9d81b4dd-78d2-4f37-b709-99f19dc40a14
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
               m_Data->DataSize   :       40
             m_Data->DataString   :       "Binary"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   58de6e02-ef2d-4a87-a0c6-a378cd2131a6 |
+|     (Recursive) Node   :   9d81b4dd-78d2-4f37-b709-99f19dc40a14 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0
@@ -1683,7 +1683,7 @@
             m_Data->DataString   :       "BST"
 ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-|     (Recursive) Node   :   00985852-32b8-4b25-aa9c-eabce8b1dc85 |
+|     (Recursive) Node   :   78c575bd-625f-4b87-8565-724b47b4b601 |
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
       Height     :   1
       Children  :   0

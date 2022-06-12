@@ -1,67 +1,67 @@
 @startuml
 
-title: Recursive Binary Tree Instance [580d5a44-58dc-4b36-8688-13f88b5bacfe]
+title: Recursive Binary Tree Instance [b3ce7b98-6b4f-44af-a04c-b6382fc90250]
 
-class "628f31e9-958f-4265-b0e1-6640d05d4d08" << (0, #b7bbbd) >> {
+class "6dbf82ed-953a-43e0-897f-6c1f72c3e186" << (0, #b7bbbd) >> {
     -DataSize   = 40
     +DataString = "D"
 }
 
-class "658dab76-313e-41fc-a4c2-1b946266f572" << (L, #6fcaed) >> {
-    -DataSize   = 40
-    +DataString = "L"
-}
-
-class "6c0914bc-43e1-41e0-8202-3229b615b696" << (L, #6fcaed) >> {
-    -DataSize   = 40
-    +DataString = "C"
-}
-
-class "efe20756-721a-4f79-968d-6525c361e396" << (L, #6fcaed) >> {
-    -DataSize   = 40
-    +DataString = "A"
-}
-
-class "7131e395-4ed6-4736-bbcc-2068f661be4f" << (L, #6fcaed) >> {
+class "3e461b28-8dbb-45f3-b583-ddbbce4f8db9" << (L, #6fcaed) >> {
     -DataSize   = 40
     +DataString = "I"
 }
 
-class "a65791e5-ad47-4d24-bc57-ae168b7cc518" << (R, #d68976) >> {
+class "7fb5454b-9a40-46b7-99f6-aedfb7b85903" << (L, #6fcaed) >> {
     -DataSize   = 40
-    +DataString = "X"
+    +DataString = "C"
 }
 
-class "56536c39-86cc-435f-b9a4-93e83cb1e956" << (R, #d68976) >> {
+class "e9a0882c-d0c4-417b-8450-330d2763db1d" << (L, #6fcaed) >> {
     -DataSize   = 40
-    +DataString = "F"
+    +DataString = "A"
 }
 
-class "386767d1-76ca-4842-8031-78d9d3ccd915" << (R, #d68976) >> {
+class "cbe2e491-5955-4974-a1f5-0628fde6b6da" << (L, #6fcaed) >> {
+    -DataSize   = 40
+    +DataString = "L"
+}
+
+class "99cf98db-f28d-47ae-83fc-0a81120ecf88" << (R, #d68976) >> {
     -DataSize   = 40
     +DataString = "O"
 }
 
-class "eb1099ce-04de-4336-a8fc-60f4981b2d44" << (R, #d68976) >> {
+class "166b18c6-c047-4297-84ad-c40cfadc9542" << (R, #d68976) >> {
     -DataSize   = 40
     +DataString = "Z"
 }
 
-class "ac2a3f44-92d2-413b-aa1b-016e0d6a8a16" << (R, #d68976) >> {
+class "72a4f83e-14d6-4c7f-8e61-178c877be49f" << (R, #d68976) >> {
+    -DataSize   = 40
+    +DataString = "F"
+}
+
+class "438845da-fc90-4462-8a29-61d9127a4a12" << (R, #d68976) >> {
+    -DataSize   = 40
+    +DataString = "X"
+}
+
+class "85d6a978-512c-4788-a086-228291b83adf" << (R, #d68976) >> {
     -DataSize   = 40
     +DataString = "B"
 }
 
 
 
-"386767d1-76ca-4842-8031-78d9d3ccd915" ---> "658dab76-313e-41fc-a4c2-1b946266f572"
-"628f31e9-958f-4265-b0e1-6640d05d4d08" ---> "6c0914bc-43e1-41e0-8202-3229b615b696"
-"6c0914bc-43e1-41e0-8202-3229b615b696" ---> "efe20756-721a-4f79-968d-6525c361e396"
-"a65791e5-ad47-4d24-bc57-ae168b7cc518" ---> "7131e395-4ed6-4736-bbcc-2068f661be4f"
-"56536c39-86cc-435f-b9a4-93e83cb1e956" ---> "a65791e5-ad47-4d24-bc57-ae168b7cc518"
-"628f31e9-958f-4265-b0e1-6640d05d4d08" ---> "56536c39-86cc-435f-b9a4-93e83cb1e956"
-"7131e395-4ed6-4736-bbcc-2068f661be4f" ---> "386767d1-76ca-4842-8031-78d9d3ccd915"
-"a65791e5-ad47-4d24-bc57-ae168b7cc518" ---> "eb1099ce-04de-4336-a8fc-60f4981b2d44"
-"efe20756-721a-4f79-968d-6525c361e396" ---> "ac2a3f44-92d2-413b-aa1b-016e0d6a8a16"
+"438845da-fc90-4462-8a29-61d9127a4a12" ---> "3e461b28-8dbb-45f3-b583-ddbbce4f8db9"
+"6dbf82ed-953a-43e0-897f-6c1f72c3e186" ---> "7fb5454b-9a40-46b7-99f6-aedfb7b85903"
+"7fb5454b-9a40-46b7-99f6-aedfb7b85903" ---> "e9a0882c-d0c4-417b-8450-330d2763db1d"
+"99cf98db-f28d-47ae-83fc-0a81120ecf88" ---> "cbe2e491-5955-4974-a1f5-0628fde6b6da"
+"3e461b28-8dbb-45f3-b583-ddbbce4f8db9" ---> "99cf98db-f28d-47ae-83fc-0a81120ecf88"
+"438845da-fc90-4462-8a29-61d9127a4a12" ---> "166b18c6-c047-4297-84ad-c40cfadc9542"
+"6dbf82ed-953a-43e0-897f-6c1f72c3e186" ---> "72a4f83e-14d6-4c7f-8e61-178c877be49f"
+"72a4f83e-14d6-4c7f-8e61-178c877be49f" ---> "438845da-fc90-4462-8a29-61d9127a4a12"
+"e9a0882c-d0c4-417b-8450-330d2763db1d" ---> "85d6a978-512c-4788-a086-228291b83adf"
 
 @enduml

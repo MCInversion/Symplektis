@@ -1,8 +1,8 @@
 @startuml
 
-title: Iterative Binary Tree Instance [2f68fa9d-c861-4d97-ad7f-daec8f637347]
+title: Iterative Binary Tree Instance [d5a0bbcc-dcaf-428f-83e9-08b511d06e1d]
 
-class "3434aec6-af7a-4e1e-b106-6dd25168865d" << (0, #b7bbbd) >> {
+class "8cc25288-5dcb-48b1-a4bf-7cbe50646ec9" << (0, #b7bbbd) >> {
     -NodeArrayIndex = 0
     ~Height = 6
     ~BalanceFactor = 2
@@ -11,7 +11,7 @@ class "3434aec6-af7a-4e1e-b106-6dd25168865d" << (0, #b7bbbd) >> {
     +DataString = "D"
 }
 
-class "73b1ff63-4b9a-4223-adcb-54bc6118427c" << (L, #6fcaed) >> {
+class "9ecd4eb9-0c39-4b0e-86f0-e4b373868aa7" << (L, #6fcaed) >> {
     -NodeArrayIndex = 1
     ~Height = 3
     ~BalanceFactor = -2
@@ -20,7 +20,7 @@ class "73b1ff63-4b9a-4223-adcb-54bc6118427c" << (L, #6fcaed) >> {
     +DataString = "C"
 }
 
-class "69541004-e9ff-4bb5-83c2-063da04d0aec" << (L, #6fcaed) >> {
+class "e0e90cdc-3447-4e20-a9de-947c224d6427" << (L, #6fcaed) >> {
     -NodeArrayIndex = 2
     ~Height = 2
     ~BalanceFactor = 1
@@ -29,7 +29,7 @@ class "69541004-e9ff-4bb5-83c2-063da04d0aec" << (L, #6fcaed) >> {
     +DataString = "A"
 }
 
-class "0b77badc-0da6-4a79-a895-7b6eda743e8d" << (L, #6fcaed) >> {
+class "1a57e48e-3fbc-4679-b78d-8ea158ec0539" << (L, #6fcaed) >> {
     -NodeArrayIndex = 7
     ~Height = 3
     ~BalanceFactor = 2
@@ -38,7 +38,7 @@ class "0b77badc-0da6-4a79-a895-7b6eda743e8d" << (L, #6fcaed) >> {
     +DataString = "I"
 }
 
-class "5bf0c86b-32f1-4c7f-b7f2-6cfb37a7d95c" << (L, #6fcaed) >> {
+class "34141b84-e11f-49e8-bc61-bb4e2d1452b0" << (L, #6fcaed) >> {
     -NodeArrayIndex = 9
     ~Height = 1
     ~BalanceFactor = 0
@@ -47,7 +47,7 @@ class "5bf0c86b-32f1-4c7f-b7f2-6cfb37a7d95c" << (L, #6fcaed) >> {
     +DataString = "L"
 }
 
-class "28381e49-9769-44f9-8a19-4df8b3135911" << (R, #d68976) >> {
+class "6d7bc3f2-20c0-47cf-ab23-66d06ca055a1" << (R, #d68976) >> {
     -NodeArrayIndex = 4
     ~Height = 5
     ~BalanceFactor = 4
@@ -56,7 +56,7 @@ class "28381e49-9769-44f9-8a19-4df8b3135911" << (R, #d68976) >> {
     +DataString = "F"
 }
 
-class "4e271663-6094-48e9-8086-ea0f73e86ed1" << (R, #d68976) >> {
+class "5645dd83-ca86-44d3-b248-fa339884cde7" << (R, #d68976) >> {
     -NodeArrayIndex = 3
     ~Height = 1
     ~BalanceFactor = 0
@@ -65,7 +65,7 @@ class "4e271663-6094-48e9-8086-ea0f73e86ed1" << (R, #d68976) >> {
     +DataString = "B"
 }
 
-class "c3b9ad07-edae-47e8-8fba-5a0a8d345e61" << (R, #d68976) >> {
+class "8076e30e-7d3b-4bfa-8d5c-b1f1d63f9c30" << (R, #d68976) >> {
     -NodeArrayIndex = 5
     ~Height = 4
     ~BalanceFactor = -2
@@ -74,7 +74,7 @@ class "c3b9ad07-edae-47e8-8fba-5a0a8d345e61" << (R, #d68976) >> {
     +DataString = "X"
 }
 
-class "c19e31d7-71c6-4409-ab0d-6c41db905ec0" << (R, #d68976) >> {
+class "1ae3e81d-ba7b-43e9-93f7-bf37fa1028a0" << (R, #d68976) >> {
     -NodeArrayIndex = 6
     ~Height = 1
     ~BalanceFactor = 0
@@ -83,7 +83,7 @@ class "c19e31d7-71c6-4409-ab0d-6c41db905ec0" << (R, #d68976) >> {
     +DataString = "Z"
 }
 
-class "49025245-b1a6-441d-a7f9-26eee77a1aa1" << (R, #d68976) >> {
+class "4ec08072-6f34-4c3a-8838-96645e01baba" << (R, #d68976) >> {
     -NodeArrayIndex = 8
     ~Height = 2
     ~BalanceFactor = -1
@@ -94,14 +94,14 @@ class "49025245-b1a6-441d-a7f9-26eee77a1aa1" << (R, #d68976) >> {
 
 
 
-"3434aec6-af7a-4e1e-b106-6dd25168865d" ---> "73b1ff63-4b9a-4223-adcb-54bc6118427c"
-"73b1ff63-4b9a-4223-adcb-54bc6118427c" ---> "69541004-e9ff-4bb5-83c2-063da04d0aec"
-"c3b9ad07-edae-47e8-8fba-5a0a8d345e61" ---> "0b77badc-0da6-4a79-a895-7b6eda743e8d"
-"49025245-b1a6-441d-a7f9-26eee77a1aa1" ---> "5bf0c86b-32f1-4c7f-b7f2-6cfb37a7d95c"
-"3434aec6-af7a-4e1e-b106-6dd25168865d" ---> "28381e49-9769-44f9-8a19-4df8b3135911"
-"69541004-e9ff-4bb5-83c2-063da04d0aec" ---> "4e271663-6094-48e9-8086-ea0f73e86ed1"
-"28381e49-9769-44f9-8a19-4df8b3135911" ---> "c3b9ad07-edae-47e8-8fba-5a0a8d345e61"
-"c3b9ad07-edae-47e8-8fba-5a0a8d345e61" ---> "c19e31d7-71c6-4409-ab0d-6c41db905ec0"
-"0b77badc-0da6-4a79-a895-7b6eda743e8d" ---> "49025245-b1a6-441d-a7f9-26eee77a1aa1"
+"8cc25288-5dcb-48b1-a4bf-7cbe50646ec9" ---> "9ecd4eb9-0c39-4b0e-86f0-e4b373868aa7"
+"9ecd4eb9-0c39-4b0e-86f0-e4b373868aa7" ---> "e0e90cdc-3447-4e20-a9de-947c224d6427"
+"8076e30e-7d3b-4bfa-8d5c-b1f1d63f9c30" ---> "1a57e48e-3fbc-4679-b78d-8ea158ec0539"
+"4ec08072-6f34-4c3a-8838-96645e01baba" ---> "34141b84-e11f-49e8-bc61-bb4e2d1452b0"
+"8cc25288-5dcb-48b1-a4bf-7cbe50646ec9" ---> "6d7bc3f2-20c0-47cf-ab23-66d06ca055a1"
+"e0e90cdc-3447-4e20-a9de-947c224d6427" ---> "5645dd83-ca86-44d3-b248-fa339884cde7"
+"6d7bc3f2-20c0-47cf-ab23-66d06ca055a1" ---> "8076e30e-7d3b-4bfa-8d5c-b1f1d63f9c30"
+"8076e30e-7d3b-4bfa-8d5c-b1f1d63f9c30" ---> "1ae3e81d-ba7b-43e9-93f7-bf37fa1028a0"
+"1a57e48e-3fbc-4679-b78d-8ea158ec0539" ---> "4ec08072-6f34-4c3a-8838-96645e01baba"
 
 @enduml
