@@ -1,7 +1,8 @@
-cmake_minimum_required(VERSION 3.14)
 cmake_policy(SET CMP0074 NEW)
+cmake_policy(SET CMP0077 NEW)
 cmake_policy(SET CMP0048 NEW)
 cmake_policy(SET CMP0090 NEW)
+cmake_minimum_required(VERSION 3.14)
 
 # use a diferent name for GUI version
 project(Symplektis_ConsoleApp VERSION 1.0)
@@ -89,9 +90,9 @@ FetchContent_Declare(Eigen
 	GIT_PROGRESS   TRUE
 	GIT_SHALLOW    TRUE
 )
-set(EIGEN_BUILD_DOC OFF)
-set(BUILD_TESTING OFF)
-set(EIGEN_BUILD_PKGCONFIG OFF)
+set(EIGEN_BUILD_DOC FALSE)
+set(BUILD_TESTING FALSE)
+set(EIGEN_BUILD_PKGCONFIG FALSE)
 FetchContent_MakeAvailable(Eigen)
 include_directories(${EIGEN_SOURCE_DIR}/eigen-src)
 find_package(Eigen3 3.4 REQUIRED NO_MODULE)
