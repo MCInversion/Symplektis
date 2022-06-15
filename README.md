@@ -49,7 +49,6 @@ or **Configure** and **Generate** using CMake GUI:
 
 ![CMakeGUISetup](https://github.com/MCInversion/Symplektis/blob/main/InfoImages/ImgCmakeGUI.jpg)
 
-**Disclaimer**: At this point, you need to **Generate** one more time otherwise the CMake will also load all (~900) Eigen (sub)projects.
 
 ------------------
 

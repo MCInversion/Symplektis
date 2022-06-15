@@ -20,6 +20,7 @@ set(SYMPLEKTIS_SOURCE_DIR ${SYMPLEKTIS_ROOT_DIR}/Symplekt_Source)
 # -------------------------------------------------------------------------
 
 include(FetchContent)
+set(FETCHCONTENT_QUIET off)
 set(EXTERNAL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/External)
 
 # -------------------------------------------------------------------------
@@ -35,10 +36,11 @@ message("Searching for Google Test repo in ${GOOGLETEST_SOURCE_DIR}")
 if(EXISTS ${GOOGLETEST_SOURCE_DIR}/googletest-src)
 
 	message("\${GOOGLETEST_SOURCE_DIR}/googletest-src exists in ${GOOGLETEST_SOURCE_DIR}")
-    set(repo_googletest ${GOOGLETEST_SOURCE_DIR}/googletest-src)
-	
+    set(repo_googletest ${GOOGLETEST_SOURCE_DIR}/googletest-src)	
+
 	# set base directory for FetchContent
 	set(FETCHCONTENT_BASE_DIR ${repo_googletest})
+	set(FETCHCONTENT_SOURCE_DIR ${repo_googletest})
 	
 else()
 
@@ -51,9 +53,10 @@ else()
 endif()
 
 FetchContent_Declare(googletest
-	GIT_REPOSITORY ${repo_googletest}
-	GIT_TAG        release-1.11.0
-	GIT_PROGRESS   TRUE
+	GIT_REPOSITORY                     ${repo_googletest}
+	GIT_TAG                            release-1.11.0
+	GIT_PROGRESS                       TRUE
+	FETCHCONTENT_TRY_FIND_PACKAGE_MODE ON 
 )
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
@@ -71,8 +74,7 @@ if (EXISTS ${EIGEN_SOURCE_DIR}/eigen-src)
 	message("\${EIGEN_SOURCE_DIR}/eigen-src exists in ${EIGEN_SOURCE_DIR}")
 	set(repo_eigen ${EIGEN_SOURCE_DIR}/eigen-src)
 	
-	# set base directory for FetchContent
-	set(FETCHCONTENT_BASE_DIR ${repo_eigen})
+	find_package(Eigen3 3.4 REQUIRED NO_MODULE)
 	
 else()
 
@@ -82,20 +84,20 @@ else()
 	# set base directory for FetchContent
 	set(FETCHCONTENT_BASE_DIR ${EIGEN_SOURCE_DIR})
 	
+	FetchContent_Declare(Eigen
+		GIT_REPOSITORY ${repo_eigen}
+		GIT_TAG        3.4.0
+		GIT_PROGRESS   TRUE
+		GIT_SHALLOW    TRUE
+	)
+	set(EIGEN_BUILD_DOC FALSE)
+	set(BUILD_TESTING FALSE)
+	set(EIGEN_BUILD_PKGCONFIG FALSE)
+	FetchContent_MakeAvailable(Eigen)
+	
 endif()
 
-FetchContent_Declare(Eigen
-	GIT_REPOSITORY ${repo_eigen}
-	GIT_TAG        3.4.0
-	GIT_PROGRESS   TRUE
-	GIT_SHALLOW    TRUE
-)
-set(EIGEN_BUILD_DOC FALSE)
-set(BUILD_TESTING FALSE)
-set(EIGEN_BUILD_PKGCONFIG FALSE)
-FetchContent_MakeAvailable(Eigen)
 include_directories(${EIGEN_SOURCE_DIR}/eigen-src)
-find_package(Eigen3 3.4 REQUIRED NO_MODULE)
 
 # -----------------------------------------------------------------------
 # .............. Set Up Symplektis Components ...........................
@@ -113,6 +115,7 @@ add_subdirectory(${SYMPLEKTIS_SOURCE_DIR}/Symplekt_ProcessingKernel)
 
 # executable
 add_executable(${PROJECT_NAME} ${SYMPLEKTIS_SOURCE_DIR}/SymplektMain.cpp)
+
 # to make sure "Symplekt_" source directories can be included
 target_include_directories(${PROJECT_NAME} PUBLIC ${SYMPLEKTIS_SOURCE_DIR})
 
