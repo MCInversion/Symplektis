@@ -6,3 +6,4 @@ External/Eigen/eigen-subbuild
 External/GoogleTest/googletest-build
 External/GoogleTest/googletest-src
 External/GoogleTest/googletest-subbuild
+Symplekt_OutputData/UnitTests
