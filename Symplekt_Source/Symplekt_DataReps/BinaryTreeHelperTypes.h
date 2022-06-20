@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "Symplekt_UtilityGeneral/IndexType.h"
+#include "Symplekt_UtilityGeneral/NamedValue.h"
 
 #include <vector>
 
