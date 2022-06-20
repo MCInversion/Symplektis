@@ -12,11 +12,9 @@ created  : 11.6.2021 : M. Cavarga (MCInversion)    :
 
 #pragma once
 
-#include <iostream>
-#include <exception>
-#include <intrin.h>
 #include <iosfwd>
 #include <sstream>
+#include <iostream>
 
 //---------------------------------------------------------------------------
 /*!
@@ -44,7 +42,7 @@ namespace Symplektis::Util
 	//-----------------------------------------------------------------------------
 	///  \class AssertUtil
 	///  \brief Custom assertion facility
-	///  \ingroup DIAG_ASSERTS
+	///  \ingroup UTILITY_GENERAL
 	///
 	///  \author M.Cavarga (MCInversion)
 	///  \date 11.6.2009
@@ -55,17 +53,20 @@ namespace Symplektis::Util
 	public:
 		//-----------------------------------------------------------------------------
 		/// \brief Main routine for handling assertion
-		///   \param[in]  expr  Expression as a string
-		///   \param[in]  file  Name of file the assertion is located in
-		///   \param[in]  line  Line number the assertion is located on
-		///   \param[out] ignoreLine  Flag for ignoring this assert next time
-		///   \return False if execution is to be broken into the debugger, true otherwise
+		/// 
+		/// \param[in]  expr  Expression as a string
+		/// \param[in]  file  Name of file the assertion is located in
+		/// \param[in]  line  Line number the assertion is located on
+		/// \param[out] ignoreLine  Flag for ignoring this assert next time
+		/// 
+		/// \return False if execution is to be broken into the debugger, true otherwise
 		///
 		//-----------------------------------------------------------------------------
 		virtual bool Handle(const char* expr, const char* file, const char* line, bool& ignoreLine) const;
 
 		//-----------------------------------------------------------------------------
 		///   \brief Tests if the assertion failed
+		///   
 		///   \return True if assertion failed, false if assertion holds
 		///
 		//-----------------------------------------------------------------------------
@@ -76,18 +77,21 @@ namespace Symplektis::Util
 
 		//-----------------------------------------------------------------------------
 		/// \brief Logs that an assert occurred
-		///   \param[in]  expr  Expression as a string
-		///   \param[in]  file  Name of file the assertion is located in
-		///   \param[in]  line  Line number the assertion is located on
+		/// 
+		/// \param[in]  expr  Expression as a string
+		/// \param[in]  file  Name of file the assertion is located in
+		/// \param[in]  line  Line number the assertion is located on
 		///
 		//-----------------------------------------------------------------------------
 		virtual void Log(const char* expr, const char* file, const char* line) const;
 
 		//-----------------------------------------------------------------------------
 		/// \brief Set/Append string to the assert message
-		///   \tparam MsgType Type of data to be converted and stored as string
-		///   \param[in]  msg  Message to be set/appended. Must be convertible to string
-		///   \return Reference to the AssertUtil instance
+		/// 
+		/// \tparam MsgType Type of data to be converted and stored as string
+		/// \param[in]  msg  Message to be set/appended. Must be convertible to string
+		/// 
+		/// \return Reference to the AssertUtil instance
 		///
 		//-----------------------------------------------------------------------------
 		template<class MsgType>
@@ -105,7 +109,8 @@ namespace Symplektis::Util
 
 		//-----------------------------------------------------------------------------
 		/// \brief Returns assert message
-		///   \return Assert message
+		///
+		/// \return Assert message
 		///
 		//-----------------------------------------------------------------------------
 		[[nodiscard]] const char* Msg() const
@@ -115,9 +120,12 @@ namespace Symplektis::Util
 
 		//-----------------------------------------------------------------------------
 		/// \brief Factory for AssertUtil
-		///   \param[in]  cond  Condition
-		///   \return     AssertUtil instance
-		///   \ingroup DIAG_ASSERTS
+		/// 
+		/// \param[in]  cond  Condition
+		/// 
+		/// \return     AssertUtil instance
+		/// 
+		/// \ingroup UTILITY_GENERAL
 		///
 		//-----------------------------------------------------------------------------
 		static AssertUtil Create(bool cond)
@@ -127,25 +135,31 @@ namespace Symplektis::Util
 
 		//-----------------------------------------------------------------------------
 		/// \brief Enables/disables assertions globally
-		///   \param[in]  enable  True if assertions are to be enabled, false if disabled
-		///   \ingroup DIAG_ASSERTS
+		/// 
+		/// \param[in]  enable  True if assertions are to be enabled, false if disabled
+		/// 
+		/// \ingroup UTILITY_GENERAL
 		///
 		//-----------------------------------------------------------------------------
 		static void Enable(bool enable);
 
 		//-----------------------------------------------------------------------------
 		/// \brief Tests if assertions are globally enabled or disabled
-		///   \return  True if assertions are enabled, false if disabled
-		///   \ingroup DIAG_ASSERTS
+		///
+		/// \return  True if assertions are enabled, false if disabled
+		///  
+		/// \ingroup UTILITY_GENERAL
 		///
 		//-----------------------------------------------------------------------------
 		static bool IsEnabled();
 
-	private:    // PRIVATE FUNCTION MEMBERS //
+	private:
 		//-----------------------------------------------------------------------------
 		/// \brief Constructor
-		///   \param[in]  cond  Condition
-		///   \param[in]  msg   Message
+		/// 
+		/// \param[in]  cond  Condition
+		/// 
+		/// \param[in]  msg   Message
 		///
 		//-----------------------------------------------------------------------------
 		explicit AssertUtil(bool cond, const char* msg = "")
@@ -166,30 +180,36 @@ namespace Symplektis::Util
 		};
 
 		/// \brief Informs user of an assertion and asks what to do
-		///   \param[in]  expr  Expression as a string
-		///   \param[in]  file  Name of file the assertion is located in
-		///   \param[in]  line  Line number the assertion is located on
-		///   \return     Action to be performed
+		/// 
+		/// \param[in]  expr  Expression as a string
+		/// \param[in]  file  Name of file the assertion is located in
+		/// \param[in]  line  Line number the assertion is located on
+		///
+		/// \return     Action to be performed
 		///
 		//-----------------------------------------------------------------------------
 		Action AskUser(const char* expr, const char* file, const char* line) const;
 
 		//-----------------------------------------------------------------------------
 		/// \brief Perform given action
-		///   \param[in]  action  Action the user has chosen
-		///   \param[out] ignoreLine  Flag for ignoring this assert next time
-		///   \return     False if execution should break into the debugger, true otherwise
+		///
+		/// \param[in]  action  Action the user has chosen
+		/// \param[out] ignoreLine  Flag for ignoring this assert next time
+		///   
+		/// \return     False if execution should break into the debugger, true otherwise
 		///
 		//-----------------------------------------------------------------------------
 		bool DoHandle(Action action, bool& ignoreLine) const;
 
 		//-----------------------------------------------------------------------------
 		/// \brief Builds formatted string from function parameters
-		///   \param[in]  expr  Expression as a string
-		///   \param[in]  file  Name of file the assertion is located in
-		///   \param[in]  line  Line number the assertion is located on
-		///   \param[in]  gui   Flag meaning whether a message for the Assert Message box is requested
-		///   \return     Formatted assertion location string
+		///
+		/// \param[in]  expr  Expression as a string
+		/// \param[in]  file  Name of file the assertion is located in
+		/// \param[in]  line  Line number the assertion is located on
+		/// \param[in]  gui   Flag meaning whether a message for the Assert Message box is requested
+		///
+		/// \return     Formatted assertion location string
 		///
 		//-----------------------------------------------------------------------------
 		std::string GetFormattedMsg(const char* expr, const char* file, const char* line, bool gui = true) const;
@@ -204,24 +224,22 @@ namespace Symplektis::Util
 
 } // Symplektis::Util
 
-//-----------------------------------------------------------------------------
+///-----------------------------------------------------------------------------
 /// \brief Diagnostic macro for assertion checking also in release.
 ///   \param[in]  expression  Specifies an expression (including pointer values) that evaluates to true or false.
 ///	  \param[in]  msg         message
-///   \ingroup DIAG_ASSERTS
+///   \ingroup UTILITY_GENERAL
 ///
 ///   \b Usage:
 ///   \code
-///       MSG_CHECK(p != NULL, "p is NULL and it surely shouldn't!");
+///       MSG_CHECK(p != NULL, "p is NULL and it surely shouldn't be!");
 ///   \endcode
 ///
 ///   Behavior of the MSG_CHECK macro:
 ///   In \b debug, the expression is evaluated, and if the result is false, the macro fires an assert. \n
 ///   In \b release, the expression is evaluated, and if the result is false, the macro just logs the occurrence of assert.
 ///
-///   \sa  VERIFY_MSG
-///
-//-----------------------------------------------------------------------------
+///-----------------------------------------------------------------------------
 #define MSG_CHECK(expression, msg)		\
 	VERIFY_CHECK(expression).Msg(msg)	\
 	/**/
@@ -229,7 +247,7 @@ namespace Symplektis::Util
 //-----------------------------------------------------------------------------
 /// \brief Diagnostic macro for assertion checking also in release.
 ///   \param[in]  expression  Specifies an expression (including pointer values) that evaluates to true or false.
-///   \ingroup DIAG_ASSERTS
+///   \ingroup UTILITY_GENERAL
 ///
 ///   \b Usage:
 ///   \code
@@ -241,8 +259,6 @@ namespace Symplektis::Util
 ///   Behavior of the VERIFY_CHECK macro:
 ///   In \b debug, the expression is evaluated, and if the result is false, the macro fires an assert. \n
 ///   In \b release, the expression is evaluated, and if the result is false, the macro just logs the occurrence of assert.
-///
-///   \sa  VERIFY_MSG
 ///
 //-----------------------------------------------------------------------------
 #define VERIFY_CHECK(expression)  \

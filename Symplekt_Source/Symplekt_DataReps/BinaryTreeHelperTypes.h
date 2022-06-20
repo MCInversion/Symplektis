@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "Symplekt_UtilityGeneral/NamedValue.h"
+#include "Symplekt_UtilityGeneral/IndexType.h"
 
 #include <vector>
 
@@ -128,12 +128,11 @@ namespace Symplektis::DataReps
 		Recursive = 1   //>! Nodes of this binary tree implementation are generated recursively as heap instances of each other.
 	};
 
-
 	//
 	// =============== Iterative Implementation Types ==================================
 	//
 
-	//=============================================================================
+	///=============================================================================
 	/// \class NodeArrayIndex
 	/// \brief Binary tree node array index value.
 	///
@@ -141,7 +140,7 @@ namespace Symplektis::DataReps
 	///
 	/// \author M. Cavarga (MCInversion)
 	/// \date   21.11.2021
-	//=============================================================================
+	///=============================================================================
 	class NodeArrayIndex : public Util::NamedValue<int, NodeArrayIndex>
 	{
 	public:
@@ -227,7 +226,7 @@ namespace Symplektis::DataReps
 		{
 			return m_value >= 0;
 		}
-		
+
 		//-----------------------------------------------------------------------------
 		/*! \brief Copy-assignment operator with size_t value.
 		 *  \param[in] value          size_t value to be assigned.
@@ -328,7 +327,7 @@ namespace Symplektis::DataReps
 		{
 			if (m_value < 0)
 				return false;
-			
+
 			return static_cast<size_t>(m_value) == value;
 		}
 

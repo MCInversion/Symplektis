@@ -12,46 +12,47 @@ created  : 11.6.2021 : M. Cavarga (MCInversion)    :
 
 #include "Assert.h"
 
-#include <ostream>
 #include <windows.h>
-#include <corecrt_terminate.h>
 #include <processenv.h>
 #include <string>
 
 namespace Symplektis::Util
 {
-	//------------------------------------------------------------------------------
-	/// \brief Displays Assertion message box
-	///
-	/// \param [in] text        message to be displayed
-	/// \param [in] caption     dialog box title
-	/// \param [in] type        determine the contents and behavior of the dialog box
-	///
-	/// \return         If the function fails, the return value is zero, otherwise returns value as API function MessageBox
-	///
-	//------------------------------------------------------------------------------
-	int assertMessageBox(const char* text, const char* caption, unsigned int type)
+	// TODO: Extend to generic asserts for Unix
+
+	namespace
 	{
-		HWND hWndParent = nullptr;
-
-		hWndParent = ::GetActiveWindow();
-
-		if (hWndParent != nullptr)
+		//------------------------------------------------------------------------------
+		/// \brief Displays Assertion message box
+		///
+		/// \param [in] text        message to be displayed
+		/// \param [in] caption     dialog box title
+		/// \param [in] type        determine the contents and behavior of the dialog box
+		///
+		/// \return         If the function fails, the return value is zero, otherwise returns value as API function MessageBox
+		///
+		//------------------------------------------------------------------------------
+		int AssertMessageBox(const char* text, const char* caption, unsigned int type)
 		{
-			hWndParent = GetLastActivePopup(hWndParent);
+			HWND hWndParent = ::GetActiveWindow();
+			if (hWndParent != nullptr)
+			{
+				hWndParent = GetLastActivePopup(hWndParent);
+			}
+			return MessageBoxA(hWndParent, text, caption, type);
 		}
-		return MessageBoxA(hWndParent, text, caption, type);
-	}
+		
+		#define _LOG_OUT std::cout
 
-	#define _LOG_OUT std::cout
+		const std::string& PrepareCmdLine()
+		{
+			static std::string cmdLine(GetCommandLineA());
+			return cmdLine;
+		}
+		
+	} // namespace
 
 	bool AssertUtil::m_IgnoreAll = false;
-
-	const std::string& PrepareCmdLine()
-	{
-		static std::string cmdLine(GetCommandLineA());
-		return cmdLine;
-	}
 
 	bool AssertUtil::Handle(const char* expr, const char* file, const char* line, bool& ignoreLine) const
 	{
@@ -82,7 +83,7 @@ namespace Symplektis::Util
 	{
 		const std::string message = GetFormattedMsg(expr, file, line, true);
 
-		switch (assertMessageBox(message.c_str(), "Assertion failed!", MB_ICONERROR | MB_ABORTRETRYIGNORE | MB_SETFOREGROUND | MB_TASKMODAL))
+		switch (AssertMessageBox(message.c_str(), "Assertion failed!", MB_ICONERROR | MB_ABORTRETRYIGNORE | MB_SETFOREGROUND | MB_TASKMODAL))
 		{
 		case IDABORT:
 			return Action::eGiveUp;
@@ -93,11 +94,11 @@ namespace Symplektis::Util
 			{
 				if (GetKeyState(VK_CONTROL) & 0x8000)
 					return Action::eIgnoreAll;
-				else
-					return Action::eIgnoreLine;
+				
+				return Action::eIgnoreLine;
 			}
-			else
-				return Action::eIgnore;
+
+			return Action::eIgnore;
 		}
 		return Action::eDebug;
 	}
