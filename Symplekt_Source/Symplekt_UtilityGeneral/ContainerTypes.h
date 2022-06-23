@@ -316,7 +316,8 @@ namespace Symplektis::Util
 	///=============================================================================
 	/// \class ContainerIndexHandle
 	/// \tparam T    type of item in m_Container.
-	/// \brief A handle object for ContainerIndex also containing a reference to its respective container.
+	/// \brief A handle object for ContainerIndex also containing a reference to its respective container.\n
+	///        This object is meant to be used as a reference object containing index information.
 	///
 	/// \ingroup UTILITY_GENERAL
 	///
@@ -344,8 +345,8 @@ namespace Symplektis::Util
 		 *  \date   20.6.2022
 		 */
 		 //-----------------------------------------------------------------------------
-		explicit ContainerIndexHandle(ContainerIndex id = NULL_INDEX, 
-			 const UniqueIndexedContainer<T>* container = nullptr)
+		explicit ContainerIndexHandle(ContainerIndex                    id = NULL_INDEX, 
+			                          UniqueIndexedContainer<T>* container = nullptr)
 			: m_Index(std::move(id)),
 		      m_Container(container)
 		{ }
