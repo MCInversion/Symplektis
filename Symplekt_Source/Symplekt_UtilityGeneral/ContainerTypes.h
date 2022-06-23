@@ -344,14 +344,36 @@ namespace Symplektis::Util
 		 *  \date   20.6.2022
 		 */
 		 //-----------------------------------------------------------------------------
-		explicit ContainerIndexHandle(
-			                               ContainerIndex id = NULL_INDEX, 
-			const std::shared_ptr<UniqueIndexedContainer<T>>& container = nullptr
-		)
+		explicit ContainerIndexHandle(ContainerIndex id = NULL_INDEX, 
+			 const UniqueIndexedContainer<T>* container = nullptr)
 			: m_Index(std::move(id)),
 		      m_Container(container)
 		{ }
 
+		/// @{
+		/// \name Special Members
+
+		/// \brief Destructor. De-allocates the raw m_Container.
+		~ContainerIndexHandle()
+		{
+			delete m_Container;
+		}
+
+		/// \brief Default constructor.
+		ContainerIndexHandle() = delete;
+
+		/// \brief Copy constructor.
+		ContainerIndexHandle(const ContainerIndexHandle&) = default;
+
+		/// \brief Move constructor.
+		ContainerIndexHandle(ContainerIndexHandle&&) = default;
+
+		/// \brief Copy-assignment operator.
+		ContainerIndexHandle& operator=(const ContainerIndexHandle&) = default;
+
+		/// \brief Move-assignment operator.
+		ContainerIndexHandle& operator=(ContainerIndexHandle&&) = default;
+		
 		/// @{
 		/// \name Operators
 
@@ -395,7 +417,7 @@ namespace Symplektis::Util
 			if (!IsValid() || !other.IsValid())
 				return false;
 
-			if (m_Container.GetID() != other.m_Container.GetID())
+			if (m_Container->GetID() != other.m_Container->GetID())
 				return false;
 			
 			return (m_Index == other.m_Index && m_Container == other.m_Container);
@@ -415,7 +437,7 @@ namespace Symplektis::Util
 			if (!IsValid() || !other.IsValid())
 				return true;
 
-			if (m_Container.GetID() != other.m_Container.GetID())
+			if (m_Container->GetID() != other.m_Container->GetID())
 				return true;
 
 			return (m_Index != other.m_Index || m_Container != other.m_Container);
@@ -440,7 +462,7 @@ namespace Symplektis::Util
 					"Symplektis exception: ContainerIndexHandle:: at least one of the handles compared by \"<\" is invalid\n");
 			}
 
-			if (m_Container.GetID() != other.m_Container.GetID())
+			if (m_Container->GetID() != other.m_Container->GetID())
 			{
 				throw Symplektis::IncompatibleInputException(
 					"Symplektis exception: ContainerIndexHandle:: containers of the handles compared by \"<\" are incompatible\n");
@@ -468,7 +490,7 @@ namespace Symplektis::Util
 					"Symplektis exception: ContainerIndexHandle:: at least one of the handles compared by \"<=\" is invalid\n");
 			}
 
-			if (m_Container.GetID() != other.m_Container.GetID())
+			if (m_Container->GetID() != other.m_Container->GetID())
 			{
 				throw Symplektis::IncompatibleInputException(
 					"Symplektis exception: ContainerIndexHandle:: containers of the handles compared by \"<=\" are incompatible\n");
@@ -509,33 +531,72 @@ namespace Symplektis::Util
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get a pointer to the element in m_Container.
+		/*! \brief Get a const reference to a container element.
 		 *
-		 *  \return Pointer to the element in m_Container indexed by m_Index. Nullptr if m_Index is invalid.
+		 *  \return const reference to a container element.
+		 *  \throw InvalidHandleException if this handle is invalid.
 		 *
 		 *  \author M. Cavarga (MCInversion)
-		 *  \date   20.6.2022
+		 *  \date   23.6.2022
 		 */
 		 //-----------------------------------------------------------------------------
-		std::shared_ptr<T> GetElement()
+		[[nodiscard]] const T& GetElement() const
 		{
 			if (!IsValid())
-				return nullptr;
+			{
+				throw Symplektis::InvalidHandleException("ContainerIndexHandle::GetElement: Invalid handle! Check m_Index or m_Container!\n");
+			}
 
-			// TODO: remove this. This won't work. Use raw ptr or references (const and non-const)
-			return std::shared_ptr<T>(m_Container[m_Index]);
+			return m_Container->at(m_Index);
+		}
+
+		//-----------------------------------------------------------------------------
+		/*! \brief Get a reference to a container element.
+		 *
+		 *  \return reference to a container element.
+		 *  \throw InvalidHandleException if this handle is invalid.
+		 *
+		 *  \author M. Cavarga (MCInversion)
+		 *  \date   23.6.2022
+		 */
+		 //-----------------------------------------------------------------------------
+		T& GetElement()
+		{
+			if (!IsValid())
+			{
+				throw Symplektis::InvalidHandleException("ContainerIndexHandle::GetElement: Invalid handle! Check m_Index or m_Container!\n");
+			}
+
+			return m_Container->at(m_Index);
 		}
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Get raw pointer to the element in m_Container.
 		 *
-		 *  \return Pointer to the element in m_Container indexed by m_Index. Nullptr if m_Index is invalid.
+		 *  \return Pointer to the element in m_Container indexed by m_Index, nullptr if m_Index is invalid.
 		 *
 		 *  \author M. Cavarga (MCInversion)
 		 *  \date   20.6.2022
 		 */
 		 //-----------------------------------------------------------------------------
-		T* GetRawElement()
+		T* GetElementPtr()
+		{
+			if (!IsValid())
+				return nullptr;
+
+			return &m_Container->at(m_Index);
+		}
+
+		//-----------------------------------------------------------------------------
+		/*! \brief Get const raw pointer to the element in m_Container.
+		 *
+		 *  \return Const pointer to the element in m_Container indexed by m_Index, nullptr if m_Index is invalid.
+		 *
+		 *  \author M. Cavarga (MCInversion)
+		 *  \date   20.6.2022
+		 */
+		 //-----------------------------------------------------------------------------
+		const T* GetElementPtr() const
 		{
 			if (!IsValid())
 				return nullptr;
@@ -584,8 +645,8 @@ namespace Symplektis::Util
 		// ===========================================================================
 		//
 		
-		ContainerIndex m_Index = NULL_INDEX;                               //>! index value for an element in m_Container.
-		std::shared_ptr<UniqueIndexedContainer<T>> m_Container = nullptr;  //>! pointer to a container indexed by m_Index.
+		ContainerIndex m_Index = NULL_INDEX;               //>! index value for an element in m_Container.
+		UniqueIndexedContainer<T>* m_Container = nullptr;  //>! raw pointer to a container indexed by m_Index.
 	};
 	
 } // namespace Symplektis::Util

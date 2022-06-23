@@ -57,5 +57,25 @@ namespace Symplektis
 		explicit IncompatibleInputException(const std::string& what) :
 			std::invalid_argument(what) { }
 	};
+
+	///=============================================================================
+	/// \class InvalidHandleException
+	/// \brief Extension of std::logic_error. \n
+	///        Meant to be thrown when a Symplektis handle object is invalid\n
+	///        and cannot be used to access an element potentially handled by this handle.
+	///
+	/// \ingroup UTILITY_GENERAL
+	///
+	/// \author M. Cavarga (MCInversion)
+	/// \date   20.6.2022
+	/// 
+	///=============================================================================
+	class InvalidHandleException final : public std::logic_error
+	{
+	public:
+		/// \brief Construct from a given message.
+		explicit InvalidHandleException(const std::string& what) :
+			std::logic_error(what) { }
+	};
 	
 } // namespace Util
