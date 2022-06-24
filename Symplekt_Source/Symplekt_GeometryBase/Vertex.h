@@ -126,7 +126,7 @@ namespace Symplektis::GeometryBase
 		*
 		*/
 		//-----------------------------------------------------------------------------
-		Vertex(const HalfEdgeIterator& halfEdge, const Vector3& pos)
+		Vertex(const HalfEdgeHandle& halfEdge, const Vector3& pos)
 		{
 			Set(halfEdge, pos);
 		}
@@ -142,7 +142,7 @@ namespace Symplektis::GeometryBase
 		*
 		*/
 		//-----------------------------------------------------------------------------
-		Vertex(const HalfEdgeIterator& halfEdge, const Vector3& pos, const unsigned int& index)
+		Vertex(const HalfEdgeHandle& halfEdge, const Vector3& pos, const unsigned int& index)
 		{
 			Set(halfEdge, pos, index);
 		}
@@ -173,26 +173,26 @@ namespace Symplektis::GeometryBase
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Get iterator to outgoing HalfEdge.
-		*   \return HalfEdgeIterator to the outgoing HalfEdge.
+		*   \return HalfEdgeHandle to the outgoing HalfEdge.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   29.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		HalfEdgeIterator& HalfEdge()
+		HalfEdgeHandle& HalfEdge()
 		{
 			return m_HalfEdge;
 		}
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Get const_iterator to the outgoing HalfEdge.
-		*   \return const HalfEdgeConstIterator to outgoing HalfEdge.
+		*   \return const HalfEdgeHandle to outgoing HalfEdge.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   29.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] const HalfEdgeConstIterator& HalfEdge() const
+		[[nodiscard]] const HalfEdgeHandle& HalfEdge() const
 		{
 			return m_HalfEdge;
 		}
@@ -257,20 +257,20 @@ namespace Symplektis::GeometryBase
 		*   \date   29.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		VertexNormalIterator& Normal()
+		VertexNormalHandle& Normal()
 		{
 			return m_Normal;
 		}
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Get const reference to this Vertex's unit normal vector.
-		*   \return const VertexNormalConstIterator reference of this Vertex's normal
+		*   \return const VertexNormalHandle reference of this Vertex's normal
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   29.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] const VertexNormalConstIterator& Normal() const
+		[[nodiscard]] const VertexNormalHandle& Normal() const
 		{
 			return m_Normal;
 		}
@@ -288,7 +288,7 @@ namespace Symplektis::GeometryBase
 		*   \date   29.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		Vertex& Set(const HalfEdgeIterator& halfEdge, const Vector3& position)
+		Vertex& Set(const HalfEdgeHandle& halfEdge, const Vector3& position)
 		{
 			m_HalfEdge = halfEdge;
 			m_Position = position;
@@ -306,7 +306,7 @@ namespace Symplektis::GeometryBase
 		*   \date   29.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		Vertex& Set(const HalfEdgeIterator& halfEdge, const Vector3& position, const unsigned int& index)
+		Vertex& Set(const HalfEdgeHandle& halfEdge, const Vector3& position, const unsigned int& index)
 		{
 			m_HalfEdge = halfEdge;
 			m_Position = position;
@@ -373,7 +373,7 @@ namespace Symplektis::GeometryBase
 		*   \date   29.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		Vertex& SetHalfEdge(const HalfEdgeIterator& halfEdge)
+		Vertex& SetHalfEdge(const HalfEdgeHandle& halfEdge)
 		{
 			m_HalfEdge = halfEdge;
 			return *this;
@@ -426,14 +426,14 @@ namespace Symplektis::GeometryBase
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Sets this Vertex's m_Normal.
-		*   \param[in] vertNormal      iterator to VertexNormal.
+		*   \param[in] vertNormal      handle to VertexNormal.
 		*   \return reference to this Vertex
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   12.10.2021
 		*/
 		//----------------------------------------------------------------------------- 		
- 		Vertex& SetNormal(const VertexNormalIterator& vertNormal)
+ 		Vertex& SetNormal(const VertexNormalHandle& vertNormal)
 		{
 			m_Normal = vertNormal;
 			return *this;
@@ -441,7 +441,7 @@ namespace Symplektis::GeometryBase
 
 	private:
 		//!< Refers to the HalfEdge coming out of this Vertex.
-		HalfEdgeIterator m_HalfEdge;
+		HalfEdgeHandle m_HalfEdge;
 
 		//!< 3D Euclidean position of this Vertex.
 		Vector3 m_Position;
@@ -453,7 +453,7 @@ namespace Symplektis::GeometryBase
 		bool m_IsBoundary = false;
 
 		//!< Refers to this Vertex's outward-pointing unit normal.
-		VertexNormalIterator m_Normal;
+		VertexNormalHandle m_Normal;
 	};
 
 } // Symplektis::GeometryBase

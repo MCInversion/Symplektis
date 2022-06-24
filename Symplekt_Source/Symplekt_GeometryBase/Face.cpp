@@ -20,6 +20,7 @@ created  : 29.7.2021 : M.Cavarga (MCInversion) :
 #include "Vector3.h"
 #include "Vector3Utils.h"
 #include "Vertex.h"
+#include "HalfEdge.h"
 #include "Poly2Tri_CDT.h"
 
 #include <ctime>
@@ -32,7 +33,7 @@ namespace Symplektis::GeometryBase
 		return (m_HalfEdge == face.m_HalfEdge);
 	}
 
-    Face& Face::Set(const std::vector<VertexIterator>& vertices)
+    Face& Face::Set(const std::vector<VertexHandle>& vertices)
     {
         if (vertices.size() < 3) // degenerate (single-line or single-point) Face
         {
@@ -48,9 +49,9 @@ namespace Symplektis::GeometryBase
 		
         if (vertices.size() == 4) // quad
         {
-            const Vector3 e1 = vertices[1]->Position() - vertices[0]->Position();
-            const Vector3 e2 = vertices[2]->Position() - vertices[0]->Position();
-            const Vector3 e3 = vertices[3]->Position() - vertices[0]->Position();
+            const Vector3 e1 = vertices[1].GetElement().Position() - vertices[0].GetElement().Position();
+            const Vector3 e2 = vertices[2].GetElement().Position() - vertices[0].GetElement().Position();
+            const Vector3 e3 = vertices[3].GetElement().Position() - vertices[0].GetElement().Position();
             const Vector3 c21 = CrossProduct(e2, e1);
             const Vector3 c23 = CrossProduct(e2, e3);
             if (DotProduct(c21, c23) > Util::GetProductTolerance())
@@ -98,10 +99,8 @@ namespace Symplektis::GeometryBase
 
             try
             {
-                std::vector<Poly2Tri::Point*> contour = {};
-                contour.reserve(points.size());
-                for (unsigned int i = 0; i < points.size(); i++)
-                    contour.push_back(&points[i]);
+                std::vector<Poly2Tri::Point*> contour{};
+                std::transform(points.cbegin(), points.cend(), std::back_inserter(contour), [](const auto& pt) { return &pt; });
 
                 constrainedDelaunay = new Poly2Tri::CDT(contour);
                 if (constrainedDelaunay == nullptr)
@@ -141,6 +140,16 @@ namespace Symplektis::GeometryBase
 
         delete constrainedDelaunay;
         return *this;
+    }
+
+    bool Face::IsBoundary() const
+    {
+        if (!m_HalfEdge.IsValid())
+        {
+            throw Symplektis::InvalidHandleException("Face::IsBoundary: m_HalfEdge handle is invalid!\n");
+        }
+
+        return m_HalfEdge.GetElement().IsBoundary();
     }
 
 } // Symplektis::GeometryBase

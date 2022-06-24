@@ -26,9 +26,9 @@ namespace Symplektis::GeometryBase
 		if (halfEdge.IsBoundary())
 			return 0.0;
 
-		const Vector3 p0 = halfEdge.NextHalfEdge()->NextHalfEdge()->TailVertex()->Position();
-		const Vector3 p1 = halfEdge.TailVertex()->Position();
-		const Vector3 p2 = halfEdge.NextHalfEdge()->TailVertex()->Position();
+		const Vector3 p0 = halfEdge.NextHalfEdge().GetElement().NextHalfEdge().GetElement().TailVertex().GetElement().Position();
+		const Vector3 p1 = halfEdge.TailVertex().GetElement().Position();
+		const Vector3 p2 = halfEdge.NextHalfEdge().GetElement().TailVertex().GetElement().Position();
 
 		const Vector3 u = p1 - p0;
 		const Vector3 v = p2 - p0;
@@ -42,9 +42,9 @@ namespace Symplektis::GeometryBase
 		if (halfEdge.IsBoundary())
 			return Vector3();
 
-		const Vector3 n = ComputeNormal(*halfEdge.AdjacentFace());
-		const Vector3 p0 = halfEdge.TailVertex()->Position();
-		const Vector3 p1 = halfEdge.OppositeHalfEdge()->TailVertex()->Position();
+		const Vector3 n = ComputeNormal(halfEdge.AdjacentFace().GetElement());
+		const Vector3 p0 = halfEdge.TailVertex().GetElement().Position();
+		const Vector3 p1 = halfEdge.OppositeHalfEdge().GetElement().TailVertex().GetElement().Position();
 
 		return CrossProduct(n, p1 - p0);
 	}

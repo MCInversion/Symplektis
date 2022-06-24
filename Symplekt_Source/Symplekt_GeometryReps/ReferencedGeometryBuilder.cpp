@@ -32,18 +32,15 @@ namespace Symplektis::GeometryReps
 	//-----------------------------------------------------------------------------
 	/*! \brief Check for isolated vertices given a half-edge container
 	*   \param[in] vert      vertex to be checked
-	*   \param[in] heBuffer  half-edge buffer to be used for checking
-	*   \return true if this vertex's half-edge points to the end iterator of heBuffer
+	*   \return true if this vertex's half-edge is null.
 	*
 	*   \author M. Cavarga (MCInversion)
 	*   \date   16.9.2021
-	*
-	*   Passing an incompatible heBuffer leads to a 'vector iterators incompatible' assertion failure (at build time)!
 	*/
 	//-----------------------------------------------------------------------------
-	[[nodiscard]] static bool IsIsolated(const Vertex& vert, const std::vector<HalfEdge>& heBuffer)
+	[[nodiscard]] static bool IsIsolated(const Vertex& vert)
 	{
-		return vert.HalfEdge() == heBuffer.cend();
+		return vert.HalfEdge() == NULL_HALF_EDGE;
 	}
 
 	void ReferencedMeshGeometryBuilder::PreallocateMeshGeometryContainers()
@@ -81,7 +78,7 @@ namespace Symplektis::GeometryReps
 		const size_t nFaces = dataVertexIndices.size();
 		const size_t nHalfEdges = 2 * nEdges;
 		const int EulerCharacteristic = static_cast<int>(nVertices - nEdges + nFaces);
-		const size_t nBoundaryCycles = std::max(0, 2 - EulerCharacteristic);
+		const size_t nBoundaryCycles = std::max<int>(0, 2 - EulerCharacteristic);
 
 		m_ResultData->HalfEdges.clear();
 		m_ResultData->Vertices.clear();
@@ -98,7 +95,7 @@ namespace Symplektis::GeometryReps
 		m_ResultData->VertexNormals.reserve(nVertexNormals);
 	}
 
-	void ReferencedMeshGeometryBuilder::FillVertexBufferAndIndexMap(std::map<unsigned int, VertexIterator>& vertIndexToVertexIter) const
+	void ReferencedMeshGeometryBuilder::FillVertexBufferAndIndexMap(std::map<unsigned int, VertexHandle>& vertIndexToVertexHandle) const
 	{
 		auto& dataVertices = m_BaseData->Vertices;
 		auto& dataVertexNormals = m_BaseData->VertexNormals;
@@ -106,9 +103,9 @@ namespace Symplektis::GeometryReps
 		for (unsigned int vertId = 0; const auto & vertex : dataVertices)
 		{
 			auto newVertexIter = m_ResultData->Vertices.insert(m_ResultData->Vertices.end(), Vertex(vertex));
-			newVertexIter->SetHalfEdge(m_ResultData->HalfEdges.end());
+			newVertexIter->SetHalfEdge(NULL_HALF_EDGE);
 			newVertexIter->SetIndex(vertId);
-			vertIndexToVertexIter[vertId] = newVertexIter;
+			vertIndexToVertexHandle[vertId] = newVertexIter;
 
 			if (m_HasNormals) // fill in vertex normals
 			{
@@ -121,13 +118,13 @@ namespace Symplektis::GeometryReps
 	}
 
 	bool ReferencedMeshGeometryBuilder::FillHalfEdgesAndFaces(
-		std::map<unsigned int, VertexIterator>&     vertIndexToVertexIter,
-		std::map<HalfEdgeIterator, bool>&           halfEdgeHasOpposite) const
+		std::map<unsigned int, VertexHandle>&     vertIndexToVertexIter,
+		std::map<HalfEdgeHandle, bool>&           halfEdgeHasOpposite) const
 	{
 		auto& dataVertexIndices = m_BaseData->PolyVertexIndices;
 		
 		bool degenerateFacesEncountered = false;
-		std::map<std::pair<unsigned int, unsigned int>, HalfEdgeIterator> edgeVertIdsToExistingHalfEdges;
+		std::map<std::pair<unsigned int, unsigned int>, HalfEdgeHandle> edgeVertIdsToExistingHalfEdges;
 		std::map<std::pair<unsigned int, unsigned int>, unsigned int> edgeVertIdsToEdgeCount;
 
 		for (unsigned int faceIndex = 0, edgeIndex = 0; const auto & indexTuple : dataVertexIndices)
@@ -142,7 +139,7 @@ namespace Symplektis::GeometryReps
 
 			const size_t nIndicesInTuple = indexTuple.size();
 
-			std::vector<VertexIterator> polyVertIters;
+			std::vector<VertexHandle> polyVertIters;
 			polyVertIters.reserve(nIndicesInTuple);
 			for (const auto& vId : indexTuple) polyVertIters.emplace_back(vertIndexToVertexIter[vId]);
 
@@ -150,7 +147,7 @@ namespace Symplektis::GeometryReps
 			auto newFaceIter = m_ResultData->Faces.insert(m_ResultData->Faces.end(), newFace);
 			newFaceIter->SetIndex(faceIndex);
 
-			std::vector<HalfEdgeIterator> halfEdges(nIndicesInTuple);
+			std::vector<HalfEdgeHandle> halfEdges(nIndicesInTuple);
 			for (auto& he : halfEdges) he = m_ResultData->HalfEdges.insert(m_ResultData->HalfEdges.end(), HalfEdge());
 
 			// initialize new half-edges
@@ -220,7 +217,7 @@ namespace Symplektis::GeometryReps
 		return degenerateFacesEncountered;
 	}
 
-	void ReferencedMeshGeometryBuilder::FillBoundaryCycles(std::map<HalfEdgeIterator, bool>& halfEdgeHasOpposite) const
+	void ReferencedMeshGeometryBuilder::FillBoundaryCycles(std::map<HalfEdgeHandle, bool>& halfEdgeHasOpposite) const
 	{
 		// extra Faces need to be added for each boundary cycle
 		for (auto halfEdgeIt = m_ResultData->HalfEdges.begin(); halfEdgeIt != m_ResultData->HalfEdges.end(); ++halfEdgeIt)
@@ -234,7 +231,7 @@ namespace Symplektis::GeometryReps
 				auto newBoundaryCycle = m_ResultData->BoundaryCycles.insert(m_ResultData->BoundaryCycles.end(), Face());
 
 				// iterate along this boundary cycle
-				std::vector<HalfEdgeIterator> boundaryCycleHalfEdges;
+				std::vector<HalfEdgeHandle> boundaryCycleHalfEdges;
 				auto heIt = halfEdgeIt;
 				do
 				{
@@ -356,7 +353,7 @@ namespace Symplektis::GeometryReps
 		// =======================================================================
 		//
 
-		std::map<unsigned int, VertexIterator> vertIndexToVertexIter;
+		std::map<unsigned int, VertexHandle> vertIndexToVertexIter;
 		FillVertexBufferAndIndexMap(vertIndexToVertexIter);
 
 		// fill the half-edges and faces buffers using the above helper containers
@@ -364,7 +361,7 @@ namespace Symplektis::GeometryReps
 		//
 		
 		// helper containers for half-edge construction
-		std::map<HalfEdgeIterator, bool> halfEdgeHasOpposite;
+		std::map<HalfEdgeHandle, bool> halfEdgeHasOpposite;
 		const bool degenerateFacesEncountered = FillHalfEdgesAndFaces(vertIndexToVertexIter, halfEdgeHasOpposite);
 
 		// it's unsafe to continue to boundary cycle construction if degenerate faces were encountered

@@ -28,10 +28,7 @@ namespace Symplektis
 	///=============================================================================
 	class InvalidInputException final : public std::invalid_argument
 	{
-	public:
-		/// \brief Construct from a given message.
-		explicit InvalidInputException(const std::string& what) :
-			std::invalid_argument(what)	{ }
+		using std::invalid_argument::invalid_argument;
 	};
 
 	///=============================================================================
@@ -52,10 +49,7 @@ namespace Symplektis
 	///=============================================================================
 	class IncompatibleInputException final : public std::invalid_argument
 	{
-	public:
-		/// \brief Construct from a given message.
-		explicit IncompatibleInputException(const std::string& what) :
-			std::invalid_argument(what) { }
+		using std::invalid_argument::invalid_argument;
 	};
 
 	///=============================================================================
@@ -72,10 +66,7 @@ namespace Symplektis
 	///=============================================================================
 	class InvalidHandleException final : public std::logic_error
 	{
-	public:
-		/// \brief Construct from a given message.
-		explicit InvalidHandleException(const std::string& what) :
-			std::logic_error(what) { }
+		using std::logic_error::logic_error;
 	};
 	
-} // namespace Util
+} // namespace Symplektis

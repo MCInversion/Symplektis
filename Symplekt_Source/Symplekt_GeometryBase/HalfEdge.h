@@ -30,20 +30,20 @@ namespace Symplektis::GeometryBase
 	struct HalfEdgeReferenceData
 	{
 		//!< Refers to the next HalfEdge around current polygonal face.
-		HalfEdgeIterator NextHalfEdge;
+		HalfEdgeHandle NextHalfEdge;
 
 		//!< Refers to the oppositely oriented HalfEdge with identical 
 		//!< endpoints corresponding to an adjacent polygonal face.
-		HalfEdgeIterator OppositeHalfEdge;
+		HalfEdgeHandle OppositeHalfEdge;
 
 		//!< Refers to the tail (start) Vertex of this HalfEdge.
-		VertexIterator TailVertex;
+		VertexHandle TailVertex;
 
 		//!< Refers to the Edge associated with this HalfEdge.
-		EdgeIterator Edge;
+		EdgeHandle Edge;
 
 		//!< Refers to the Face adjacent to this HalfEdge.
-		FaceIterator AdjacentFace;
+		FaceHandle AdjacentFace;
 	};
 
 	///=============================================================================
@@ -60,55 +60,32 @@ namespace Symplektis::GeometryBase
 	public:
 
 		/// @{
-		/// \name Default Members
+		/// \name Default Special Members
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Default constructor
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   26.8.2021
-		*/
+		/// \brief Default constructor
 		//-----------------------------------------------------------------------------
 		HalfEdge() = default;
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Default move constructor
-		*   \param[in] other  HalfEdge to be moved.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   26.8.2021
-		*/
+		/// \brief Default move constructor
 		//-----------------------------------------------------------------------------
-		HalfEdge(HalfEdge&& other) = default;
+		HalfEdge(HalfEdge&& ) = default;
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Default destructor
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   26.8.2021
-		*/
+		/// \brief Default destructor
 		//-----------------------------------------------------------------------------
 		~HalfEdge() = default;
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Default copy-assignment operator
-		*   \param[in] other  HalfEdge to be copy-assigned.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   26.8.2021
-		*/
+		/// \brief Default copy-assignment operator
 		//-----------------------------------------------------------------------------
-		HalfEdge& operator=(const HalfEdge& other) = default;
+		HalfEdge& operator=(const HalfEdge& ) = default;
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Default move-assignment operator
-		*   \param[in] other  HalfEdge to be move-assigned.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   26.8.2021
-		*/
+		/// \brief Default move-assignment operator
 		//-----------------------------------------------------------------------------
-		HalfEdge& operator=(HalfEdge&& other) = default;
+		HalfEdge& operator=(HalfEdge&& ) = default;
 
 		/// @{
 		/// \name Constructors
@@ -217,7 +194,7 @@ namespace Symplektis::GeometryBase
 		*   \date   16.9.2021
 		*/
 		//-----------------------------------------------------------------------------
-		HalfEdge& SetAdjacentFace(const FaceIterator& face)
+		HalfEdge& SetAdjacentFace(const FaceHandle& face)
 		{
 			m_RefData.AdjacentFace = face;
 			return *this;
@@ -227,131 +204,131 @@ namespace Symplektis::GeometryBase
 		/// \name Getters
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get const_iterator to NextHalfEdge.
-		*   \return const HalfEdgeConstIterator to NextHalfEdge.
+		/*! \brief Get a const handle to NextHalfEdge.
+		*   \return const HalfEdgeHandle to NextHalfEdge.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   26.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] const HalfEdgeConstIterator& NextHalfEdge() const
+		[[nodiscard]] const HalfEdgeHandle& NextHalfEdge() const
 		{
 			return m_RefData.NextHalfEdge;
 		}
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Get iterator to NextHalfEdge.
-		*   \return HalfEdgeIterator to NextHalfEdge.
+		*   \return HalfEdgeHandle to NextHalfEdge.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   26.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		HalfEdgeIterator& NextHalfEdge()
+		HalfEdgeHandle& NextHalfEdge()
 		{
 			return m_RefData.NextHalfEdge;
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get const_iterator to OppositeHalfEdge.
-		*   \return const HalfEdgeConstIterator to OppositeHalfEdge.
+		/*! \brief Get a const handle to OppositeHalfEdge.
+		*   \return const HalfEdgeHandle to OppositeHalfEdge.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   26.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] const HalfEdgeConstIterator& OppositeHalfEdge() const
+		[[nodiscard]] const HalfEdgeHandle& OppositeHalfEdge() const
 		{
 			return m_RefData.OppositeHalfEdge;
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get iterator to OppositeHalfEdge.
-		*   \return HalfEdgeIterator to OppositeHalfEdge.
+		/*! \brief Get a handle to OppositeHalfEdge.
+		*   \return HalfEdgeHandle to OppositeHalfEdge.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   26.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		HalfEdgeIterator& OppositeHalfEdge()
+		HalfEdgeHandle& OppositeHalfEdge()
 		{
 			return m_RefData.OppositeHalfEdge;
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get const_iterator to TailVertex.
-		*   \return const VertexConstIterator to TailVertex.
+		/*! \brief Get a const handle to TailVertex.
+		*   \return const VertexHandle to TailVertex.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   26.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] const VertexConstIterator& TailVertex() const
+		[[nodiscard]] const VertexHandle& TailVertex() const
 		{
 			return m_RefData.TailVertex;
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get iterator to TailVertex.
-		*   \return VertexIterator to TailVertex.
+		/*! \brief Get a handle to TailVertex.
+		*   \return VertexHandle to TailVertex.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   26.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		VertexIterator& TailVertex()
+		VertexHandle& TailVertex()
 		{
 			return m_RefData.TailVertex;
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get const_iterator to Edge.
-		*   \return const EdgeConstIterator to Edge.
+		/*! \brief Get a const handle to Edge.
+		*   \return const EdgeHandle to Edge.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   26.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] const EdgeConstIterator& Edge() const
+		[[nodiscard]] const EdgeHandle& Edge() const
 		{
 			return m_RefData.Edge;
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get iterator to Edge.
-		*   \return EdgeIterator to Edge.
+		/*! \brief Get a handle to Edge.
+		*   \return EdgeHandle to Edge.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   26.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		EdgeIterator& Edge()
+		EdgeHandle& Edge()
 		{
 			return m_RefData.Edge;
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get iterator to AdjacentFace.
-		*   \return FaceIterator to AdjacentFace.
+		/*! \brief Get a handle to AdjacentFace.
+		*   \return FaceHandle to AdjacentFace.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   26.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		FaceIterator& AdjacentFace()
+		FaceHandle& AdjacentFace()
 		{
 			return m_RefData.AdjacentFace;
 		}
 		
 		//-----------------------------------------------------------------------------
-		/*! \brief Get const_iterator to AdjacentFace.
-		*   \return const FaceConstIterator to AdjacentFace.
+		/*! \brief Get a const handle to AdjacentFace.
+		*   \return const FaceHandle to AdjacentFace.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   26.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] const FaceConstIterator& AdjacentFace() const
+		[[nodiscard]] const FaceHandle& AdjacentFace() const
 		{
 			return m_RefData.AdjacentFace;
 		}

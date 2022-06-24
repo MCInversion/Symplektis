@@ -75,13 +75,13 @@ namespace Symplektis::GeometryBase
 		//-----------------------------------------------------------------------------
 		/*! \brief Constructor. Creates a normal vector instance with vector vec and reference to Vertex vert.
 		 *  \param[in] vec             normal Vector3
-		 *  \param[in] vert            Vertex iterator of ReferencedMeshGeometryData.
+		 *  \param[in] vert            VertexHandle of ReferencedMeshGeometryData.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   12.10.2021
 		*/
 		//-----------------------------------------------------------------------------
-		VertexNormal(const Vector3& vec, const VertexIterator& vert)
+		VertexNormal(const Vector3& vec, const VertexHandle& vert)
 		{
 			Set(vec);
 			SetVertex(vert);
@@ -156,15 +156,15 @@ namespace Symplektis::GeometryBase
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Sets vertex reference (iterator).
-		 *  \param[in] vert            Vertex iterator of ReferencedMeshGeometryData.
+		/*! \brief Sets vertex reference (handle).
+		 *  \param[in] vert            Vertex handle of ReferencedMeshGeometryData.
 		 *  \return reference to this VertexNormal
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   12.10.2021
 		*/
 		//-----------------------------------------------------------------------------
-		VertexNormal& SetVertex(const VertexIterator& vert)
+		VertexNormal& SetVertex(const VertexHandle& vert)
 		{
 			m_Vertex = vert;
 			return *this;
@@ -200,36 +200,36 @@ namespace Symplektis::GeometryBase
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Gets m_Vertex iterator reference (iterator to Vertices vector)
-		 *  \return vertex iterator.
+		/*! \brief Gets m_Vertex handle reference (handle to Vertices vector)
+		 *  \return vertex handle.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   12.10.2021
 		*/
 		//-----------------------------------------------------------------------------
-		VertexIterator& Vertex()
+		VertexHandle& Vertex()
 		{
 			return m_Vertex;
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Gets const m_Vertex iterator reference (iterator to Vertices vector)
-		 *  \return const vertex iterator.
+		/*! \brief Gets const m_Vertex handle reference (handle to Vertices vector)
+		 *  \return const vertex handle.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   12.10.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] const VertexIterator& Vertex() const
+		[[nodiscard]] const VertexHandle& Vertex() const
 		{
 			return m_Vertex;
 		}
 	
 	private:
 
-		Vector3 m_Vector; //!< Normal Vector3
+		Vector3 m_Vector;       //!< Normal Vector3
 
-		VertexIterator m_Vertex;  //!< Iterator to base Vertex object
+		VertexHandle m_Vertex;  //!< A handle to base Vertex object
 	};
 	
 } // Symplektis::GeometryBase

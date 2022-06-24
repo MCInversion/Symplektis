@@ -83,7 +83,7 @@ namespace Symplektis::GeometryBase
 		*   Initialize from given HalfEdge
 		*/
 		//-----------------------------------------------------------------------------
-		explicit Edge(const HalfEdgeIterator& he)
+		explicit Edge(const HalfEdgeHandle& he)
 			: m_HalfEdge(he)
 		{
 		}
@@ -99,7 +99,7 @@ namespace Symplektis::GeometryBase
 		*   Initialize from given HalfEdge and id
 		*/
 		//-----------------------------------------------------------------------------
-		Edge(const HalfEdgeIterator& he, const unsigned int& id)
+		Edge(const HalfEdgeHandle& he, const unsigned int& id)
 			: m_HalfEdge(he), m_UniqueEdgeIndex(id)
 		{
 		}
@@ -129,27 +129,27 @@ namespace Symplektis::GeometryBase
 		/// \name Getters
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get const_iterator to HalfEdge.
-		*   \return const HalfEdgeConstIterator to HalfEdge.
+		/*! \brief Get const handle to HalfEdge.
+		*   \return HalfEdgeHandle to HalfEdge.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   30.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] const HalfEdgeConstIterator& HalfEdge() const
+		[[nodiscard]] const HalfEdgeHandle& HalfEdge() const
 		{
 			return m_HalfEdge;
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get iterator to HalfEdge.
-		*   \return HalfEdgeIterator to HalfEdge.
+		/*! \brief Get handle to HalfEdge.
+		*   \return HalfEdgeHandle to HalfEdge.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   30.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		HalfEdgeIterator& HalfEdge()
+		HalfEdgeHandle& HalfEdge()
 		{
 			return m_HalfEdge;
 		}
@@ -208,7 +208,7 @@ namespace Symplektis::GeometryBase
 		*   \date   30.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		Edge& Set(const HalfEdgeIterator& halfEdge)
+		Edge& Set(const HalfEdgeHandle& halfEdge)
 		{
 			m_HalfEdge = halfEdge;
 			return *this;
@@ -224,7 +224,7 @@ namespace Symplektis::GeometryBase
 		*   \date   30.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		Edge& Set(const HalfEdgeIterator& halfEdge, const unsigned int& id)
+		Edge& Set(const HalfEdgeHandle& halfEdge, const unsigned int& id)
 		{
 			m_HalfEdge = halfEdge;
 			m_UniqueEdgeIndex = id;
@@ -248,7 +248,7 @@ namespace Symplektis::GeometryBase
 
 	private:
 		//!< Refers to the HalfEdge associated with this Edge
-		HalfEdgeIterator m_HalfEdge;
+		HalfEdgeHandle m_HalfEdge;
 
 		//!< A unique index from 0, ..., nEdges - 1
 		unsigned int m_UniqueEdgeIndex{ 0 };

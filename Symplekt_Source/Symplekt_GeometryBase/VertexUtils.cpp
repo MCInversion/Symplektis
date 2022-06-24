@@ -23,12 +23,12 @@ namespace Symplektis::GeometryBase
 	Vector3 ComputeVertexNormal(const Vertex& vertex)
 	{
 		Vector3 result{};
-		HalfEdgeConstIterator he = vertex.HalfEdge();
+		HalfEdgeHandle he = vertex.HalfEdge();
 
 		do
 		{   // 1-ring neighborhood iteration
-			if (!he->IsBoundary()) result += ComputeNormal(*he->AdjacentFace());
-			he = he->OppositeHalfEdge()->NextHalfEdge();
+			if (!he.GetElement().IsBoundary()) result += ComputeNormal(he.GetElement().AdjacentFace().GetElement());
+			he = he.GetElement().OppositeHalfEdge().GetElement().NextHalfEdge();
 		} while (he != vertex.HalfEdge());
 
 		return result.Normalize();
@@ -37,12 +37,12 @@ namespace Symplektis::GeometryBase
 	double ComputeDualNeighborhoodArea(const Vertex& vertex)
 	{
 		double result = 0.0;
-		HalfEdgeConstIterator he = vertex.HalfEdge();
+		HalfEdgeHandle he = vertex.HalfEdge();
 
 		do
 		{   // 1-ring neighborhood iteration
-			if (!he->IsBoundary()) result += ComputeArea(*he->AdjacentFace());
-			he = he->OppositeHalfEdge()->NextHalfEdge();
+			if (!he.GetElement().IsBoundary()) result += ComputeArea(he.GetElement().AdjacentFace().GetElement());
+			he = he.GetElement().OppositeHalfEdge().GetElement().NextHalfEdge();
 		} while (he != vertex.HalfEdge());
 
 		return result / 3.0;
@@ -51,12 +51,12 @@ namespace Symplektis::GeometryBase
 	unsigned int GetValence(const Vertex& vertex)
 	{
 		unsigned int result = 0;
-		HalfEdgeConstIterator he = vertex.HalfEdge();
+		HalfEdgeHandle he = vertex.HalfEdge();
 
 		do
 		{   // 1-ring neighborhood iteration
 			result++;
-			he = he->OppositeHalfEdge()->NextHalfEdge();
+			he = he.GetElement().OppositeHalfEdge().GetElement().NextHalfEdge();
 		} while (he != vertex.HalfEdge());
 
 		return result;

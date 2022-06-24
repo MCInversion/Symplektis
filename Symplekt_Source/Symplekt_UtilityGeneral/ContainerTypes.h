@@ -3,6 +3,22 @@
 *   
 *   \author M. Cavarga (MCInversion)
 *   \date 17.6.2022
+*
+\verbatim
+   Previous attempts with referenced geometry and binary tree implementations used iterators, but as it turns out: \n
+   iterators of container elements after the insertion/erasure position are invalidated. This renders them useless \n
+   for applications involving topological adjustments to referenced geometry because a substantial portion of iterators\n
+   used in GeometryBase types (e.g. Vertex, HalfEdge, Face...) would need to be re-validated (reset) after adding or \n
+   removing an element from container.
+
+   The current implementation involves global index types, container indices, unique containers, and index handles.  \n
+   The following rules must apply: \n
+   1) Referencing after completion & validation: \n
+     > A container element can only be retrieved after it is complete and of its all handles are valid. \n
+   2) Containers are uniquely identified by their UUID upon construction. \n
+     > Unless explicitly specified upon construction, containers have unique identifiers, so that handle indices can be suitably comparable. \n
+   
+\endverbatim
 */
 
 #pragma once
@@ -14,7 +30,6 @@
 
 #include <algorithm>
 #include <cstdint>
-#include <memory>
 #include <vector>
 
 namespace Symplektis::Util
@@ -48,27 +63,6 @@ namespace Symplektis::Util
 	{
 	public:
 		using NamedValue::NamedValue;
-
-		/// @{
-		/// \name Default Special Members
-
-		/// \brief Default constructor.
-		ContainerIndex() = default;
-
-		/// \brief Default copy constructor.
-		ContainerIndex(const ContainerIndex& other) = default;
-
-		/// \brief Default move constructor.
-		ContainerIndex(ContainerIndex&& other) = default;
-
-		/// \brief Default copy-assignment operator.
-		ContainerIndex& operator=(const ContainerIndex& other) = default;
-
-		/// \brief Default move-assignment operator.
-		ContainerIndex& operator=(ContainerIndex&& other) = default;
-
-		/// \brief Default destructor.
-		virtual ~ContainerIndex() = default;
 
 		/// @{
 		/// \name Constructors
@@ -175,7 +169,7 @@ namespace Symplektis::Util
 		 *   \date   29.11.2021
 		 */
 		 //-----------------------------------------------------------------------------
-		virtual ContainerIndex& operator= (const int& value)
+		ContainerIndex& operator= (const int& value) noexcept
 		{
 			m_value = static_cast<Symplekt_IndexType>(value);
 			return *this;
@@ -272,10 +266,10 @@ namespace Symplektis::Util
 	};
 
 	/// \brief null index pointing no a non-existent position in an array.
-	constexpr ContainerIndex NULL_INDEX{ -1 };
+	[[clang::no_destroy]] constexpr ContainerIndex NULL_INDEX{ -1 };
 
 	/// \brief maximum possible ContainerIndex.
-	constexpr ContainerIndex MAX_INDEX{ SYMPLEKT_MAX_INDEX };
+	[[clang::no_destroy]] constexpr ContainerIndex MAX_INDEX{ SYMPLEKT_MAX_INDEX };
 
 	///=============================================================================
 	/// \class UniqueIndexedContainer
@@ -291,14 +285,22 @@ namespace Symplektis::Util
 	template <typename T>
 	class UniqueIndexedContainer : public std::vector<T>
 	{
+		using std::vector<T>::vector;
 	public:
 		///-----------------------------------------------------------------------------
-		/// \brief Default constructor. Generates a UUID when an instance of this container is created.
+		/// \brief Default constructor.
 		///-----------------------------------------------------------------------------
-		UniqueIndexedContainer()
+		UniqueIndexedContainer() noexcept
 			: std::vector<T>(),
-			  m_ContainerID(CreateUUID())
-		{ }
+			  m_ContainerID(CreateUUID()) {}
+
+		///-----------------------------------------------------------------------------
+		/// \brief Constructor. Initialize from an existing UUID.
+		/// \param[in] id    identifier to be set.
+		///-----------------------------------------------------------------------------
+		explicit UniqueIndexedContainer(const UUID& id) noexcept
+			: std::vector<T>(),
+			m_ContainerID(id) {}
 		
 		///-----------------------------------------------------------------------------
 		/// \brief UUID getter.
@@ -307,6 +309,24 @@ namespace Symplektis::Util
 		UUID& GetID()
 		{
 			return m_ContainerID;
+		}
+
+		///-----------------------------------------------------------------------------
+		/// \brief const UUID getter.
+		/// \return this container's ID.
+		///-----------------------------------------------------------------------------
+		[[nodiscard]] const UUID& GetID() const
+		{
+			return m_ContainerID;
+		}
+
+		///-----------------------------------------------------------------------------
+		/// \brief UUID setter.
+		/// \param[in] id    identifier to be set.
+		///-----------------------------------------------------------------------------
+		void SetID(const UUID& id)
+		{
+			m_ContainerID = id;
 		}
 	
 	private:	
@@ -345,9 +365,8 @@ namespace Symplektis::Util
 		 *  \date   20.6.2022
 		 */
 		 //-----------------------------------------------------------------------------
-		explicit ContainerIndexHandle(ContainerIndex                    id = NULL_INDEX, 
-			                          UniqueIndexedContainer<T>* container = nullptr)
-			: m_Index(std::move(id)),
+		explicit ContainerIndexHandle(const ContainerIndex& id, UniqueIndexedContainer<T>* container = nullptr)
+			: m_Index(id),
 		      m_Container(container)
 		{ }
 
@@ -355,13 +374,13 @@ namespace Symplektis::Util
 		/// \name Special Members
 
 		/// \brief Destructor. De-allocates the raw m_Container.
-		~ContainerIndexHandle()
+		constexpr ~ContainerIndexHandle()
 		{
 			delete m_Container;
 		}
 
 		/// \brief Default constructor.
-		ContainerIndexHandle() = delete;
+		constexpr ContainerIndexHandle() = default;
 
 		/// \brief Copy constructor.
 		ContainerIndexHandle(const ContainerIndexHandle&) = default;
@@ -443,7 +462,7 @@ namespace Symplektis::Util
 
 			return (m_Index != other.m_Index || m_Container != other.m_Container);
 		}
-
+		
 		//-----------------------------------------------------------------------------
 		/*! \brief Comparison less-than operator.
 		 *
@@ -597,7 +616,7 @@ namespace Symplektis::Util
 		 *  \date   20.6.2022
 		 */
 		 //-----------------------------------------------------------------------------
-		const T* GetElementPtr() const
+		[[nodiscard]] const T* GetElementPtr() const
 		{
 			if (!IsValid())
 				return nullptr;

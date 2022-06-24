@@ -38,10 +38,10 @@ namespace Symplektis::GeometryBase
 			return Vector3();
 		}
 		
-		const Vector3 p0 = tri.HalfEdge()->TailVertex()->Position();
-		const Vector3 p1 = tri.HalfEdge()->NextHalfEdge()->TailVertex()->Position();
-		const Vector3 n = ComputeRotatedEdgeVector(*tri.HalfEdge());
-		const double h = 0.5 * ComputeOppositeAngleCotan(*tri.HalfEdge());
+		const Vector3 p0 = tri.HalfEdge().GetElement().TailVertex().GetElement().Position();
+		const Vector3 p1 = tri.HalfEdge().GetElement().NextHalfEdge().GetElement().TailVertex().GetElement().Position();
+		const Vector3 n = ComputeRotatedEdgeVector(tri.HalfEdge().GetElement());
+		const double h = 0.5 * ComputeOppositeAngleCotan(tri.HalfEdge().GetElement());
 
 		return 0.5 * (p0 + p1) + h * n;
 	}
@@ -51,9 +51,9 @@ namespace Symplektis::GeometryBase
 		double result = 0.0;
 		for (const auto& triangle : poly.GetTriangulation())
 		{
-			const Vector3 v0 = std::get<0>(triangle)->Position();
-			const Vector3 v1 = std::get<1>(triangle)->Position();
-			const Vector3 v2 = std::get<2>(triangle)->Position();
+			const Vector3 v0 = std::get<0>(triangle).GetElement().Position();
+			const Vector3 v1 = std::get<1>(triangle).GetElement().Position();
+			const Vector3 v2 = std::get<2>(triangle).GetElement().Position();
 
 			result += ComputeTriangleArea(v0, v1, v2);
 		}
@@ -66,9 +66,9 @@ namespace Symplektis::GeometryBase
 		Vector3 result;
 		for (const auto& triangle : poly.GetTriangulation())
 		{
-			const Vector3 v0 = std::get<0>(triangle)->Position();
-			const Vector3 v1 = std::get<1>(triangle)->Position();
-			const Vector3 v2 = std::get<2>(triangle)->Position();
+			const Vector3 v0 = std::get<0>(triangle).GetElement().Position();
+			const Vector3 v1 = std::get<1>(triangle).GetElement().Position();
+			const Vector3 v2 = std::get<2>(triangle).GetElement().Position();
 
 			result += CrossProduct(v1 - v0, v2 - v0);
 		}
@@ -79,14 +79,14 @@ namespace Symplektis::GeometryBase
 		return result.Normalize();
 	}
 
-	Vector3 ComputeNormal(const std::vector<VertexIterator>& vertices)
+	Vector3 ComputeNormal(const std::vector<VertexHandle>& vertices)
 	{
 		Vector3 result;
 		for (unsigned int i = 0; i < vertices.size(); i++)
 		{
 			const auto iNext = (static_cast<size_t>(i) + 1) % vertices.size();
-			const Vector3 fromNext = vertices[i]->Position() - vertices[iNext]->Position();
-			const Vector3 plusNext = vertices[i]->Position() + vertices[iNext]->Position();
+			const Vector3 fromNext = vertices[i].GetElement().Position() - vertices[iNext].GetElement().Position();
+			const Vector3 plusNext = vertices[i].GetElement().Position() + vertices[iNext].GetElement().Position();
 
 			result.X() += fromNext.Y() * plusNext.Z();
 			result.Y() += fromNext.Z() * plusNext.X();
@@ -103,13 +103,13 @@ namespace Symplektis::GeometryBase
 	{
 		unsigned int vertCounter = 0;
 		Vector3 result;
-		HalfEdgeConstIterator halfEdge = poly.HalfEdge();
+		HalfEdgeHandle halfEdge = poly.HalfEdge();
 
 		do
 		{
 			vertCounter++;
-			result += halfEdge->TailVertex()->Position();
-			halfEdge = halfEdge->NextHalfEdge();
+			result += halfEdge.GetElement().TailVertex().GetElement().Position();
+			halfEdge = halfEdge.GetElement().NextHalfEdge();
 		}
 		while (halfEdge != poly.HalfEdge());
 
@@ -177,15 +177,15 @@ namespace Symplektis::GeometryBase
 		return projections;
 	}
 
-	std::vector<Vector2> ComputeProjectionsAlongNormal(const std::vector<VertexIterator>& vertices)
+	std::vector<Vector2> ComputeProjectionsAlongNormal(const std::vector<VertexHandle>& vertices)
 	{
 		const Vector3 normal = ComputeNormal(vertices);
-		const Vector3 refPoint = vertices[0]->Position();
+		const Vector3 refPoint = vertices[0].GetElement().Position();
 
 		return ComputeProjectionsAlongNormal(vertices, normal, refPoint);
 	}
 
-	std::vector<Vector2> ComputeProjectionsAlongNormal(const std::vector<VertexIterator>& vertices, const Vector3& normal, const Vector3& refPoint)
+	std::vector<Vector2> ComputeProjectionsAlongNormal(const std::vector<VertexHandle>& vertices, const Vector3& normal, const Vector3& refPoint)
 	{
 		const auto quat = ComputeLookAtQuaternion(normal, Vector3(0.0, 0.0, 1.0));
 		const auto projX = Vector3(0.0, 1.0, 0.0).ApplyQuaternion(quat);
@@ -195,7 +195,7 @@ namespace Symplektis::GeometryBase
 		projections.reserve(vertices.size());
 		for (const auto& vert : vertices)
 		{
-			const Vector3 vec = vert->Position() - refPoint;
+			const Vector3 vec = vert.GetElement().Position() - refPoint;
 			projections.emplace_back(Vector2(vec.DotProduct(projX), vec.DotProduct(projY)));
 		}
 
@@ -375,8 +375,7 @@ namespace Symplektis::GeometryBase
 			try
 			{
 				std::vector<Poly2Tri::Point*> contour = {};
-				contour.reserve(points.size());
-				for (auto& p : points) contour.push_back(&p);
+				std::transform(points.cbegin(), points.cend(), std::back_inserter(contour), [](const auto& pt) { return &pt; });
 
 				constrainedDelaunay = new Poly2Tri::CDT(contour);
 				if (constrainedDelaunay == nullptr)

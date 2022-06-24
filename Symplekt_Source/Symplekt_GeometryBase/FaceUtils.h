@@ -136,7 +136,7 @@ namespace Symplektis::GeometryBase
 	*   \date   30.8.2021
 	*/
 	//-----------------------------------------------------------------------------
-	[[nodiscard]] Vector3 ComputeNormal(const std::vector<VertexIterator>& vertices);
+	[[nodiscard]] Vector3 ComputeNormal(const std::vector<VertexHandle>& vertices);
 
 	//-----------------------------------------------------------------------------
 	/*! \brief Computes projections along normal of a general polygon
@@ -147,7 +147,7 @@ namespace Symplektis::GeometryBase
 	*   \date   30.8.2021
 	*/
 	//-----------------------------------------------------------------------------
-	[[nodiscard]] std::vector<Vector2> ComputeProjectionsAlongNormal(const std::vector<VertexIterator>& vertices);
+	[[nodiscard]] std::vector<Vector2> ComputeProjectionsAlongNormal(const std::vector<VertexHandle>& vertices);
 
 	//-----------------------------------------------------------------------------
 	/*! \brief Computes projections along normal of a general polygon
@@ -160,7 +160,7 @@ namespace Symplektis::GeometryBase
 	*   \date   30.8.2021
 	*/
 	//-----------------------------------------------------------------------------
-	[[nodiscard]] std::vector<Vector2> ComputeProjectionsAlongNormal(const std::vector<VertexIterator>& vertices, const Vector3& normal, const Vector3& refPoint);
+	[[nodiscard]] std::vector<Vector2> ComputeProjectionsAlongNormal(const std::vector<VertexHandle>& vertices, const Vector3& normal, const Vector3& refPoint);
 
     //
     // ==============  Requires a valid geometry representation data (referenced mesh geometry) ===========

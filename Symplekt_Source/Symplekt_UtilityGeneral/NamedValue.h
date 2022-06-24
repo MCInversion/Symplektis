@@ -35,6 +35,7 @@ namespace Symplektis::Util
 
 		///-----------------------------------------------------------------------------
 		/// \brief Explicit constructor.
+		/// \param[in] value      value to be initialized from.
 		///-----------------------------------------------------------------------------
 		constexpr explicit NamedValue(T value) noexcept
 			: m_value(value)
@@ -111,6 +112,7 @@ namespace Symplektis::Util
 
 		///-----------------------------------------------------------------------------
 		/// \brief Value getter.
+		/// \return the value of this named value type.
 		///-----------------------------------------------------------------------------
 		[[nodiscard]] constexpr T get() const noexcept
 		{

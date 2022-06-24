@@ -11,6 +11,8 @@ created  : 26.8.2021 : M.Cavarga (MCInversion) :
 */
 #pragma once
 
+#include "Symplekt_UtilityGeneral/ContainerTypes.h"
+
 #include <vector>
 
 namespace Symplektis::GeometryBase
@@ -154,5 +156,148 @@ namespace Symplektis::GeometryBase
 	 */
 	 //-----------------------------------------------------------------------------
 	typedef std::vector<VertexNormal>::const_iterator VertexNormalConstIterator;
+
+	//
+	// ====================== Geometry Containers ==================================
+	//
+
+	///=============================================================================
+	/// \typedef VertexContainer
+	/// \brief A linear iterable container for Vertex data identified by a UUID.
+	///
+	/// \ingroup GEOMETRY_BASE
+	///
+	/// \author M. Cavarga (MCInversion)
+	/// \date   24.6.2022
+	/// 
+	///=============================================================================
+	typedef Util::UniqueIndexedContainer<Vertex> VertexContainer;
+
+	///=============================================================================
+	/// \typedef FaceContainer
+	/// \brief A linear iterable container for Face data identified by a UUID.
+	///
+	/// \ingroup GEOMETRY_BASE
+	///
+	/// \author M. Cavarga (MCInversion)
+	/// \date   24.6.2022
+	/// 
+	///=============================================================================
+	typedef Util::UniqueIndexedContainer<Face> FaceContainer;
+
+	///=============================================================================
+	/// \typedef EdgeContainer
+	/// \brief A linear iterable container for Edge data identified by a UUID.
+	///
+	/// \ingroup GEOMETRY_BASE
+	///
+	/// \author M. Cavarga (MCInversion)
+	/// \date   24.6.2022
+	/// 
+	///=============================================================================
+	typedef Util::UniqueIndexedContainer<Edge> EdgeContainer;
+
+	///=============================================================================
+	/// \typedef HalfEdgeContainer
+	/// \brief A linear iterable container for HalfEdge data identified by a UUID.
+	///
+	/// \ingroup GEOMETRY_BASE
+	///
+	/// \author M. Cavarga (MCInversion)
+	/// \date   24.6.2022
+	/// 
+	///=============================================================================
+	typedef Util::UniqueIndexedContainer<HalfEdge> HalfEdgeContainer;
+
+	///=============================================================================
+	/// \typedef VertexNormalContainer
+	/// \brief A linear iterable container for VertexNormal data identified by a UUID.
+	///
+	/// \ingroup GEOMETRY_BASE
+	///
+	/// \author M. Cavarga (MCInversion)
+	/// \date   24.6.2022
+	/// 
+	///=============================================================================
+	typedef Util::UniqueIndexedContainer<VertexNormal> VertexNormalContainer;
+
+	//
+	// ======================== Geometry Handles ===================================
+	//
+
+	///=============================================================================
+	/// \typedef VertexHandle
+	/// \brief A handle object for ContainerIndex also containing a reference to VertexContainer.
+	///
+	/// \ingroup GEOMETRY_BASE
+	///
+	/// \author M. Cavarga (MCInversion)
+	/// \date   24.6.2022
+	/// 
+	///=============================================================================
+	typedef Util::ContainerIndexHandle<Vertex> VertexHandle;
+
+	/// \brief A null VertexHandle pointing no a non-existent position in a VertexContainer.
+	[[clang::no_destroy]] constexpr VertexHandle NULL_VERTEX{};
+
+	///=============================================================================
+	/// \typedef FaceHandle
+	/// \brief A handle object for ContainerIndex also containing a reference to FaceContainer.
+	///
+	/// \ingroup GEOMETRY_BASE
+	///
+	/// \author M. Cavarga (MCInversion)
+	/// \date   24.6.2022
+	/// 
+	///=============================================================================
+	typedef Util::ContainerIndexHandle<Face> FaceHandle;
+
+	/// \brief A null FaceHandle pointing no a non-existent position in a FaceContainer.
+	[[clang::no_destroy]] constexpr FaceHandle NULL_FACE{};
+	
+	///=============================================================================
+	/// \typedef EdgeHandle
+	/// \brief A handle object for ContainerIndex also containing a reference to EdgeContainer.
+	///
+	/// \ingroup GEOMETRY_BASE
+	///
+	/// \author M. Cavarga (MCInversion)
+	/// \date   24.6.2022
+	/// 
+	///=============================================================================
+	typedef Util::ContainerIndexHandle<Edge> EdgeHandle;
+
+	/// \brief A null EdgeHandle pointing no a non-existent position in a EdgeContainer.
+	[[clang::no_destroy]] constexpr EdgeHandle NULL_EDGE{};
+
+	///=============================================================================
+	/// \typedef HalfEdgeHandle
+	/// \brief A handle object for ContainerIndex also containing a reference to HalfEdgeContainer.
+	///
+	/// \ingroup GEOMETRY_BASE
+	///
+	/// \author M. Cavarga (MCInversion)
+	/// \date   24.6.2022
+	/// 
+	///=============================================================================
+	typedef Util::ContainerIndexHandle<HalfEdge> HalfEdgeHandle;
+
+	/// \brief A null HalfEdgeHandle pointing no a non-existent position in a HalfEdgeContainer.
+	[[clang::no_destroy]] constexpr HalfEdgeHandle NULL_HALF_EDGE{};
+
+	///=============================================================================
+	/// \typedef VertexNormalHandle
+	/// \brief A handle object for ContainerIndex also containing a reference to VertexNormalContainer.
+	///
+	/// \ingroup GEOMETRY_BASE
+	///
+	/// \author M. Cavarga (MCInversion)
+	/// \date   24.6.2022
+	/// 
+	///=============================================================================
+	typedef Util::ContainerIndexHandle<VertexNormal> VertexNormalHandle;
+
+	/// \brief A null VertexNormalHandle pointing no a non-existent position in a VertexNormalContainer.
+	[[clang::no_destroy]] constexpr VertexNormalHandle NULL_VERTEX_NORMAL{};
 
 } // Symplektis::GeometryBase

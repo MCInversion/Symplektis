@@ -132,7 +132,7 @@ namespace Symplektis::GeometryReps
 		*   \date   8.10.2021
 		*/
 		//-----------------------------------------------------------------------------
-		void FillVertexBufferAndIndexMap(std::map<unsigned int, GeometryBase::VertexIterator>& vertIndexToVertexIter) const;
+		void FillVertexBufferAndIndexMap(std::map<unsigned int, GeometryBase::VertexHandle>& vertIndexToVertexIter) const;
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Fills half-edge, edge, and face buffers + helper containers.
@@ -144,8 +144,8 @@ namespace Symplektis::GeometryReps
 		*/
 		//-----------------------------------------------------------------------------
 		bool FillHalfEdgesAndFaces(
-			std::map<unsigned int, GeometryBase::VertexIterator>&      vertIndexToVertexIter,
-			std::map<GeometryBase::HalfEdgeIterator, bool>&            halfEdgeHasOpposite) const;
+			std::map<unsigned int, GeometryBase::VertexHandle>&      vertIndexToVertexIter,
+			std::map<GeometryBase::HalfEdgeHandle, bool>&            halfEdgeHasOpposite) const;
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Fills the boundary cycles buffers from half-edges that do not have opposites.
@@ -155,7 +155,7 @@ namespace Symplektis::GeometryReps
 		*   \date   8.10.2021
 		*/
 		//-----------------------------------------------------------------------------
-		void FillBoundaryCycles(std::map<GeometryBase::HalfEdgeIterator, bool>& halfEdgeHasOpposite) const;
+		void FillBoundaryCycles(std::map<GeometryBase::HalfEdgeHandle, bool>& halfEdgeHasOpposite) const;
 
 		//-----------------------------------------------------------------------------
 		/*! \brief A checking method for isolated vertices

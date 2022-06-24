@@ -12,12 +12,11 @@ created  : 29.7.2021 : M.Cavarga (MCInversion) :
 #pragma once
 
 #include "GeometryHelperTypes.h"
-#include "HalfEdge.h"
 
 namespace Symplektis::GeometryBase
 {
 	//!< List of triples of vertices
-	using Triangulation = std::vector<std::tuple<VertexIterator, VertexIterator, VertexIterator>>;
+	using Triangulation = std::vector<std::tuple<VertexHandle, VertexHandle, VertexHandle>>;
 
 	//=============================================================================
 	/// \class Face
@@ -32,56 +31,32 @@ namespace Symplektis::GeometryBase
 	{
 	public:
 		/// @{
-		/// \name Default Members
+		/// \name Default Special Members
 
-		//-----------------------------------------------------------------------------
-		/*! \brief Default constructor
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   26.8.2021
-		*/
-		//-----------------------------------------------------------------------------
+		///-----------------------------------------------------------------------------
+		/// \brief Default constructor
+		///-----------------------------------------------------------------------------
 		Face() = default;
 
-		//-----------------------------------------------------------------------------
-		/*! \brief Default copy constructor
-		*   \param[in] other  Face to be copied.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   26.8.2021
-		*/
-		//-----------------------------------------------------------------------------
-		Face(const Face& other) = default;
+		///-----------------------------------------------------------------------------
+		/// \brief Default copy constructor
+		///-----------------------------------------------------------------------------
+		Face(const Face&) = default;
 
-		//-----------------------------------------------------------------------------
-		/*! \brief Default move constructor
-		*   \param[in] other  Face to be moved.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   26.8.2021
-		*/
-		//-----------------------------------------------------------------------------
-		Face(Face&& other) = default;
+		///-----------------------------------------------------------------------------
+		/// \brief Default move constructor
+		///-----------------------------------------------------------------------------
+		Face(Face&&) = default;
 
-		//-----------------------------------------------------------------------------
-		/*! \brief Default destructor
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   26.8.2021
-		*/
-		//-----------------------------------------------------------------------------
+		///-----------------------------------------------------------------------------
+		/// \brief Default destructor
+		///-----------------------------------------------------------------------------
 		~Face() = default;
 
-		//-----------------------------------------------------------------------------
-		/*! \brief Default move-assignment operator.
-		*   \param[in] other     Face to be move-assigned.
-		*   \return Reference to this Vertex.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   29.8.2021
-		*/
-		//-----------------------------------------------------------------------------
-		Face& operator=(Face&& other) = default;
+		///-----------------------------------------------------------------------------
+		/// \brief Default move-assignment operator.
+		///-----------------------------------------------------------------------------
+		Face& operator=(Face&&) = default;
 		
 		/// @{
 		/// \name Constructors
@@ -96,7 +71,7 @@ namespace Symplektis::GeometryBase
 		*   Initialize from given HalfEdge
 		*/
 		//-----------------------------------------------------------------------------
-		explicit Face(const HalfEdgeIterator& halfEdge)
+		explicit Face(const HalfEdgeHandle& halfEdge)
 			: m_HalfEdge(halfEdge)
 		{
 		}
@@ -112,22 +87,22 @@ namespace Symplektis::GeometryBase
 		*   Initialize from given HalfEdge and id
 		*/
 		//-----------------------------------------------------------------------------
-		Face(const HalfEdgeIterator& edge, const unsigned int& id) 
+		explicit Face(const HalfEdgeHandle& edge, const unsigned int& id) 
 			: m_HalfEdge(edge), m_UniqueFaceIndex(id)
 		{
 		}
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Set constructor
-		*   \param[in] triang     Triangulation (list of triples of VertexIterator's)
-		*   \param[in] halfEdge   HalfEdgeIterator to be initialized from
+		*   \param[in] triang     Triangulation (list of triples of VertexHandle's)
+		*   \param[in] halfEdge   HalfEdgeHandle to be initialized from
 		*   \param[in] id         Face index
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   31.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		Face(const Triangulation& triang, const HalfEdgeIterator& halfEdge, const unsigned int& id)
+		Face(const Triangulation& triang, const HalfEdgeHandle& halfEdge, const unsigned int& id)
 			: Face(halfEdge, id)
 		{
 			SetTriangulation(triang);
@@ -135,14 +110,14 @@ namespace Symplektis::GeometryBase
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Set constructor
-		*   \param[in] triang     Triangulation (list of triples of VertexIterator's)
-		*   \param[in] halfEdge   HalfEdgeIterator to be initialized from
+		*   \param[in] triang     Triangulation (list of triples of VertexHandle's)
+		*   \param[in] halfEdge   HalfEdgeHandle to be initialized from
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   31.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		Face(const Triangulation& triang, const HalfEdgeIterator& halfEdge)
+		Face(const Triangulation& triang, const HalfEdgeHandle& halfEdge)
 			: Face(halfEdge)
 		{
 			SetTriangulation(triang);
@@ -151,7 +126,7 @@ namespace Symplektis::GeometryBase
 		//-----------------------------------------------------------------------------
 		/*! \brief Construct (triangulate) from vertices.
 		*   \param[in] vertices   Vertex's to be initialized from
-		*   \param[in] halfEdge   HalfEdgeIterator to be initialized from
+		*   \param[in] halfEdge   HalfEdgeHandle to be initialized from
 		*   \param[in] id         Face index
 		*
 		*   \author M. Cavarga (MCInversion)
@@ -160,7 +135,7 @@ namespace Symplektis::GeometryBase
 		*   This setter uses Poly2Tri library for triangulating n-gons with n > 4
 		*/
 		//-----------------------------------------------------------------------------
-		Face(const std::vector<VertexIterator>& vertices, const HalfEdgeIterator& halfEdge, const unsigned int& id)
+		Face(const std::vector<VertexHandle>& vertices, const HalfEdgeHandle& halfEdge, const unsigned int& id)
 			: Face(halfEdge, id)
 		{
 			Set(vertices);
@@ -169,7 +144,7 @@ namespace Symplektis::GeometryBase
 		//-----------------------------------------------------------------------------
 		/*! \brief Construct (triangulate) from vertices and a half-edge.
 		*   \param[in] vertices   Vertex's to be initialized from
-		*   \param[in] halfEdge   HalfEdgeIterator to be initialized from
+		*   \param[in] halfEdge   HalfEdgeHandle to be initialized from
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   31.8.2021
@@ -177,7 +152,7 @@ namespace Symplektis::GeometryBase
 		*   This setter uses Poly2Tri library for triangulating n-gons with n > 4
 		*/
 		//-----------------------------------------------------------------------------
-		Face(const std::vector<VertexIterator>& vertices, const HalfEdgeIterator& halfEdge)
+		Face(const std::vector<VertexHandle>& vertices, const HalfEdgeHandle& halfEdge)
 			: Face(halfEdge)
 		{
 			Set(vertices);
@@ -193,7 +168,7 @@ namespace Symplektis::GeometryBase
 		*   This setter uses Poly2Tri library for triangulating n-gons with n > 4
 		*/
 		//-----------------------------------------------------------------------------
-		explicit Face(const std::vector<VertexIterator>& vertices)
+		explicit Face(const std::vector<VertexHandle>& vertices)
 		{
 			Set(vertices);
 		}
@@ -220,7 +195,7 @@ namespace Symplektis::GeometryBase
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Comparison of Face's. Compares HalfEdgeIterator's.
+		/*! \brief Comparison of Face's. Compares HalfEdgeHandle's.
 		*   \param[in] face     Compared Face.
 		*   \return True when faces are equal, otherwise false.
 		*
@@ -234,27 +209,27 @@ namespace Symplektis::GeometryBase
 		/// \name Getters
 		
 		//-----------------------------------------------------------------------------
-		/*! \brief HalfEdge getter. Gets an iterator to one of the face's half-edges. 
+		/*! \brief HalfEdge getter. Gets a handle to one of the face's half-edges. 
 		*   \return m_HalfEdge
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   27.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		HalfEdgeIterator& HalfEdge()
+		HalfEdgeHandle& HalfEdge()
 		{
 			return m_HalfEdge;
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief A const HalfEdge getter. Gets a const_iterator to one of the face's half-edges.
-		*   \return const reference to m_HalfEdge (const_iterator)
+		/*! \brief A const HalfEdge getter. Gets a const handle to one of the face's half-edges.
+		*   \return const reference to m_HalfEdge (HalfEdgeHandle)
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   27.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] const HalfEdgeConstIterator& HalfEdge() const
+		[[nodiscard]] const HalfEdgeHandle& HalfEdge() const
 		{
 			return m_HalfEdge;
 		}
@@ -325,7 +300,7 @@ namespace Symplektis::GeometryBase
 		*   This setter uses Poly2Tri library for triangulating n-gons with n > 4
 		*/
 		//-----------------------------------------------------------------------------
-		Face& Set(const std::vector<VertexIterator>& vertices);
+		Face& Set(const std::vector<VertexHandle>& vertices);
 		
 		//-----------------------------------------------------------------------------
 		/*! \brief Initialize from another Face
@@ -345,14 +320,14 @@ namespace Symplektis::GeometryBase
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Set HalfEdge
-		*   \param[in] edge   HalfEdge(Iterator) to be initialized from
+		*   \param[in] edge   HalfEdgeHandle to be initialized from
 		*   \return reference to this Face
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   2.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		Face& SetHalfEdge(const HalfEdgeIterator& edge)
+		Face& SetHalfEdge(const HalfEdgeHandle& edge)
 		{
 			m_HalfEdge = edge;
 			return *this;
@@ -360,7 +335,7 @@ namespace Symplektis::GeometryBase
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Initialize from a HalfEdge and face id
-		*   \param[in] edge     HalfEdge(Iterator) to be initialized from
+		*   \param[in] edge     HalfEdgeHandle to be initialized from
 		*   \param[in] id       a unique (unsigned) face id
 		*   \return reference to this Face
 		*
@@ -368,7 +343,7 @@ namespace Symplektis::GeometryBase
 		*   \date   27.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		Face& Set(const HalfEdgeIterator& edge, const unsigned int& id)
+		Face& Set(const HalfEdgeHandle& edge, const unsigned int& id)
 		{
 			m_HalfEdge = edge;
 			m_UniqueFaceIndex = id;
@@ -411,19 +386,17 @@ namespace Symplektis::GeometryBase
 		//-----------------------------------------------------------------------------
 		/*! \brief Gets the isBoundary flag of this face
 		*   \return true if this Face is a boundary face
+		*   \throw InvalidHandleException if m_HalfEdge handle is invalid.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   27.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] bool IsBoundary() const
-		{
-			return m_HalfEdge->IsBoundary();
-		}
+		[[nodiscard]] bool IsBoundary() const;
 
 	private:
 		//!< Refers to one of the HalfEdge's associated with this Face
-		HalfEdgeIterator m_HalfEdge;
+		HalfEdgeHandle m_HalfEdge;
 
 		//!< A unique index from 0, ..., nFaces - 1
 		unsigned int m_UniqueFaceIndex{ 0 };

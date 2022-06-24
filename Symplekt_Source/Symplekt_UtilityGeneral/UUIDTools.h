@@ -29,7 +29,7 @@ namespace Symplektis::Util
      *   \date   22.11.2021
      */
      //-----------------------------------------------------------------------------
-	inline UUID CreateUUID()
+	inline UUID CreateUUID() noexcept
 	{
 		UUID result = GUID_NULL;
 		
