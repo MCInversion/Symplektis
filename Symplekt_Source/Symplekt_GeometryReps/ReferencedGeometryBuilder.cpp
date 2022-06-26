@@ -48,9 +48,9 @@ namespace Symplektis::GeometryReps
 		if (m_BaseData->Vertices.empty() || m_BaseData->PolyVertexIndices.empty())
 			return; // null geometry (just indices or just a point cloud)
 		
-		auto& dataVertices = m_BaseData->Vertices;
-		auto& dataVertexIndices = m_BaseData->PolyVertexIndices;
-		auto& dataVertexNormals = m_BaseData->VertexNormals;
+		const auto& dataVertices = m_BaseData->Vertices;
+		const auto& dataVertexIndices = m_BaseData->PolyVertexIndices;
+		const auto& dataVertexNormals = m_BaseData->VertexNormals;
 
 		m_HasNormals = !dataVertexNormals.empty();
 
@@ -77,8 +77,8 @@ namespace Symplektis::GeometryReps
 		const size_t nEdges = edgeIdsSet.size();
 		const size_t nFaces = dataVertexIndices.size();
 		const size_t nHalfEdges = 2 * nEdges;
-		const int EulerCharacteristic = static_cast<int>(nVertices - nEdges + nFaces);
-		const size_t nBoundaryCycles = std::max<int>(0, 2 - EulerCharacteristic);
+		const int eulerCharacteristic = static_cast<int>(nVertices - nEdges + nFaces);
+		const size_t nBoundaryCycles = std::max<int>(0, 2 - eulerCharacteristic);
 
 		m_ResultData->HalfEdges.clear();
 		m_ResultData->Vertices.clear();
@@ -97,28 +97,31 @@ namespace Symplektis::GeometryReps
 
 	void ReferencedMeshGeometryBuilder::FillVertexBufferAndIndexMap(std::map<unsigned int, VertexHandle>& vertIndexToVertexHandle) const
 	{
-		auto& dataVertices = m_BaseData->Vertices;
-		auto& dataVertexNormals = m_BaseData->VertexNormals;
+		const auto& dataVertices = m_BaseData->Vertices;
+		const auto& dataVertexNormals = m_BaseData->VertexNormals;
 		
-		for (unsigned int vertId = 0; const auto & vertex : dataVertices)
+		for (const auto & vertex : dataVertices)
 		{
-			auto newVertexIter = m_ResultData->Vertices.insert(m_ResultData->Vertices.end(), Vertex(vertex));
+			const auto newVertexIter = m_ResultData->Vertices.insert(m_ResultData->Vertices.end(), Vertex(vertex));
+			const auto newIndex = Util::ContainerIndex(m_ResultData->Vertices.size() - 1);
 			newVertexIter->SetHalfEdge(NULL_HALF_EDGE);
-			newVertexIter->SetIndex(vertId);
-			vertIndexToVertexHandle[vertId] = newVertexIter;
+			newVertexIter->SetIndex(newIndex.get());
+
+			const auto newVertexHandle = VertexHandle(newIndex, &m_ResultData->Vertices);
+			vertIndexToVertexHandle[newIndex.get()] = newVertexHandle;
 
 			if (m_HasNormals) // fill in vertex normals
 			{
-				const auto& vertNormalVec = dataVertexNormals[vertId];
-				auto newVertexNormalIter = m_ResultData->VertexNormals.insert(m_ResultData->VertexNormals.end(), VertexNormal(vertNormalVec, newVertexIter));
-				newVertexIter->SetNormal(newVertexNormalIter);				
+				const auto& vertNormalVec = dataVertexNormals[newIndex.get()];
+				const auto newVertexNormalIter = m_ResultData->VertexNormals.insert(m_ResultData->VertexNormals.end(), VertexNormal(vertNormalVec, newVertexHandle));
+				const auto newVertexNormalHandle = VertexNormalHandle(newIndex, &m_ResultData->VertexNormals);
+				newVertexIter->SetNormal(newVertexNormalHandle);
 			}
-			vertId++;
 		}
 	}
 
 	bool ReferencedMeshGeometryBuilder::FillHalfEdgesAndFaces(
-		std::map<unsigned int, VertexHandle>&     vertIndexToVertexIter,
+		std::map<unsigned int, VertexHandle>&     vertIndexToVertexHandle,
 		std::map<HalfEdgeHandle, bool>&           halfEdgeHasOpposite) const
 	{
 		auto& dataVertexIndices = m_BaseData->PolyVertexIndices;
@@ -139,16 +142,23 @@ namespace Symplektis::GeometryReps
 
 			const size_t nIndicesInTuple = indexTuple.size();
 
-			std::vector<VertexHandle> polyVertIters;
-			polyVertIters.reserve(nIndicesInTuple);
-			for (const auto& vId : indexTuple) polyVertIters.emplace_back(vertIndexToVertexIter[vId]);
+			std::vector<VertexHandle> polyVertHandles;
+			polyVertHandles.reserve(nIndicesInTuple);
+			for (const auto& vId : indexTuple) polyVertHandles.emplace_back(vertIndexToVertexHandle[vId]);
 
-			const Face newFace{ polyVertIters };
-			auto newFaceIter = m_ResultData->Faces.insert(m_ResultData->Faces.end(), newFace);
+			const Face newFace{ polyVertHandles };
+			const auto newFaceIter = m_ResultData->Faces.insert(m_ResultData->Faces.end(), newFace);
 			newFaceIter->SetIndex(faceIndex);
+			const auto newFaceIndex = Util::ContainerIndex(faceIndex);
+			const auto newFaceHandle = FaceHandle(newFaceIndex, &m_ResultData->Faces);
 
 			std::vector<HalfEdgeHandle> halfEdges(nIndicesInTuple);
-			for (auto& he : halfEdges) he = m_ResultData->HalfEdges.insert(m_ResultData->HalfEdges.end(), HalfEdge());
+			for (auto& he : halfEdges)
+			{
+				m_ResultData->HalfEdges.emplace_back(HalfEdge());
+				const auto newHEIndex = Util::ContainerIndex(m_ResultData->HalfEdges.size() - 1);
+				he = HalfEdgeHandle(newHEIndex, &m_ResultData->HalfEdges);
+			}
 
 			// initialize new half-edges
 			for (unsigned int i = 0; i < nIndicesInTuple; i++)
@@ -161,19 +171,19 @@ namespace Symplektis::GeometryReps
 
 				HalfEdgeReferenceData heData;
 				heData.NextHalfEdge = halfEdges[nextPolyIndex];
-				heData.TailVertex = vertIndexToVertexIter[firstEdgeVertId];
+				heData.TailVertex = vertIndexToVertexHandle[firstEdgeVertId];
 
-				const bool isBoundary = false;
-				*halfEdges[i] = HalfEdge(heData, isBoundary);
+				constexpr bool isBoundary = false;
+				halfEdges[i].GetElement().Set(heData, isBoundary);
 
 				// keep track of which half-edges have flip edges defined (for detecting boundaries)
 				halfEdgeHasOpposite[halfEdges[i]] = false;
 
 				// point vertex a at the current half-edge
-				vertIndexToVertexIter[firstEdgeVertId]->HalfEdge() = halfEdges[i];
+				vertIndexToVertexHandle[firstEdgeVertId].GetElement().HalfEdge() = halfEdges[i];
 
 				// point the new face and this half edge to each-other
-				halfEdges[i]->SetAdjacentFace(newFaceIter);
+				halfEdges[i].GetElement().SetAdjacentFace(newFaceHandle);
 				newFaceIter->SetHalfEdge(halfEdges[i]);
 
 				if (firstEdgeVertId > secondEdgeVertId) std::swap(firstEdgeVertId, secondEdgeVertId);
@@ -182,18 +192,21 @@ namespace Symplektis::GeometryReps
 				// opposite edge of the current half-edge
 				if (edgeVertIdsToExistingHalfEdges.find({ firstEdgeVertId, secondEdgeVertId }) != edgeVertIdsToExistingHalfEdges.cend())
 				{
-					halfEdges[i]->OppositeHalfEdge() = edgeVertIdsToExistingHalfEdges[{ firstEdgeVertId, secondEdgeVertId }];
-					halfEdges[i]->OppositeHalfEdge()->OppositeHalfEdge() = halfEdges[i];
-					halfEdges[i]->Edge() = halfEdges[i]->OppositeHalfEdge()->Edge();
+					halfEdges[i].GetElement().OppositeHalfEdge() = edgeVertIdsToExistingHalfEdges[{ firstEdgeVertId, secondEdgeVertId }];
+					halfEdges[i].GetElement().OppositeHalfEdge().GetElement().OppositeHalfEdge() = halfEdges[i];
+					halfEdges[i].GetElement().Edge() = halfEdges[i].GetElement().OppositeHalfEdge().GetElement().Edge();
 					halfEdgeHasOpposite[halfEdges[i]] = true;
-					halfEdgeHasOpposite[halfEdges[i]->OppositeHalfEdge()] = true;
+					halfEdgeHasOpposite[halfEdges[i].GetElement().OppositeHalfEdge()] = true;
 				}
 				// otherwise, construct an edge connected to the current half-edge
 				else
 				{
-					halfEdges[i]->Edge() = m_ResultData->Edges.insert(m_ResultData->Edges.end(), Edge());
-					halfEdges[i]->Edge()->SetIndex(edgeIndex);
-					halfEdges[i]->Edge()->HalfEdge() = halfEdges[i];
+					m_ResultData->Edges.emplace_back(Edge());
+					const auto newEdgeIndex = Util::ContainerIndex(m_ResultData->Edges.size() - 1);
+					const auto newEdgeHandle = EdgeHandle(newEdgeIndex, &m_ResultData->Edges);
+					halfEdges[i].GetElement().Edge() = newEdgeHandle;
+					halfEdges[i].GetElement().Edge().GetElement().SetIndex(edgeIndex);
+					halfEdges[i].GetElement().Edge().GetElement().HalfEdge() = halfEdges[i];
 					edgeVertIdsToEdgeCount[{firstEdgeVertId, secondEdgeVertId}] = 0;
 					edgeIndex++;
 				}
@@ -220,55 +233,60 @@ namespace Symplektis::GeometryReps
 	void ReferencedMeshGeometryBuilder::FillBoundaryCycles(std::map<HalfEdgeHandle, bool>& halfEdgeHasOpposite) const
 	{
 		// extra Faces need to be added for each boundary cycle
-		for (auto halfEdgeIt = m_ResultData->HalfEdges.begin(); halfEdgeIt != m_ResultData->HalfEdges.end(); ++halfEdgeIt)
+		auto halfEdgeHandle = HalfEdgeHandle(static_cast<Util::ContainerIndex>(0), &m_ResultData->HalfEdges);
+		do
 		{
 			// If a half-edge without an opposite half-edge is found, a new face is to be created
 			// corresponding to a boundary cycle.
 
-			if (!halfEdgeHasOpposite[halfEdgeIt])
+			if (!halfEdgeHasOpposite[halfEdgeHandle])
 			{
 				// create a new face
-				auto newBoundaryCycle = m_ResultData->BoundaryCycles.insert(m_ResultData->BoundaryCycles.end(), Face());
+				auto newBoundaryCycleIt = m_ResultData->BoundaryCycles.insert(m_ResultData->BoundaryCycles.end(), Face());
+				const auto newBoundaryCycleId = Util::ContainerIndex(m_ResultData->BoundaryCycles.size() - 1);
+				const auto newBoundaryCycleHandle = FaceHandle(newBoundaryCycleId, &m_ResultData->BoundaryCycles);
 
 				// iterate along this boundary cycle
 				std::vector<HalfEdgeHandle> boundaryCycleHalfEdges;
-				auto heIt = halfEdgeIt;
+				auto heHandle = halfEdgeHandle;
 				do
 				{
 					// create a new half-edge on the boundary face
-					auto newHEIt = m_ResultData->HalfEdges.insert(m_ResultData->HalfEdges.end(), HalfEdge());
+					const auto newExteriorHeIt = m_ResultData->HalfEdges.insert(m_ResultData->HalfEdges.end(), HalfEdge());
+					const auto newExteriorHeId = Util::ContainerIndex(m_ResultData->HalfEdges.size() - 1);
+					const auto newExteriorHeHandle = HalfEdgeHandle(newExteriorHeId, &m_ResultData->HalfEdges);
 
 					// mark only the half-edge on the boundary face as being on the boundary
-					newHEIt->SetIsBoundary(true);
+					newExteriorHeIt->SetIsBoundary(true);
 
 					// link the current half-edge in the cycle to its new flip edge
-					heIt->OppositeHalfEdge() = newHEIt;
+					heHandle.GetElement().OppositeHalfEdge() = newExteriorHeHandle;
 
 					// grab the next half-edge along the boundary by finding
 					// the next half-edge around the current vertex that doesn't
 					// have a flip edge defined
-					auto nextHEIt = heIt->NextHalfEdge();
-					while (halfEdgeHasOpposite[nextHEIt])
+					auto nextHeHandle = heHandle.GetElement().NextHalfEdge();
+					while (halfEdgeHasOpposite[nextHeHandle])
 					{
-						nextHEIt = nextHEIt->OppositeHalfEdge()->NextHalfEdge();
+						nextHeHandle = nextHeHandle.GetElement().OppositeHalfEdge().GetElement().NextHalfEdge();
 					}
 
 					// set attributes for the flip edge (we'll set ->next below)
-					newHEIt->OppositeHalfEdge() = heIt;
-					newHEIt->TailVertex() = nextHEIt->TailVertex();
-					newHEIt->TailVertex()->SetIsBoundary(true);
-					newHEIt->Edge() = heIt->Edge();
-					newHEIt->AdjacentFace() = newBoundaryCycle;
+					newExteriorHeIt->OppositeHalfEdge() = heHandle;
+					newExteriorHeIt->TailVertex() = nextHeHandle.GetElement().TailVertex();
+					newExteriorHeIt->TailVertex().GetElement().SetIsBoundary(true);
+					newExteriorHeIt->Edge() = heHandle.GetElement().Edge();
+					newExteriorHeIt->AdjacentFace() = newBoundaryCycleHandle;
 
 					// point the new face to this half-edge
-					newBoundaryCycle->HalfEdge() = newHEIt;
+					newBoundaryCycleIt->HalfEdge() = newExteriorHeHandle;
 
 					// keep track of all the new half-edges in the boundary cycle
-					boundaryCycleHalfEdges.push_back(newHEIt);
+					boundaryCycleHalfEdges.push_back(newExteriorHeHandle);
 
 					// continue to walk along the cycle
-					heIt = nextHEIt;
-				} while (heIt != halfEdgeIt);
+					heHandle = nextHeHandle;
+				} while (heHandle != halfEdgeHandle);
 
 				// link together the cycle of boundary half-edges
 				const auto nBDCycleHECount = boundaryCycleHalfEdges.size();
@@ -279,7 +297,8 @@ namespace Symplektis::GeometryReps
 					halfEdgeHasOpposite[boundaryCycleHalfEdges[i]->OppositeHalfEdge()] = true;
 				}
 			}
-		}
+			++halfEdgeHandle.GetIndex();
+		} while (halfEdgeHandle.IsValid());
 	}
 
 	void ReferencedMeshGeometryBuilder::PerformIsolatedVertexCheck() const

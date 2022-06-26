@@ -126,30 +126,30 @@ namespace Symplektis::GeometryReps
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Fills the vertex buffer and a vertexIndex->vertex map.
-		*   \param[in] vertIndexToVertexIter        a vertexIndex->vertexIterator map for associating vertex indices with index buffer iterators.
+		*   \param[out] vertIndexToVertexHandle        a vertexIndex -> vertexHandle map for associating vertex indices with inserted vertices.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   8.10.2021
 		*/
 		//-----------------------------------------------------------------------------
-		void FillVertexBufferAndIndexMap(std::map<unsigned int, GeometryBase::VertexHandle>& vertIndexToVertexIter) const;
+		void FillVertexBufferAndIndexMap(std::map<unsigned int, GeometryBase::VertexHandle>& vertIndexToVertexHandle) const;
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Fills half-edge, edge, and face buffers + helper containers.
-		*   \param[in] vertIndexToVertexIter             a vertexIndex->vertexIterator map for associating vertex indices with index buffer iterators.
-		*   \param[in] halfEdgeHasOpposite               a halfEdgeIterator->hasOpposite map storing information about halfEdges having their opposites.
+		*   \param[out] vertIndexToVertexHandle           a vertexIndex->vertexHandle map for associating vertex indices with vertex handles.
+		*   \param[out] halfEdgeHasOpposite               a halfEdgeHandle->hasOpposite map storing information about halfEdges having their opposites.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   8.10.2021
 		*/
 		//-----------------------------------------------------------------------------
 		bool FillHalfEdgesAndFaces(
-			std::map<unsigned int, GeometryBase::VertexHandle>&      vertIndexToVertexIter,
+			std::map<unsigned int, GeometryBase::VertexHandle>&      vertIndexToVertexHandle,
 			std::map<GeometryBase::HalfEdgeHandle, bool>&            halfEdgeHasOpposite) const;
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Fills the boundary cycles buffers from half-edges that do not have opposites.
-		*   \param[in] halfEdgeHasOpposite        a halfEdgeIterator->hasOpposite map storing information about halfEdges having their opposites.
+		*   \param[out] halfEdgeHasOpposite        a halfEdgeHandle->hasOpposite map storing information about halfEdges having their opposites.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   8.10.2021

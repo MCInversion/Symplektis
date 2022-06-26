@@ -146,6 +146,19 @@ namespace Symplektis::Util
 		}
 
 		//-----------------------------------------------------------------------------
+		/*! \brief Explicit int conversion operator.
+		 *  \return int value of this index.
+		 *
+		 *   \author M. Cavarga (MCInversion)
+		 *   \date   26.6.2022
+		 */
+		 //-----------------------------------------------------------------------------
+		explicit operator int() const
+		{
+			return m_value;
+		}
+
+		//-----------------------------------------------------------------------------
 		/*! \brief Copy-assignment operator with size_t value.
 		 *  \param[in] value          size_t value to be assigned.
 		 *  \return reference to this ContainerIndex.
@@ -261,6 +274,34 @@ namespace Symplektis::Util
 		bool operator== (const int& value) const
 		{
 			return m_value == static_cast<Symplekt_IndexType>(value);
+		}
+
+		//-----------------------------------------------------------------------------
+		/*! \brief Prefix incrementation operator.
+		 *  \return reference to this ContainerIndex.
+		 *
+		 *   \author M. Cavarga (MCInversion)
+		 *   \date   26.6.2022
+		 */
+		 //-----------------------------------------------------------------------------
+		ContainerIndex& operator++()
+		{
+			++m_value;
+			return *this;
+		}
+
+		//-----------------------------------------------------------------------------
+		/*! \brief Prefix decrementation operator.
+		 *  \return reference to this ContainerIndex.
+		 *
+		 *   \author M. Cavarga (MCInversion)
+		 *   \date   26.6.2022
+		 */
+		 //-----------------------------------------------------------------------------
+		ContainerIndex& operator--()
+		{
+			--m_value;
+			return *this;
 		}
 
 	};
