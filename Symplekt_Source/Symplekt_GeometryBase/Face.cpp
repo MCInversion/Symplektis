@@ -20,7 +20,9 @@ created  : 29.7.2021 : M.Cavarga (MCInversion) :
 #include "Vector3.h"
 #include "Vector3Utils.h"
 #include "Vertex.h"
+#include "VertexNormal.h"
 #include "HalfEdge.h"
+#include "Edge.h"
 #include "Poly2Tri_CDT.h"
 
 #include <ctime>
@@ -100,7 +102,9 @@ namespace Symplektis::GeometryBase
             try
             {
                 std::vector<Poly2Tri::Point*> contour{};
-                std::transform(points.cbegin(), points.cend(), std::back_inserter(contour), [](const auto& pt) { return &pt; });
+                contour.reserve(points.size());
+                for (auto& pt : points)
+                    contour.emplace_back(&pt);
 
                 constrainedDelaunay = new Poly2Tri::CDT(contour);
                 if (constrainedDelaunay == nullptr)

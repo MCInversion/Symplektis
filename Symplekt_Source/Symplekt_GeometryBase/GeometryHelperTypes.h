@@ -238,7 +238,7 @@ namespace Symplektis::GeometryBase
 	typedef Util::ContainerIndexHandle<Vertex> VertexHandle;
 
 	/// \brief A null VertexHandle pointing no a non-existent position in a VertexContainer.
-	[[clang::no_destroy]] constexpr VertexHandle NULL_VERTEX{};
+	constexpr VertexHandle NULL_VERTEX{};
 
 	///=============================================================================
 	/// \typedef FaceHandle
@@ -253,7 +253,7 @@ namespace Symplektis::GeometryBase
 	typedef Util::ContainerIndexHandle<Face> FaceHandle;
 
 	/// \brief A null FaceHandle pointing no a non-existent position in a FaceContainer.
-	[[clang::no_destroy]] constexpr FaceHandle NULL_FACE{};
+	constexpr FaceHandle NULL_FACE{};
 	
 	///=============================================================================
 	/// \typedef EdgeHandle
@@ -268,7 +268,7 @@ namespace Symplektis::GeometryBase
 	typedef Util::ContainerIndexHandle<Edge> EdgeHandle;
 
 	/// \brief A null EdgeHandle pointing no a non-existent position in a EdgeContainer.
-	[[clang::no_destroy]] constexpr EdgeHandle NULL_EDGE{};
+	constexpr EdgeHandle NULL_EDGE{};
 
 	///=============================================================================
 	/// \typedef HalfEdgeHandle
@@ -283,7 +283,7 @@ namespace Symplektis::GeometryBase
 	typedef Util::ContainerIndexHandle<HalfEdge> HalfEdgeHandle;
 
 	/// \brief A null HalfEdgeHandle pointing no a non-existent position in a HalfEdgeContainer.
-	[[clang::no_destroy]] constexpr HalfEdgeHandle NULL_HALF_EDGE{};
+	constexpr HalfEdgeHandle NULL_HALF_EDGE{};
 
 	///=============================================================================
 	/// \typedef VertexNormalHandle
@@ -298,6 +298,6 @@ namespace Symplektis::GeometryBase
 	typedef Util::ContainerIndexHandle<VertexNormal> VertexNormalHandle;
 
 	/// \brief A null VertexNormalHandle pointing no a non-existent position in a VertexNormalContainer.
-	[[clang::no_destroy]] constexpr VertexNormalHandle NULL_VERTEX_NORMAL{};
+	constexpr VertexNormalHandle NULL_VERTEX_NORMAL{};
 
 } // Symplektis::GeometryBase

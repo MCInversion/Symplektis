@@ -15,7 +15,10 @@ created  : 23.9.2021 : M.Cavarga (MCInversion) :
 #include "Vertex.h"
 #include "Vector3.h"
 #include "HalfEdge.h"
+#include "Edge.h"
+#include "Face.h"
 #include "FaceUtils.h"
+#include "VertexNormal.h"
 
 namespace Symplektis::GeometryBase
 {

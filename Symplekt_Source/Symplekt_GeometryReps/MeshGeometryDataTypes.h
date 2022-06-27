@@ -38,7 +38,17 @@ namespace Symplektis::GeometryReps
 		std::vector<GeometryBase::Vector3>       VertexNormals{};
 
 		/// \brief Returns the byte size of this geometry container.
-		[[nodiscard]] size_t Size() const;
+		[[nodiscard]] size_t Size() const
+		{
+			size_t polySize = 0;
+			for (const auto& poly : PolyVertexIndices)
+				polySize += poly.size();
+			
+			return
+				Vertices.size() * sizeof(GeometryBase::Vector3) +
+				polySize * sizeof(unsigned int) +
+				VertexNormals.size() * sizeof(GeometryBase::Vector3);
+		}
 	};
 
 	//=============================================================================
@@ -59,7 +69,14 @@ namespace Symplektis::GeometryReps
 		std::vector<std::vector<unsigned int>> TriangulationIndices{};
 
 		/// \brief Returns the byte size of this geometry container.
-		[[nodiscard]] size_t Size() const;
+		[[nodiscard]] size_t Size() const
+		{
+			return
+				VertexCoords.size() * sizeof(double) +
+				VertexNormalCoords.size() * sizeof(double) +
+				VertexIndices.size() * sizeof(unsigned int) +
+				TriangulationIndices.size() * sizeof(unsigned int);
+		}
 
 		/// \brief Construct data with a name
 		explicit BufferMeshGeometryData(std::wstring name)
@@ -95,157 +112,15 @@ namespace Symplektis::GeometryReps
 		GeometryBase::VertexNormalContainer VertexNormals{};
 
 		/// \brief Returns the byte size of this geometry container.
-		[[nodiscard]] size_t Size() const;
-
-		//
-		// =============== Constructors & Setters =================================================
-		//
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Destructor
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   9.10.2021
-		*/
-		//-----------------------------------------------------------------------------
-        ~ReferencedMeshGeometryData() = default;
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Constructor. Construct named mesh data.
-		*   \param[in] name      Name string for this mesh data.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   9.6.2022
-		*/
-		//-----------------------------------------------------------------------------
-		explicit ReferencedMeshGeometryData(std::wstring name)
-			: Name(name)
+		[[nodiscard]] size_t Size() const
 		{
+			return
+				HalfEdges.size() * sizeof(GeometryBase::HalfEdge) +
+				Vertices.size() * sizeof(GeometryBase::Vertex) +
+				Edges.size() * sizeof(GeometryBase::Edge) +
+				(Faces.size() + BoundaryCycles.size()) * sizeof(GeometryBase::Face) +
+				VertexNormals.size() * sizeof(GeometryBase::VertexNormal);
 		}
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Copy constructor
-		*   \param[in] other      ReferencedMeshGeometryData to be copied.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   9.10.2021
-		*/
-		//-----------------------------------------------------------------------------
-        ReferencedMeshGeometryData(const ReferencedMeshGeometryData& other);
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Default move constructor
-		*   \param[in] other      ReferencedMeshGeometryData to be moved.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   9.10.2021
-		*/
-		//-----------------------------------------------------------------------------
-		ReferencedMeshGeometryData(ReferencedMeshGeometryData&& other) = default;
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Copy-assignment operator.
-		*   \param[in] other      ReferencedMeshGeometryData to be copied.
-		*   \return Reference to this ReferencedMeshGeometryData.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   9.10.2021
-		*/
-		//-----------------------------------------------------------------------------
-        ReferencedMeshGeometryData& operator=(const ReferencedMeshGeometryData& other);
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Default move-assignment operator.
-		*   \param[in] other      ReferencedMeshGeometryData to be moved.
-		*   \return Reference to this ReferencedMeshGeometryData.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   9.10.2021
-		*/
-		//-----------------------------------------------------------------------------
-		ReferencedMeshGeometryData& operator=(ReferencedMeshGeometryData&& other) = default;
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Safe data setter for writing data buffers with proper (new) std::vector iterators based on position index.
-		*   \param[in] other      ReferencedMeshGeometryData to be set.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   9.10.2021
-		*/
-		//-----------------------------------------------------------------------------
-		void SetDataSafely(const ReferencedMeshGeometryData& other);
-	
-	private:
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Trivial copy-set
-		*   \param[in] otherData      ReferencedMeshGeometryData to be set.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   9.10.2021
-		*/
-		//-----------------------------------------------------------------------------
-		void TrivialCopySet(const ReferencedMeshGeometryData& otherData) noexcept;
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Safe half-edge data buffer setter for writing the half-edge buffer with proper (new) std::vector iterators based on position index.
-		*   \param[in] otherData      ReferencedMeshGeometryData to be set.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   9.10.2021
-		*/
-		//-----------------------------------------------------------------------------
-        void SetHalfEdgesBuffer(const ReferencedMeshGeometryData& otherData);
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Safe vertices data buffer setter for writing the vertex buffer with proper (new) std::vector iterators based on position index.
-		*   \param[in] otherData      ReferencedMeshGeometryData to be set.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   9.10.2021
-		*/
-		//-----------------------------------------------------------------------------
-        void SetVerticesBuffer(const ReferencedMeshGeometryData& otherData);
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Safe edges data buffer setter for writing the edge buffer with proper (new) std::vector iterators based on position index.
-		*   \param[in] otherData      ReferencedMeshGeometryData to be set.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   9.10.2021
-		*/
-		//-----------------------------------------------------------------------------
-        void SetEdgesBuffer(const ReferencedMeshGeometryData& otherData);
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Safe faces data buffer setter for writing the face buffer with proper (new) std::vector iterators based on position index.
-		*   \param[in] otherData      ReferencedMeshGeometryData to be set.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   9.10.2021
-		*/
-		//-----------------------------------------------------------------------------
-        void SetFacesBuffer(const ReferencedMeshGeometryData& otherData);
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Safe boundary cycle (face) data buffer setter for writing the boundary cycle buffer with proper (new) std::vector iterators based on position index.
-		*   \param[in] otherData      ReferencedMeshGeometryData to be set.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   9.10.2021
-		*/
-		//-----------------------------------------------------------------------------
-		void SetBoundaryCyclesBuffer(const ReferencedMeshGeometryData& otherData);
-
-		//-----------------------------------------------------------------------------
-		/*! \brief Safe vertex normal data buffer setter for writing the vertex normal buffer with proper (new) std::vector iterators based on position index.
-		*   \param[in] otherData      ReferencedMeshGeometryData to be set.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   9.10.2021
-		*/
-		//-----------------------------------------------------------------------------
-		void SetVertexNormalsBuffer(const ReferencedMeshGeometryData& otherData);
 	};
 
 } // Symplektis::GeometryReps

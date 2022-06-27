@@ -233,6 +233,34 @@ namespace Symplektis::Util
 		}
 
 		//-----------------------------------------------------------------------------
+		/*! \brief Less-than operator for size_t value.
+		 *  \param[in] value          value to be compared.
+		 *  \return true if this index's value is less than the compared value.
+		 *
+		 *   \author M. Cavarga (MCInversion)
+		 *   \date   29.11.2021
+		 */
+		 //-----------------------------------------------------------------------------
+		bool operator< (const size_t& value) const
+		{
+			return m_value < static_cast<Symplekt_IndexType>(value);
+		}
+
+		//-----------------------------------------------------------------------------
+		/*! \brief Less-than operator for size_t value.
+		 *  \param[in] value          value to be compared.
+		 *  \return true if this index's value is less than the compared value.
+		 *
+		 *   \author M. Cavarga (MCInversion)
+		 *   \date   29.11.2021
+		 */
+		 //-----------------------------------------------------------------------------
+		bool operator< (const ContainerIndex& value) const
+		{
+			return m_value < value.get();
+		}
+
+		//-----------------------------------------------------------------------------
 		/*! \brief Comparison equal operator with another ContainerIndex.
 		 *  \param[in] other          ContainerIndex to be compared.
 		 *  \return true if this index's value is equal to the compared ContainerIndex's value.
@@ -308,10 +336,10 @@ namespace Symplektis::Util
 	};
 
 	/// \brief null index pointing no a non-existent position in an array.
-	[[clang::no_destroy]] constexpr ContainerIndex NULL_INDEX{ -1 };
+	constexpr ContainerIndex NULL_INDEX{ -1 };
 
 	/// \brief maximum possible ContainerIndex.
-	[[clang::no_destroy]] constexpr ContainerIndex MAX_INDEX{ SYMPLEKT_MAX_INDEX };
+	constexpr ContainerIndex MAX_INDEX{ SYMPLEKT_MAX_INDEX };
 
 	///=============================================================================
 	/// \class UniqueIndexedContainer
@@ -329,6 +357,9 @@ namespace Symplektis::Util
 	{
 		using std::vector<T>::vector;
 	public:
+		/// @{
+		/// \name Constructors
+		
 		///-----------------------------------------------------------------------------
 		/// \brief Default constructor.
 		///-----------------------------------------------------------------------------
@@ -343,6 +374,49 @@ namespace Symplektis::Util
 		explicit UniqueIndexedContainer(const UUID& id) noexcept
 			: std::vector<T>(),
 			m_ContainerID(id) {}
+
+		///-----------------------------------------------------------------------------
+		/// \brief Copy constructor. Generates a new UUID.
+		/// \param[in] other    copied container.
+		///-----------------------------------------------------------------------------
+		UniqueIndexedContainer(const UniqueIndexedContainer& other)
+			: std::vector<T>(other),
+			  m_ContainerID(CreateUUID()) {}
+
+		///-----------------------------------------------------------------------------
+		/// \brief Move constructor.
+		///-----------------------------------------------------------------------------
+		UniqueIndexedContainer(UniqueIndexedContainer&&) noexcept = default;
+
+		/// @{
+		/// \name Destructor
+
+		///-----------------------------------------------------------------------------
+		/// \brief Destructor.
+		///-----------------------------------------------------------------------------
+		~UniqueIndexedContainer() = default;
+		
+		/// @{
+		/// \name Operators
+
+		///-----------------------------------------------------------------------------
+		/// \brief Copy-assignment operator. Generates a new m_ContainerID.
+		/// \param[in] other      UniqueIndexedContainer to be copy-assigned
+		/// \return reference to this UniqueIndexedContainer.
+		///-----------------------------------------------------------------------------
+		UniqueIndexedContainer& operator=(const UniqueIndexedContainer& other)
+		{
+			m_ContainerID = CreateUUID();
+			return std::vector<T>::operator=(other);
+		}
+
+		///-----------------------------------------------------------------------------
+		/// \brief Move-assignment operator.
+		///-----------------------------------------------------------------------------
+		UniqueIndexedContainer& operator=(UniqueIndexedContainer&&) noexcept = default;
+		
+		/// @{
+		/// \name Getters
 		
 		///-----------------------------------------------------------------------------
 		/// \brief UUID getter.
@@ -361,6 +435,29 @@ namespace Symplektis::Util
 		{
 			return m_ContainerID;
 		}
+
+		///-----------------------------------------------------------------------------
+		/// \brief vector element getter.
+		/// \param[in] index       ContainerIndex to pass to std::vector<T>::at
+		/// \return reference to this container's item at index.get().
+		///-----------------------------------------------------------------------------
+		T& at(const ContainerIndex& index)
+		{
+			return __super::at(index.get());
+		}
+
+		///-----------------------------------------------------------------------------
+		/// \brief const vector element getter.
+		/// \param[in] index       ContainerIndex to pass to std::vector<T>::at
+		/// \return const reference to this container's item at index.get().
+		///-----------------------------------------------------------------------------
+		[[nodiscard]] const T& at(const ContainerIndex& index) const
+		{
+			return __super::at(index.get());
+		}
+		
+		/// @{
+		/// \name Setters
 
 		///-----------------------------------------------------------------------------
 		/// \brief UUID setter.
@@ -413,7 +510,7 @@ namespace Symplektis::Util
 		 *  \date   20.6.2022
 		 */
 		 //-----------------------------------------------------------------------------
-		explicit ContainerIndexHandle(const ContainerIndex& id, const UniqueIndexedContainer<T>* container = nullptr)
+		explicit ContainerIndexHandle(const ContainerIndex& id, UniqueIndexedContainer<T>* container = nullptr)
 			: m_Index(id),
 		      m_Container(container)
 		{ }
@@ -422,7 +519,7 @@ namespace Symplektis::Util
 		/// \name Special Members
 
 		/// \brief Destructor. De-allocates the raw m_Container.
-		constexpr ~ContainerIndexHandle()
+		constexpr ~ContainerIndexHandle() noexcept
 		{
 			delete m_Container;
 		}

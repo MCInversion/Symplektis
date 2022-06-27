@@ -27,8 +27,8 @@ namespace Symplektis::GeometryReps
 	/// \author M. Cavarga (MCInversion)
 	/// \date   14.9.2021
 	///
-	/// Inspired by "DDG-Exercises" repo: https://github.com/GeometryCollective/ddg-exercises
-	/// Copyright 2021-2022 Geometry Collective, Nicole Feng, and Marek Marchlewicz, Carnegie Mellon University (CMU).
+	/// Inspired by "DGPDEC/Course" repo: https://github.com/dgpdec/course
+	/// Copyright 2010 Keenan Crane, Fernando de Goes, Mathieu Desbrun, Peter Schroder
 	/// 
 	//=============================================================================
 	class ReferencedMeshGeometryBuilder

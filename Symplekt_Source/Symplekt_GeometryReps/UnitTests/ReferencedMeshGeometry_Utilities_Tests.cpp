@@ -23,7 +23,6 @@
 #include "MeshGeometryDataForTesting.h"
 
 #include <corecrt_math_defines.h>
-#include <algorithm>
 #include <tuple>
 #include <numeric>
 
@@ -35,12 +34,16 @@ namespace Symplektis::UnitTests
     // ------- Test data construction utils ----------------------
     //
 
-    std::vector<VertexIterator> ConstructVertexIteratorVectorForTesting(std::vector<Vertex>& vertices)
+    std::vector<VertexHandle> ConstructVertexHandleVectorForTesting(const VertexContainer& vertices)
     {
-        std::vector<VertexIterator> result;
+        std::vector<VertexHandle> result;
         result.reserve(vertices.size());
-        for (auto vertIt = vertices.begin(); vertIt != vertices.end(); ++vertIt)
-            result.emplace_back(vertIt);
+        auto id = static_cast<Util::ContainerIndex>(0);
+    	do
+    	{
+            result.emplace_back(VertexHandle(id, const_cast<VertexContainer*>(&vertices)));
+            ++id;
+        } while (id < vertices.size());
 
         return result;
     }
@@ -224,10 +227,10 @@ namespace Symplektis::UnitTests
     TEST(ReferencedMeshGeometry_Utilities_Tests, TriangleVertices_ConstructFace_TriangleFace)
     {
         // Arrange
-        std::vector vertices{
+        const VertexContainer vertices{
             Vertex(), Vertex(1.0, 0.0, 0.0), Vertex(0.0, 1.0, 0.0)
         };
-        const auto vertexIters = ConstructVertexIteratorVectorForTesting(vertices);
+        const auto vertexIters = ConstructVertexHandleVectorForTesting(vertices);
 
         // Act
         const Face testTriangle(vertexIters);
@@ -235,15 +238,15 @@ namespace Symplektis::UnitTests
         // Assert
         const auto& triangulation = testTriangle.GetTriangulation();
         EXPECT_EQ(triangulation.size(), 1);
-        EXPECT_TRUE(std::get<0>(triangulation[0])->Position() == vertices[0].Position());
-        EXPECT_TRUE(std::get<1>(triangulation[0])->Position() == vertices[1].Position());
-        EXPECT_TRUE(std::get<2>(triangulation[0])->Position() == vertices[2].Position());
+        EXPECT_TRUE(std::get<0>(triangulation[0]).GetElement().Position() == vertices[0].Position());
+        EXPECT_TRUE(std::get<1>(triangulation[0]).GetElement().Position() == vertices[1].Position());
+        EXPECT_TRUE(std::get<2>(triangulation[0]).GetElement().Position() == vertices[2].Position());
     }
 
     TEST(ReferencedMeshGeometry_Utilities_Tests, QuadVertices_ConstructQuadFaceFromCCWVertices_QuadFace)
     {
         // Arrange
-        std::vector vertices{
+        const VertexContainer vertices{
             Vertex(), Vertex(1.0, 0.0, 0.0), Vertex(1.0, 1.0, 0.5), Vertex(0.0, 1.0, 0.0)
         };
         /* =========================================
@@ -256,7 +259,7 @@ namespace Symplektis::UnitTests
            | /     |
            v0 ---- v1
            ======================================== */
-        const auto vertexIters = ConstructVertexIteratorVectorForTesting(vertices);
+        const auto vertexIters = ConstructVertexHandleVectorForTesting(vertices);
 
         // Act
         const Face testQuad(vertexIters);
@@ -264,19 +267,24 @@ namespace Symplektis::UnitTests
         // Assert
         const auto& triangulation = testQuad.GetTriangulation();
         EXPECT_EQ(triangulation.size(), 2);
-        EXPECT_TRUE(std::get<0>(triangulation[0])->Position() == vertices[0].Position());
-        EXPECT_TRUE(std::get<1>(triangulation[0])->Position() == vertices[1].Position());
-        EXPECT_TRUE(std::get<2>(triangulation[0])->Position() == vertices[2].Position());
 
-        EXPECT_TRUE(std::get<0>(triangulation[1])->Position() == vertices[0].Position());
-        EXPECT_TRUE(std::get<1>(triangulation[1])->Position() == vertices[2].Position());
-        EXPECT_TRUE(std::get<2>(triangulation[1])->Position() == vertices[3].Position());
+        //bool isValid = std::get<0>(triangulation[0]).IsValid();
+        //ASSERT_THROW(isValid, Symplektis::InvalidHandleException);
+        EXPECT_TRUE(std::get<0>(triangulation[0]).GetElement().Position() == vertices[0].Position());
+        //isValid = std::get<1>(triangulation[0]).IsValid();
+        //ASSERT_THROW(isValid, Symplektis::InvalidHandleException);
+        EXPECT_TRUE(std::get<1>(triangulation[0]).GetElement().Position() == vertices[1].Position());    	
+        EXPECT_TRUE(std::get<2>(triangulation[0]).GetElement().Position() == vertices[2].Position());
+
+        EXPECT_TRUE(std::get<0>(triangulation[1]).GetElement().Position() == vertices[0].Position());
+        EXPECT_TRUE(std::get<1>(triangulation[1]).GetElement().Position() == vertices[2].Position());
+        EXPECT_TRUE(std::get<2>(triangulation[1]).GetElement().Position() == vertices[3].Position());
     }
 
     TEST(ReferencedMeshGeometry_Utilities_Tests, QuadVertices_ConstructQuadFaceFromAlternatingVertices_QuadFace)
     {
         // Arrange
-        std::vector vertices{
+        const VertexContainer vertices{
             Vertex(), Vertex(1.0, 1.0, 0.5), Vertex(1.0, 0.0, 0.0), Vertex(0.0, 1.0, 0.0)
         };
         /* =========================================
@@ -288,7 +296,7 @@ namespace Symplektis::UnitTests
            |     \ |
            v0 ---- v2 => 1
            ======================================== */
-        const auto vertexIters = ConstructVertexIteratorVectorForTesting(vertices);
+        const auto vertexIters = ConstructVertexHandleVectorForTesting(vertices);
 
         // Act
         const Face testQuad(vertexIters);
@@ -296,19 +304,19 @@ namespace Symplektis::UnitTests
         // Assert
         const auto& triangulation = testQuad.GetTriangulation();
         EXPECT_EQ(triangulation.size(), 2);
-        EXPECT_TRUE(std::get<0>(triangulation[0])->Position() == vertices[0].Position());
-        EXPECT_TRUE(std::get<1>(triangulation[0])->Position() == vertices[1].Position());
-        EXPECT_TRUE(std::get<2>(triangulation[0])->Position() == vertices[3].Position());
+        EXPECT_TRUE(std::get<0>(triangulation[0]).GetElement().Position() == vertices[0].Position());
+        EXPECT_TRUE(std::get<1>(triangulation[0]).GetElement().Position() == vertices[1].Position());
+        EXPECT_TRUE(std::get<2>(triangulation[0]).GetElement().Position() == vertices[3].Position());
 
-        EXPECT_TRUE(std::get<0>(triangulation[1])->Position() == vertices[1].Position());
-        EXPECT_TRUE(std::get<1>(triangulation[1])->Position() == vertices[2].Position());
-        EXPECT_TRUE(std::get<2>(triangulation[1])->Position() == vertices[3].Position());
+        EXPECT_TRUE(std::get<0>(triangulation[1]).GetElement().Position() == vertices[1].Position());
+        EXPECT_TRUE(std::get<1>(triangulation[1]).GetElement().Position() == vertices[2].Position());
+        EXPECT_TRUE(std::get<2>(triangulation[1]).GetElement().Position() == vertices[3].Position());
     }
 
     TEST(ReferencedMeshGeometry_Utilities_Tests, QuadVertices_ConstructPentagonFaceFromVertices_PentagonFace)
     {
         // Arrange
-        std::vector vertices{
+        const VertexContainer vertices{
             Vertex(), Vertex(1.0, 0.0, 0.5), Vertex(phi, 1.0, 0.0), Vertex(1.0, phi, 0.5), Vertex(0.0, 1.0, 0.0)
         };
         /*   ==================================================
@@ -326,7 +334,7 @@ namespace Symplektis::UnitTests
            v0 _ _ v1
              ==================================================
          */
-        const auto vertexIters = ConstructVertexIteratorVectorForTesting(vertices);
+        const auto vertexIters = ConstructVertexHandleVectorForTesting(vertices);
 
         // Act
         const Face testPolygon(vertexIters);
@@ -335,17 +343,17 @@ namespace Symplektis::UnitTests
         const auto& triangulation = testPolygon.GetTriangulation();
         EXPECT_EQ(triangulation.size(), 3);
 
-        EXPECT_TRUE(std::get<0>(triangulation[0])->Position() == vertices[2].Position());
-        EXPECT_TRUE(std::get<1>(triangulation[0])->Position() == vertices[3].Position());
-        EXPECT_TRUE(std::get<2>(triangulation[0])->Position() == vertices[4].Position());
+        EXPECT_TRUE(std::get<0>(triangulation[0]).GetElement().Position() == vertices[2].Position());
+        EXPECT_TRUE(std::get<1>(triangulation[0]).GetElement().Position() == vertices[3].Position());
+        EXPECT_TRUE(std::get<2>(triangulation[0]).GetElement().Position() == vertices[4].Position());
 
-        EXPECT_TRUE(std::get<0>(triangulation[1])->Position() == vertices[1].Position());
-        EXPECT_TRUE(std::get<1>(triangulation[1])->Position() == vertices[2].Position());
-        EXPECT_TRUE(std::get<2>(triangulation[1])->Position() == vertices[4].Position());
+        EXPECT_TRUE(std::get<0>(triangulation[1]).GetElement().Position() == vertices[1].Position());
+        EXPECT_TRUE(std::get<1>(triangulation[1]).GetElement().Position() == vertices[2].Position());
+        EXPECT_TRUE(std::get<2>(triangulation[1]).GetElement().Position() == vertices[4].Position());
 
-        EXPECT_TRUE(std::get<0>(triangulation[2])->Position() == vertices[4].Position());
-        EXPECT_TRUE(std::get<1>(triangulation[2])->Position() == vertices[0].Position());
-        EXPECT_TRUE(std::get<2>(triangulation[2])->Position() == vertices[1].Position());
+        EXPECT_TRUE(std::get<0>(triangulation[2]).GetElement().Position() == vertices[4].Position());
+        EXPECT_TRUE(std::get<1>(triangulation[2]).GetElement().Position() == vertices[0].Position());
+        EXPECT_TRUE(std::get<2>(triangulation[2]).GetElement().Position() == vertices[1].Position());
     }
 
     // TODO: More triangulation tests for (n>=5)-gons
@@ -424,7 +432,7 @@ namespace Symplektis::UnitTests
     TEST(ReferencedMeshGeometry_Utilities_Tests, Triangle_ComputeTriangleNormalFromVertices_TriangleNormal)
     {
         // Arrange
-        std::vector vertices{
+        const VertexContainer vertices{
             Vertex(), Vertex(1.0, 0.0, 0.0), Vertex(0.0, 1.0, 0.0)
         };
         /* =========================================
@@ -437,7 +445,7 @@ namespace Symplektis::UnitTests
           |    v0 --- v1
            -> x
            ======================================== */
-        const auto vertexIters = ConstructVertexIteratorVectorForTesting(vertices);
+        const auto vertexIters = ConstructVertexHandleVectorForTesting(vertices);
 
         // Act
         const Vector3 normal = ComputeNormal(vertexIters);
@@ -451,7 +459,7 @@ namespace Symplektis::UnitTests
     TEST(ReferencedMeshGeometry_Utilities_Tests, Quad_ComputeQuadNormalFromVertices_QuadNormal)
     {
         // Arrange
-        std::vector vertices{
+        const VertexContainer vertices{
             Vertex(), Vertex(1.0, 0.0, 0.0), Vertex(1.0, 1.0, 0.5), Vertex(0.0, 1.0, 0.0)
         };
         /* =========================================
@@ -464,7 +472,7 @@ namespace Symplektis::UnitTests
           |    v0 ---- v1     |      v0 ---- v1
            -> x               -> x
            ======================================== */
-        const auto vertexIters = ConstructVertexIteratorVectorForTesting(vertices);
+        const auto vertexIters = ConstructVertexHandleVectorForTesting(vertices);
 
         // Act
         const Vector3 normal = ComputeNormal(vertexIters);
@@ -478,7 +486,7 @@ namespace Symplektis::UnitTests
     TEST(ReferencedMeshGeometry_Utilities_Tests, Pentagon_ComputeNormalFromVertices_PentagonNormal)
     {
         // Arrange
-        std::vector vertices{
+        const VertexContainer vertices{
             Vertex(), Vertex(1.0, 0.0, 0.5), Vertex(phi, 1.0, 0.0), Vertex(1.0, phi, 0.5), Vertex(0.0, 1.0, 0.0)
         };
         /*  ==================================================
@@ -497,7 +505,7 @@ namespace Symplektis::UnitTests
           -> x                    -> x
             ==================================================
          */
-        const auto vertexIters = ConstructVertexIteratorVectorForTesting(vertices);
+        const auto vertexIters = ConstructVertexHandleVectorForTesting(vertices);
 
         // Act
         const Vector3 normal = ComputeNormal(vertexIters);
@@ -511,7 +519,7 @@ namespace Symplektis::UnitTests
     TEST(ReferencedMeshGeometry_Utilities_Tests, Triangle_ComputeProjectionsAlongNormalFromVerticesNormalAndRefPt_ProjectionsAlongTriangleNormal)
     {
         // Arrange
-        std::vector vertices{
+        const VertexContainer vertices{
             Vertex(), Vertex(1.0, 0.0, 0.0), Vertex(0.0, 1.0, 0.0)
         };
         /* =========================================
@@ -525,7 +533,7 @@ namespace Symplektis::UnitTests
           |    v0 --- v1            |       p1 ---- p0
            -> x                      -> x
            ======================================== */
-        const auto vertexIters = ConstructVertexIteratorVectorForTesting(vertices);
+        const auto vertexIters = ConstructVertexHandleVectorForTesting(vertices);
         const auto& refPt = vertices[0].Position();
         const auto& normal = Vector3(0.0, 0.0, 1.0);
 
@@ -547,7 +555,7 @@ namespace Symplektis::UnitTests
     TEST(ReferencedMeshGeometry_Utilities_Tests, Triangle_ComputeProjectionsAlongNormalFromVertices_ProjectionsAlongTriangleNormal)
     {
         // Arrange
-        std::vector vertices{
+        const VertexContainer vertices{
             Vertex(), Vertex(1.0, 0.0, 0.0), Vertex(0.0, 1.0, 0.0)
         };
         /* =========================================
@@ -561,7 +569,7 @@ namespace Symplektis::UnitTests
           |    v0 --- v1            |       p2 ---- p0
            -> x                      -> x
            ======================================== */
-        const auto vertexIters = ConstructVertexIteratorVectorForTesting(vertices);
+        const auto vertexIters = ConstructVertexHandleVectorForTesting(vertices);
 
         // Act
         const auto& projections = ComputeProjectionsAlongNormal(vertexIters);
@@ -581,7 +589,7 @@ namespace Symplektis::UnitTests
     TEST(ReferencedMeshGeometry_Utilities_Tests, Quad_ComputeProjectionsAlongNormalFromVertices_ProjectionsAlongNormal)
     {
         // Arrange
-        std::vector vertices{
+        const VertexContainer vertices{
             Vertex(), Vertex(1.0, 0.0, 0.0), Vertex(1.0, 1.0, 0.5), Vertex(0.0, 1.0, 0.0)
         };
         /* =========================================
@@ -601,7 +609,7 @@ namespace Symplektis::UnitTests
           |
            -> x
            ======================================== */
-        const auto vertexIters = ConstructVertexIteratorVectorForTesting(vertices);
+        const auto vertexIters = ConstructVertexHandleVectorForTesting(vertices);
 
         // Act
         const auto& projections = ComputeProjectionsAlongNormal(vertexIters);
@@ -624,7 +632,7 @@ namespace Symplektis::UnitTests
     TEST(ReferencedMeshGeometry_Utilities_Tests, Quad_ComputeProjectionsAlongNormalFromVerticesRefPtAndNormal_ProjectionsAlongNormal)
     {
         // Arrange
-        std::vector vertices{
+        const VertexContainer vertices{
             Vertex(), Vertex(1.0, 0.0, 0.0), Vertex(1.0, 1.0, 0.5), Vertex(0.0, 1.0, 0.0)
         };
         /* =========================================
@@ -644,7 +652,7 @@ namespace Symplektis::UnitTests
           |
            -> x
            ======================================== */
-        const auto vertexIters = ConstructVertexIteratorVectorForTesting(vertices);
+        const auto vertexIters = ConstructVertexHandleVectorForTesting(vertices);
         const auto& refPt = vertices[0].Position();
         const auto& normal = Vector3(0.0, 0.0, 1.0);
 
@@ -669,7 +677,7 @@ namespace Symplektis::UnitTests
     TEST(ReferencedMeshGeometry_Utilities_Tests, Pentagon_ComputeProjectionsAlongNormalFromVertices_PentagonProjectionsAlongNormal)
     {
         // Arrange
-        std::vector vertices{
+        const VertexContainer vertices{
             Vertex(), Vertex(1.0, 0.0, 0.5), Vertex(phi, 1.0, 0.0), Vertex(1.0, phi, 0.5), Vertex(0.0, 1.0, 0.0)
         };
         /*  ===========================================================================================
@@ -690,7 +698,7 @@ namespace Symplektis::UnitTests
           -> x                    -> x
             ===========================================================================================
          */
-        const auto vertexIters = ConstructVertexIteratorVectorForTesting(vertices);
+        const auto vertexIters = ConstructVertexHandleVectorForTesting(vertices);
 
         // Act
         const auto& projections = ComputeProjectionsAlongNormal(vertexIters);
@@ -716,7 +724,7 @@ namespace Symplektis::UnitTests
     TEST(ReferencedMeshGeometry_Utilities_Tests, Pentagon_ComputeProjectionsAlongNormalFromVerticesRefPtAndNormal_PentagonProjectionsAlongNormal)
     {
         // Arrange
-        std::vector vertices{
+        const VertexContainer vertices{
             Vertex(), Vertex(1.0, 0.0, 0.5), Vertex(phi, 1.0, 0.0), Vertex(1.0, phi, 0.5), Vertex(0.0, 1.0, 0.0)
         };
         /*  ===========================================================================================
@@ -736,7 +744,7 @@ namespace Symplektis::UnitTests
           -> x                    -> x                               -> x
             ===========================================================================================
          */
-        const auto vertexIters = ConstructVertexIteratorVectorForTesting(vertices);
+        const auto vertexIters = ConstructVertexHandleVectorForTesting(vertices);
         const auto& refPt = vertices[0].Position();
         const auto& normal = Vector3(0.0, 0.0, 1.0);
 

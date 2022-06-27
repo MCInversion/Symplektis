@@ -83,8 +83,8 @@ namespace Symplektis::UnitTests
         EXPECT_EQ(icoMeshData.Edges.size(), 30);        
     	for (unsigned int edgeCounter = 0; auto& edge : icoMeshData.Edges)
     	{
-            const Vector3 v0 = edge.HalfEdge()->TailVertex()->Position();
-            const Vector3 v1 = edge.HalfEdge()->OppositeHalfEdge()->TailVertex()->Position();
+            const Vector3 v0 = edge.HalfEdge().GetElement().TailVertex().GetElement().Position();
+            const Vector3 v1 = edge.HalfEdge().GetElement().OppositeHalfEdge().GetElement().TailVertex().GetElement().Position();
             const double length = (v1 - v0).GetLength();
             EXPECT_DOUBLE_EQ(length, ico_edge_length);
             EXPECT_EQ(edge.Index(), edgeCounter);

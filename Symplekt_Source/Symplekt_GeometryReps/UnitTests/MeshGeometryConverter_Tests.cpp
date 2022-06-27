@@ -15,6 +15,7 @@
 #include "Symplekt_GeometryReps/ReferencedMeshGeometry.h"
 #include "Symplekt_GeometryReps/ReferencedToBufferMeshGeometryConverter.h"
 #include "Symplekt_GeometryReps/BufferToReferencedMeshGeometryConverter.h"
+#include "Symplekt_GeometryReps/MeshGeometryDataTypes.h"
 
 #include "MeshGeometryDataForTesting.h"
 

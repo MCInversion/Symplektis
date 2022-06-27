@@ -44,7 +44,7 @@ namespace Symplektis::GeometryReps
 		vertexHandles.reserve(meshData.Vertices.size());
 		std::ranges::transform(meshData.Vertices, std::back_inserter(vertexHandles), 
 			[&meshData](const Vertex& vert){
-				return VertexHandle(static_cast<Util::ContainerIndex>(vert.Index()), &meshData.Vertices);
+				return VertexHandle(static_cast<Util::ContainerIndex>(vert.Index()), const_cast<VertexContainer*>(&meshData.Vertices));
 			});
 		if (!meshData.VertexNormals.empty()) // has normals
 		{
@@ -63,7 +63,7 @@ namespace Symplektis::GeometryReps
 			do
 			{
 				const Util::Symplekt_IndexType vertexIndex = heHandle.GetElement().TailVertex().GetIndex().get();
-				geoData.PolyVertexIndices[faceIndex].emplace_back(vertexHandles[vertexIndex].GetElement().Position());
+				geoData.PolyVertexIndices[faceIndex].emplace_back(vertexIndex);
 				heHandle = heHandle.GetElement().NextHalfEdge();
 			}
 			while (heHandle != baseHeHandle);

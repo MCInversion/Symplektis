@@ -12,6 +12,8 @@ created  : 12.10.2021 : M.Cavarga (MCInversion) :
 #pragma once
 
 #include "Vector3.h"
+#include "Vertex.h"
+
 #include "GeometryHelperTypes.h"
 
 namespace Symplektis::GeometryBase
@@ -40,15 +42,10 @@ namespace Symplektis::GeometryBase
 		//-----------------------------------------------------------------------------
 		VertexNormal() = default;
 
-		//-----------------------------------------------------------------------------
-		/*! \brief Default move constructor
-		*   \param[in] other  VertexNormal to be moved.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   12.10.2021
-		*/
-		//-----------------------------------------------------------------------------
-		VertexNormal(VertexNormal&& other) = default;
+		///-----------------------------------------------------------------------------
+		/// \brief Default move constructor
+		///-----------------------------------------------------------------------------
+		VertexNormal(VertexNormal&&) = default;
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Default destructor
@@ -59,15 +56,10 @@ namespace Symplektis::GeometryBase
 		//-----------------------------------------------------------------------------
 		~VertexNormal() = default;
 
-		//-----------------------------------------------------------------------------
-		/*! \brief Default move-assignment operator
-		*   \param[in] other  VertexNormal to be move-assigned.
-		*
-		*   \author M. Cavarga (MCInversion)
-		*   \date   12.10.2021
-		*/
-		//-----------------------------------------------------------------------------
-		VertexNormal& operator=(VertexNormal&& other) = default;
+		///-----------------------------------------------------------------------------
+		/// \brief Default move-assignment operator
+		///-----------------------------------------------------------------------------
+		VertexNormal& operator=(VertexNormal&&) = default;
 		
 		/// @{
 		/// \name Constructors

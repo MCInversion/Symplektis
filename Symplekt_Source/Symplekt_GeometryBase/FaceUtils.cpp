@@ -15,10 +15,12 @@ created  : 30.8.2021 : M.Cavarga (MCInversion) :
 #include "Symplekt_UtilityGeneral/Assert.h"
 #include "Symplekt_UtilityGeneral/ToleranceSettings.h"
 
-#include "Vertex.h"
+#include "Edge.h"
+#include "Face.h"
 #include "HalfEdge.h"
 #include "HalfEdgeUtils.h"
-#include "Face.h"
+#include "Vertex.h"
+#include "VertexNormal.h"
 
 #include "Vector2.h"
 #include "Vector3.h"
@@ -374,8 +376,10 @@ namespace Symplektis::GeometryBase
 
 			try
 			{
-				std::vector<Poly2Tri::Point*> contour = {};
-				std::transform(points.cbegin(), points.cend(), std::back_inserter(contour), [](const auto& pt) { return &pt; });
+				std::vector<Poly2Tri::Point*> contour{};
+				contour.reserve(points.size());
+				for (auto& pt : points)
+					contour.emplace_back(&pt);
 
 				constrainedDelaunay = new Poly2Tri::CDT(contour);
 				if (constrainedDelaunay == nullptr)

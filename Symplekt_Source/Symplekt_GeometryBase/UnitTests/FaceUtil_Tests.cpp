@@ -10,6 +10,13 @@
 
 #include "Symplekt_GeometryBase/Vector2.h"
 #include "Symplekt_GeometryBase/Vector3.h"
+
+#include "Symplekt_GeometryBase/Vertex.h"
+#include "Symplekt_GeometryBase/VertexNormal.h"
+#include "Symplekt_GeometryBase/HalfEdge.h"
+#include "Symplekt_GeometryBase/Face.h"
+#include "Symplekt_GeometryBase/Edge.h"
+
 #include "Symplekt_GeometryBase/FaceUtils.h"
 
 #include "Symplekt_UtilityGeneral/NumericUtils.h"
