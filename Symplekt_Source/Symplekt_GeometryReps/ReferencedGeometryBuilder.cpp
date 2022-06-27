@@ -108,6 +108,7 @@ namespace Symplektis::GeometryReps
 			newVertexIter->SetIndex(newIndex.get());
 
 			const auto newVertexHandle = VertexHandle(newIndex, &m_ResultData->Vertices);
+			ASSERT(newVertexHandle.IsValid(), "ReferencedMeshGeometryBuilder::FillVertexBufferAndIndexMap: Pre-exception handle check: Invalid VertexHandle!\n");
 			vertIndexToVertexHandle[newIndex.get()] = newVertexHandle;
 
 			if (m_HasNormals) // fill in vertex normals
@@ -115,6 +116,7 @@ namespace Symplektis::GeometryReps
 				const auto& vertNormalVec = dataVertexNormals[newIndex.get()];
 				const auto newVertexNormalIter = m_ResultData->VertexNormals.insert(m_ResultData->VertexNormals.end(), VertexNormal(vertNormalVec, newVertexHandle));
 				const auto newVertexNormalHandle = VertexNormalHandle(newIndex, &m_ResultData->VertexNormals);
+				ASSERT(newVertexNormalHandle.IsValid(), "ReferencedMeshGeometryBuilder::FillVertexBufferAndIndexMap: Pre-exception handle check: Invalid VertexNormalHandle!\n");
 				newVertexIter->SetNormal(newVertexNormalHandle);
 			}
 		}
@@ -144,13 +146,18 @@ namespace Symplektis::GeometryReps
 
 			std::vector<VertexHandle> polyVertHandles;
 			polyVertHandles.reserve(nIndicesInTuple);
-			for (const auto& vId : indexTuple) polyVertHandles.emplace_back(vertIndexToVertexHandle[vId]);
+			for (const auto& vId : indexTuple)
+			{
+				ASSERT(vertIndexToVertexHandle[vId].IsValid(), "ReferencedMeshGeometryBuilder::FillHalfEdgesAndFaces: Pre-exception handle check: Invalid VertexHandle!\n");
+				polyVertHandles.emplace_back(vertIndexToVertexHandle[vId]);
+			}
 
 			const Face newFace{ polyVertHandles };
 			const auto newFaceIter = m_ResultData->Faces.insert(m_ResultData->Faces.end(), newFace);
 			newFaceIter->SetIndex(faceIndex);
 			const auto newFaceIndex = Util::ContainerIndex(faceIndex);
 			const auto newFaceHandle = FaceHandle(newFaceIndex, &m_ResultData->Faces);
+			ASSERT(newFaceHandle.IsValid(), "ReferencedMeshGeometryBuilder::FillHalfEdgesAndFaces: Pre-exception handle check: Invalid FaceHandle!\n");
 
 			std::vector<HalfEdgeHandle> halfEdges(nIndicesInTuple);
 			for (auto& he : halfEdges)
@@ -158,6 +165,7 @@ namespace Symplektis::GeometryReps
 				m_ResultData->HalfEdges.emplace_back(HalfEdge());
 				const auto newHEIndex = Util::ContainerIndex(m_ResultData->HalfEdges.size() - 1);
 				he = HalfEdgeHandle(newHEIndex, &m_ResultData->HalfEdges);
+				ASSERT(he.IsValid(), "ReferencedMeshGeometryBuilder::FillHalfEdgesAndFaces: Pre-exception handle check: Invalid HalfEdgeHandle!\n");
 			}
 
 			// initialize new half-edges
@@ -170,8 +178,8 @@ namespace Symplektis::GeometryReps
 				unsigned int secondEdgeVertId = indexTuple[nextPolyIndex];
 
 				HalfEdgeReferenceData heData;
-				heData.NextHalfEdge = halfEdges[nextPolyIndex];
-				heData.TailVertex = vertIndexToVertexHandle[firstEdgeVertId];
+				heData.NextHalfEdge = halfEdges[nextPolyIndex]; // verified above
+				heData.TailVertex = vertIndexToVertexHandle[firstEdgeVertId]; // verified above
 
 				constexpr bool isBoundary = false;
 				halfEdges[i].GetElement().Set(heData, isBoundary);
@@ -204,6 +212,7 @@ namespace Symplektis::GeometryReps
 					m_ResultData->Edges.emplace_back(Edge());
 					const auto newEdgeIndex = Util::ContainerIndex(m_ResultData->Edges.size() - 1);
 					const auto newEdgeHandle = EdgeHandle(newEdgeIndex, &m_ResultData->Edges);
+					ASSERT(newEdgeHandle.IsValid(), "ReferencedMeshGeometryBuilder::FillHalfEdgesAndFaces: Pre-exception handle check: Invalid EdgeHandle!\n");
 					halfEdges[i].GetElement().Edge() = newEdgeHandle;
 					halfEdges[i].GetElement().Edge().GetElement().SetIndex(edgeIndex);
 					halfEdges[i].GetElement().Edge().GetElement().HalfEdge() = halfEdges[i];
@@ -245,16 +254,18 @@ namespace Symplektis::GeometryReps
 				auto newBoundaryCycleIt = m_ResultData->BoundaryCycles.insert(m_ResultData->BoundaryCycles.end(), Face());
 				const auto newBoundaryCycleId = Util::ContainerIndex(m_ResultData->BoundaryCycles.size() - 1);
 				const auto newBoundaryCycleHandle = FaceHandle(newBoundaryCycleId, &m_ResultData->BoundaryCycles);
+				ASSERT(newBoundaryCycleHandle.IsValid(), "ReferencedMeshGeometryBuilder::FillBoundaryCycles: Pre-exception handle check: Invalid FaceHandle!\n");
 
 				// iterate along this boundary cycle
 				std::vector<HalfEdgeHandle> boundaryCycleHalfEdges;
 				auto heHandle = halfEdgeHandle;
 				do
 				{
-					// create a new half-edge on the boundary face
+					// create a new exterior half-edge on the boundary face
 					const auto newExteriorHeIt = m_ResultData->HalfEdges.insert(m_ResultData->HalfEdges.end(), HalfEdge());
 					const auto newExteriorHeId = Util::ContainerIndex(m_ResultData->HalfEdges.size() - 1);
 					const auto newExteriorHeHandle = HalfEdgeHandle(newExteriorHeId, &m_ResultData->HalfEdges);
+					ASSERT(newExteriorHeHandle.IsValid(), "ReferencedMeshGeometryBuilder::FillBoundaryCycles: Pre-exception handle check: Invalid HalfEdgeHandle!\n");
 
 					// mark only the half-edge on the boundary face as being on the boundary
 					newExteriorHeIt->SetIsBoundary(true);
@@ -292,9 +303,9 @@ namespace Symplektis::GeometryReps
 				const auto nBDCycleHECount = boundaryCycleHalfEdges.size();
 				for (unsigned int i = 0; i < nBDCycleHECount; i++)
 				{
-					boundaryCycleHalfEdges[i]->NextHalfEdge() = boundaryCycleHalfEdges[(i + nBDCycleHECount - 1) % nBDCycleHECount];
+					boundaryCycleHalfEdges[i].GetElement().NextHalfEdge() = boundaryCycleHalfEdges[(i + nBDCycleHECount - 1) % nBDCycleHECount];
 					halfEdgeHasOpposite[boundaryCycleHalfEdges[i]] = true;
-					halfEdgeHasOpposite[boundaryCycleHalfEdges[i]->OppositeHalfEdge()] = true;
+					halfEdgeHasOpposite[boundaryCycleHalfEdges[i].GetElement().OppositeHalfEdge()] = true;
 				}
 			}
 			++halfEdgeHandle.GetIndex();
@@ -306,7 +317,7 @@ namespace Symplektis::GeometryReps
 		
 		for (unsigned int vertexId = 0; const auto& vert : m_ResultData->Vertices)
 		{
-			if (IsIsolated(vert, m_ResultData->HalfEdges))
+			if (IsIsolated(vert))
 			{
 				auto warningMsg = std::string("Warning: Vertex ") + std::to_string(vertexId) + " is isolated (not contained in any face).\n";
 				MSG_CHECK(false, warningMsg);
@@ -318,40 +329,44 @@ namespace Symplektis::GeometryReps
 
     void ReferencedMeshGeometryBuilder::PerformNonManifoldVertexCheck() const
     {
-		std::map<VertexConstIterator, unsigned int> valencePerVisitedVertex;
+		std::map<VertexHandle, unsigned int> valencePerVisitedVertex;
 
 		// count along the list of faces
 		for (auto& face : m_ResultData->Faces)
 		{
-			HalfEdgeConstIterator heConstIt = face.HalfEdge();
+			HalfEdgeHandle heHandle = face.HalfEdge();
 			do
 			{   // iterate along face half-edge tail vertices
-				valencePerVisitedVertex[heConstIt->TailVertex()]++;
-				heConstIt = heConstIt->NextHalfEdge();
+				ASSERT(heHandle.IsValid(), "ReferencedMeshGeometryBuilder::PerformNonManifoldVertexCheck: Pre-exception handle check: Invalid HalfEdgeHandle!\n");
+				valencePerVisitedVertex[heHandle.GetElement().TailVertex()]++;
+				heHandle = heHandle.GetElement().NextHalfEdge();
 			}
-			while (heConstIt != face.HalfEdge());
+			while (heHandle != face.HalfEdge());
 		}
 
 		// count along the list of boundary cycles
         for (auto& bdCycle : m_ResultData->BoundaryCycles)
         {
-            HalfEdgeConstIterator heConstIt = bdCycle.HalfEdge();
+            HalfEdgeHandle heHandle = bdCycle.HalfEdge();
             do
             {   // iterate along boundary cycle half-edge tail vertices
-                valencePerVisitedVertex[heConstIt->TailVertex()]++;
-                heConstIt = heConstIt->NextHalfEdge();
+				ASSERT(heHandle.IsValid(), "ReferencedMeshGeometryBuilder::PerformNonManifoldVertexCheck: Pre-exception handle check: Invalid HalfEdgeHandle!\n");
+                valencePerVisitedVertex[heHandle.GetElement().TailVertex()]++;
+				heHandle = heHandle.GetElement().NextHalfEdge();
             }
-			while (heConstIt != bdCycle.HalfEdge());
+			while (heHandle != bdCycle.HalfEdge());
         }
 
 		// throw warnings when encountering a valence discrepancy in a vertex
         unsigned int vertexId = 0;
         for (auto vIter = m_ResultData->Vertices.begin(); vIter != m_ResultData->Vertices.end(); ++vIter)
-        {			
-            if (const unsigned int computedValence = GetValence(*vIter); valencePerVisitedVertex[vIter] != computedValence)
+        {
+			const auto vHandle = VertexHandle(static_cast<Util::ContainerIndex>(vertexId), &m_ResultData->Vertices);
+			ASSERT(vHandle.IsValid(), "ReferencedMeshGeometryBuilder::PerformNonManifoldVertexCheck: Pre-exception handle check: Invalid VertexHandle!\n");
+            if (const unsigned int computedValence = GetValence(*vIter); valencePerVisitedVertex[vHandle] != computedValence)
             {
                 auto warningMsg = std::string("Warning: Vertex ") + std::to_string(vertexId) + " is non-manifold\n" +
-					              " with valencePerVisitedVertex : " + std::to_string(valencePerVisitedVertex[vIter]) +
+					              " with valencePerVisitedVertex : " + std::to_string(valencePerVisitedVertex[vHandle]) +
 					              ", and computed valence: " + std::to_string(computedValence);
                 MSG_CHECK(false, warningMsg);
             }

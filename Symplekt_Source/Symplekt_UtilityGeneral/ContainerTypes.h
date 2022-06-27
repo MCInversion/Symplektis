@@ -17,7 +17,8 @@
      > A container element can only be retrieved after it is complete and of its all handles are valid. \n
    2) Containers are uniquely identified by their UUID upon construction. \n
      > Unless explicitly specified upon construction, containers have unique identifiers, so that handle indices can be suitably comparable. \n
-   
+
+   TODO: Consider using pre-validation upon every use of data stored using these handles.
 \endverbatim
 */
 
@@ -385,9 +386,15 @@ namespace Symplektis::Util
 	/// \author M. Cavarga (MCInversion)
 	/// \date   17.6.2022
 	///
-	/// Inspired by PMP (Polygon Mesh Processing) library SurfaceMesh.h/Handle
-	/// Copyright 2011-2021 the Polygon Mesh Processing Library developers.
-	/// Copyright 2001-2005 by Computer Graphics Group, RWTH Aachen
+	/// Inspired by PMP (Polygon Mesh Processing) library SurfaceMesh.h/Handle \n
+	/// Copyright 2011-2021 the Polygon Mesh Processing Library developers.    \n
+	/// Copyright 2001-2005 by Computer Graphics Group, RWTH Aachen            \n
+	///
+	/// NOTE: Since container elements are extracted using ContainerIndexHandle::GetElement methods, it is \n
+	/// unsafe to implement public setters which could potentially invalidate this handle. \n
+	/// ContainerIndexHandle::ResetToNull is the only exception.
+	///
+	/// TODO: Consider using std::shared_ptr for m_Container after doing some performance/memory tests
 	/// 
 	///=============================================================================
 	template <typename T>
@@ -406,7 +413,7 @@ namespace Symplektis::Util
 		 *  \date   20.6.2022
 		 */
 		 //-----------------------------------------------------------------------------
-		explicit ContainerIndexHandle(const ContainerIndex& id, UniqueIndexedContainer<T>* container = nullptr)
+		explicit ContainerIndexHandle(const ContainerIndex& id, const UniqueIndexedContainer<T>* container = nullptr)
 			: m_Index(id),
 		      m_Container(container)
 		{ }
@@ -599,6 +606,8 @@ namespace Symplektis::Util
 		 *
 		 *  \author M. Cavarga (MCInversion)
 		 *  \date   23.6.2022
+		 *
+		 *  DISCLAIMER: Verify the validity of this handle upon every change before using this getter.
 		 */
 		 //-----------------------------------------------------------------------------
 		[[nodiscard]] const T& GetElement() const
@@ -619,6 +628,8 @@ namespace Symplektis::Util
 		 *
 		 *  \author M. Cavarga (MCInversion)
 		 *  \date   23.6.2022
+		 *
+		 *  DISCLAIMER: Verify the validity of this handle upon every change before using this getter.
 		 */
 		 //-----------------------------------------------------------------------------
 		T& GetElement()
@@ -693,9 +704,11 @@ namespace Symplektis::Util
 		 *
 		 *  \author M. Cavarga (MCInversion)
 		 *  \date   20.6.2022
+		 *
+		 *  DISCLAIMER: This method will invalidate this handle.
 		 */
 		//-----------------------------------------------------------------------------
-		void Reset()
+		void ResetToNull()
 		{
 			m_Index = NULL_INDEX;
 			m_Container = nullptr;

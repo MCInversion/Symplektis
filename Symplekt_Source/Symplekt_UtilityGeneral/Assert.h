@@ -16,17 +16,15 @@ created  : 11.6.2021 : M. Cavarga (MCInversion)    :
 #include <sstream>
 #include <iostream>
 
-//---------------------------------------------------------------------------
-/*!
- *   \brief Assert macro with a message
- *
- *  This macro is defined in Assert.h.
- */
-//---------------------------------------------------------------------------
+///---------------------------------------------------------------------------
+///  \brief Assert macro with a message. Terminates the application if condition == false and dumps a message to std::cerr.
+///  \param[in] condition     boolean condition to be asserted.
+///  \param[in] message       std::string or char* message to be passed to std::cerr if condition == false.
+///---------------------------------------------------------------------------
 #ifndef NDEBUG
 #   define ASSERT(condition, message)                                            \
     do {                                                                         \
-        if (! (condition)) {                                                     \
+        if (!(condition)) {                                                      \
             std::cerr << "Assertion `" #condition "` failed in " << __FILE__     \
                       << " line " << __LINE__ << ": " << (message) << std::endl; \
             std::terminate();                                                    \

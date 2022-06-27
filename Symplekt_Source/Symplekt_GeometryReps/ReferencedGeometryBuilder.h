@@ -26,6 +26,10 @@ namespace Symplektis::GeometryReps
 	///
 	/// \author M. Cavarga (MCInversion)
 	/// \date   14.9.2021
+	///
+	/// Inspired by "DDG-Exercises" repo: https://github.com/GeometryCollective/ddg-exercises
+	/// Copyright 2021-2022 Geometry Collective, Nicole Feng, and Marek Marchlewicz, Carnegie Mellon University (CMU).
+	/// 
 	//=============================================================================
 	class ReferencedMeshGeometryBuilder
 	{
@@ -167,7 +171,7 @@ namespace Symplektis::GeometryReps
         void PerformIsolatedVertexCheck() const;
 		
 		//-----------------------------------------------------------------------------
-		/*! \brief A checking method for non-manifold vertices
+		/*! \brief A checking method for non-manifold vertices and geometry handle validity.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   14.9.2021

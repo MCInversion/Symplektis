@@ -14,8 +14,6 @@
 
 #include "BufferMeshGeometry.h"
 
-#include <map>
-
 namespace Symplektis::GeometryReps
 {
 	using namespace GeometryBase;
@@ -40,36 +38,35 @@ namespace Symplektis::GeometryReps
 		geoData.Name = meshData.Name;
 		
 		geoData.Vertices.reserve(meshData.Vertices.size());
-
-		const bool hasNormals = !meshData.VertexNormals.empty();
 		geoData.VertexNormals.reserve(meshData.VertexNormals.size());
-		std::map<VertexConstIterator, unsigned int> vertexToVertexIndex{};
-
-		unsigned int currentVertId = 0;
-		for (auto vert = meshData.Vertices.begin(); vert != meshData.Vertices.end(); ++vert)
+		
+		std::vector<VertexHandle> vertexHandles;
+		vertexHandles.reserve(meshData.Vertices.size());
+		std::ranges::transform(meshData.Vertices, std::back_inserter(vertexHandles), 
+			[&meshData](const Vertex& vert){
+				return VertexHandle(static_cast<Util::ContainerIndex>(vert.Index()), &meshData.Vertices);
+			});
+		if (!meshData.VertexNormals.empty()) // has normals
 		{
-			vertexToVertexIndex[vert] = currentVertId;
-			geoData.Vertices.emplace_back(vert->Position());
-
-			if (hasNormals)
-			{
-				geoData.VertexNormals.emplace_back(vert->Normal()->Get());
-			}
-			currentVertId++;
+			std::ranges::transform(meshData.VertexNormals, std::back_inserter(geoData.VertexNormals),
+			[](const VertexNormal& normal) {
+					return normal.Get();
+			});
 		}
 
 		geoData.PolyVertexIndices = std::vector<std::vector<unsigned int>>{ meshData.Faces.size() };
 		for (unsigned int faceIndex = 0; const auto& face : meshData.Faces)
 		{
-			const auto& baseHeIt = face.HalfEdge();
-			auto heIt = baseHeIt;
+			const auto& baseHeHandle = face.HalfEdge();
+			auto heHandle = baseHeHandle;
 			geoData.PolyVertexIndices[faceIndex].reserve(face.GetTriangulation().size() + 2);
 			do
 			{
-				geoData.PolyVertexIndices[faceIndex].emplace_back(vertexToVertexIndex[heIt->TailVertex()]);
-				heIt = heIt->NextHalfEdge();
+				const Util::Symplekt_IndexType vertexIndex = heHandle.GetElement().TailVertex().GetIndex().get();
+				geoData.PolyVertexIndices[faceIndex].emplace_back(vertexHandles[vertexIndex].GetElement().Position());
+				heHandle = heHandle.GetElement().NextHalfEdge();
 			}
-			while (heIt != baseHeIt);
+			while (heHandle != baseHeHandle);
 			faceIndex++;
 		}
 
