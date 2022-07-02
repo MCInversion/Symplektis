@@ -49,6 +49,7 @@ or **Configure** and **Generate** using CMake GUI:
 
 ![CMakeGUISetup](https://github.com/MCInversion/Symplektis/blob/main/InfoImages/ImgCmakeGUI.jpg)
 
+**Known CMake Problem**: After first clone, you may need to configure and generate one more time, otherewise all the subprojects of Eigen an Boost get loaded into the VS solution.
 
 ------------------
 
