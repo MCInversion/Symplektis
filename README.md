@@ -49,8 +49,6 @@ or **Configure** and **Generate** using CMake GUI:
 
 ![CMakeGUISetup](https://github.com/MCInversion/Symplektis/blob/main/InfoImages/ImgCmakeGUI.jpg)
 
-**Known CMake Problem**: After first clone, you may need to configure and generate one more time, otherewise all the subprojects of Eigen an Boost get loaded into the VS solution.
-
 ------------------
 
 #### When Using Visual Studio:
@@ -58,6 +56,8 @@ or **Configure** and **Generate** using CMake GUI:
 **The required C++ standard is C++ 20**, so make sure you have at least **MSVC 19.28**. If you're not using Visual Studio, make sure you have compilers which support C++ 20.
 
 When using CMake, make sure to choose Native compilers, and x64 configuration. Then just open {dir. where I cloned}/Symplektis/build/Symplektis_ConsoleApp.sln or click **Open Project** in CMake GUI.
+
+**Known CMake Problem**: After first clone, you may need to **configure and generate twice**, otherewise all the ~900 subprojects of Eigen an Boost get loaded into the VS solution.
 
 Build all Symplektis projects either from Solution Explorer, or just run using Local Windows Debugger (F5).
 
