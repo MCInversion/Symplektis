@@ -20,7 +20,7 @@ namespace Symplektis::GeometryBase
 
 	//=============================================================================
 	/// \struct HalfEdgeReferenceData
-	/// \brief A reference data container for half-edge data structure
+	/// \brief A reference data item for half-edge data structure
 	///
 	/// \ingroup GEOMETRY_BASE
 	///
@@ -30,20 +30,20 @@ namespace Symplektis::GeometryBase
 	struct HalfEdgeReferenceData
 	{
 		//!< Refers to the next HalfEdge around current polygonal face.
-		HalfEdgeHandle NextHalfEdge;
+		HalfEdgeIndex NextHalfEdge{NULL_HALF_EDGE};
 
 		//!< Refers to the oppositely oriented HalfEdge with identical 
 		//!< endpoints corresponding to an adjacent polygonal face.
-		HalfEdgeHandle OppositeHalfEdge;
+		HalfEdgeIndex OppositeHalfEdge{NULL_HALF_EDGE};
 
 		//!< Refers to the tail (start) Vertex of this HalfEdge.
-		VertexHandle TailVertex;
+		VertexIndex TailVertex{NULL_VERTEX};
 
 		//!< Refers to the Edge associated with this HalfEdge.
-		EdgeHandle Edge;
+		EdgeIndex Edge{NULL_EDGE};
 
 		//!< Refers to the Face adjacent to this HalfEdge.
-		FaceHandle AdjacentFace;
+		FaceIndex AdjacentFace{NULL_FACE};
 	};
 
 	///=============================================================================
@@ -186,15 +186,15 @@ namespace Symplektis::GeometryBase
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Sets the `m_RefData.AdjacentFace` iterator of this HalfEdge
-		*   \param[in] face      iterator to an adjacent face
+		/*! \brief Sets the `m_RefData.AdjacentFace` index of this HalfEdge
+		*   \param[in] face      index to an adjacent face
 		*   \return reference to this HalfEdge
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   16.9.2021
 		*/
 		//-----------------------------------------------------------------------------
-		HalfEdge& SetAdjacentFace(const FaceHandle& face)
+		HalfEdge& SetAdjacentFace(const FaceIndex& face)
 		{
 			m_RefData.AdjacentFace = face;
 			return *this;
@@ -204,131 +204,131 @@ namespace Symplektis::GeometryBase
 		/// \name Getters
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get a const handle to NextHalfEdge.
-		*   \return const HalfEdgeHandle to NextHalfEdge.
+		/*! \brief Get a const index to NextHalfEdge.
+		*   \return const HalfEdgeIndex to NextHalfEdge.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   26.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] const HalfEdgeHandle& NextHalfEdge() const
+		[[nodiscard]] const HalfEdgeIndex& NextHalfEdge() const
 		{
 			return m_RefData.NextHalfEdge;
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get iterator to NextHalfEdge.
-		*   \return HalfEdgeHandle to NextHalfEdge.
+		/*! \brief Get an index to NextHalfEdge.
+		*   \return HalfEdgeIndex to NextHalfEdge.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   26.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		HalfEdgeHandle& NextHalfEdge()
+		HalfEdgeIndex& NextHalfEdge()
 		{
 			return m_RefData.NextHalfEdge;
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get a const handle to OppositeHalfEdge.
-		*   \return const HalfEdgeHandle to OppositeHalfEdge.
+		/*! \brief Get a const index to OppositeHalfEdge.
+		*   \return const HalfEdgeIndex to OppositeHalfEdge.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   26.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] const HalfEdgeHandle& OppositeHalfEdge() const
+		[[nodiscard]] const HalfEdgeIndex& OppositeHalfEdge() const
 		{
 			return m_RefData.OppositeHalfEdge;
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get a handle to OppositeHalfEdge.
-		*   \return HalfEdgeHandle to OppositeHalfEdge.
+		/*! \brief Get an index to OppositeHalfEdge.
+		*   \return HalfEdgeIndex to OppositeHalfEdge.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   26.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		HalfEdgeHandle& OppositeHalfEdge()
+		HalfEdgeIndex& OppositeHalfEdge()
 		{
 			return m_RefData.OppositeHalfEdge;
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get a const handle to TailVertex.
-		*   \return const VertexHandle to TailVertex.
+		/*! \brief Get a const index to TailVertex.
+		*   \return const VertexIndex to TailVertex.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   26.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] const VertexHandle& TailVertex() const
+		[[nodiscard]] const VertexIndex& TailVertex() const
 		{
 			return m_RefData.TailVertex;
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get a handle to TailVertex.
-		*   \return VertexHandle to TailVertex.
+		/*! \brief Get an index to TailVertex.
+		*   \return VertexIndex to TailVertex.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   26.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		VertexHandle& TailVertex()
+		VertexIndex& TailVertex()
 		{
 			return m_RefData.TailVertex;
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get a const handle to Edge.
-		*   \return const EdgeHandle to Edge.
+		/*! \brief Get a const index to Edge.
+		*   \return const EdgeIndex to Edge.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   26.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] const EdgeHandle& Edge() const
+		[[nodiscard]] const EdgeIndex& Edge() const
 		{
 			return m_RefData.Edge;
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get a handle to Edge.
-		*   \return EdgeHandle to Edge.
+		/*! \brief Get an index to Edge.
+		*   \return EdgeIndex to Edge.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   26.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		EdgeHandle& Edge()
+		EdgeIndex& Edge()
 		{
 			return m_RefData.Edge;
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get a handle to AdjacentFace.
-		*   \return FaceHandle to AdjacentFace.
+		/*! \brief Get an index to AdjacentFace.
+		*   \return FaceIndex to AdjacentFace.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   26.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		FaceHandle& AdjacentFace()
+		FaceIndex& AdjacentFace()
 		{
 			return m_RefData.AdjacentFace;
 		}
 		
 		//-----------------------------------------------------------------------------
-		/*! \brief Get a const handle to AdjacentFace.
-		*   \return const FaceHandle to AdjacentFace.
+		/*! \brief Get a const index to AdjacentFace.
+		*   \return const FaceIndex to AdjacentFace.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   26.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] const FaceHandle& AdjacentFace() const
+		[[nodiscard]] const FaceIndex& AdjacentFace() const
 		{
 			return m_RefData.AdjacentFace;
 		}

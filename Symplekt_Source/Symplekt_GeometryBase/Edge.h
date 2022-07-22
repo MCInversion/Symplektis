@@ -83,7 +83,7 @@ namespace Symplektis::GeometryBase
 		*   Initialize from given HalfEdge
 		*/
 		//-----------------------------------------------------------------------------
-		explicit Edge(const HalfEdgeHandle& he)
+		explicit Edge(const HalfEdgeIndex& he)
 			: m_HalfEdge(he)
 		{
 		}
@@ -99,7 +99,7 @@ namespace Symplektis::GeometryBase
 		*   Initialize from given HalfEdge and id
 		*/
 		//-----------------------------------------------------------------------------
-		Edge(const HalfEdgeHandle& he, const unsigned int& id)
+		Edge(const HalfEdgeIndex& he, const unsigned int& id)
 			: m_HalfEdge(he), m_UniqueEdgeIndex(id)
 		{
 		}
@@ -130,26 +130,26 @@ namespace Symplektis::GeometryBase
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Get const handle to HalfEdge.
-		*   \return HalfEdgeHandle to HalfEdge.
+		*   \return HalfEdgeIndex to HalfEdge.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   30.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] const HalfEdgeHandle& HalfEdge() const
+		[[nodiscard]] const HalfEdgeIndex& HalfEdge() const
 		{
 			return m_HalfEdge;
 		}
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Get handle to HalfEdge.
-		*   \return HalfEdgeHandle to HalfEdge.
+		*   \return HalfEdgeIndex to HalfEdge.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   30.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		HalfEdgeHandle& HalfEdge()
+		HalfEdgeIndex& HalfEdge()
 		{
 			return m_HalfEdge;
 		}
@@ -201,14 +201,14 @@ namespace Symplektis::GeometryBase
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Initialize from a HalfEdge
-		*   \param[in] halfEdge   HalfEdge(Iterator) to be initialized from
+		*   \param[in] halfEdge   HalfEdge(Index) to be initialized from
 		*   \return reference to this Edge
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   30.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		Edge& Set(const HalfEdgeHandle& halfEdge)
+		Edge& Set(const HalfEdgeIndex& halfEdge)
 		{
 			m_HalfEdge = halfEdge;
 			return *this;
@@ -216,15 +216,15 @@ namespace Symplektis::GeometryBase
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Initialize from a HalfEdge and Edge id
-		*   \param[in] halfEdge     HalfEdge(Iterator) to be initialized from
-		*   \param[in] id       a unique (unsigned) Edge id
+		*   \param[in] halfEdge     HalfEdge(Index) to be initialized from
+		*   \param[in] id           a unique (unsigned) Edge id
 		*   \return reference to this Edge
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   30.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		Edge& Set(const HalfEdgeHandle& halfEdge, const unsigned int& id)
+		Edge& Set(const HalfEdgeIndex& halfEdge, const unsigned int& id)
 		{
 			m_HalfEdge = halfEdge;
 			m_UniqueEdgeIndex = id;
@@ -248,7 +248,7 @@ namespace Symplektis::GeometryBase
 
 	private:
 		//!< Refers to the HalfEdge associated with this Edge
-		HalfEdgeHandle m_HalfEdge;
+		HalfEdgeIndex m_HalfEdge;
 
 		//!< A unique index from 0, ..., nEdges - 1
 		unsigned int m_UniqueEdgeIndex{ 0 };

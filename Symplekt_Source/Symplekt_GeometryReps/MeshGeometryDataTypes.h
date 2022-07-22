@@ -104,12 +104,12 @@ namespace Symplektis::GeometryReps
 		// =============== Data containers ========================================================
 		//
 		
-		GeometryBase::HalfEdgeContainer         HalfEdges{};
-		GeometryBase::VertexContainer            Vertices{};
-		GeometryBase::EdgeContainer                 Edges{};
-		GeometryBase::FaceContainer                 Faces{};
-		GeometryBase::FaceContainer        BoundaryCycles{};
-		GeometryBase::VertexNormalContainer VertexNormals{};
+		std::vector<GeometryBase::HalfEdge>         HalfEdges{};
+		std::vector<GeometryBase::Vertex>            Vertices{};
+		std::vector<GeometryBase::Edge>                 Edges{};
+		std::vector<GeometryBase::Face>                 Faces{};
+		std::vector<GeometryBase::Face>        BoundaryCycles{};
+		std::vector<GeometryBase::VertexNormal> VertexNormals{};
 
 		/// \brief Returns the byte size of this geometry container.
 		[[nodiscard]] size_t Size() const

@@ -158,76 +158,12 @@ namespace Symplektis::GeometryBase
 	typedef std::vector<VertexNormal>::const_iterator VertexNormalConstIterator;
 
 	//
-	// ====================== Geometry Containers ==================================
-	//
-
-	///=============================================================================
-	/// \typedef VertexContainer
-	/// \brief A linear iterable container for Vertex data identified by a UUID.
-	///
-	/// \ingroup GEOMETRY_BASE
-	///
-	/// \author M. Cavarga (MCInversion)
-	/// \date   24.6.2022
-	/// 
-	///=============================================================================
-	typedef Util::UniqueIndexedContainer<Vertex> VertexContainer;
-
-	///=============================================================================
-	/// \typedef FaceContainer
-	/// \brief A linear iterable container for Face data identified by a UUID.
-	///
-	/// \ingroup GEOMETRY_BASE
-	///
-	/// \author M. Cavarga (MCInversion)
-	/// \date   24.6.2022
-	/// 
-	///=============================================================================
-	typedef Util::UniqueIndexedContainer<Face> FaceContainer;
-
-	///=============================================================================
-	/// \typedef EdgeContainer
-	/// \brief A linear iterable container for Edge data identified by a UUID.
-	///
-	/// \ingroup GEOMETRY_BASE
-	///
-	/// \author M. Cavarga (MCInversion)
-	/// \date   24.6.2022
-	/// 
-	///=============================================================================
-	typedef Util::UniqueIndexedContainer<Edge> EdgeContainer;
-
-	///=============================================================================
-	/// \typedef HalfEdgeContainer
-	/// \brief A linear iterable container for HalfEdge data identified by a UUID.
-	///
-	/// \ingroup GEOMETRY_BASE
-	///
-	/// \author M. Cavarga (MCInversion)
-	/// \date   24.6.2022
-	/// 
-	///=============================================================================
-	typedef Util::UniqueIndexedContainer<HalfEdge> HalfEdgeContainer;
-
-	///=============================================================================
-	/// \typedef VertexNormalContainer
-	/// \brief A linear iterable container for VertexNormal data identified by a UUID.
-	///
-	/// \ingroup GEOMETRY_BASE
-	///
-	/// \author M. Cavarga (MCInversion)
-	/// \date   24.6.2022
-	/// 
-	///=============================================================================
-	typedef Util::UniqueIndexedContainer<VertexNormal> VertexNormalContainer;
-
-	//
 	// ======================== Geometry Handles ===================================
 	//
 
 	///=============================================================================
-	/// \typedef VertexHandle
-	/// \brief A handle object for ContainerIndex also containing a reference to VertexContainer.
+	/// \typedef VertexIndex
+	/// \brief An index value wrapper for a vertex in the vertex container.
 	///
 	/// \ingroup GEOMETRY_BASE
 	///
@@ -235,14 +171,14 @@ namespace Symplektis::GeometryBase
 	/// \date   24.6.2022
 	/// 
 	///=============================================================================
-	typedef Util::ContainerIndexHandle<Vertex> VertexHandle;
+	typedef Util::ContainerIndex VertexIndex;
 
-	/// \brief A null VertexHandle pointing no a non-existent position in a VertexContainer.
-	constexpr VertexHandle NULL_VERTEX{};
+	/// \brief A null VertexIndex pointing no a non-existent position in a vertex container.
+	constexpr VertexIndex NULL_VERTEX{-1};
 
 	///=============================================================================
-	/// \typedef FaceHandle
-	/// \brief A handle object for ContainerIndex also containing a reference to FaceContainer.
+	/// \typedef FaceIndex
+	/// \brief An index value wrapper for a face in the face container.
 	///
 	/// \ingroup GEOMETRY_BASE
 	///
@@ -250,14 +186,14 @@ namespace Symplektis::GeometryBase
 	/// \date   24.6.2022
 	/// 
 	///=============================================================================
-	typedef Util::ContainerIndexHandle<Face> FaceHandle;
+	typedef Util::ContainerIndex FaceIndex;
 
-	/// \brief A null FaceHandle pointing no a non-existent position in a FaceContainer.
-	constexpr FaceHandle NULL_FACE{};
+	/// \brief A null FaceIndex pointing no a non-existent position in a face container.
+	constexpr FaceIndex NULL_FACE{-1};
 	
 	///=============================================================================
-	/// \typedef EdgeHandle
-	/// \brief A handle object for ContainerIndex also containing a reference to EdgeContainer.
+	/// \typedef EdgeIndex
+	/// \brief An index value wrapper for an edge in the edge container.
 	///
 	/// \ingroup GEOMETRY_BASE
 	///
@@ -265,14 +201,14 @@ namespace Symplektis::GeometryBase
 	/// \date   24.6.2022
 	/// 
 	///=============================================================================
-	typedef Util::ContainerIndexHandle<Edge> EdgeHandle;
+	typedef Util::ContainerIndex EdgeIndex;
 
-	/// \brief A null EdgeHandle pointing no a non-existent position in a EdgeContainer.
-	constexpr EdgeHandle NULL_EDGE{};
+	/// \brief A null EdgeIndex pointing no a non-existent position in an edge container.
+	constexpr EdgeIndex NULL_EDGE{};
 
 	///=============================================================================
-	/// \typedef HalfEdgeHandle
-	/// \brief A handle object for ContainerIndex also containing a reference to HalfEdgeContainer.
+	/// \typedef HalfEdgeIndex
+	/// \brief An index value wrapper for a half-edge in the half-edge container.
 	///
 	/// \ingroup GEOMETRY_BASE
 	///
@@ -280,14 +216,14 @@ namespace Symplektis::GeometryBase
 	/// \date   24.6.2022
 	/// 
 	///=============================================================================
-	typedef Util::ContainerIndexHandle<HalfEdge> HalfEdgeHandle;
+	typedef Util::ContainerIndex HalfEdgeIndex;
 
-	/// \brief A null HalfEdgeHandle pointing no a non-existent position in a HalfEdgeContainer.
-	constexpr HalfEdgeHandle NULL_HALF_EDGE{};
+	/// \brief A null HalfEdgeIndex pointing no a non-existent position in a half-edge container.
+	constexpr HalfEdgeIndex NULL_HALF_EDGE{};
 
 	///=============================================================================
-	/// \typedef VertexNormalHandle
-	/// \brief A handle object for ContainerIndex also containing a reference to VertexNormalContainer.
+	/// \typedef VertexNormalIndex
+	/// \brief An index value wrapper for a vertex normal in the vertex normal container.
 	///
 	/// \ingroup GEOMETRY_BASE
 	///
@@ -295,9 +231,9 @@ namespace Symplektis::GeometryBase
 	/// \date   24.6.2022
 	/// 
 	///=============================================================================
-	typedef Util::ContainerIndexHandle<VertexNormal> VertexNormalHandle;
+	typedef Util::ContainerIndex VertexNormalIndex;
 
-	/// \brief A null VertexNormalHandle pointing no a non-existent position in a VertexNormalContainer.
-	constexpr VertexNormalHandle NULL_VERTEX_NORMAL{};
+	/// \brief A null VertexNormalIndex pointing no a non-existent position in a vertex normal container.
+	constexpr VertexNormalIndex NULL_VERTEX_NORMAL{};
 
 } // Symplektis::GeometryBase

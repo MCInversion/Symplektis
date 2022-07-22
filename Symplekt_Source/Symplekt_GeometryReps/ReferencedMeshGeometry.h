@@ -23,6 +23,8 @@ namespace Symplektis::GeometryReps
     ///
     /// \ingroup GEOMETRY_REPS
     ///
+    /// TODO: Move to a separate file, so the PImpl actually fulfills its recompilation avoidance purpose.
+    ///
     /// \author M. Cavarga (MCInversion)
     /// \date   7.10.2021
     //=============================================================================

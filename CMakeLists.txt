@@ -15,6 +15,10 @@ set(CMAKE_CONFIGURATION_TYPES Debug Release)
 set(SYMPLEKTIS_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 set(SYMPLEKTIS_SOURCE_DIR ${SYMPLEKTIS_ROOT_DIR}/Symplekt_Source)
 
+# Autogen folders
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+set_property(GLOBAL PROPERTY AUTOGEN_TARGETS_FOLDER Autogen)
+
 # -------------------------------------------------------------------------
 # ---------------------------- External Libs ------------------------------
 # -------------------------------------------------------------------------
