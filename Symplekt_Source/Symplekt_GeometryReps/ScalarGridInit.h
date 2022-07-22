@@ -41,8 +41,8 @@ namespace Symplektis::GeometryReps
 
 		const size_t totalCellCount = resultData.XCellCount * resultData.YCellCount * resultData.ZCellCount;
 
-		resultData.CellData = std::vector(totalCellCount, inputData.InitValue);
-		resultData.CellIsFrozen = std::vector(totalCellCount, false);
+		resultData.CellData = std::vector<double>(totalCellCount, inputData.InitValue);
+		resultData.CellIsFrozen = std::vector<bool>(totalCellCount, false);
 
 		return resultData;
 	}

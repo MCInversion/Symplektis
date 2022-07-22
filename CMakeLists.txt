@@ -34,27 +34,10 @@ set(EXTERNAL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/External)
 enable_testing()
 
 set(GOOGLETEST_SOURCE_DIR ${EXTERNAL_DIR}/GoogleTest)
+set(repo_googletest https://github.com/google/googletest.git)
 
-message("Searching for Google Test repo in ${GOOGLETEST_SOURCE_DIR}")
-
-if(EXISTS ${GOOGLETEST_SOURCE_DIR}/googletest-src)
-
-	message("\${GOOGLETEST_SOURCE_DIR}/googletest-src exists in ${GOOGLETEST_SOURCE_DIR}")
-    set(repo_googletest ${GOOGLETEST_SOURCE_DIR}/googletest-src)	
-
-	# set base directory for FetchContent
-	set(FETCHCONTENT_BASE_DIR ${repo_googletest})
-	set(FETCHCONTENT_SOURCE_DIR ${repo_googletest})
-	
-else()
-
-	message("\${GOOGLETEST_SOURCE_DIR}/googletest-src does not exist, cloning from https://github.com/google/googletest.git")
-    set(repo_googletest https://github.com/google/googletest.git)
-	
-	# set base directory for FetchContent
-	set(FETCHCONTENT_BASE_DIR ${GOOGLETEST_SOURCE_DIR})
-	
-endif()
+# set base directory for FetchContent
+set(FETCHCONTENT_BASE_DIR ${GOOGLETEST_SOURCE_DIR})
 
 FetchContent_Declare(googletest
 	GIT_REPOSITORY                     ${repo_googletest}
@@ -64,42 +47,30 @@ FetchContent_Declare(googletest
 )
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
-include_directories(${GOOGLETEST_SOURCE_DIR}/googletest-src)
+
+include_directories(${GOOGLETEST_SOURCE_DIR}/googletest-src/googletest/include)
 
 # -----------------------------------------------------------------------
 # ......................... Set Up Eigen ................................
 # -----------------------------------------------------------------------
 
 set(EIGEN_SOURCE_DIR ${EXTERNAL_DIR}/Eigen)
-message("Searching for Eigen repo in ${EIGEN_SOURCE_DIR}")
+set(repo_eigen https://gitlab.com/libeigen/eigen.git)
 
-if (EXISTS ${EIGEN_SOURCE_DIR}/eigen-src)
+# set base directory for FetchContent
+set(FETCHCONTENT_BASE_DIR ${EIGEN_SOURCE_DIR})
 
-	message("\${EIGEN_SOURCE_DIR}/eigen-src exists in ${EIGEN_SOURCE_DIR}")
-	set(repo_eigen ${EIGEN_SOURCE_DIR}/eigen-src)
-	
-	find_package(Eigen3 3.4 REQUIRED NO_MODULE)
-	
-else()
-
-	message("\${EIGEN_SOURCE_DIR}/eigen-src does not exist, cloning from https://gitlab.com/libeigen/eigen.git")
-	set(repo_eigen https://gitlab.com/libeigen/eigen.git)
-	
-	# set base directory for FetchContent
-	set(FETCHCONTENT_BASE_DIR ${EIGEN_SOURCE_DIR})
-	
-	FetchContent_Declare(Eigen
-		GIT_REPOSITORY ${repo_eigen}
-		GIT_TAG        3.4.0
-		GIT_PROGRESS   TRUE
-		GIT_SHALLOW    TRUE
-	)
-	set(EIGEN_BUILD_DOC FALSE)
-	set(BUILD_TESTING FALSE)
-	set(EIGEN_BUILD_PKGCONFIG FALSE)
-	FetchContent_MakeAvailable(Eigen)
-	
-endif()
+FetchContent_Declare(Eigen
+	GIT_REPOSITORY                     ${repo_eigen}
+	GIT_TAG                            3.4.0
+	GIT_PROGRESS                       TRUE
+	FETCHCONTENT_TRY_FIND_PACKAGE_MODE ON 
+)
+set(EIGEN_BUILD_DOC FALSE)
+set(BUILD_TESTING FALSE)
+set(EIGEN_BUILD_PKGCONFIG FALSE)
+FetchContent_MakeAvailable(Eigen)
+find_package(Eigen3 3.4 REQUIRED NO_MODULE)
 
 include_directories(${EIGEN_SOURCE_DIR}/eigen-src)
 

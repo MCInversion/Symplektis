@@ -102,39 +102,65 @@ TEST(OBJImport_TestSuite, SFBunnyOBJFile_Import_ImportedSFBunnyData)
 
 ------------------
 
-### Architecture Components & Their Purpose:
+## Architecture Components & Their Purpose:
 
 ![SymplektisBaseArchitecture](https://github.com/MCInversion/Symplektis/blob/main/InfoImages/Symplekt_Architecture.png)
+
+Symplektis is meant to serve as the foundation for a "`Symplekt_App`" which introduces new functionality by combining functionalities in the `Kernel` block. The `Kernel` uses base functionality in the `Basis` block, and finally there's the `External` block which hosts all thrid-party libraries such as GoogleTest and Eigen.
+
+### [] **Symplekt_App**
+
+It can be a simple demo executable or a more complex project with multiple helper classes and/or utilities. This component will, most of the time, consist of only a single `main()` function with some helper utilites. The true extent of this item is still unknown at this point and will be better known after apps like ShrinkWrapper.exe will be implemented. The ShrinkWrapper app will, for example, use all Kernel components to:
+ - save/load standardized mesh/implicit geometries to/from selected directories,
+ - perform time and memory-consumption measurements for the algorithms,
+ - voxelize & construct SDFs of imported mesh geometries,
+ - use surface fairing and decimation methods to "shrink-wrap" target meshes with a chosen starting surface,
+ - perform analysis operations on mesh and volumetric data within the app or from loaded files.
+ - print additional reports about the above functionality, some of them integrated as inputs for other tools e.g. Wolfram Mathematica, (PlantUML)[https://www.planttext.com/].
+ 
+This means that Symplektis ShrinkWrapper will need to accumulate the above functionality first in a single `main()` where flags would be turned on/off to run different settings, then a command line interface will be implemented for the Symplekt_IOService component which will parse `argv**` into Symplektis commands, and finally a user interface incorporating all of the above (including a command line option) will be implemented.
+
+------------------
+
+### [] **Kernel**:
+
+Symplektis Kernel is meant to contain all functionality available to the user, essentially serving as an API for Symplekt_App. At this point, there is no reason for other components to be available to the Symplekt_App. All of the operations an app could perform will be interfaced and/or implemented in this block. That entails I/O operations, fundamental geometric functionality, and the key algorithms used in the app.
+
+#### -> **Symplekt_IOService**:
+Input/Output service. Deals with import/export of 3D data (image or polygonal), analysis & timing reports, and console output.
+
+#### -> **Symplekt_Algorithms**: 
+
+Initially there were two components, namely for "analysis" and "processing" subroutines.
+
+An "analysis subroutine" is any algorithm performed on mesh or implicit geometry data which outputs a scalar, vector, or tensor field defined either on the geometry itself, or on the ambient (Euclidean) space of the evaluated geometry.
+
+A "processing subroutine" is any algorithm performed on mesh or implicit geometry data which outputs a modified (processed) geometry of the same type. For example, remeshing, decimation, triangulation, smoothing, or fairing tools.
+
+At this stage, however, it seems illogical to separate them into two components which might potentially overlap quite a lot. In particular, `AABBTree` might be used to "analyze" a mesh by computing a distance to it, or for "processing" it before a shrink-wrapper tool is used.
+
+#### -> **Symplekt_GeometryKernel**:
+
+Implements higher-level math primitives, such as `Vector3`, `Quaternion`, `Matrix4` etc. including basic mathematical and geometry utils such as: triangle-box intersection, triangulation etc, and geometric representations (e.g. mesh, implicit) of 3D objects.
+
+------------------
+
+#### -> [] **Basis**:
+
+This block forms the "basis" for the Kernel block, that is: a low-level support for IOService, Algorithms and GeometryKernel. Components in this block contain abstract representations of items in the Kernel block as well as data representations for various purposes, including those for numerical methods invoking Eigen functionality.
 
 #### -> **Symplekt_UtilityGeneral**:
 A low-level component containing base error handlers, assertions, timing etc.
 
 #### -> **Symplekt_DataReps**:
-A mid-level component with useful data structure implementations (e.g.: binary tree).
-
-#### -> **Symplekt_GeometryBase**:
-A mid-level geometry component containing all building blocks of geometric objects and transformations, such as: `Vector3`, `Quaternion`, `Matrix4` etc. including basic mathematical and geometry utils such as: triangle-box intersection etc.
-
-#### -> **Symplekt_GeometryReps**:
-A mid-level geometry component responsible for geometric representations (e.g. mesh, implicit) of 3D objects.
-
-#### -> **Symplekt_IOService**:
-Input/Output service. Deals with import/export of 3D data (image or polygonal), analysis & timing reports, and console output.
+A low-level component with useful data structure implementations (e.g.: binary tree).
 
 #### -> **Symplekt_Numerics**:
 A low-level processing component delegated to by mid-level analysis and processing components to perform large-scale numerical computations (e.g.: linear solvers, diagonalization, ...). Uses the [Eigen library](https://gitlab.com/libeigen/eigen).
 
-#### -> **Symplekt_AnalysisKernel**:
-
-An "analysis subroutine" is any algorithm performed on mesh or implicit geometry data which outputs a scalar, vector, or tensor field defined either on the geometry itself, or on the ambient (Euclidean) space of the evaluated geometry.
-
-#### -> **Symplekt_ProcessingKernel**:
-
-A "processing subroutine" is any algorithm performed on mesh or implicit geometry data which outputs a modified (processed) geometry of the same type. For example, remeshing, decimation, triangulation, smoothing, or fairing tools.
-
 ------------------
 
-### Third-Party (External):
+### [] Third-Party (External):
 
 #### -> **GoogleTest**:
 

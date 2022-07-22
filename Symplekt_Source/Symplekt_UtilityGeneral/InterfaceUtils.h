@@ -31,16 +31,16 @@ namespace Symplektis::Util
 		ISymplektBaseObject() = default;
 		
 		/// \brief Default copy constructor.
-		ISymplektBaseObject(const ISymplektBaseObject& other) = default;
+		ISymplektBaseObject(const ISymplektBaseObject&) = default;
 
 		/// \brief Default move constructor.
-		ISymplektBaseObject(ISymplektBaseObject&& other) = default;
+		ISymplektBaseObject(ISymplektBaseObject&&) = default;
 
 		/// \brief Default copy-assignment operator.
-		ISymplektBaseObject& operator=(const ISymplektBaseObject& other) = default;
+		ISymplektBaseObject& operator=(const ISymplektBaseObject&) = default;
 
 		/// \brief Default move-assignment operator.
-		ISymplektBaseObject& operator=(ISymplektBaseObject&& other) = default;
+		ISymplektBaseObject& operator=(ISymplektBaseObject&&) = default;
 		
 		/// \brief Default destructor.
 		virtual ~ISymplektBaseObject() = default;
