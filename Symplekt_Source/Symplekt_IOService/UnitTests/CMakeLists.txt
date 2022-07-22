@@ -9,7 +9,6 @@ file(GLOB Symplekt_IOService_Tests_Src "*.h" "*.cpp")
 
 # Now simply link against gtest or gtest_main as needed. Eg
 add_executable(${PROJECT_NAME} ${Symplekt_IOService_Tests_Src})
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${SYMPLEKT_KERNEL_FOLDER})
 
 # ----- make sure SYMPLEKTIS_ROOT_DIR is readable in source ---------
 #

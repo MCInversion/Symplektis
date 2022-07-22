@@ -15,9 +15,8 @@ set(CMAKE_CONFIGURATION_TYPES Debug Release)
 set(SYMPLEKTIS_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 set(SYMPLEKTIS_SOURCE_DIR ${SYMPLEKTIS_ROOT_DIR}/Symplekt_Source)
 
-# Autogen folders
-set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-set_property(GLOBAL PROPERTY AUTOGEN_TARGETS_FOLDER Autogen)
+# Set Symplektis_ShrinkWrapper the startup project
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME})
 
 # -------------------------------------------------------------------------
 # ---------------------------- External Libs ------------------------------
@@ -99,19 +98,71 @@ add_subdirectory(${SYMPLEKTIS_SOURCE_DIR}/Symplekt_Algorithms)
 
 # executable
 add_executable(${PROJECT_NAME} ${SYMPLEKTIS_SOURCE_DIR}/ShrinkWrapper.cpp)
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${SYMPLEKT_APPS_FOLDER})
+
+# Autogen folders
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+set_property(GLOBAL PROPERTY AUTOGEN_TARGETS_FOLDER Autogen)
+
+# VS solution filters for targets
+set_target_properties(
+
+	${PROJECT_NAME}
+	# ${PROJECT2_NAME}
+	# ${PROJECT3_NAME}
+	
+	PROPERTIES FOLDER ${SYMPLEKT_APPS_FOLDER}
+)
+set_target_properties(
+	
+	# googletest
+	gmock
+	gmock_main
+	gtest
+	gtest_main
+	uninstall
+	
+	PROPERTIES FOLDER ${SYMPLEKT_EXTERNAL_FOLDER}
+)
+
+set_target_properties(
+
+	Symplekt_IOService
+	Symplekt_IOService_Tests
+	Symplekt_DataReps
+	Symplekt_DataReps_Tests
+	Symplekt_Numerics
+	# Symplekt_Numerics_Tests
+	
+	PROPERTIES FOLDER ${SYMPLEKT_BASIS_FOLDER}
+)
+
+set_target_properties(
+
+	Symplekt_UtilityGeneral
+	Symplekt_UtilityGeneral_Tests
+	Symplekt_GeometryKernel
+	Symplekt_GeometryKernel_Tests
+	Symplekt_Algorithms
+	# Symplekt_Algorithms_Tests
+	
+	PROPERTIES FOLDER ${SYMPLEKT_KERNEL_FOLDER}
+)
+
 
 # to make sure "Symplekt_" source directories can be included
 target_include_directories(${PROJECT_NAME} PUBLIC ${SYMPLEKTIS_SOURCE_DIR})
 
 # link components to main project
 target_link_libraries(${PROJECT_NAME}
+
 	Symplekt_UtilityGeneral
 	Symplekt_DataReps
 	Symplekt_Numerics
+	
 	Symplekt_IOService
 	Symplekt_GeometryKernel
 	Symplekt_Algorithms
+	
 	Eigen3::Eigen
 )
 
