@@ -145,7 +145,7 @@ Implements higher-level math primitives, such as `Vector3`, `Quaternion`, `Matri
 
 ------------------
 
-#### -> [] **Basis**:
+### [] **Basis**:
 
 This block forms the "basis" for the Kernel block, that is: a low-level support for IOService, Algorithms and GeometryKernel. Components in this block contain abstract representations of items in the Kernel block as well as data representations for various purposes, including those for numerical methods invoking Eigen functionality.
 
