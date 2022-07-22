@@ -9,7 +9,7 @@
 #pragma once
 
 
-#include "Symplekt_GeometryBase/Vector3.h"
+#include "Symplekt_GeometryKernel/Vector3.h"
 
 #include <string>
 #include <vector>
@@ -28,9 +28,9 @@ namespace Symplektis::IOService
 	struct GeometryIOData
 	{
 		std::wstring                              Name;
-		std::vector<GeometryBase::Vector3>        Vertices;
+		std::vector<GeometryKernel::Vector3>        Vertices;
 		std::vector<std::vector<unsigned int>>    VertexIndices;
-		std::vector<GeometryBase::Vector3>        VertexNormals;
+		std::vector<GeometryKernel::Vector3>        VertexNormals;
 		
 		// TODO: textures etc
 

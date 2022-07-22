@@ -8,12 +8,12 @@
 
 #include "BaseGeometryImportHandle.h"
 
-#include "Symplekt_GeometryReps/BufferMeshGeometry.h"
-#include "Symplekt_GeometryReps/ReferencedMeshGeometry.h"
+#include "Symplekt_GeometryKernel/BufferMeshGeometry.h"
+#include "Symplekt_GeometryKernel/ReferencedMeshGeometry.h"
 
 namespace Symplektis::IOService
 {
-	using namespace GeometryReps;
+	using namespace GeometryKernel;
 
 	//-----------------------------------------------------------------------------
 	/*! \brief Copies buffers from imported GeometryIOData to BasePolygonalGeometryData object used for geometry construction.

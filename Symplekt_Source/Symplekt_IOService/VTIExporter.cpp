@@ -24,7 +24,7 @@ namespace Symplektis::IOService
 	*   \date   24.10.2021
 	*/
 	//-----------------------------------------------------------------------------
-	static std::pair<double, double> EvaluateScalarFieldRangeBounds(const GeometryReps::ScalarGridData& data)
+	static std::pair<double, double> EvaluateScalarFieldRangeBounds(const GeometryKernel::ScalarGridData& data)
 	{
 		double min = DBL_MAX;
 		double max = DBL_MIN;
@@ -37,7 +37,7 @@ namespace Symplektis::IOService
 		return { min, max };
 	}
 
-    ExportStatus VTIExporter::Export(const GeometryReps::ScalarGridData& data, const std::filesystem::path& exportedFileName)
+    ExportStatus VTIExporter::Export(const GeometryKernel::ScalarGridData& data, const std::filesystem::path& exportedFileName)
     {
 		std::filesystem::path resultPath = exportedFileName;
 

@@ -8,9 +8,9 @@
 
 #include "gtest/gtest.h"
 
-#include "Symplekt_GeometryBase/Box3.h"
-#include "Symplekt_GeometryReps/ImplicitGeometryDataTypes.h"
-#include "Symplekt_GeometryReps/ScalarGridInit.h"
+#include "Symplekt_GeometryKernel/Box3.h"
+#include "Symplekt_GeometryKernel/ImplicitGeometryDataTypes.h"
+#include "Symplekt_GeometryKernel/ScalarGridInit.h"
 
 #include "Symplekt_IOService/VTIExporter.h"
 
@@ -21,7 +21,7 @@
 namespace Symplektis::UnitTests
 {
 	using namespace IOService;
-	using namespace GeometryReps;
+	using namespace GeometryKernel;
 
 	// set up root directory
 	const std::filesystem::path symplektRootPath = DSYMPLEKTIS_ROOT_DIR;
@@ -63,7 +63,7 @@ namespace Symplektis::UnitTests
 	{
 		// Arrange
 		const auto fileFullPath = symplektRootPath / "Symplekt_OutputData\\UnitTests" / "polynomialScalarField.vti";
-		auto boundingBox = GeometryBase::Box3{
+		auto boundingBox = GeometryKernel::Box3{
 			{-20.3, -20.1, 0.21},
 			{20.123, 20.35, 29.96}
 		};
@@ -83,7 +83,7 @@ namespace Symplektis::UnitTests
 	{
 		// Arrange
 		const auto fileFullPath = symplektRootPath / "Symplekt_OutputData\\UnitTests" / "trigScalarField.vti";
-		auto boundingBox = GeometryBase::Box3{
+		auto boundingBox = GeometryKernel::Box3{
 			{-20.3, -20.1, 0.21},
 			{20.123, 20.35, 29.96}
 		};
@@ -103,7 +103,7 @@ namespace Symplektis::UnitTests
 	{
 		// Arrange
 		const auto fileFullPath = symplektRootPath / "Symplekt_OutputData\\UnitTests" / "maxMinScalarField.vti";
-		auto boundingBox = GeometryBase::Box3{
+		auto boundingBox = GeometryKernel::Box3{
 			{-20.123, -20.35, -29.96},
 			{20.123, 20.35, 29.96}
 		};
@@ -123,7 +123,7 @@ namespace Symplektis::UnitTests
 	{
 		// Arrange
 		const auto fileFullPath = symplektRootPath / "Symplekt_OutputData\\UnitTests" / "minMaxScalarField.vti";
-		auto boundingBox = GeometryBase::Box3{
+		auto boundingBox = GeometryKernel::Box3{
 			{-20.123, -20.35, -29.96},
 			{20.123, 20.35, 29.96}
 		};

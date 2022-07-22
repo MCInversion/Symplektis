@@ -82,7 +82,7 @@ namespace Symplektis::IOService
 		//-----------------------------------------------------------------------------
 		static void PostProcessVertexNormalsFromIndices(
 			const std::vector<std::vector<unsigned int>>&  collectedNormalIndices,
-			const std::vector<GeometryBase::Vector3>&      nonIndexedVertexNormals);
+			const std::vector<GeometryKernel::Vector3>&      nonIndexedVertexNormals);
 
 		//
 		// ==================================

@@ -8,7 +8,7 @@
    Previous attempts with referenced geometry and binary tree implementations used iterators, but as it turns out: \n
    iterators of container elements after the insertion/erasure position are invalidated. This renders them useless \n
    for applications involving topological adjustments to referenced geometry because a substantial portion of iterators\n
-   used in GeometryBase types (e.g. Vertex, HalfEdge, Face...) would need to be re-validated (reset) after adding or \n
+   used in GeometryKernel types (e.g. Vertex, HalfEdge, Face...) would need to be re-validated (reset) after adding or \n
    removing an element from container.
 
    The current implementation involves global index types, container indices, unique containers, and index handles.  \n

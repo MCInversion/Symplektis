@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "Symplekt_GeometryReps/ImplicitGeometryDataTypes.h" // TODO: use a local struct instead of GeometryReps::ScalarGridData
+#include "Symplekt_GeometryKernel/ImplicitGeometryDataTypes.h" // TODO: use a local struct instead of GeometryKernel::ScalarGridData
 #include "IOHelperTypes.h"
 
 #include <filesystem>
@@ -45,7 +45,7 @@ namespace Symplektis::IOService
 		*   \date   24.10.2021
 		*/
 		//-----------------------------------------------------------------------------
-		static [[nodiscard]] ExportStatus Export(const GeometryReps::ScalarGridData& data, const std::filesystem::path& exportedFileName);		
+		static [[nodiscard]] ExportStatus Export(const GeometryKernel::ScalarGridData& data, const std::filesystem::path& exportedFileName);		
 	};
 
 } // Symplektis::IOService

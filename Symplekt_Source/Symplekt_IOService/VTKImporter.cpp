@@ -15,7 +15,7 @@
 
 namespace Symplektis::IOService
 {
-	using namespace GeometryBase;
+	using namespace GeometryKernel;
 	
 	//-----------------------------------------------------------------------------
 	/*! \brief Parse mesh file name from the imported file path.

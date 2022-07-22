@@ -9,6 +9,7 @@ file(GLOB Symplekt_IOService_Tests_Src "*.h" "*.cpp")
 
 # Now simply link against gtest or gtest_main as needed. Eg
 add_executable(${PROJECT_NAME} ${Symplekt_IOService_Tests_Src})
+set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${SYMPLEKT_KERNEL_FOLDER})
 
 # ----- make sure SYMPLEKTIS_ROOT_DIR is readable in source ---------
 #
@@ -24,8 +25,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${SYMPLEKTIS_SOURCE_DIR})
 target_link_libraries(${PROJECT_NAME}
 	gtest_main			    # gtest lib
 	Symplekt_IOService      # tested lib
-	Symplekt_GeometryBase   # geom dependencies 1
-	Symplekt_GeometryReps   # geom dependencies 2
+	Symplekt_GeometryKernel # geom dependencies
 	Symplekt_UtilityGeneral # util dependencies
 )
 

@@ -16,7 +16,7 @@
 
 namespace Symplektis::IOService
 {
-	using namespace GeometryBase;
+	using namespace GeometryKernel;
 
 	//-----------------------------------------------------------------------------
 	/*! \brief Read a line token composed of three floating point coordinates

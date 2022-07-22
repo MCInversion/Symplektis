@@ -5,7 +5,7 @@ cmake_policy(SET CMP0090 NEW)
 cmake_minimum_required(VERSION 3.14)
 
 # use a diferent name for GUI version
-project(Symplektis_ConsoleApp VERSION 1.0)
+project(Symplektis_ShrinkWrapper VERSION 1.0)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -78,18 +78,28 @@ include_directories(${EIGEN_SOURCE_DIR}/eigen-src)
 # .............. Set Up Symplektis Components ...........................
 # -----------------------------------------------------------------------
 
+# block folder definitions
+
+set(SYMPLEKT_APPS_FOLDER "Symplekt_Apps")
+set(SYMPLEKT_KERNEL_FOLDER "Kernel")
+set(SYMPLEKT_BASIS_FOLDER "Basis")
+set(SYMPLEKT_EXTERNAL_FOLDER "External")
+
 # add component directories
+
+# -- Basis --
 add_subdirectory(${SYMPLEKTIS_SOURCE_DIR}/Symplekt_UtilityGeneral)
 add_subdirectory(${SYMPLEKTIS_SOURCE_DIR}/Symplekt_DataReps)
-add_subdirectory(${SYMPLEKTIS_SOURCE_DIR}/Symplekt_IOService)
-add_subdirectory(${SYMPLEKTIS_SOURCE_DIR}/Symplekt_GeometryBase)
-add_subdirectory(${SYMPLEKTIS_SOURCE_DIR}/Symplekt_GeometryReps)
 add_subdirectory(${SYMPLEKTIS_SOURCE_DIR}/Symplekt_Numerics)
-add_subdirectory(${SYMPLEKTIS_SOURCE_DIR}/Symplekt_AnalysisKernel)
-add_subdirectory(${SYMPLEKTIS_SOURCE_DIR}/Symplekt_ProcessingKernel)
+
+# -- Kernel --
+add_subdirectory(${SYMPLEKTIS_SOURCE_DIR}/Symplekt_IOService)
+add_subdirectory(${SYMPLEKTIS_SOURCE_DIR}/Symplekt_GeometryKernel)
+add_subdirectory(${SYMPLEKTIS_SOURCE_DIR}/Symplekt_Algorithms)
 
 # executable
-add_executable(${PROJECT_NAME} ${SYMPLEKTIS_SOURCE_DIR}/SymplektMain.cpp)
+add_executable(${PROJECT_NAME} ${SYMPLEKTIS_SOURCE_DIR}/ShrinkWrapper.cpp)
+set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${SYMPLEKT_APPS_FOLDER})
 
 # to make sure "Symplekt_" source directories can be included
 target_include_directories(${PROJECT_NAME} PUBLIC ${SYMPLEKTIS_SOURCE_DIR})
@@ -98,12 +108,10 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${SYMPLEKTIS_SOURCE_DIR})
 target_link_libraries(${PROJECT_NAME}
 	Symplekt_UtilityGeneral
 	Symplekt_DataReps
-	Symplekt_IOService
-    Symplekt_GeometryReps
-	Symplekt_GeometryBase
 	Symplekt_Numerics
-	Symplekt_ProcessingKernel
-	Symplekt_AnalysisKernel
+	Symplekt_IOService
+	Symplekt_GeometryKernel
+	Symplekt_Algorithms
 	Eigen3::Eigen
 )
 

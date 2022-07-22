@@ -8,7 +8,7 @@
 
 #include "gtest/gtest.h"
 
-#include "Symplekt_GeometryReps/MeshGeometryDataTypes.h"
+#include "Symplekt_GeometryKernel/MeshGeometryDataTypes.h"
 
 #include "Symplekt_IOService/OBJImporter.h"
 #include "Symplekt_IOService/BaseGeometryImportHandle.h"

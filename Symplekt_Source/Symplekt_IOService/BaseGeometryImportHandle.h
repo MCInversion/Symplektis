@@ -10,7 +10,7 @@
 
 #include "GeometryIOData.h"
 
-#include "Symplekt_GeometryReps/MeshGeometryDataTypes.h"
+#include "Symplekt_GeometryKernel/MeshGeometryDataTypes.h"
 
 namespace Symplektis::IOService
 {
@@ -25,7 +25,7 @@ namespace Symplektis::IOService
      *
      */
      //-----------------------------------------------------------------------------
-	GeometryReps::ReferencedMeshGeometryData ConvertIODataToReferencedMeshGeometryData(const GeometryIOData& importedData);
+	GeometryKernel::ReferencedMeshGeometryData ConvertIODataToReferencedMeshGeometryData(const GeometryIOData& importedData);
 
     //-----------------------------------------------------------------------------
     /*! \brief Builds BufferMeshGeometryData from imported GeometryIOData using BufferMeshGeometry implementation.
@@ -37,6 +37,6 @@ namespace Symplektis::IOService
      *
      */
      //-----------------------------------------------------------------------------
-	GeometryReps::BufferMeshGeometryData ConvertIODataToBufferMeshGeometryData(const GeometryIOData& importedData);
+	GeometryKernel::BufferMeshGeometryData ConvertIODataToBufferMeshGeometryData(const GeometryIOData& importedData);
 
 } // Symplektis::IOService
