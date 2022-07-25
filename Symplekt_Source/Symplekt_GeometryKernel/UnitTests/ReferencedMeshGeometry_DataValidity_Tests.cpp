@@ -82,8 +82,8 @@ namespace Symplektis::UnitTests
         EXPECT_EQ(icoMeshData.Edges.size(), 30);        
     	for (unsigned int edgeCounter = 0; auto& edge : icoMeshData.Edges)
     	{
-            const Vector3 v0 = edge.HalfEdge().GetElement().TailVertex().GetElement().Position();
-            const Vector3 v1 = edge.HalfEdge().GetElement().OppositeHalfEdge().GetElement().TailVertex().GetElement().Position();
+            const Vector3 v0 = icoMeshData.Vertices[icoMeshData.HalfEdges[edge.HalfEdge().get()].TailVertex().get()].Position();
+            const Vector3 v1 = icoMeshData.Vertices[icoMeshData.HalfEdges[icoMeshData.HalfEdges[edge.HalfEdge().get()].OppositeHalfEdge().get()].TailVertex().get()].Position();
             const double length = (v1 - v0).GetLength();
             EXPECT_DOUBLE_EQ(length, ico_edge_length);
             EXPECT_EQ(edge.Index(), edgeCounter);
@@ -113,7 +113,7 @@ namespace Symplektis::UnitTests
         const auto& icoMeshData = m_Icosahedron->GetMeshData();
     	for (auto& face : icoMeshData.Faces)
     	{
-            const double area = ComputeArea(face);
+            const double area = ComputeArea(face, icoMeshData);
             EXPECT_DOUBLE_EQ(area, ico_triangle_area);
     	}
     }
@@ -125,7 +125,7 @@ namespace Symplektis::UnitTests
         unsigned int faceCounter = 0;
         for (auto& face : icoWithHoleMeshData.Faces)
         {
-            const double area = ComputeArea(face);
+            const double area = ComputeArea(face, icoWithHoleMeshData);
             EXPECT_DOUBLE_EQ(area, ico_triangle_area);
             EXPECT_EQ(face.Index(), faceCounter);
             faceCounter++;
@@ -134,7 +134,7 @@ namespace Symplektis::UnitTests
         EXPECT_EQ(icoWithHoleMeshData.BoundaryCycles.size(), 1);
         const auto& hole = icoWithHoleMeshData.BoundaryCycles[0];
         EXPECT_EQ(hole.GetTriangulation().size(), 0);
-        const double holeArea = ComputeArea(hole);
+        const double holeArea = ComputeArea(hole, icoWithHoleMeshData);
         EXPECT_DOUBLE_EQ(holeArea, 0.0);
     }
 
@@ -148,7 +148,7 @@ namespace Symplektis::UnitTests
         EXPECT_EQ(faceCount, 19);
         for (unsigned int i = 0; i < faceCount; i++)
         {
-	        const double area = ComputeArea(icoFaces[i]);
+	        const double area = ComputeArea(icoFaces[i], icoWithQuadMeshData);
             EXPECT_EQ(icoFaces[i].Index(), i);
         	if (icoFaces[i].GetTriangulation().size() == 1) // triangles
         	{
@@ -177,10 +177,10 @@ namespace Symplektis::UnitTests
         const Vertex testVertex4 = icoWithHoleMeshData.Vertices[4]; // boundary vertex
 
         // Act
-        const unsigned int vertex0Valence = GetValence(testVertex0); 
-        const unsigned int vertex2Valence = GetValence(testVertex2);
-        const unsigned int vertex3Valence = GetValence(testVertex3);
-        const unsigned int vertex4Valence = GetValence(testVertex4);
+        const unsigned int vertex0Valence = GetValence(testVertex0, icoWithHoleMeshData);
+        const unsigned int vertex2Valence = GetValence(testVertex2, icoWithHoleMeshData);
+        const unsigned int vertex3Valence = GetValence(testVertex3, icoWithHoleMeshData);
+        const unsigned int vertex4Valence = GetValence(testVertex4, icoWithHoleMeshData);
 
         // Assert
         EXPECT_EQ(vertex0Valence, 5);
@@ -199,7 +199,7 @@ namespace Symplektis::UnitTests
         const auto& boundaryVertex4 = icoWithHoleMeshData.Vertices[4];
 
 		// Act & Assert
-        EXPECT_TRUE(hole.IsBoundary());
+        EXPECT_TRUE(hole.IsBoundary(icoWithHoleMeshData.HalfEdges));
         EXPECT_TRUE(boundaryVertex3.IsBoundary());
         EXPECT_TRUE(boundaryVertex4.IsBoundary());
         EXPECT_FALSE(nonBoundaryVertex0.IsBoundary());
@@ -220,11 +220,11 @@ namespace Symplektis::UnitTests
 		// Assert
         EXPECT_EQ(copiedData.Faces.size(), 18);
         EXPECT_EQ(copiedData.BoundaryCycles.size(), 1);
-        EXPECT_DOUBLE_EQ(ComputeArea(copiedData.Faces[0]), ico_triangle_area);
+        EXPECT_DOUBLE_EQ(ComputeArea(copiedData.Faces[0], copiedData), ico_triangle_area);
         // original data should keep its values
         EXPECT_EQ(icoWithHoleMeshData.Faces.size(), 18);
         EXPECT_EQ(icoWithHoleMeshData.BoundaryCycles.size(), 1);
-        EXPECT_DOUBLE_EQ(ComputeArea(icoWithHoleMeshData.Faces[0]), ico_triangle_area);
+        EXPECT_DOUBLE_EQ(ComputeArea(icoWithHoleMeshData.Faces[0], icoWithHoleMeshData), ico_triangle_area);
     }
 
     TEST_F(ReferencedMeshGeometry_DataValidity_TestFixture, HoleMeshData_DataCopyAssignment_DataCopyAssigned)
@@ -238,11 +238,11 @@ namespace Symplektis::UnitTests
         // Assert
         EXPECT_EQ(copiedData.Faces.size(), 18);
         EXPECT_EQ(copiedData.BoundaryCycles.size(), 1);
-        EXPECT_DOUBLE_EQ(ComputeArea(copiedData.Faces[0]), ico_triangle_area);
+        EXPECT_DOUBLE_EQ(ComputeArea(copiedData.Faces[0], copiedData), ico_triangle_area);
         // original data should keep its values
         EXPECT_EQ(icoWithHoleMeshData.Faces.size(), 18);
         EXPECT_EQ(icoWithHoleMeshData.BoundaryCycles.size(), 1);
-        EXPECT_DOUBLE_EQ(ComputeArea(icoWithHoleMeshData.Faces[0]), ico_triangle_area);
+        EXPECT_DOUBLE_EQ(ComputeArea(icoWithHoleMeshData.Faces[0], icoWithHoleMeshData), ico_triangle_area);
     }
 
     TEST_F(ReferencedMeshGeometry_DataValidity_TestFixture, HoleMeshData_DataMoveConstructor_DataMoveConstructed)
@@ -251,12 +251,12 @@ namespace Symplektis::UnitTests
         auto icoWithHoleMeshData = m_IcosahedronWithHole->GetMeshData();
 
         // Act
-        const ReferencedMeshGeometryData copiedData(std::move(icoWithHoleMeshData));
+        const ReferencedMeshGeometryData movedData(std::move(icoWithHoleMeshData));
 
         // Assert
-        EXPECT_EQ(copiedData.Faces.size(), 18);
-        EXPECT_EQ(copiedData.BoundaryCycles.size(), 1);
-        EXPECT_DOUBLE_EQ(ComputeArea(copiedData.Faces[0]), ico_triangle_area);
+        EXPECT_EQ(movedData.Faces.size(), 18);
+        EXPECT_EQ(movedData.BoundaryCycles.size(), 1);
+        EXPECT_DOUBLE_EQ(ComputeArea(movedData.Faces[0], movedData), ico_triangle_area);
         // original data should lose its values
         EXPECT_EQ(icoWithHoleMeshData.Faces.size(), 0);
         EXPECT_EQ(icoWithHoleMeshData.BoundaryCycles.size(), 0);
@@ -268,12 +268,12 @@ namespace Symplektis::UnitTests
         auto icoWithHoleMeshData = m_IcosahedronWithHole->GetMeshData();
 
         // Act
-        const auto copiedData = std::move(icoWithHoleMeshData);
+        const auto movedData = std::move(icoWithHoleMeshData);
 
         // Assert
-        EXPECT_EQ(copiedData.Faces.size(), 18);
-        EXPECT_EQ(copiedData.BoundaryCycles.size(), 1);
-        EXPECT_DOUBLE_EQ(ComputeArea(copiedData.Faces[0]), ico_triangle_area);
+        EXPECT_EQ(movedData.Faces.size(), 18);
+        EXPECT_EQ(movedData.BoundaryCycles.size(), 1);
+        EXPECT_DOUBLE_EQ(ComputeArea(movedData.Faces[0], movedData), ico_triangle_area);
         // original data should lose its values
         EXPECT_EQ(icoWithHoleMeshData.Faces.size(), 0);  
         EXPECT_EQ(icoWithHoleMeshData.BoundaryCycles.size(), 0);
@@ -291,14 +291,14 @@ namespace Symplektis::UnitTests
         // Assert
         EXPECT_EQ(copiedData0.Faces.size(), 18);
         EXPECT_EQ(copiedData0.BoundaryCycles.size(), 1);
-        EXPECT_DOUBLE_EQ(ComputeArea(copiedData0.Faces[0]), ico_triangle_area);
+        EXPECT_DOUBLE_EQ(ComputeArea(copiedData0.Faces[0], copiedData0), ico_triangle_area);
         EXPECT_EQ(copiedData1.Faces.size(), 18);
         EXPECT_EQ(copiedData1.BoundaryCycles.size(), 1);
-        EXPECT_DOUBLE_EQ(ComputeArea(copiedData1.Faces[0]), ico_triangle_area);
+        EXPECT_DOUBLE_EQ(ComputeArea(copiedData1.Faces[0], copiedData1), ico_triangle_area);
         // original data should keep its values
         EXPECT_EQ(icoWithHoleMeshData.Faces.size(), 18);
         EXPECT_EQ(icoWithHoleMeshData.BoundaryCycles.size(), 1);
-        EXPECT_DOUBLE_EQ(ComputeArea(icoWithHoleMeshData.Faces[0]), ico_triangle_area);
+        EXPECT_DOUBLE_EQ(ComputeArea(icoWithHoleMeshData.Faces[0], icoWithHoleMeshData), ico_triangle_area);
     }
 
 } // Symplektis::UnitTests

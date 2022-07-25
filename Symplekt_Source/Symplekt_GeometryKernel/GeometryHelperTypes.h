@@ -174,7 +174,7 @@ namespace Symplektis::GeometryKernel
 	typedef Util::ContainerIndex VertexIndex;
 
 	/// \brief A null VertexIndex pointing no a non-existent position in a vertex container.
-	constexpr VertexIndex NULL_VERTEX{-1};
+	constexpr VertexIndex NULL_VERTEX{-1 };
 
 	///=============================================================================
 	/// \typedef FaceIndex
@@ -189,7 +189,7 @@ namespace Symplektis::GeometryKernel
 	typedef Util::ContainerIndex FaceIndex;
 
 	/// \brief A null FaceIndex pointing no a non-existent position in a face container.
-	constexpr FaceIndex NULL_FACE{-1};
+	constexpr FaceIndex NULL_FACE{-1 };
 	
 	///=============================================================================
 	/// \typedef EdgeIndex
@@ -204,7 +204,7 @@ namespace Symplektis::GeometryKernel
 	typedef Util::ContainerIndex EdgeIndex;
 
 	/// \brief A null EdgeIndex pointing no a non-existent position in an edge container.
-	constexpr EdgeIndex NULL_EDGE{};
+	constexpr EdgeIndex NULL_EDGE{ -1 };
 
 	///=============================================================================
 	/// \typedef HalfEdgeIndex
@@ -219,7 +219,7 @@ namespace Symplektis::GeometryKernel
 	typedef Util::ContainerIndex HalfEdgeIndex;
 
 	/// \brief A null HalfEdgeIndex pointing no a non-existent position in a half-edge container.
-	constexpr HalfEdgeIndex NULL_HALF_EDGE{};
+	constexpr HalfEdgeIndex NULL_HALF_EDGE{-1 };
 
 	///=============================================================================
 	/// \typedef VertexNormalIndex
@@ -234,6 +234,6 @@ namespace Symplektis::GeometryKernel
 	typedef Util::ContainerIndex VertexNormalIndex;
 
 	/// \brief A null VertexNormalIndex pointing no a non-existent position in a vertex normal container.
-	constexpr VertexNormalIndex NULL_VERTEX_NORMAL{};
+	constexpr VertexNormalIndex NULL_VERTEX_NORMAL{ -1 };
 
 } // Symplektis::GeometryKernel

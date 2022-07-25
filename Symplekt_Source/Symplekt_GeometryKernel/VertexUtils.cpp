@@ -15,51 +15,54 @@ created  : 23.9.2021 : M.Cavarga (MCInversion) :
 #include "Vertex.h"
 #include "Vector3.h"
 #include "HalfEdge.h"
-#include "Edge.h"
-#include "Face.h"
 #include "FaceUtils.h"
-#include "VertexNormal.h"
 
 namespace Symplektis::GeometryKernel
 {
 
-	Vector3 ComputeVertexNormal(const Vertex& vertex)
+	Vector3 ComputeVertexNormal(const Vertex& vertex, const ReferencedMeshGeometryData& meshData)
 	{
 		Vector3 result{};
-		HalfEdgeHandle he = vertex.HalfEdge();
+		auto he = vertex.HalfEdge();
 
 		do
 		{   // 1-ring neighborhood iteration
-			if (!he.GetElement().IsBoundary()) result += ComputeNormal(he.GetElement().AdjacentFace().GetElement());
-			he = he.GetElement().OppositeHalfEdge().GetElement().NextHalfEdge();
+			if (!meshData.HalfEdges[he.get()].IsBoundary())
+			{
+				result += ComputeNormal(meshData.Faces[meshData.HalfEdges[he.get()].AdjacentFace().get()], meshData);
+			}
+			he = meshData.HalfEdges[meshData.HalfEdges[he.get()].OppositeHalfEdge().get()].NextHalfEdge();
 		} while (he != vertex.HalfEdge());
 
 		return result.Normalize();
 	}
 
-	double ComputeDualNeighborhoodArea(const Vertex& vertex)
+	double ComputeDualNeighborhoodArea(const Vertex& vertex, const ReferencedMeshGeometryData& meshData)
 	{
 		double result = 0.0;
-		HalfEdgeHandle he = vertex.HalfEdge();
+		auto he = vertex.HalfEdge();
 
 		do
 		{   // 1-ring neighborhood iteration
-			if (!he.GetElement().IsBoundary()) result += ComputeArea(he.GetElement().AdjacentFace().GetElement());
-			he = he.GetElement().OppositeHalfEdge().GetElement().NextHalfEdge();
+			if (!meshData.HalfEdges[he.get()].IsBoundary())
+			{
+				result += ComputeArea(meshData.Faces[meshData.HalfEdges[he.get()].AdjacentFace().get()], meshData);
+			}
+			he = meshData.HalfEdges[meshData.HalfEdges[he.get()].OppositeHalfEdge().get()].NextHalfEdge();
 		} while (he != vertex.HalfEdge());
 
 		return result / 3.0;
 	}
 
-	unsigned int GetValence(const Vertex& vertex)
+	unsigned int GetValence(const Vertex& vertex, const ReferencedMeshGeometryData& meshData)
 	{
 		unsigned int result = 0;
-		HalfEdgeHandle he = vertex.HalfEdge();
+		auto he = vertex.HalfEdge();
 
 		do
 		{   // 1-ring neighborhood iteration
 			result++;
-			he = he.GetElement().OppositeHalfEdge().GetElement().NextHalfEdge();
+			he = meshData.HalfEdges[meshData.HalfEdges[he.get()].OppositeHalfEdge().get()].NextHalfEdge();
 		} while (he != vertex.HalfEdge());
 
 		return result;

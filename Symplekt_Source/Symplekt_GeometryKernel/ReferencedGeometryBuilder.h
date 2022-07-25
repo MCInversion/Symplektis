@@ -33,19 +33,19 @@ namespace Symplektis::GeometryKernel
 	//=============================================================================
 	class ReferencedMeshGeometryBuilder
 	{
-    public:
+	public:
 		/// @{
 		/// \name Constructors
-		
-        //-----------------------------------------------------------------------------
-        /*! \brief Constructor.
+
+		//-----------------------------------------------------------------------------
+		/*! \brief Constructor.
 		*   \param[in] inputData        BasePolygonalGeometryData to construct a referenced geometry data from
-        *
-        *   \author M. Cavarga (MCInversion)
-        *   \date   14.9.2021
-        */
-        //-----------------------------------------------------------------------------
-        explicit ReferencedMeshGeometryBuilder(BasePolygonalGeometryData& inputData);
+		*
+		*   \author M. Cavarga (MCInversion)
+		*   \date   14.9.2021
+		*/
+		//-----------------------------------------------------------------------------
+		explicit ReferencedMeshGeometryBuilder(BasePolygonalGeometryData& inputData);
 
 		/// @{
 		/// \name Functionality
@@ -70,11 +70,11 @@ namespace Symplektis::GeometryKernel
 		 *   \date   14.9.2021
 		 *
 		 */
-		//-----------------------------------------------------------------------------
+		 //-----------------------------------------------------------------------------
 		ReferencedMeshGeometryData& Data()
-        {
-            return *m_ResultData;
-        }
+		{
+			return *m_ResultData;
+		}
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Built const data getter
@@ -89,8 +89,8 @@ namespace Symplektis::GeometryKernel
 			return *m_ResultData;
 		}
 
-        /// @{
-        /// \name Setters
+		/// @{
+		/// \name Setters
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Sets base geometry data
@@ -130,36 +130,36 @@ namespace Symplektis::GeometryKernel
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Fills the vertex buffer and a vertexIndex->vertex map.
-		*   \param[out] vertIndexToVertexHandle        a vertexIndex -> vertexHandle map for associating vertex indices with inserted vertices.
+		*   \param[in] vertIndexToVertexIter        a vertexIndex->vertexIterator map for associating vertex indices with index buffer iterators.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   8.10.2021
 		*/
 		//-----------------------------------------------------------------------------
-		void FillVertexBufferAndIndexMap(std::map<unsigned int, GeometryKernel::VertexHandle>& vertIndexToVertexHandle) const;
+		void FillVertexBufferAndIndexMap(std::map<unsigned int, VertexIterator>& vertIndexToVertexIter) const;
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Fills half-edge, edge, and face buffers + helper containers.
-		*   \param[out] vertIndexToVertexHandle           a vertexIndex->vertexHandle map for associating vertex indices with vertex handles.
-		*   \param[out] halfEdgeHasOpposite               a halfEdgeHandle->hasOpposite map storing information about halfEdges having their opposites.
+		*   \param[in] vertIndexToVertexIter             a vertexIndex->vertexIterator map for associating vertex indices with index buffer iterators.
+		*   \param[in] halfEdgeHasOpposite               a halfEdgeIterator->hasOpposite map storing information about halfEdges having their opposites.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   8.10.2021
 		*/
 		//-----------------------------------------------------------------------------
 		bool FillHalfEdgesAndFaces(
-			std::map<unsigned int, GeometryKernel::VertexHandle>&      vertIndexToVertexHandle,
-			std::map<GeometryKernel::HalfEdgeHandle, bool>&            halfEdgeHasOpposite) const;
+			std::map<unsigned int, VertexIterator>& vertIndexToVertexIter,
+			std::map<HalfEdgeIterator, bool>& halfEdgeHasOpposite) const;
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Fills the boundary cycles buffers from half-edges that do not have opposites.
-		*   \param[out] halfEdgeHasOpposite        a halfEdgeHandle->hasOpposite map storing information about halfEdges having their opposites.
+		*   \param[in] halfEdgeHasOpposite        a halfEdgeIterator->hasOpposite map storing information about halfEdges having their opposites.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   8.10.2021
 		*/
 		//-----------------------------------------------------------------------------
-		void FillBoundaryCycles(std::map<GeometryKernel::HalfEdgeHandle, bool>& halfEdgeHasOpposite) const;
+		void FillBoundaryCycles(std::map<HalfEdgeIterator, bool>& halfEdgeHasOpposite) const;
 
 		//-----------------------------------------------------------------------------
 		/*! \brief A checking method for isolated vertices
@@ -168,16 +168,16 @@ namespace Symplektis::GeometryKernel
 		*   \date   14.9.2021
 		*/
 		//-----------------------------------------------------------------------------
-        void PerformIsolatedVertexCheck() const;
-		
+		void PerformIsolatedVertexCheck() const;
+
 		//-----------------------------------------------------------------------------
-		/*! \brief A checking method for non-manifold vertices and geometry handle validity.
+		/*! \brief A checking method for non-manifold vertices
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   14.9.2021
 		*/
 		//-----------------------------------------------------------------------------
-        void PerformNonManifoldVertexCheck() const;
+		void PerformNonManifoldVertexCheck() const;
 
 		//
 		// =============== Data ========================================================

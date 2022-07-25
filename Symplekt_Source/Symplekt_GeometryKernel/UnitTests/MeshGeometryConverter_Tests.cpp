@@ -43,6 +43,7 @@ namespace Symplektis::UnitTests
 		ReferencedMeshGeometry m_TestIcosahedronRefGeom;
 		BufferMeshGeometry     m_TestIcosahedronBuffGeom;
 	};
+
 	TEST_F(MeshGeometryConverters_TestFixture, ReferencedGeometry_ConvertReferencedGeometryToBufferGeometry_CorrectBufferGeometryData)
 	{
 		// Arrange, Act
@@ -51,7 +52,7 @@ namespace Symplektis::UnitTests
 		const auto& resultGeometry = refToBuffConverter.GetResultGeometry();
 		
 		auto& testBuffGeomResultData = resultGeometry.GetMeshData();
-		const size_t expectedIcoBuffGeomSize = 608;
+		constexpr size_t expectedIcoBuffGeomSize = 608;
 		const size_t icosahedronDataSize = testBuffGeomResultData.Size();
 		const auto [v0, v1, v2] = ObtainTriangleVerticesFromTriangulationIndices(0, testBuffGeomResultData);
 		const double face0Area = ComputeTriangleArea(v0, v1, v2);
@@ -76,13 +77,13 @@ namespace Symplektis::UnitTests
 		
 		const auto& testRefGeomResultData = resultGeometry.GetMeshData();
 #if _DEBUG
-		const size_t expectedIcoRefGeomSize = 10880;
+		constexpr size_t expectedIcoRefGeomSize = 10880;
 #else
-		const size_t expectedIcoRefGeomSize = 4736;
+		constexpr size_t expectedIcoRefGeomSize = 4736;
 #endif
 		const size_t icosahedronDataSize = testRefGeomResultData.Size();
-		const unsigned int vertex0Valence = GetValence(testRefGeomResultData.Vertices[0]);
-		const double face0Area = ComputeArea(testRefGeomResultData.Faces[0]);
+		const unsigned int vertex0Valence = GetValence(testRefGeomResultData.Vertices[0], testRefGeomResultData);
+		const double face0Area = ComputeArea(testRefGeomResultData.Faces[0], testRefGeomResultData);
 
 		// Assert
 		EXPECT_EQ(icosahedronDataSize, expectedIcoRefGeomSize);

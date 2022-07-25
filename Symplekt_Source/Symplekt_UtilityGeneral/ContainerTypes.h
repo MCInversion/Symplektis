@@ -31,7 +31,6 @@
 
 #include <algorithm>
 #include <cstdint>
-#include <vector>
 
 namespace Symplektis::Util
 {

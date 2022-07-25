@@ -13,9 +13,6 @@
 
 #include "Symplekt_GeometryKernel/Vertex.h"
 #include "Symplekt_GeometryKernel/VertexNormal.h"
-#include "Symplekt_GeometryKernel/HalfEdge.h"
-#include "Symplekt_GeometryKernel/Face.h"
-#include "Symplekt_GeometryKernel/Edge.h"
 
 #include "Symplekt_GeometryKernel/FaceUtils.h"
 

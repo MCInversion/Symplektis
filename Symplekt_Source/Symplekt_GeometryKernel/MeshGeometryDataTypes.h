@@ -33,9 +33,9 @@ namespace Symplektis::GeometryKernel
 	struct BasePolygonalGeometryData
 	{
 		std::wstring                             Name;
-		std::vector<GeometryKernel::Vector3>       Vertices{};
+		std::vector<Vector3>                     Vertices{};
 		std::vector<std::vector<unsigned int>>   PolyVertexIndices{};
-		std::vector<GeometryKernel::Vector3>       VertexNormals{};
+		std::vector<Vector3>                     VertexNormals{};
 
 		/// \brief Returns the byte size of this geometry container.
 		[[nodiscard]] size_t Size() const
@@ -45,9 +45,9 @@ namespace Symplektis::GeometryKernel
 				polySize += poly.size();
 			
 			return
-				Vertices.size() * sizeof(GeometryKernel::Vector3) +
+				Vertices.size() * sizeof(Vector3) +
 				polySize * sizeof(unsigned int) +
-				VertexNormals.size() * sizeof(GeometryKernel::Vector3);
+				VertexNormals.size() * sizeof(Vector3);
 		}
 	};
 
@@ -104,22 +104,22 @@ namespace Symplektis::GeometryKernel
 		// =============== Data containers ========================================================
 		//
 		
-		std::vector<GeometryKernel::HalfEdge>         HalfEdges{};
-		std::vector<GeometryKernel::Vertex>            Vertices{};
-		std::vector<GeometryKernel::Edge>                 Edges{};
-		std::vector<GeometryKernel::Face>                 Faces{};
-		std::vector<GeometryKernel::Face>        BoundaryCycles{};
-		std::vector<GeometryKernel::VertexNormal> VertexNormals{};
+		std::vector<HalfEdge>         HalfEdges{};
+		std::vector<Vertex>            Vertices{};
+		std::vector<Edge>                 Edges{};
+		std::vector<Face>                 Faces{};
+		std::vector<Face>        BoundaryCycles{};
+		std::vector<VertexNormal> VertexNormals{};
 
 		/// \brief Returns the byte size of this geometry container.
 		[[nodiscard]] size_t Size() const
 		{
 			return
-				HalfEdges.size() * sizeof(GeometryKernel::HalfEdge) +
-				Vertices.size() * sizeof(GeometryKernel::Vertex) +
-				Edges.size() * sizeof(GeometryKernel::Edge) +
-				(Faces.size() + BoundaryCycles.size()) * sizeof(GeometryKernel::Face) +
-				VertexNormals.size() * sizeof(GeometryKernel::VertexNormal);
+				HalfEdges.size() * sizeof(HalfEdge) +
+				Vertices.size() * sizeof(Vertex) +
+				Edges.size() * sizeof(Edge) +
+				(Faces.size() + BoundaryCycles.size()) * sizeof(Face) +
+				VertexNormals.size() * sizeof(VertexNormal);
 		}
 	};
 

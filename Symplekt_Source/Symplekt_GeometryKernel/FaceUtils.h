@@ -12,6 +12,7 @@ created  : 30.8.2021 : M.Cavarga (MCInversion) :
 #pragma once
 
 #include "GeometryHelperTypes.h"
+#include "MeshGeometryDataTypes.h"
 
 namespace Symplektis::GeometryKernel
 {
@@ -129,38 +130,46 @@ namespace Symplektis::GeometryKernel
 	
 	//-----------------------------------------------------------------------------
 	/*! \brief Computes normal to a general polygon
-	*   \param[in] vertices        Polygon contour Vertex list
+	*   \param[in] vertexIndices     Polygon contour Vertex list.
+	*	\param[in] meshData          data object containing mesh elements.
 	*   \return polygon normal
 	*
 	*   \author M. Cavarga (MCInversion)
 	*   \date   30.8.2021
 	*/
 	//-----------------------------------------------------------------------------
-	[[nodiscard]] Vector3 ComputeNormal(const std::vector<VertexIndex>& vertices);
+	[[nodiscard]] Vector3 ComputeNormal(const std::vector<VertexIndex>& vertexIndices, const ReferencedMeshGeometryData& meshData);
 
 	//-----------------------------------------------------------------------------
 	/*! \brief Computes projections along normal of a general polygon
-	*   \param[in] vertices        Polygon contour Vertex list
+	*   \param[in] vertexIndices        Polygon contour Vertex list
+	*	\param[in] meshData             data object containing mesh elements.
 	*   \return list of 2D projections along normal
 	*
 	*   \author M. Cavarga (MCInversion)
 	*   \date   30.8.2021
 	*/
 	//-----------------------------------------------------------------------------
-	[[nodiscard]] std::vector<Vector2> ComputeProjectionsAlongNormal(const std::vector<VertexIndex>& vertices);
+	[[nodiscard]] std::vector<Vector2> ComputeProjectionsAlongNormal(
+		const std::vector<VertexIndex>& vertexIndices, const ReferencedMeshGeometryData& meshData);
 
 	//-----------------------------------------------------------------------------
 	/*! \brief Computes projections along normal of a general polygon
-	*   \param[in] vertices        Polygon contour Vertex list
-	*   \param[in] normal          Polygon normal (Vector3)
-	*   \param[in] refPoint        reference point (Vector3)
+	*   \param[in] vertexIndices     Polygon contour Vertex list
+	*   \param[in] normal            Polygon normal (Vector3)
+	*   \param[in] refPoint          reference point (Vector3)
+	*	\param[in] meshData          data object containing mesh elements.
 	*   \return list of 2D projections along normal
 	*
 	*   \author M. Cavarga (MCInversion)
 	*   \date   30.8.2021
 	*/
 	//-----------------------------------------------------------------------------
-	[[nodiscard]] std::vector<Vector2> ComputeProjectionsAlongNormal(const std::vector<VertexIndex>& vertices, const Vector3& normal, const Vector3& refPoint);
+	[[nodiscard]] std::vector<Vector2> ComputeProjectionsAlongNormal(
+		const std::vector<VertexIndex>& vertexIndices, 
+		const Vector3& normal, 
+		const Vector3& refPoint, 
+		const ReferencedMeshGeometryData& meshData);
 
     //
     // ==============  Requires a valid geometry representation data (referenced mesh geometry) ===========
@@ -168,47 +177,51 @@ namespace Symplektis::GeometryKernel
 
 	//-----------------------------------------------------------------------------
 	/*! \brief Computes the barycenter of a general polygon
-	*   \param[in] poly     polygon to have its barycenter computed
+	*   \param[in] poly        polygon to have its barycenter computed.
+	*	\param[in] meshData    data object containing mesh elements.
 	*   \return polygon barycenter
 	*
 	*   \author M. Cavarga (MCInversion)
 	*   \date   30.8.2021
 	*/
 	//-----------------------------------------------------------------------------
-	[[nodiscard]] Vector3 ComputeBarycenter(const Face& poly);
+	[[nodiscard]] Vector3 ComputeBarycenter(const Face& poly, const ReferencedMeshGeometryData& meshData);
 
 	//-----------------------------------------------------------------------------
 	/*! \brief Computes the circumcenter of a triangle Face
-	*   \param[in] tri     polygon to have its circumcenter computed
+	*   \param[in] tri         polygon to have its circumcenter computed.
+	*	\param[in] meshData    data object containing mesh elements.
 	*   \return triangle circumcenter
 	*
 	*   \author M. Cavarga (MCInversion)
 	*   \date   30.8.2021
 	*/
 	//-----------------------------------------------------------------------------
-	[[nodiscard]] Vector3 ComputeCircumcenter(const Face& tri);
+	[[nodiscard]] Vector3 ComputeCircumcenter(const Face& tri, const ReferencedMeshGeometryData& meshData);
 
 	//-----------------------------------------------------------------------------
 	/*! \brief Computes area of a general polygon
-	*   \param[in] poly     polygon to have its area computed
+	*   \param[in] poly     polygon to have its area computed.
+	*	\param[in] meshData    data object containing mesh elements.
 	*   \return area
 	*
 	*   \author M. Cavarga (MCInversion)
 	*   \date   30.8.2021
 	*/
 	//-----------------------------------------------------------------------------
-	[[nodiscard]] double ComputeArea(const Face& poly);
+	[[nodiscard]] double ComputeArea(const Face& poly, const ReferencedMeshGeometryData& meshData);
 
 	//-----------------------------------------------------------------------------
 	/*! \brief Computes normal to a general polygon
-	*   \param[in] poly     polygon to have its normal computed
+	*   \param[in] poly        polygon to have its normal computed.
+	*	\param[in] meshData    data object containing mesh elements.
 	*   \return polygon normal
 	*
 	*   \author M. Cavarga (MCInversion)
 	*   \date   30.8.2021
 	*/
 	//-----------------------------------------------------------------------------
-	[[nodiscard]] Vector3 ComputeNormal(const Face& poly);
+	[[nodiscard]] Vector3 ComputeNormal(const Face& poly, const ReferencedMeshGeometryData& meshData);
 
 
 } // Symplektis::GeometryKernel

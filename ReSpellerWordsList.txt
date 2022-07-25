@@ -29,3 +29,4 @@ rebalance
 rebalancing
 rebalances
 decrementation
+collinearity

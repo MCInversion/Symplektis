@@ -58,7 +58,7 @@ namespace Symplektis::UnitTests
 	TEST_F(BufferMeshGeometry_DataValidity_TestFixture, BufferMeshGeometry_ObtainTriangleVerticesFromTriangulationIndices_CorrectVertexCoords)
 	{
 		// Arrange
-        const unsigned int triId = 0;
+        constexpr unsigned int triId = 0;
 
 		// Act
         const auto [v0, v1, v2] = ObtainTriangleVerticesFromTriangulationIndices(triId, m_Icosahedron->GetMeshData());

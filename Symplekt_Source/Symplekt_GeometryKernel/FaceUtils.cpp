@@ -15,12 +15,10 @@ created  : 30.8.2021 : M.Cavarga (MCInversion) :
 #include "Symplekt_UtilityGeneral/Assert.h"
 #include "Symplekt_UtilityGeneral/ToleranceSettings.h"
 
-#include "Edge.h"
 #include "Face.h"
 #include "HalfEdge.h"
 #include "HalfEdgeUtils.h"
 #include "Vertex.h"
-#include "VertexNormal.h"
 
 #include "Vector2.h"
 #include "Vector3.h"
@@ -32,30 +30,32 @@ created  : 30.8.2021 : M.Cavarga (MCInversion) :
 
 namespace Symplektis::GeometryKernel
 {
-	Vector3 ComputeCircumcenter(const Face& tri)
+	Vector3 ComputeCircumcenter(const Face& tri, const ReferencedMeshGeometryData& meshData)
 	{
+		ASSERT(!meshData.Vertices.empty() && !meshData.HalfEdges.empty(), "ComputeCircumcenter: invalid meshData!");
 		if (tri.GetTriangulation().size() != 1)
 		{
 			MSG_CHECK(false, "ComputeCircumcenter: Attempting to compute circumcenter of a non-triangle Face!\n");
-			return Vector3();
+			return {};
 		}
 		
-		const Vector3 p0 = tri.HalfEdge().GetElement().TailVertex().GetElement().Position();
-		const Vector3 p1 = tri.HalfEdge().GetElement().NextHalfEdge().GetElement().TailVertex().GetElement().Position();
-		const Vector3 n = ComputeRotatedEdgeVector(tri.HalfEdge().GetElement());
-		const double h = 0.5 * ComputeOppositeAngleCotan(tri.HalfEdge().GetElement());
+		const Vector3 p0 = meshData.Vertices[meshData.HalfEdges[tri.HalfEdge().get()].TailVertex().get()].Position();
+		const Vector3 p1 = meshData.Vertices[meshData.HalfEdges[meshData.HalfEdges[tri.HalfEdge().get()].NextHalfEdge().get()].TailVertex().get()].Position();
+		const Vector3 n = ComputeRotatedEdgeVector(meshData.HalfEdges[tri.HalfEdge().get()], meshData);
+		const double h = 0.5 * ComputeOppositeAngleCotan(meshData.HalfEdges[tri.HalfEdge().get()], meshData);
 
 		return 0.5 * (p0 + p1) + h * n;
 	}
 
-	double ComputeArea(const Face& poly)
+	double ComputeArea(const Face& poly, const ReferencedMeshGeometryData& meshData)
 	{
+		ASSERT(!meshData.Vertices.empty(), "ComputeArea: invalid meshData!");
 		double result = 0.0;
 		for (const auto& triangle : poly.GetTriangulation())
 		{
-			const Vector3 v0 = std::get<0>(triangle).GetElement().Position();
-			const Vector3 v1 = std::get<1>(triangle).GetElement().Position();
-			const Vector3 v2 = std::get<2>(triangle).GetElement().Position();
+			const Vector3 v0 = meshData.Vertices[std::get<0>(triangle).get()].Position();
+			const Vector3 v1 = meshData.Vertices[std::get<1>(triangle).get()].Position();
+			const Vector3 v2 = meshData.Vertices[std::get<2>(triangle).get()].Position();
 
 			result += ComputeTriangleArea(v0, v1, v2);
 		}
@@ -63,14 +63,15 @@ namespace Symplektis::GeometryKernel
 		return result;
 	}
 
-	Vector3 ComputeNormal(const Face& poly)
+	Vector3 ComputeNormal(const Face& poly, const ReferencedMeshGeometryData& meshData)
 	{
+		ASSERT(!meshData.Vertices.empty(), "ComputeNormal: invalid meshData!");
 		Vector3 result;
 		for (const auto& triangle : poly.GetTriangulation())
 		{
-			const Vector3 v0 = std::get<0>(triangle).GetElement().Position();
-			const Vector3 v1 = std::get<1>(triangle).GetElement().Position();
-			const Vector3 v2 = std::get<2>(triangle).GetElement().Position();
+			const Vector3 v0 = meshData.Vertices[std::get<0>(triangle).get()].Position();
+			const Vector3 v1 = meshData.Vertices[std::get<1>(triangle).get()].Position();
+			const Vector3 v2 = meshData.Vertices[std::get<2>(triangle).get()].Position();
 
 			result += CrossProduct(v1 - v0, v2 - v0);
 		}
@@ -81,14 +82,15 @@ namespace Symplektis::GeometryKernel
 		return result.Normalize();
 	}
 
-	Vector3 ComputeNormal(const std::vector<VertexHandle>& vertices)
+	Vector3 ComputeNormal(const std::vector<VertexIndex>& vertexIndices, const ReferencedMeshGeometryData& meshData)
 	{
+		ASSERT(meshData.Vertices.size() >= vertexIndices.size(), "ComputeNormal: invalid number of vertices.");
 		Vector3 result;
-		for (unsigned int i = 0; i < vertices.size(); i++)
+		for (unsigned int i = 0; i < vertexIndices.size(); i++)
 		{
-			const auto iNext = (static_cast<size_t>(i) + 1) % vertices.size();
-			const Vector3 fromNext = vertices[i].GetElement().Position() - vertices[iNext].GetElement().Position();
-			const Vector3 plusNext = vertices[i].GetElement().Position() + vertices[iNext].GetElement().Position();
+			const auto iNext = (static_cast<size_t>(i) + 1) % vertexIndices.size();
+			const Vector3 fromNext = meshData.Vertices[vertexIndices[i].get()].Position() - meshData.Vertices[vertexIndices[iNext].get()].Position();
+			const Vector3 plusNext = meshData.Vertices[vertexIndices[i].get()].Position() + meshData.Vertices[vertexIndices[iNext].get()].Position();
 
 			result.X() += fromNext.Y() * plusNext.Z();
 			result.Y() += fromNext.Z() * plusNext.X();
@@ -101,19 +103,20 @@ namespace Symplektis::GeometryKernel
 		return result.Normalize();
 	}
 
-	Vector3 ComputeBarycenter(const Face& poly)
+	Vector3 ComputeBarycenter(const Face& poly, const ReferencedMeshGeometryData& meshData)
 	{
+		ASSERT(!meshData.Vertices.empty() && !meshData.HalfEdges.empty(), "ComputeBarycenter: invalid meshData!");
 		unsigned int vertCounter = 0;
 		Vector3 result;
-		HalfEdgeHandle halfEdge = poly.HalfEdge();
+		auto halfEdgeId = poly.HalfEdge();
 
 		do
 		{
 			vertCounter++;
-			result += halfEdge.GetElement().TailVertex().GetElement().Position();
-			halfEdge = halfEdge.GetElement().NextHalfEdge();
+			result += meshData.Vertices[meshData.HalfEdges[halfEdgeId.get()].TailVertex().get()].Position();
+			halfEdgeId = meshData.HalfEdges[halfEdgeId.get()].NextHalfEdge();
 		}
-		while (halfEdge != poly.HalfEdge());
+		while (halfEdgeId != poly.HalfEdge());
 
 		return result / vertCounter;
 	}
@@ -179,25 +182,27 @@ namespace Symplektis::GeometryKernel
 		return projections;
 	}
 
-	std::vector<Vector2> ComputeProjectionsAlongNormal(const std::vector<VertexHandle>& vertices)
+	std::vector<Vector2> ComputeProjectionsAlongNormal(const std::vector<VertexIndex>& vertexIndices, const ReferencedMeshGeometryData& meshData)
 	{
-		const Vector3 normal = ComputeNormal(vertices);
-		const Vector3 refPoint = vertices[0].GetElement().Position();
+		ASSERT(meshData.Vertices.size() >= vertexIndices.size(), "ComputeProjectionsAlongNormal: invalid number of vertices.");
+		const Vector3 normal = ComputeNormal(vertexIndices, meshData);
+		const Vector3 refPoint = meshData.Vertices[vertexIndices[0].get()].Position();
 
-		return ComputeProjectionsAlongNormal(vertices, normal, refPoint);
+		return ComputeProjectionsAlongNormal(vertexIndices, normal, refPoint, meshData);
 	}
 
-	std::vector<Vector2> ComputeProjectionsAlongNormal(const std::vector<VertexHandle>& vertices, const Vector3& normal, const Vector3& refPoint)
+	std::vector<Vector2> ComputeProjectionsAlongNormal(const std::vector<VertexIndex>& vertexIndices, const Vector3& normal, const Vector3& refPoint, const ReferencedMeshGeometryData& meshData)
 	{
+		ASSERT(meshData.Vertices.size() >= vertexIndices.size(), "ComputeProjectionsAlongNormal: invalid number of vertices.");
 		const auto quat = ComputeLookAtQuaternion(normal, Vector3(0.0, 0.0, 1.0));
 		const auto projX = Vector3(0.0, 1.0, 0.0).ApplyQuaternion(quat);
 		const auto projY = Vector3(0.0, 0.0, 1.0).ApplyQuaternion(quat);
 
 		std::vector<Vector2> projections{};
-		projections.reserve(vertices.size());
-		for (const auto& vert : vertices)
+		projections.reserve(vertexIndices.size());
+		for (const auto& vertId : vertexIndices)
 		{
-			const Vector3 vec = vert.GetElement().Position() - refPoint;
+			const Vector3 vec = meshData.Vertices[vertId.get()].Position() - refPoint;
 			projections.emplace_back(Vector2(vec.DotProduct(projX), vec.DotProduct(projY)));
 		}
 
@@ -409,7 +414,7 @@ namespace Symplektis::GeometryKernel
 		triangulationFaceIds.reserve(triangles.size());
 		for (const auto& tri : triangles)
 		{
-			for (unsigned int i = 0; i < 3; i++)
+			for (int i = 0; i < 3; i++)
 				triangulationVertexIds.emplace_back(vertexIdTuple[tri->GetPoint(i)->_vIdx]);
 			triangulationFaceIds.emplace_back(faceIndex++);
 		}

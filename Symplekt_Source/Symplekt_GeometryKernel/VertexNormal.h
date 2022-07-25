@@ -67,13 +67,13 @@ namespace Symplektis::GeometryKernel
 		//-----------------------------------------------------------------------------
 		/*! \brief Constructor. Creates a normal vector instance with vector vec and reference to Vertex vert.
 		 *  \param[in] vec             normal Vector3
-		 *  \param[in] vert            VertexHandle of ReferencedMeshGeometryData.
+		 *  \param[in] vert            VertexIndex of ReferencedMeshGeometryData.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   12.10.2021
 		*/
 		//-----------------------------------------------------------------------------
-		VertexNormal(const Vector3& vec, const VertexHandle& vert)
+		VertexNormal(const Vector3& vec, const VertexIndex& vert)
 		{
 			Set(vec);
 			SetVertex(vert);
@@ -156,7 +156,7 @@ namespace Symplektis::GeometryKernel
 		*   \date   12.10.2021
 		*/
 		//-----------------------------------------------------------------------------
-		VertexNormal& SetVertex(const VertexHandle& vert)
+		VertexNormal& SetVertex(const VertexIndex& vert)
 		{
 			m_Vertex = vert;
 			return *this;
@@ -199,7 +199,7 @@ namespace Symplektis::GeometryKernel
 		*   \date   12.10.2021
 		*/
 		//-----------------------------------------------------------------------------
-		VertexHandle& Vertex()
+		VertexIndex& Vertex()
 		{
 			return m_Vertex;
 		}
@@ -212,7 +212,7 @@ namespace Symplektis::GeometryKernel
 		*   \date   12.10.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] const VertexHandle& Vertex() const
+		[[nodiscard]] const VertexIndex& Vertex() const
 		{
 			return m_Vertex;
 		}
@@ -221,7 +221,7 @@ namespace Symplektis::GeometryKernel
 
 		Vector3 m_Vector;       //!< Normal Vector3
 
-		VertexHandle m_Vertex;  //!< A handle to base Vertex object
+		VertexIndex m_Vertex;  //!< An index to base Vertex object
 	};
 	
 } // Symplektis::GeometryKernel

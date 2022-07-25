@@ -125,9 +125,10 @@ namespace Symplektis::GeometryKernel
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Construct (triangulate) from vertices.
-		*   \param[in] vertices   Vertex's to be initialized from
-		*   \param[in] halfEdge   HalfEdgeIndex to be initialized from
-		*   \param[in] id         Face index
+		*   \param[in] vertexIndices     indices of vertices to be initialized from
+		*   \param[in] halfEdge          HalfEdgeIndex to be initialized from
+		*   \param[in] id                Face index
+		*	\param[in] vertexContainer   container of vertices indexed by vertexIndices.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   31.8.2021
@@ -135,16 +136,17 @@ namespace Symplektis::GeometryKernel
 		*   This setter uses Poly2Tri library for triangulating n-gons with n > 4
 		*/
 		//-----------------------------------------------------------------------------
-		Face(const std::vector<VertexIndex>& vertices, const HalfEdgeIndex& halfEdge, const unsigned int& id)
+		Face(const std::vector<VertexIndex>& vertexIndices, const HalfEdgeIndex& halfEdge, const unsigned int& id, const std::vector<Vertex>& vertexContainer)
 			: Face(halfEdge, id)
 		{
-			Set(vertices);
+			Set(vertexIndices, vertexContainer);
 		}
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Construct (triangulate) from vertices and a half-edge.
-		*   \param[in] vertices   Vertex's to be initialized from
-		*   \param[in] halfEdge   HalfEdgeIndex to be initialized from
+		*   \param[in] vertexIndices     indices of vertices to be initialized from
+		*   \param[in] halfEdge          HalfEdgeIndex to be initialized from
+		*	\param[in] vertexContainer   container of vertices indexed by vertexIndices.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   31.8.2021
@@ -152,15 +154,16 @@ namespace Symplektis::GeometryKernel
 		*   This setter uses Poly2Tri library for triangulating n-gons with n > 4
 		*/
 		//-----------------------------------------------------------------------------
-		Face(const std::vector<VertexIndex>& vertices, const HalfEdgeIndex& halfEdge)
+		Face(const std::vector<VertexIndex>& vertexIndices, const HalfEdgeIndex& halfEdge, const std::vector<Vertex>& vertexContainer)
 			: Face(halfEdge)
 		{
-			Set(vertices);
+			Set(vertexIndices, vertexContainer);
 		}
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Construct (triangulate) from vertices.
-		*   \param[in] vertices   Vertex's to be initialized from
+		*   \param[in] vertexIndices     indices of vertices to be initialized from.
+		*	\param[in] vertexContainer   container of vertices indexed by vertexIndices.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   31.8.2021
@@ -168,9 +171,9 @@ namespace Symplektis::GeometryKernel
 		*   This setter uses Poly2Tri library for triangulating n-gons with n > 4
 		*/
 		//-----------------------------------------------------------------------------
-		explicit Face(const std::vector<VertexIndex>& vertices)
+		Face(const std::vector<VertexIndex>& vertexIndices, const std::vector<Vertex>& vertexContainer)
 		{
-			Set(vertices);
+			Set(vertexIndices, vertexContainer);
 		}
 
 		/// @{
@@ -291,7 +294,8 @@ namespace Symplektis::GeometryKernel
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Initialize (triangulate) from vertices.
-		*   \param[in] vertices   Vertex's to be initialized from
+		*   \param[in] vertexIndices     indices of vertices to initialize this face from
+		*	\param[in] vertexContainer   container for vertices in a mesh.
 		*   \return reference to this Polygon
 		*
 		*   \author M. Cavarga (MCInversion)
@@ -300,7 +304,7 @@ namespace Symplektis::GeometryKernel
 		*   This setter uses Poly2Tri library for triangulating n-gons with n > 4
 		*/
 		//-----------------------------------------------------------------------------
-		Face& Set(const std::vector<VertexIndex>& vertices);
+		Face& Set(const std::vector<VertexIndex>& vertexIndices, const std::vector<Vertex>& vertexContainer);
 		
 		//-----------------------------------------------------------------------------
 		/*! \brief Initialize from another Face
@@ -391,7 +395,7 @@ namespace Symplektis::GeometryKernel
 		*   \date   27.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] bool IsBoundary() const;
+		[[nodiscard]] bool IsBoundary(const std::vector<GeometryKernel::HalfEdge>& halfEdgeContainer) const;
 
 	private:
 		//!< Refers to one of the HalfEdge's associated with this Face

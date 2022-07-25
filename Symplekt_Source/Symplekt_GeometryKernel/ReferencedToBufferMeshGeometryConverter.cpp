@@ -38,35 +38,36 @@ namespace Symplektis::GeometryKernel
 		geoData.Name = meshData.Name;
 		
 		geoData.Vertices.reserve(meshData.Vertices.size());
+
+		const bool hasNormals = !meshData.VertexNormals.empty();
 		geoData.VertexNormals.reserve(meshData.VertexNormals.size());
-		
-		std::vector<VertexHandle> vertexHandles;
-		vertexHandles.reserve(meshData.Vertices.size());
-		std::ranges::transform(meshData.Vertices, std::back_inserter(vertexHandles), 
-			[&meshData](const Vertex& vert){
-				return VertexHandle(static_cast<Util::ContainerIndex>(vert.Index()), const_cast<VertexContainer*>(&meshData.Vertices));
-			});
-		if (!meshData.VertexNormals.empty()) // has normals
+		std::map<VertexConstIterator, unsigned int> vertexToVertexIndex{};
+
+		unsigned int currentVertId = 0;
+		for (auto vert = meshData.Vertices.begin(); vert != meshData.Vertices.end(); ++vert)
 		{
-			std::ranges::transform(meshData.VertexNormals, std::back_inserter(geoData.VertexNormals),
-			[](const VertexNormal& normal) {
-					return normal.Get();
-			});
+			vertexToVertexIndex[vert] = currentVertId;
+			geoData.Vertices.emplace_back(vert->Position());
+
+			if (hasNormals)
+			{
+				geoData.VertexNormals.emplace_back(meshData.VertexNormals[vert->Normal().get()].Get());
+			}
+			currentVertId++;
 		}
 
 		geoData.PolyVertexIndices = std::vector<std::vector<unsigned int>>{ meshData.Faces.size() };
 		for (unsigned int faceIndex = 0; const auto& face : meshData.Faces)
 		{
-			const auto& baseHeHandle = face.HalfEdge();
-			auto heHandle = baseHeHandle;
+			const auto& baseHeId = face.HalfEdge();
+			auto heId = baseHeId;
 			geoData.PolyVertexIndices[faceIndex].reserve(face.GetTriangulation().size() + 2);
 			do
 			{
-				const Util::Symplekt_IndexType vertexIndex = heHandle.GetElement().TailVertex().GetIndex().get();
-				geoData.PolyVertexIndices[faceIndex].emplace_back(vertexIndex);
-				heHandle = heHandle.GetElement().NextHalfEdge();
+				geoData.PolyVertexIndices[faceIndex].emplace_back(vertexToVertexIndex[meshData.Vertices.cbegin() + meshData.HalfEdges[heId.get()].TailVertex().get()]);
+				heId = meshData.HalfEdges[heId.get()].NextHalfEdge();
 			}
-			while (heHandle != baseHeHandle);
+			while (heId != baseHeId);
 			faceIndex++;
 		}
 

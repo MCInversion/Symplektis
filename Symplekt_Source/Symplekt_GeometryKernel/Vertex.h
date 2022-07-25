@@ -118,7 +118,7 @@ namespace Symplektis::GeometryKernel
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Constructor. Initialize this Vertex from halfEdge ref, and position vector
-		*   \param[in] halfEdge        iterator to HalfEdge coming out of this Vertex
+		*   \param[in] halfEdge        index of HalfEdge coming out of this Vertex
 		*   \param[in] pos             position 3D vector
 		*
 		*   \author M. Cavarga (MCInversion)
@@ -126,14 +126,14 @@ namespace Symplektis::GeometryKernel
 		*
 		*/
 		//-----------------------------------------------------------------------------
-		Vertex(const HalfEdgeHandle& halfEdge, const Vector3& pos)
+		Vertex(const HalfEdgeIndex& halfEdge, const Vector3& pos)
 		{
 			Set(halfEdge, pos);
 		}
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Constructor. Initialize this Vertex from halfEdge ref, position vector, and unique index
-		*   \param[in] halfEdge        iterator to HalfEdge coming out of this Vertex
+		*   \param[in] halfEdge        index of HalfEdge coming out of this Vertex
 		*   \param[in] pos             position 3D vector
 		*   \param[in] index           a unique index from 0, ..., nVertices - 1
 		*
@@ -142,7 +142,7 @@ namespace Symplektis::GeometryKernel
 		*
 		*/
 		//-----------------------------------------------------------------------------
-		Vertex(const HalfEdgeHandle& halfEdge, const Vector3& pos, const unsigned int& index)
+		Vertex(const HalfEdgeIndex& halfEdge, const Vector3& pos, const unsigned int& index)
 		{
 			Set(halfEdge, pos, index);
 		}
@@ -172,27 +172,27 @@ namespace Symplektis::GeometryKernel
 		/// \name Getters
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get iterator to outgoing HalfEdge.
-		*   \return HalfEdgeHandle to the outgoing HalfEdge.
+		/*! \brief Get index to outgoing HalfEdge.
+		*   \return HalfEdgeIndex to the outgoing HalfEdge.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   29.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		HalfEdgeHandle& HalfEdge()
+		HalfEdgeIndex& HalfEdge()
 		{
 			return m_HalfEdge;
 		}
 
 		//-----------------------------------------------------------------------------
-		/*! \brief Get const_iterator to the outgoing HalfEdge.
-		*   \return const HalfEdgeHandle to outgoing HalfEdge.
+		/*! \brief Get const index to the outgoing HalfEdge.
+		*   \return const HalfEdgeIndex to outgoing HalfEdge.
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   29.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] const HalfEdgeHandle& HalfEdge() const
+		[[nodiscard]] const HalfEdgeIndex& HalfEdge() const
 		{
 			return m_HalfEdge;
 		}
@@ -257,20 +257,20 @@ namespace Symplektis::GeometryKernel
 		*   \date   29.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		VertexNormalHandle& Normal()
+		VertexNormalIndex& Normal()
 		{
 			return m_Normal;
 		}
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Get const reference to this Vertex's unit normal vector.
-		*   \return const VertexNormalHandle reference of this Vertex's normal
+		*   \return const VertexNormalIndex reference of this Vertex's normal
 		*
 		*   \author M. Cavarga (MCInversion)
 		*   \date   29.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		[[nodiscard]] const VertexNormalHandle& Normal() const
+		[[nodiscard]] const VertexNormalIndex& Normal() const
 		{
 			return m_Normal;
 		}
@@ -280,7 +280,7 @@ namespace Symplektis::GeometryKernel
 		
 		//-----------------------------------------------------------------------------
 		/*! \brief Sets this Vertex from halfEdge ref, and position vector
-		*   \param[in] halfEdge        iterator to HalfEdge coming out of this Vertex
+		*   \param[in] halfEdge        index of HalfEdge coming out of this Vertex
 		*   \param[in] position        position 3D vector
 		*   \return reference to this Vertex
 		*
@@ -288,7 +288,7 @@ namespace Symplektis::GeometryKernel
 		*   \date   29.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		Vertex& Set(const HalfEdgeHandle& halfEdge, const Vector3& position)
+		Vertex& Set(const HalfEdgeIndex& halfEdge, const Vector3& position)
 		{
 			m_HalfEdge = halfEdge;
 			m_Position = position;
@@ -297,7 +297,7 @@ namespace Symplektis::GeometryKernel
 
 		//-----------------------------------------------------------------------------
 		/*! \brief Sets this Vertex from halfEdge ref, position, and vertex index
-		*   \param[in] halfEdge        iterator to HalfEdge coming out of this Vertex
+		*   \param[in] halfEdge        index of HalfEdge coming out of this Vertex
 		*   \param[in] position        position 3D vector
 		*   \param[in] index           a unique index from 0, ..., nVertices - 1
 		*   \return reference to this Vertex
@@ -306,7 +306,7 @@ namespace Symplektis::GeometryKernel
 		*   \date   29.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		Vertex& Set(const HalfEdgeHandle& halfEdge, const Vector3& position, const unsigned int& index)
+		Vertex& Set(const HalfEdgeIndex& halfEdge, const Vector3& position, const unsigned int& index)
 		{
 			m_HalfEdge = halfEdge;
 			m_Position = position;
@@ -373,7 +373,7 @@ namespace Symplektis::GeometryKernel
 		*   \date   29.8.2021
 		*/
 		//-----------------------------------------------------------------------------
-		Vertex& SetHalfEdge(const HalfEdgeHandle& halfEdge)
+		Vertex& SetHalfEdge(const HalfEdgeIndex& halfEdge)
 		{
 			m_HalfEdge = halfEdge;
 			return *this;
@@ -433,7 +433,7 @@ namespace Symplektis::GeometryKernel
 		*   \date   12.10.2021
 		*/
 		//----------------------------------------------------------------------------- 		
- 		Vertex& SetNormal(const VertexNormalHandle& vertNormal)
+ 		Vertex& SetNormal(const VertexNormalIndex& vertNormal)
 		{
 			m_Normal = vertNormal;
 			return *this;
@@ -441,7 +441,7 @@ namespace Symplektis::GeometryKernel
 
 	private:
 		//!< Refers to the HalfEdge coming out of this Vertex.
-		HalfEdgeHandle m_HalfEdge;
+		HalfEdgeIndex m_HalfEdge;
 
 		//!< 3D Euclidean position of this Vertex.
 		Vector3 m_Position;
@@ -453,7 +453,7 @@ namespace Symplektis::GeometryKernel
 		bool m_IsBoundary = false;
 
 		//!< Refers to this Vertex's outward-pointing unit normal.
-		VertexNormalHandle m_Normal;
+		VertexNormalIndex m_Normal;
 	};
 
 } // Symplektis::GeometryKernel

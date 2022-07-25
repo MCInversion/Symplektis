@@ -35,39 +35,41 @@ namespace Symplektis::GeometryKernel
 		return (m_HalfEdge == face.m_HalfEdge);
 	}
 
-    Face& Face::Set(const std::vector<VertexHandle>& vertices)
+    Face& Face::Set(const std::vector<VertexIndex>& vertexIndices, const std::vector<Vertex>& vertexContainer)
     {
-        if (vertices.size() < 3) // degenerate (single-line or single-point) Face
+        ASSERT(vertexContainer.size() >= vertexIndices.size(), "Face::Set: Invalid vertexContainer! vertexContainer.size() < vertexIndices.size()");
+
+        if (vertexIndices.size() < 3) // degenerate (single-line or single-point) Face
         {
             MSG_CHECK(false, "Face::Set: Attempting to instantiate a Face with < 3 vertices!\n");
             return *this;
         }
 		
-        if (vertices.size() == 3) // triangle (trivial)
+        if (vertexIndices.size() == 3) // triangle (trivial)
         {
-            m_Triangulation = { {vertices[0], vertices[1], vertices[2]} };
+            m_Triangulation = { {vertexIndices[0], vertexIndices[1], vertexIndices[2]} };
             return *this;
         }
 		
-        if (vertices.size() == 4) // quad
+        if (vertexIndices.size() == 4) // quad
         {
-            const Vector3 e1 = vertices[1].GetElement().Position() - vertices[0].GetElement().Position();
-            const Vector3 e2 = vertices[2].GetElement().Position() - vertices[0].GetElement().Position();
-            const Vector3 e3 = vertices[3].GetElement().Position() - vertices[0].GetElement().Position();
+            const Vector3 e1 = vertexContainer[vertexIndices[1].get()].Position() - vertexContainer[vertexIndices[0].get()].Position();
+            const Vector3 e2 = vertexContainer[vertexIndices[2].get()].Position() - vertexContainer[vertexIndices[0].get()].Position();
+            const Vector3 e3 = vertexContainer[vertexIndices[3].get()].Position() - vertexContainer[vertexIndices[0].get()].Position();
             const Vector3 c21 = CrossProduct(e2, e1);
             const Vector3 c23 = CrossProduct(e2, e3);
             if (DotProduct(c21, c23) > Util::GetProductTolerance())
             {
                 m_Triangulation = {
-                    {vertices[0], vertices[1], vertices[3]},
-                    {vertices[1], vertices[2], vertices[3]}
+                    {vertexIndices[0], vertexIndices[1], vertexIndices[3]},
+                    {vertexIndices[1], vertexIndices[2], vertexIndices[3]}
                 };
                 return *this;
             }
 
             m_Triangulation = {
-                {vertices[0], vertices[1], vertices[2]},
-                {vertices[0], vertices[2], vertices[3]}
+                {vertexIndices[0], vertexIndices[1], vertexIndices[2]},
+                {vertexIndices[0], vertexIndices[2], vertexIndices[3]}
             };
 
             return *this;
@@ -76,7 +78,8 @@ namespace Symplektis::GeometryKernel
         // ============= initializing a "penta-or-more-gon" ((n > 4)-gon): =============
         // ============= Note: using Poly2Tri util library for triangulation ===========
 
-        const auto projections = ComputeProjectionsAlongNormal(vertices);
+        const auto projections = ComputeProjectionsAlongNormal(vertexIndices, 
+            ReferencedMeshGeometryData(L"DummyMeshData", {}, vertexContainer));
         Poly2Tri::CDT* constrainedDelaunay = nullptr;
 
         // poly2tri doesn't work well with duplicate or collinear points. it is possible that it will fail on certain inputs
@@ -120,7 +123,6 @@ namespace Symplektis::GeometryKernel
                     "\nFace::Set: Triangulation was not able to finish with " +
                     std::to_string(TRIANG_MAX_TRIES) + " tries!\n";
                 MSG_CHECK(false, msg);
-                continue;
             }
         }
 		
@@ -134,11 +136,11 @@ namespace Symplektis::GeometryKernel
         m_Triangulation.reserve(triangles.size());
 
 		std::ranges::transform(triangles, std::back_inserter(m_Triangulation), 
-            [&vertices](const auto& tri) -> auto {
+            [](const auto& tri) -> auto {
             return std::tuple{
-                vertices[tri->GetPoint(0)->_vIdx],
-                vertices[tri->GetPoint(1)->_vIdx],
-                vertices[tri->GetPoint(2)->_vIdx]
+                VertexIndex(tri->GetPoint(0)->_vIdx),
+                VertexIndex(tri->GetPoint(1)->_vIdx),
+                VertexIndex(tri->GetPoint(2)->_vIdx)
             };
         });
 
@@ -146,14 +148,14 @@ namespace Symplektis::GeometryKernel
         return *this;
     }
 
-    bool Face::IsBoundary() const
+    bool Face::IsBoundary(const std::vector<GeometryKernel::HalfEdge>& halfEdgeContainer) const
     {
-        if (!m_HalfEdge.IsValid())
+        if (!m_HalfEdge.IsValid() || m_HalfEdge >= halfEdgeContainer.size())
         {
-            throw Symplektis::InvalidHandleException("Face::IsBoundary: m_HalfEdge handle is invalid!\n");
+            throw Symplektis::InvalidHandleException("Face::IsBoundary: m_HalfEdge index is invalid!\n");
         }
 
-        return m_HalfEdge.GetElement().IsBoundary();
+        return halfEdgeContainer[m_HalfEdge.get()].IsBoundary();
     }
 
 } // Symplektis::GeometryKernel
