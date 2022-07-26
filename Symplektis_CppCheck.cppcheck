@@ -2,16 +2,14 @@
 <project version="1">
     <builddir>Symplektis_CppCheck-cppcheck-build-dir</builddir>
     <platform>Unspecified</platform>
-    <importproject>build/Symplektis_ConsoleApp.sln</importproject>
-    <analyze-all-vs-configs>true</analyze-all-vs-configs>
+    <importproject>build/Symplektis_ShrinkWrapper.sln</importproject>
+    <analyze-all-vs-configs>false</analyze-all-vs-configs>
     <check-headers>true</check-headers>
     <check-unused-templates>true</check-unused-templates>
     <max-ctu-depth>2</max-ctu-depth>
     <max-template-recursion>100</max-template-recursion>
     <vs-configurations>
         <config>Debug</config>
-        <config>MinSizeRel</config>
-        <config>RelWithDebInfo</config>
         <config>Release</config>
     </vs-configurations>
 </project>
