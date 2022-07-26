@@ -77,9 +77,9 @@ namespace Symplektis::UnitTests
 		
 		const auto& testRefGeomResultData = resultGeometry.GetMeshData();
 #if _DEBUG
-		constexpr size_t expectedIcoRefGeomSize = 10880;
+		constexpr size_t expectedIcoRefGeomSize = 3056;
 #else
-		constexpr size_t expectedIcoRefGeomSize = 4736;
+		constexpr size_t expectedIcoRefGeomSize = 2896;
 #endif
 		const size_t icosahedronDataSize = testRefGeomResultData.Size();
 		const unsigned int vertex0Valence = GetValence(testRefGeomResultData.Vertices[0], testRefGeomResultData);

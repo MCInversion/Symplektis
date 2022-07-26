@@ -65,13 +65,13 @@ namespace Symplektis::UnitTests
 
 		// Assert
 #if _DEBUG
-        EXPECT_EQ(icosahedronDataSize, 10880);
-        EXPECT_EQ(icosahedronWithHolesDataSize, 10528);
-        EXPECT_EQ(icosahedronWithQuadDataSize, 10528);
+        EXPECT_EQ(icosahedronDataSize, 3056);
+        EXPECT_EQ(icosahedronWithHolesDataSize, 2960);
+        EXPECT_EQ(icosahedronWithQuadDataSize, 2960);
 #else
-        EXPECT_EQ(icosahedronDataSize, 4736);
-        EXPECT_EQ(icosahedronWithHolesDataSize, 4584);
-        EXPECT_EQ(icosahedronWithQuadDataSize, 4584);
+        EXPECT_EQ(icosahedronDataSize, 2896);
+        EXPECT_EQ(icosahedronWithHolesDataSize, 2808);
+        EXPECT_EQ(icosahedronWithQuadDataSize, 2808);
 #endif
 	}
 	

@@ -258,7 +258,7 @@ namespace Symplektis::GeometryKernel
 					// set attributes for the flip edge (we'll set ->next below)
 					newHEIt->OppositeHalfEdge() = HalfEdgeIndex(static_cast<unsigned int>(heIt - m_ResultData->HalfEdges.begin()));
 					newHEIt->TailVertex() = m_ResultData->HalfEdges[nextHEId.get()].TailVertex();
-					m_ResultData->HalfEdges[newHEIt->TailVertex().get()].SetIsBoundary(true);
+					m_ResultData->Vertices[newHEIt->TailVertex().get()].SetIsBoundary(true);
 					newHEIt->Edge() = heIt->Edge();
 					newHEIt->AdjacentFace() = FaceIndex(static_cast<unsigned int>(newBoundaryCycle - m_ResultData->BoundaryCycles.begin()));
 
