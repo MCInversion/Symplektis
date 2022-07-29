@@ -94,6 +94,7 @@ namespace Symplektis::UnitTests
     {
         // Arrange, Act, Assert
         const auto& icoMeshData = m_Icosahedron->GetMeshData();
+        EXPECT_EQ(icoMeshData.Type, PolyMeshType::Triangular);
         EXPECT_EQ(icoMeshData.TriangulationIndices.size(), 20);
         EXPECT_EQ(icoMeshData.TriangulationIndices[0].size(), 1);
         EXPECT_EQ(icoMeshData.TriangulationIndices[1].size(), 1);
@@ -102,6 +103,7 @@ namespace Symplektis::UnitTests
         EXPECT_EQ(icoMeshData.VertexNormalCoords.size(), 0);
 
         const auto& icoWithQuadMeshData = m_IcosahedronWithQuad->GetMeshData();
+        EXPECT_EQ(icoWithQuadMeshData.Type, PolyMeshType::TriAndQuadMixed);
         EXPECT_EQ(icoWithQuadMeshData.TriangulationIndices.size(), 19);
         EXPECT_EQ(icoWithQuadMeshData.TriangulationIndices[0].size(), 2);
         EXPECT_EQ(icoWithQuadMeshData.TriangulationIndices[1].size(), 1);
@@ -110,6 +112,7 @@ namespace Symplektis::UnitTests
         EXPECT_EQ(icoWithQuadMeshData.VertexNormalCoords.size(), 0);
 
         const auto& icoWithHoleMeshData = m_IcosahedronWithHole->GetMeshData();
+        EXPECT_EQ(icoWithHoleMeshData.Type, PolyMeshType::Triangular);
         EXPECT_EQ(icoWithHoleMeshData.TriangulationIndices.size(), 18);
         EXPECT_EQ(icoWithHoleMeshData.TriangulationIndices[0].size(), 1);
         EXPECT_EQ(icoWithHoleMeshData.TriangulationIndices[1].size(), 1);
@@ -121,6 +124,7 @@ namespace Symplektis::UnitTests
 	{
         // Arrange, Act, Assert
         const auto& meshData = m_Icosahedron->GetMeshData();
+        EXPECT_EQ(meshData.Type, PolyMeshType::Triangular);
         const size_t vertexIdsSize = meshData.VertexIndices.size();
         EXPECT_EQ(vertexIdsSize, 60);
         for (unsigned int triVertId = 0; triVertId < vertexIdsSize; triVertId += 3)
@@ -136,6 +140,7 @@ namespace Symplektis::UnitTests
     {
         // Arrange, Act, Assert
         const auto& icoWithQuadMeshData = m_IcosahedronWithQuad->GetMeshData();
+        EXPECT_EQ(icoWithQuadMeshData.Type, PolyMeshType::TriAndQuadMixed);
         const size_t triangulationIdsSize = icoWithQuadMeshData.TriangulationIndices.size();
         EXPECT_EQ(triangulationIdsSize, 19);
         for (unsigned int triangulationFaceId = 0; triangulationFaceId < triangulationIdsSize; triangulationFaceId++)

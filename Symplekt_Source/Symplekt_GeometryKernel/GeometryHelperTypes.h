@@ -15,6 +15,7 @@ created  : 26.8.2021 : M.Cavarga (MCInversion) :
 
 #include <vector>
 
+
 namespace Symplektis::GeometryKernel
 {
 	/// forward declarations
@@ -46,6 +47,12 @@ namespace Symplektis::GeometryKernel
 	//       than spending another week on making these iterators safe. Critical entry/escape points
 	//       should, however, be handled by try-catch blocks, so that potential crashes are caught.
 	// ======!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!=======
+
+	// TODO: Report after completing the implementation of EdgeSplit, EdgeFlip, and EdgeCollapse
+
+	//
+	// =================================== Iterators ===============================================
+	//
 
 	//-----------------------------------------------------------------------------
 	/*! \typedef VertexIterator
@@ -235,5 +242,50 @@ namespace Symplektis::GeometryKernel
 
 	/// \brief A null VertexNormalIndex pointing no a non-existent position in a vertex normal container.
 	constexpr VertexNormalIndex NULL_VERTEX_NORMAL{ -1 };
+
+	//
+	// =================================== Geometry Evaluation ===============================================
+	//
+
+	//=============================================================================
+	/// \enum PolyMeshType
+	/// \brief Enumerates the type of mesh upon evaluating the vertex counts of polygons (when the mesh is loaded)
+	///
+	/// \ingroup GEOMETRY_BASE
+	///
+	/// \author M. Cavarga (MCInversion)
+	/// \date   28.7.2022
+	//=============================================================================
+	enum class [[nodiscard]] PolyMeshType
+	{
+		Triangular         = 0,
+		TriAndQuadMixed    = 1,
+		Quadrilateral      = 2,
+		Arbitrary          = 3
+	};
+
+	//-----------------------------------------------------------------------------
+	/*! \brief Evaluates PolyMeshType from minimum and maximum polygon sizes (number of vertices).
+	*   \param[in] sizeMin      minimum number of mesh vertices in a polygon.
+	*	\param[in] sizeMax      maximum number of mesh vertices in a polygon.
+	*   \return the type of polygon mesh.
+	*
+	*   \author M. Cavarga (MCInversion)
+	*   \date   29.7.2022
+	*/
+	//-----------------------------------------------------------------------------
+	[[nodiscard]] inline PolyMeshType ConvertPolySizesToMeshType(const size_t& sizeMin, const size_t& sizeMax)
+	{
+		if (sizeMin == 3 && sizeMax == 3)
+			return PolyMeshType::Triangular;
+
+		if (sizeMin == 4 && sizeMax == 4)
+			return PolyMeshType::Quadrilateral;
+
+		if (sizeMin == 3 && sizeMax == 4)
+			return PolyMeshType::TriAndQuadMixed;
+
+		return PolyMeshType::Arbitrary;
+	}
 
 } // Symplektis::GeometryKernel

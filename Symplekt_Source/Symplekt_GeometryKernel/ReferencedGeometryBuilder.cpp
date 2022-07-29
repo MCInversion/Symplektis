@@ -55,10 +55,21 @@ namespace Symplektis::GeometryKernel
 		MSG_CHECK(!m_HasNormals || dataVertexNormals.size() == dataVertices.size(),
 			"ReferencedMeshGeometryBuilder::PreallocateMeshGeometryContainers: dataVertexNormals.size() != dataVertices.size() for non-empty dataVertexNormals buffer!\n");
 
+		size_t minVertexCountInPolygon = SIZE_MAX;
+		size_t maxVertexCountInPolygon = 0;
+
 		// count edges
 		std::set<std::pair<unsigned int, unsigned int>> edgeIdsSet;
 		for (const auto& indexTuple : dataVertexIndices)
 		{
+			// ----------- evaluate mesh polygon types ----------------
+			if (indexTuple.size() < minVertexCountInPolygon)
+				minVertexCountInPolygon = indexTuple.size();
+
+			if (indexTuple.size() > maxVertexCountInPolygon)
+				maxVertexCountInPolygon = indexTuple.size();
+			// --------------------------------------------------------
+
 			for (unsigned int i = 0; i < indexTuple.size(); i++)
 			{
 				unsigned int vertId0 = indexTuple[i];
@@ -69,6 +80,8 @@ namespace Symplektis::GeometryKernel
 				edgeIdsSet.insert({ vertId0, vertId1 });
 			}
 		}
+
+		m_ResultData->Type = ConvertPolySizesToMeshType(minVertexCountInPolygon, maxVertexCountInPolygon);
 
 		const size_t nVertices = dataVertices.size();
 		const size_t nVertexNormals = dataVertexNormals.size();

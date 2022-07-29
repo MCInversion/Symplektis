@@ -223,5 +223,26 @@ namespace Symplektis::GeometryKernel
 	//-----------------------------------------------------------------------------
 	[[nodiscard]] Vector3 ComputeNormal(const Face& poly, const ReferencedMeshGeometryData& meshData);
 
+	//-----------------------------------------------------------------------------
+	/*! \brief Evaluates whether input face is a triangle face.
+	*   \param[in] face      Face to be evaluated.
+	*   \return true if the number of triangulations of the input face is 1.
+	*
+	*   \author M. Cavarga (MCInversion)
+	*   \date   29.7.2022
+	*/
+	//-----------------------------------------------------------------------------
+	[[nodiscard]] bool IsATriangle(const Face& face);
+
+	//-----------------------------------------------------------------------------
+	/*! \brief Evaluates whether input face is a quadrilateral face.
+	*   \param[in] face      Face to be evaluated.
+	*   \return true if the number of triangulations of the input face is 2.
+	*
+	*   \author M. Cavarga (MCInversion)
+	*   \date   29.7.2022
+	*/
+	//-----------------------------------------------------------------------------
+	[[nodiscard]] bool IsAQuadrilateral(const Face& face);
 
 } // Symplektis::GeometryKernel

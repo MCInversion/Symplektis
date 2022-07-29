@@ -79,6 +79,7 @@ namespace Symplektis::UnitTests
     {
     	// Arrange, Act, Assert
         const auto& icoMeshData = m_Icosahedron->GetMeshData();
+        EXPECT_EQ(icoMeshData.Type, PolyMeshType::Triangular);
         EXPECT_EQ(icoMeshData.Edges.size(), 30);        
     	for (unsigned int edgeCounter = 0; auto& edge : icoMeshData.Edges)
     	{
@@ -95,14 +96,17 @@ namespace Symplektis::UnitTests
 	{
         // Arrange, Act, Assert
         const auto& icoMeshData = m_Icosahedron->GetMeshData();
+        EXPECT_EQ(icoMeshData.Type, PolyMeshType::Triangular);
         EXPECT_EQ(icoMeshData.Faces.size(), 20);
         EXPECT_EQ(icoMeshData.BoundaryCycles.size(), 0);
 
         const auto& icoWithQuadMeshData = m_IcosahedronWithQuad->GetMeshData();
+        EXPECT_EQ(icoWithQuadMeshData.Type, PolyMeshType::TriAndQuadMixed);
         EXPECT_EQ(icoWithQuadMeshData.Faces.size(), 19);
         EXPECT_EQ(icoWithQuadMeshData.BoundaryCycles.size(), 0);
 
         const auto& icoWithHoleMeshData = m_IcosahedronWithHole->GetMeshData();
+        EXPECT_EQ(icoWithHoleMeshData.Type, PolyMeshType::Triangular);
         EXPECT_EQ(icoWithHoleMeshData.Faces.size(), 18);
         EXPECT_EQ(icoWithHoleMeshData.BoundaryCycles.size(), 1);
 	}
@@ -289,13 +293,16 @@ namespace Symplektis::UnitTests
         const ReferencedMeshGeometryData copiedData1(copiedData0);
 
         // Assert
+        EXPECT_EQ(copiedData0.Type, PolyMeshType::Triangular);
         EXPECT_EQ(copiedData0.Faces.size(), 18);
         EXPECT_EQ(copiedData0.BoundaryCycles.size(), 1);
         EXPECT_DOUBLE_EQ(ComputeArea(copiedData0.Faces[0], copiedData0), ico_triangle_area);
+        EXPECT_EQ(copiedData1.Type, PolyMeshType::Triangular);
         EXPECT_EQ(copiedData1.Faces.size(), 18);
         EXPECT_EQ(copiedData1.BoundaryCycles.size(), 1);
         EXPECT_DOUBLE_EQ(ComputeArea(copiedData1.Faces[0], copiedData1), ico_triangle_area);
         // original data should keep its values
+        EXPECT_EQ(icoWithHoleMeshData.Type, PolyMeshType::Triangular);
         EXPECT_EQ(icoWithHoleMeshData.Faces.size(), 18);
         EXPECT_EQ(icoWithHoleMeshData.BoundaryCycles.size(), 1);
         EXPECT_DOUBLE_EQ(ComputeArea(icoWithHoleMeshData.Faces[0], icoWithHoleMeshData), ico_triangle_area);

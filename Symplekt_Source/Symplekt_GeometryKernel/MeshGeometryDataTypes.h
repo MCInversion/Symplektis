@@ -62,7 +62,12 @@ namespace Symplektis::GeometryKernel
 	//=============================================================================
 	struct BufferMeshGeometryData
 	{
-		std::wstring                           Name;
+		std::wstring Name;
+
+		//
+		// =============== Data containers ========================================================
+		//
+
 		std::vector<double>                    VertexCoords{};
 		std::vector<double>                    VertexNormalCoords{};
 		std::vector<unsigned int>              VertexIndices{};
@@ -82,6 +87,12 @@ namespace Symplektis::GeometryKernel
 		explicit BufferMeshGeometryData(std::wstring name)
 			: Name(name)
 		{ }
+
+		//
+		// =============== Properties ========================================================
+		//
+
+		PolyMeshType Type = PolyMeshType::Arbitrary; //>! type based on the numbers of vertices in polygons. Resets upon conversion to ref geom.
 	};
 
 	//=============================================================================
@@ -121,6 +132,12 @@ namespace Symplektis::GeometryKernel
 				(Faces.size() + BoundaryCycles.size()) * sizeof(Face) +
 				VertexNormals.size() * sizeof(VertexNormal);
 		}
+
+		//
+		// =============== Properties ========================================================
+		//
+
+		PolyMeshType Type = PolyMeshType::Arbitrary; //>! type based on the numbers of vertices in polygons. Resets upon conversion to buffer geom.
 	};
 
 } // Symplektis::GeometryKernel

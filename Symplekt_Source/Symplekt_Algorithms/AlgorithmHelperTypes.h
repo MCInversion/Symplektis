@@ -26,6 +26,7 @@ namespace Symplektis::Algorithms
 		AlgorithmInProgress   = 3, //!< the algorithm is still in progress.
 		ImplementationPending = 4  //!< the algorithm has not been implemented yet.
 	};
+
 } // namespace Symplektis::Algorithms
 
 ///---------------------------------------------------------------------------

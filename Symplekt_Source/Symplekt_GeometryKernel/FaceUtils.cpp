@@ -508,5 +508,13 @@ namespace Symplektis::GeometryKernel
 		return GetPolygonIndicesFromTriangles(std::move(triangles));
 	}
 
+	bool IsATriangle(const Face& face)
+	{
+		return face.GetTriangulation().size() == 1;
+	}
 
+	bool IsAQuadrilateral(const Face& face)
+	{
+		return face.GetTriangulation().size() == 2;
+	}
 } // Symplektis::GeometryKernel

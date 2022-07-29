@@ -24,11 +24,12 @@ namespace Symplektis::Algorithms
 	//=============================================================================
 	struct IncrementalRemeshingSettings
 	{
-		unsigned int NIterations = 10;          //>! number of incremental remeshing steps/
-		unsigned int NTanSmoothingSteps = 5;    //>! number of tangential smoothing steps.
-		double TargetEdgeLength = 1.0;          //>! base edge length preference for the remesher.
-		bool IsAdaptive{ true };                //>! if true, target edge lengths differ depending on principal curvatures.
-		bool UseBackProjection{ true };         //>! if true, as the final step, vertices will be projected back to the original surface (onto a triangle)
+		unsigned int NIterations = 10;            //>! number of incremental remeshing steps/
+		unsigned int NTanSmoothingSteps = 5;      //>! number of tangential smoothing steps.
+		double TargetEdgeLength = 1.0;            //>! base edge length preference for the remesher.
+		bool IsAdaptive{ true };                  //>! if true, target edge lengths differ depending on principal curvatures.
+		bool UseBackProjection{ true };           //>! if true, as the final step, vertices will be projected back to the original surface (onto a triangle).
+		bool ForceMeshTypeVerification{ false };  //>! if true, and input mesh type is PolyMeshType::Arbitrary a check for triangular mesh type will be forced.
 	};
 
 	//=============================================================================

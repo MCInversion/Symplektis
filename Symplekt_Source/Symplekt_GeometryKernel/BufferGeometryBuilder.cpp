@@ -27,9 +27,9 @@ namespace Symplektis::GeometryKernel
 		if (m_BaseData->Vertices.empty() || m_BaseData->PolyVertexIndices.empty())
 			return; // null geometry (just indices or just a point cloud)
 		
-        auto& dataVertices = m_BaseData->Vertices;
-        auto& dataVertexIndices = m_BaseData->PolyVertexIndices;
-		auto& dataVertexNormals = m_BaseData->VertexNormals;
+        const auto& dataVertices = m_BaseData->Vertices;
+        const auto& dataVertexIndices = m_BaseData->PolyVertexIndices;
+		const auto& dataVertexNormals = m_BaseData->VertexNormals;
 
 		m_HasNormals = !dataVertexNormals.empty();
 
@@ -44,9 +44,19 @@ namespace Symplektis::GeometryKernel
 		m_ResultData->TriangulationIndices = std::vector<std::vector<unsigned int>>(nTriangulations);
 		
 		size_t nTriangles = 0;
+		size_t minVertexCountInPolygon = SIZE_MAX;
+		size_t maxVertexCountInPolygon = 0;
 
 		for (unsigned int polygonId = 0; const auto& indexTuple : dataVertexIndices)
 		{
+			// ----------- evaluate mesh polygon types ----------------
+			if (indexTuple.size() < minVertexCountInPolygon)
+				minVertexCountInPolygon = indexTuple.size();
+
+			if (indexTuple.size() > maxVertexCountInPolygon)
+				maxVertexCountInPolygon = indexTuple.size();
+			// --------------------------------------------------------
+
 			const size_t idTupleSize = indexTuple.size();
 			const size_t assumedTriangleCount = (idTupleSize > 2 ? (idTupleSize - 2) : 0);
 
@@ -54,6 +64,8 @@ namespace Symplektis::GeometryKernel
 			nTriangles += assumedTriangleCount;
 			polygonId++;
 		}
+
+		m_ResultData->Type = ConvertPolySizesToMeshType(minVertexCountInPolygon, maxVertexCountInPolygon);
 		
 		const size_t nVertexIndices = 3 * nTriangles;
 

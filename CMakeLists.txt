@@ -143,7 +143,7 @@ set_target_properties(
 	Symplekt_GeometryKernel
 	Symplekt_GeometryKernel_Tests
 	Symplekt_Algorithms
-	# Symplekt_Algorithms_Tests
+	Symplekt_Algorithms_Tests
 	
 	PROPERTIES FOLDER ${SYMPLEKT_KERNEL_FOLDER}
 )
